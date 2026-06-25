@@ -1,0 +1,4 @@
+run: curl -o v2ray.txt "${{ secrets.url }}?v=${{ secrets.token }}";
+run: curl -o clash.txt "${{ secrets.url }}?c=${{ secrets.token }}"
+run: curl -o v2ray_check.txt "${{ secrets.url }}?vc=${{ secrets.token }}"
+run: curl -o clash_check.txt "${{ secrets.url }}?cc=${{ secrets.token }}"
