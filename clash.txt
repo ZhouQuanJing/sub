@@ -1,0 +1,992 @@
+mixed-port: 7890
+ipv6: true
+allow-lan: true
+unified-delay: true
+tcp-concurrent: true
+external-controller: 127.0.0.1:9090
+log-level: info
+mode: rule
+
+geox-url:
+  geoip: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat
+  geosite: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat
+  mmdb: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.metadb
+  asn: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/GeoLite2-ASN.mmdb
+
+dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  ipv6: false
+  use-system-hosts: false
+  cache-algorithm: arc
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - +.lan
+    - +.local
+    - +.msftconnecttest.com
+    - +.msftncsi.com
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+    - 1.1.1.1
+    - 8.8.8.8
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+  respect-rules: true
+  proxy-server-nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+  nameserver-policy:
+    geosite:private,cn,geolocation-cn:
+      - https://dns.alidns.com/dns-query
+      - https://doh.pub/dns-query
+    geosite:google,youtube,telegram,gfw,geolocation-!cn:
+      - https://1.1.1.1/dns-query
+      - https://1.0.0.1/dns-query
+      - https://208.67.222.222/dns-query
+      - https://208.67.220.220/dns-query
+
+sniffer:
+  enable: true
+  sniff:
+    HTTP:
+      ports:
+        - 80
+        - 8080-8880
+      override-destination: true
+    TLS:
+      ports:
+        - 443
+        - 8443
+    QUIC:
+      ports:
+        - 443
+        - 8443
+  skip-domain:
+    - Mijia Cloud
+    - +.push.apple.com
+
+proxies:
+  - {name: "日本 0002", type: vless, server: green.jiangniao.de, port: 51790, uuid: 1b69afb7-9f0a-4e6c-9a4b-1fcf7621b0be, network: tcp, tls: true, udp: true, flow: xtls-rprx-vision-udp443, servername: icloud.com, client-fingerprint: chrome, reality-opts: {public-key: XJa0ZYOvtfwRz7aF8GprVrnEjc4S1rokGFhc-tI1YFk, short-id: 02c40852, spider-x: "/"}, path: "", host: "", sni: icloud.com, cipher: auto}
+  - {name: "美国 0004", type: vless, server: jiang.jiangniao.de, port: 42025, uuid: bed8750e-36e0-425d-ae14-48d5b70cedd9, network: tcp, tls: true, udp: true, flow: xtls-rprx-vision-udp443, servername: yahoo.com, client-fingerprint: chrome, reality-opts: {public-key: 6baH2z3cSHXyNF-y60uOu15VRrHIA1s0w-c7DXvNLG4, short-id: e5d928499470, spider-x: "/"}, path: "", host: "", sni: yahoo.com, cipher: auto}
+  - {name: "美国 0005", type: vless, server: jiang.jiangniao.de, port: 50682, uuid: 41fe730f-127b-4c27-81ef-7e2a240b5e2e, network: tcp, tls: true, udp: true, flow: xtls-rprx-vision-udp443, servername: yahoo.com, client-fingerprint: chrome, reality-opts: {public-key: zIIPhsd4pP9omVPxtUbusaJq9UcY7artFMY70MLQiWg, short-id: 6f110ee0d9fd, spider-x: "/"}, path: "", host: "", sni: yahoo.com, cipher: auto}
+  - {name: "美国 0006", type: vless, server: jiang.jiangniao.de, port: 41236, uuid: 1a16fad3-3182-445f-b27b-db018e4e5746, network: tcp, tls: true, udp: true, flow: xtls-rprx-vision-udp443, servername: yahoo.com, client-fingerprint: chrome, reality-opts: {public-key: lDSUkgWuvxEQ1RzMbuwGCqdX7bn3uDetAYJmP4HGhXA, short-id: c5475819, spider-x: "/"}, path: "", host: "", sni: yahoo.com, cipher: auto}
+  - {name: "美国 0008", type: vless, server: jiang.jiangniao.de, port: 12852, uuid: e96ab706-0aa6-4ff6-820a-6f3549dd3319, network: tcp, tls: true, udp: true, flow: xtls-rprx-vision-udp443, servername: icloud.com, client-fingerprint: chrome, reality-opts: {public-key: uInXYi-6Bd6C061wSjWpFZTaE8Hd1fS3MBsU57geT0I, short-id: 28fcba0ec25e, spider-x: "/"}, path: "", host: "", sni: icloud.com, cipher: auto}
+  - {name: "美国 0009", type: vless, server: jiang.jiangniao.de, port: 44779, uuid: 6ae3ada1-49c6-48ab-8cd3-53b63ae2e9f1, network: tcp, tls: true, udp: true, flow: xtls-rprx-vision-udp443, servername: icloud.com, client-fingerprint: chrome, reality-opts: {public-key: l9y_VNGHADyIsENlPgZxkhGPy8u3YzIJKC73GD8fuS4, short-id: 6eb946ae72a615, spider-x: "/"}, path: "", host: "", sni: icloud.com, cipher: auto}
+  - {encryption: none, security: reality, type: vless, sni: www.apple.com, pbk: A3NXnUIT-W0m1Y_leRnv5so2IeCvk9FCFgL31PulfTw, sid: 628b3c90c98ead4f, name: "新加坡 0001", server: 13.214.39.151, port: 8686, cipher: auto, network: tcp, path: "", host: "", tls: false, uuid: 1a17b19d-4896-4531-af79-6e91d8ef8228}
+  - {encryption: none, security: reality, type: vless, sni: www.apple.com, pbk: A3NXnUIT-W0m1Y_leRnv5so2IeCvk9FCFgL31PulfTw, sid: 628b3c90c98ead4f, name: "韩国 0001", server: 43.200.179.132, port: 8686, cipher: auto, network: tcp, path: "", host: "", tls: false, uuid: 1a17b19d-4896-4531-af79-6e91d8ef8228}
+  - {security: tls, sni: d.usj1.cat.bilibili.com, name: "日本 0004", server: d1.catcat321.com, port: 46581, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 7e70223b-f331-41d5-9313-02b8d2df2885}
+  - {security: tls, sni: d.usj1.cat.bilibili.com, name: "日本 0005", server: d1.catcat321.com, port: 14912, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 7e70223b-f331-41d5-9313-02b8d2df2885}
+  - {security: tls, sni: d.usj1.cat.bilibili.com, name: "日本 0006", server: d1.catcat321.com, port: 13320, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 7e70223b-f331-41d5-9313-02b8d2df2885}
+  - {security: tls, sni: d.usj1.cat.bilibili.com, name: "日本 0008", server: d1.catcat321.com, port: 23796, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 7e70223b-f331-41d5-9313-02b8d2df2885}
+  - {security: tls, sni: d.usj1.cat.bilibili.com, name: "日本 0009", server: d1.catcat321.com, port: 29187, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 7e70223b-f331-41d5-9313-02b8d2df2885}
+  - {security: tls, sni: d.usj1.cat.bilibili.com, name: "日本 0010", server: d1.catcat321.com, port: 48045, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 7e70223b-f331-41d5-9313-02b8d2df2885}
+  - {security: tls, sni: d.usj1.cat.bilibili.com, name: "日本 0011", server: d1.catcat321.com, port: 47339, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 7e70223b-f331-41d5-9313-02b8d2df2885}
+  - {security: tls, sni: d.usj1.cat.bilibili.com, name: "日本 0012", server: d1.catcat321.com, port: 14584, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 7e70223b-f331-41d5-9313-02b8d2df2885}
+  - {security: tls, sni: d.usj1.cat.bilibili.com, name: "日本 0014", server: d1.catcat321.com, port: 52738, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 7e70223b-f331-41d5-9313-02b8d2df2885}
+  - {security: tls, sni: d.usj1.cat.bilibili.com, name: "日本 0015", server: d1.catcat321.com, port: 47803, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 7e70223b-f331-41d5-9313-02b8d2df2885}
+  - {security: tls, sni: d.usj1.cat.bilibili.com, name: "日本 0016", server: d1.catcat321.com, port: 56686, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 7e70223b-f331-41d5-9313-02b8d2df2885}
+  - {flow: xtls-rprx-vision, fp: safari, pbk: Lk_uZjr6a6DyLsgh1VasuUCN9G2YdO32u9nFZPgHxSw, security: reality, sid: 0f5af4a2, sni: www.cloudflare.com, name: "法国 0001", server: 20.199.24.140, port: 443, type: vless, cipher: auto, network: tcp, path: "", host: "", tls: false, uuid: d890b403-d536-4c32-945c-b46e250492a6}
+  - {security: tls, sni: d.usj1.cat.bilibili.com, name: "日本 0017", server: d1.catcat321.com, port: 19139, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 7e70223b-f331-41d5-9313-02b8d2df2885}
+  - {security: tls, sni: d.usj1.cat.bilibili.com, name: "日本 0018", server: d1.catcat321.com, port: 56887, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 7e70223b-f331-41d5-9313-02b8d2df2885}
+  - {security: tls, sni: yazhou10.dynu.net, name: "香港 0001", server: jpbgp.netvigor.cc, port: 19128, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: OccIqeORGQwiNkwS}
+  - {flow: xtls-rprx-vision, fp: chrome, pbk: JE82iOR_U_H7ffxJ5yfoxXeRkMlE-aVu1wxR7n6jrVM, security: reality, sid: 473277e2, sni: dlcdnets.asus.com, name: "台湾 0001", server: tw3.miyazono-kaori.com, port: 443, type: vless, cipher: auto, network: tcp, path: "", host: "", tls: false, uuid: 580d81f8-4f30-49d6-ad90-59fb4a850313}
+  - {security: tls, sni: d.usj1.cat.bilibili.com, name: "日本 0020", server: d1.catcat321.com, port: 50888, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 7e70223b-f331-41d5-9313-02b8d2df2885}
+  - {security: tls, sni: d.usj1.cat.bilibili.com, name: "日本 0022", server: d1.catcat321.com, port: 54007, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 7e70223b-f331-41d5-9313-02b8d2df2885}
+  - {flow: xtls-rprx-vision, pbk: z6_OFl0jskilOOxkQcUcdQOCS4-LVndwFF9i7kIOPzg, security: reality, sid: d23753491eefde7e, sni: www.nvidia.com, name: "德国 0004", server: 185.137.157.72, port: 443, type: vless, cipher: auto, network: tcp, path: "", host: "", tls: false, uuid: 55a5044d-5b35-405f-971c-ea7aacaafcb4}
+  - {add: 154.37.223.56, aid: 0, id: f1ac5c82-00a4-400b-bb20-530c91b7c5bb, port: 52080, ps: "🇭🇰_香港_56", security: auto, name: "香港 0002", server: 154.37.223.56, type: vmess, cipher: auto, sni: "", network: tcp, path: "", host: "", tls: false, uuid: f1ac5c82-00a4-400b-bb20-530c91b7c5bb, alterId: 0}
+  - {security: tls, sni: fr.01.naiun.bilibili.com, name: "香港 0003", server: 103.177.136.42, port: 45619, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 4f4d1167-ef14-4304-9bce-0740472503ef}
+  - {security: tls, sni: az.01.naiun.bilibili.com, name: "香港 0004", server: 103.177.136.42, port: 41943, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 4f4d1167-ef14-4304-9bce-0740472503ef}
+  - {security: tls, sni: az.01.naiun.bilibili.com, name: "香港 0005", server: 103.177.136.45, port: 41943, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 4f4d1167-ef14-4304-9bce-0740472503ef}
+  - {add: 154.37.223.56, aid: 0, id: 137fcb24-2538-49ef-ce1e-329ebe5edcbe, port: 13659, ps: "🇭🇰_香港_71", security: auto, name: "香港 0007", server: 154.37.223.56, type: vmess, cipher: auto, sni: "", network: tcp, path: "", host: "", tls: false, uuid: 137fcb24-2538-49ef-ce1e-329ebe5edcbe, alterId: 0}
+  - {security: tls, sni: is.01.naiun.bilibili.com, name: "香港 0008", server: 103.177.136.42, port: 47909, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 4f4d1167-ef14-4304-9bce-0740472503ef}
+  - {security: tls, sni: d.usj1.cat.bilibili.com, name: "日本 0024", server: d1.catcat321.com, port: 58995, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 7e70223b-f331-41d5-9313-02b8d2df2885}
+  - {security: tls, sni: d.usj1.cat.bilibili.com, name: "日本 0025", server: d1.catcat321.com, port: 57106, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 7e70223b-f331-41d5-9313-02b8d2df2885}
+  - {flow: xtls-rprx-vision, fp: random, pbk: en2L9xxQOv2w4eD0sxqu3eOFGnqOxZLWuR9sFqBDdAM, security: reality, sid: f266fd3d4e, sni: swcdn.apple.com, name: "香港 0009", server: 1.sdwan.realm-sync.com, port: 58712, type: vless, cipher: auto, network: tcp, path: "", host: "", tls: false, uuid: da4f61d1-8ca2-4bbf-a79a-1dfff04073e6}
+  - {security: tls, sni: ams1.fromblancwithlove.com, name: "荷兰 0002", server: 185.229.191.12, port: 8443, type: vless, cipher: auto, network: tcp, path: "", host: "", tls: true, uuid: 394f6981-a782-4779-9a85-e6cf22935d93}
+  - {security: tls, sni: ams1.fromblancwithlove.com, name: "荷兰 0003", server: 185.229.191.13, port: 8443, type: vless, cipher: auto, network: tcp, path: "", host: "", tls: true, uuid: 394f6981-a782-4779-9a85-e6cf22935d93}
+  - {security: tls, sni: ams1.fromblancwithlove.com, name: "罗马尼亚 0002", server: 95.173.199.69, port: 8443, type: vless, cipher: auto, network: tcp, path: "", host: "", tls: true, uuid: 394f6981-a782-4779-9a85-e6cf22935d93}
+  - {security: tls, sni: ams1.fromblancwithlove.com, name: "罗马尼亚 0003", server: 95.173.199.116, port: 8443, type: vless, cipher: auto, network: tcp, path: "", host: "", tls: true, uuid: 394f6981-a782-4779-9a85-e6cf22935d93}
+  - {security: tls, sni: ams1.fromblancwithlove.com, name: "罗马尼亚 0005", server: 95.173.199.86, port: 8443, type: vless, cipher: auto, network: tcp, path: "", host: "", tls: true, uuid: 394f6981-a782-4779-9a85-e6cf22935d93}
+  - {security: tls, sni: ams1.fromblancwithlove.com, name: "罗马尼亚 0006", server: 95.173.199.106, port: 8443, type: vless, cipher: auto, network: tcp, path: "", host: "", tls: true, uuid: 394f6981-a782-4779-9a85-e6cf22935d93}
+  - {security: tls, sni: ams1.fromblancwithlove.com, name: "土耳其 0002", server: 87.249.139.235, port: 8443, type: vless, cipher: auto, network: tcp, path: "", host: "", tls: true, uuid: 394f6981-a782-4779-9a85-e6cf22935d93}
+  - {security: tls, sni: ams1.fromblancwithlove.com, name: "土耳其 0003", server: 87.249.139.247, port: 8443, type: vless, cipher: auto, network: tcp, path: "", host: "", tls: true, uuid: 394f6981-a782-4779-9a85-e6cf22935d93}
+  - {security: tls, sni: ams1.fromblancwithlove.com, name: "瑞典 0001", server: 79.127.249.221, port: 8443, type: vless, cipher: auto, network: tcp, path: "", host: "", tls: true, uuid: 394f6981-a782-4779-9a85-e6cf22935d93}
+  - {security: tls, sni: ams1.fromblancwithlove.com, name: "土耳其 0004", server: 87.249.139.233, port: 8443, type: vless, cipher: auto, network: tcp, path: "", host: "", tls: true, uuid: 394f6981-a782-4779-9a85-e6cf22935d93}
+  - {security: tls, sni: ams1.fromblancwithlove.com, name: "乌克兰 0001", server: 143.244.45.50, port: 8443, type: vless, cipher: auto, network: tcp, path: "", host: "", tls: true, uuid: 394f6981-a782-4779-9a85-e6cf22935d93}
+  - {security: tls, sni: ams1.fromblancwithlove.com, name: "乌克兰 0002", server: 143.244.45.53, port: 8443, type: vless, cipher: auto, network: tcp, path: "", host: "", tls: true, uuid: 394f6981-a782-4779-9a85-e6cf22935d93}
+  - {security: tls, sni: ams1.fromblancwithlove.com, name: "乌克兰 0003", server: 143.244.45.55, port: 8443, type: vless, cipher: auto, network: tcp, path: "", host: "", tls: true, uuid: 394f6981-a782-4779-9a85-e6cf22935d93}
+  - {flow: xtls-rprx-vision, fp: chrome, pbk: 7Mb18pl7fH3NvhVevIVTgRdPlAorUucOWMlUaTrDV0o, security: reality, sid: 4265cc8365, sni: swcdn.apple.com, name: "香港 0010", server: 1.sdwan.realm-sync.com, port: 5454, type: vless, cipher: auto, network: tcp, path: "", host: "", tls: false, uuid: da4f61d1-8ca2-4bbf-a79a-1dfff04073e6}
+  - {flow: xtls-rprx-vision, fp: chrome, pbk: 8Ct9wBZLha-ePZMWbSau9ViKgbwlCgEsbGMjNnoVDzw, security: reality, sid: 9da3779ceafd, sni: swcdn.apple.com, name: "香港 0011", server: 1.sdwan.realm-sync.com, port: 5457, type: vless, cipher: auto, network: tcp, path: "", host: "", tls: false, uuid: da4f61d1-8ca2-4bbf-a79a-1dfff04073e6}
+  - {security: tls, sni: ams1.fromblancwithlove.com, name: "英国 0001", server: 152.233.28.200, port: 8443, type: vless, cipher: auto, network: tcp, path: "", host: "", tls: true, uuid: 394f6981-a782-4779-9a85-e6cf22935d93}
+  - {security: tls, sni: ams1.fromblancwithlove.com, name: "英国 0002", server: 152.233.28.201, port: 8443, type: vless, cipher: auto, network: tcp, path: "", host: "", tls: true, uuid: 394f6981-a782-4779-9a85-e6cf22935d93}
+  - {flow: xtls-rprx-vision, fp: chrome, pbk: 0soGDTguByd3I9e2nLuzkw5BOHELZ_AHHDkA0Zx3JRA, security: reality, sid: f3f70ca767, sni: www.discoverasr.com, name: "香港 0012", server: 1.sdwan.realm-sync.com, port: 55567, type: vless, cipher: auto, network: tcp, path: "", host: "", tls: false, uuid: da4f61d1-8ca2-4bbf-a79a-1dfff04073e6}
+  - {flow: xtls-rprx-vision, fp: random, pbk: rPR7TUpmOpwShZeyLs2QFa46zzCBNkNdYkxe7-trUUc, security: reality, sid: 63290ae7179078, sni: swcdn.apple.com, name: "香港 0013", server: 1.sdwan.realm-sync.com, port: 60776, type: vless, cipher: auto, network: tcp, path: "", host: "", tls: false, uuid: da4f61d1-8ca2-4bbf-a79a-1dfff04073e6}
+  - {security: tls, sni: ams1.fromblancwithlove.com, name: "英国 0003", server: 152.233.28.202, port: 8443, type: vless, cipher: auto, network: tcp, path: "", host: "", tls: true, uuid: 394f6981-a782-4779-9a85-e6cf22935d93}
+  - {security: tls, sni: de.01.naiun.bilibili.com, name: "香港 0023", server: 103.177.136.45, port: 46424, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 4f4d1167-ef14-4304-9bce-0740472503ef}
+  - {security: tls, sni: ch.01.naiun.bilibili.com, name: "香港 0024", server: 103.177.136.42, port: 45553, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 4f4d1167-ef14-4304-9bce-0740472503ef}
+  - {security: tls, sni: hk.catxstar.com, name: "法国 0002", server: kkvlvvq-a.catcat321.com, port: 20035, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 63872b0d-87dd-4474-b690-92773af2922e}
+  - {security: tls, sni: gh.01.naiun.bilibili.com, name: "香港 0025", server: 103.177.136.42, port: 48697, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 4f4d1167-ef14-4304-9bce-0740472503ef}
+  - {security: tls, sni: fr.01.naiun.bilibili.com, name: "香港 0026", server: 103.177.136.45, port: 45619, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 4f4d1167-ef14-4304-9bce-0740472503ef}
+  - {security: tls, sni: is.01.naiun.bilibili.com, name: "香港 0027", server: 103.177.136.45, port: 47909, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 4f4d1167-ef14-4304-9bce-0740472503ef}
+  - {security: tls, sni: gh.01.naiun.bilibili.com, name: "香港 0028", server: 103.177.136.45, port: 48697, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 4f4d1167-ef14-4304-9bce-0740472503ef}
+  - {security: tls, sni: de.01.naiun.bilibili.com, name: "香港 0029", server: 103.177.136.42, port: 46424, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 4f4d1167-ef14-4304-9bce-0740472503ef}
+  - {security: tls, sni: ch.01.naiun.bilibili.com, name: "香港 0030", server: 103.177.136.45, port: 45553, type: trojan, cipher: "", network: tcp, path: "", host: "", tls: true, password: 4f4d1167-ef14-4304-9bce-0740472503ef}
+  - {host: hhcm.hhxaf.cc.cd, path: "/", security: tls, sni: hhcm.hhxaf.cc.cd, type: trojan, name: "韩国 0002", server: 211.49.57.161, port: 443, cipher: "", network: ws, tls: true, password: eeb6823c-b926-4ea2-866a-5542edd26e59, ws-opts: {path: "/", headers: {Host: hhcm.hhxaf.cc.cd}}}
+  - {host: hhcm.hhxaf.cc.cd, path: "/", security: tls, sni: hhcm.hhxaf.cc.cd, type: trojan, name: "韩国 0003", server: 211.49.57.178, port: 443, cipher: "", network: ws, tls: true, password: eeb6823c-b926-4ea2-866a-5542edd26e59, ws-opts: {path: "/", headers: {Host: hhcm.hhxaf.cc.cd}}}
+  - {host: 95r.ir, path: "/MiTiVPN=Se", security: tls, sni: 95r.ir, type: trojan, name: "荷兰 0004", server: 45.131.4.118, port: 443, cipher: "", network: ws, tls: true, password: MiTiVPN, ws-opts: {path: "/MiTiVPN=Se", headers: {Host: 95r.ir}}}
+  - {host: space.byu.id.yxls.eu.cc, path: "/au-do", security: tls, sni: space.byu.id.yxls.eu.cc, type: trojan, name: "塞舌尔 0006", server: 45.130.125.126, port: 443, cipher: "", network: ws, tls: true, password: 86957ec0-b213-433b-a43b-51f2175e0ec3, ws-opts: {path: "/au-do", headers: {Host: space.byu.id.yxls.eu.cc}}}
+  - {host: unnes.ac.id.yxls.eu.cc, path: "/br-orcl", security: tls, sni: unnes.ac.id.yxls.eu.cc, type: trojan, name: "美国 0014", server: blog.webex.com, port: 443, cipher: "", network: ws, tls: true, password: afbcd89a-5a90-4a44-a42a-be08f444aa3f, ws-opts: {path: "/br-orcl", headers: {Host: unnes.ac.id.yxls.eu.cc}}}
+  - {host: space.byu.id.yxls.eu.cc, path: "/us-gllc", security: tls, sni: space.byu.id.yxls.eu.cc, type: trojan, name: "荷兰 0005", server: 188.164.248.122, port: 443, cipher: "", network: ws, tls: true, password: 6c862415-30d2-4813-8e49-42e99a0bd415, ws-opts: {path: "/us-gllc", headers: {Host: space.byu.id.yxls.eu.cc}}}
+  - {host: www.multiplydose.com, path: "//assignment", security: tls, sni: www.multiplydose.com, type: trojan, name: "未知 0052", server: 104.19.208.184, port: 443, cipher: "", network: ws, tls: true, password: humanity, ws-opts: {path: "//assignment", headers: {Host: www.multiplydose.com}}}
+  - {host: www.ignitelimit.com, path: "/assignment", security: tls, sni: www.ignitelimit.com, type: trojan, name: "未知 0053", server: 104.17.177.143, port: 443, cipher: "", network: ws, tls: true, password: humanity, ws-opts: {path: "/assignment", headers: {Host: www.ignitelimit.com}}}
+  - {host: www.calmloud.com, path: "/assignment", security: tls, sni: www.calmloud.com, type: trojan, name: "未知 0054", server: sourceforge.net, port: 443, cipher: "", network: ws, tls: true, password: humanity, ws-opts: {path: "/assignment", headers: {Host: www.calmloud.com}}}
+  - {host: www.calmloud.com, path: "/assignment", security: tls, sni: www.calmloud.com, type: trojan, name: "未知 0055", server: 104.20.6.134, port: 443, cipher: "", network: ws, tls: true, password: humanity, ws-opts: {path: "/assignment", headers: {Host: www.calmloud.com}}}
+  - {host: www.calmloud.com, path: "/assignment", security: tls, sni: www.calmloud.com, type: trojan, name: "未知 0056", server: 104.18.152.229, port: 443, cipher: "", network: ws, tls: true, password: humanity, ws-opts: {path: "/assignment", headers: {Host: www.calmloud.com}}}
+  - {host: www.multiplydose.com, path: "/assignment", security: tls, sni: www.multiplydose.com, type: trojan, name: "未知 0057", server: 172.66.47.69, port: 443, cipher: "", network: ws, tls: true, password: humanity, ws-opts: {path: "/assignment", headers: {Host: www.multiplydose.com}}}
+  - {host: www.creationlong.org, path: "/assignment", security: tls, sni: www.creationlong.org, type: trojan, name: "未知 0058", server: 188.114.98.0, port: 443, cipher: "", network: ws, tls: true, password: humanity, ws-opts: {path: "/assignment", headers: {Host: www.creationlong.org}}}
+  - {host: www.ignitelimit.com, path: "/assignment", security: tls, sni: www.ignitelimit.com, type: trojan, name: "未知 0059", server: 104.16.174.117, port: 443, cipher: "", network: ws, tls: true, password: humanity, ws-opts: {path: "/assignment", headers: {Host: www.ignitelimit.com}}}
+  - {path: "/assignment", security: tls, type: trojan, name: "未知 0060", server: www.ignitelimit.com, port: 443, cipher: "", sni: "", network: ws, host: "", tls: true, password: humanity, ws-opts: {path: "/assignment"}}
+  - {host: www.gossipglove.com, path: "/assignment", security: tls, sni: www.gossipglove.com, type: trojan, name: "未知 0061", server: 104.18.7.147, port: 443, cipher: "", network: ws, tls: true, password: humanity, ws-opts: {path: "/assignment", headers: {Host: www.gossipglove.com}}}
+  - {host: www.calmloud.com, path: "/assignment", security: tls, sni: www.calmloud.com, type: trojan, name: "塞舌尔 0007", server: 45.130.125.0, port: 443, cipher: "", network: ws, tls: true, password: humanity, ws-opts: {path: "/assignment", headers: {Host: www.calmloud.com}}}
+  - {host: www.ignitelimit.com, path: "/assignment", security: tls, sni: www.ignitelimit.com, type: trojan, name: "未知 0062", server: 104.18.152.225, port: 443, cipher: "", network: ws, tls: true, password: humanity, ws-opts: {path: "/assignment", headers: {Host: www.ignitelimit.com}}}
+  - {host: www.gossipglove.com, path: "/assignment", security: tls, sni: www.gossipglove.com, type: trojan, name: "未知 0063", server: 104.25.112.190, port: 443, cipher: "", network: ws, tls: true, password: humanity, ws-opts: {path: "/assignment", headers: {Host: www.gossipglove.com}}}
+  - {host: www.multiplydose.com, path: "/assignment", security: tls, sni: www.multiplydose.com, type: trojan, name: "未知 0064", server: 172.67.180.92, port: 443, cipher: "", network: ws, tls: true, password: humanity, ws-opts: {path: "/assignment", headers: {Host: www.multiplydose.com}}}
+  - {host: www.multiplydose.com, path: "/assignment", security: tls, sni: www.multiplydose.com, type: trojan, name: "未知 0065", server: 104.19.230.21, port: 443, cipher: "", network: ws, tls: true, password: humanity, ws-opts: {path: "/assignment", headers: {Host: www.multiplydose.com}}}
+  - {host: www.creationlong.org, path: "/assignment", security: tls, sni: www.creationlong.org, type: trojan, name: "未知 0067", server: 104.18.139.67, port: 443, cipher: "", network: ws, tls: true, password: humanity, ws-opts: {path: "/assignment", headers: {Host: www.creationlong.org}}}
+  - {host: www.gossipglove.com, path: "/assignment", security: tls, sni: www.gossipglove.com, type: trojan, name: "未知 0068", server: 188.114.96.3, port: 443, cipher: "", network: ws, tls: true, password: humanity, ws-opts: {path: "/assignment", headers: {Host: www.gossipglove.com}}}
+  - {path: "/assignment", security: tls, sni: www.creationlong.org, type: trojan, name: "未知 0070", server: www.creationlong.org, port: 443, cipher: "", network: ws, host: "", tls: true, password: humanity, ws-opts: {path: "/assignment"}}
+  - {host: www.calmloud.com, path: "/assignment", security: tls, sni: www.calmloud.com, type: trojan, name: "未知 0071", server: 104.18.152.246, port: 443, cipher: "", network: ws, tls: true, password: humanity, ws-opts: {path: "/assignment", headers: {Host: www.calmloud.com}}}
+  - {host: www.gossipglove.com, path: "/assignment", security: tls, sni: www.gossipglove.com, type: trojan, name: "未知 0072", server: 172.64.146.198, port: 443, cipher: "", network: ws, tls: true, password: humanity, ws-opts: {path: "/assignment", headers: {Host: www.gossipglove.com}}}
+  - {host: vpn5.rnmcnm.com, path: "/ws-79dffb8106db", security: tls, sni: vpn5.rnmcnm.com, type: trojan, name: "未知 0073", server: ip4.vpean2.qzz.io, port: 443, cipher: "", network: ws, tls: true, password: rYuChHcwQZskq9E0zdoR, ws-opts: {path: "/ws-79dffb8106db", headers: {Host: vpn5.rnmcnm.com}}}
+  - {host: www.multiplydose.com, path: "/assignment", security: tls, sni: www.multiplydose.com, type: trojan, name: "未知 0074", server: 162.159.17.189, port: 443, cipher: "", network: ws, tls: true, password: humanity, ws-opts: {path: "/assignment", headers: {Host: www.multiplydose.com}}}
+  - {host: www.calmlunch.com, path: "/assignment", security: tls, sni: www.calmlunch.com, type: trojan, name: "未知 0075", server: 104.19.64.105, port: 443, cipher: "", network: ws, tls: true, password: humanity, ws-opts: {path: "/assignment", headers: {Host: www.calmlunch.com}}}
+  - {host: www.multiplydose.com, path: "/assignment", security: tls, sni: www.multiplydose.com, type: trojan, name: "未知 0078", server: 104.18.12.149, port: 443, cipher: "", network: ws, tls: true, password: humanity, ws-opts: {path: "/assignment", headers: {Host: www.multiplydose.com}}}
+  - {host: www.ignitelimit.com, path: "/assignment", security: tls, sni: www.ignitelimit.com, type: trojan, name: "未知 0079", server: 104.16.174.34, port: 443, cipher: "", network: ws, tls: true, password: humanity, ws-opts: {path: "/assignment", headers: {Host: www.ignitelimit.com}}}
+  - {host: www.creationlong.org, path: "/assignment", security: tls, sni: www.creationlong.org, type: trojan, name: "未知 0080", server: 104.16.90.120, port: 443, cipher: "", network: ws, tls: true, password: humanity, ws-opts: {path: "/assignment", headers: {Host: www.creationlong.org}}}
+  - {fp: chrome, host: sw2.rainzone.ir, path: "/", security: tls, sni: sw2.rainzone.ir, type: vless, name: "未知 0081", server: 104.21.19.124, port: 2087, cipher: auto, network: ws, tls: true, uuid: a9c0d70c-8283-4dfb-b3e0-6e797fc4ce26, ws-opts: {path: "/", headers: {Host: sw2.rainzone.ir}}}
+  - {fp: chrome, host: fnl1.monopolitass.ir, path: "/", security: tls, sni: fnl1.monopolitass.ir, type: vless, name: "未知 0082", server: cdn2.portalcode.ir, port: 2087, cipher: auto, network: ws, tls: true, uuid: a9c0d70c-8283-4dfb-b3e0-6e797fc4ce26, ws-opts: {path: "/", headers: {Host: fnl1.monopolitass.ir}}}
+  - {fp: chrome, host: gr1.rainzone.ir, path: "/", security: tls, sni: gr1.rainzone.ir, type: vless, name: "未知 0083", server: cdn2.portalcode.ir, port: 2087, cipher: auto, network: ws, tls: true, uuid: a9c0d70c-8283-4dfb-b3e0-6e797fc4ce26, ws-opts: {path: "/", headers: {Host: gr1.rainzone.ir}}}
+  - {fp: chrome, path: "/", security: tls, sni: hello.xigmond.ir, type: vless, name: "未知 0084", server: 104.21.102.164, port: 443, cipher: auto, network: ws, host: "", tls: true, uuid: cd82822e-2290-4511-ac5d-1d1be9c0335d, ws-opts: {path: "/"}}
+  - {host: 4-4-3-mitivpn.global.ssl.fastly.net, path: "/", security: tls, sni: ssl.fastly.com, type: trojan, name: "美国 0017", server: 151.101.56.6, port: 443, cipher: "", network: ws, tls: true, password: Mitivpn, ws-opts: {path: "/", headers: {Host: 4-4-3-mitivpn.global.ssl.fastly.net}}}
+  - {host: 3-mitivpn.global.ssl.fastly.net, path: "/de=mitivpn", security: tls, sni: global.fastly.com, type: trojan, name: "美国 0018", server: 151.101.110.219, port: 443, cipher: "", network: ws, tls: true, password: Mitivpn, ws-opts: {path: "/de=mitivpn", headers: {Host: 3-mitivpn.global.ssl.fastly.net}}}
+  - {host: small-glitter-aa35.76-21d.workers.dev, path: "/pyip=ProxyIP.KR.CMLiussss.net", type: vless, name: "未知 0085", server: 162.159.156.214, port: 8880, cipher: auto, sni: "", network: ws, tls: false, uuid: 74705348-bb9c-47c6-9e91-057c6407bb20, ws-opts: {path: "/pyip=ProxyIP.KR.CMLiussss.net", headers: {Host: small-glitter-aa35.76-21d.workers.dev}}}
+  - {host: shrill-waterfall-bfe2.416.workers.dev, path: "/pyip=ProxyIP.JP.CMLiussss.net", type: vless, name: "未知 0086", server: www.baipiao.eu.org, port: 8880, cipher: auto, sni: "", network: ws, tls: false, uuid: 129b50b6-060d-475c-b1de-b87c2a67051f, ws-opts: {path: "/pyip=ProxyIP.JP.CMLiussss.net", headers: {Host: shrill-waterfall-bfe2.416.workers.dev}}}
+  - {host: polished-field-4448.186-705.workers.dev, path: "/pyip=ProxyIP.KR.CMLiussss.net", type: vless, name: "未知 0087", server: 162.159.48.193, port: 8880, cipher: auto, sni: "", network: ws, tls: false, uuid: df26029b-bffe-4ce2-9246-25b52ed2b1c7, ws-opts: {path: "/pyip=ProxyIP.KR.CMLiussss.net", headers: {Host: polished-field-4448.186-705.workers.dev}}}
+  - {host: summer-hill-7f65.275-521.workers.dev, path: "/pyip=ProxyIP.JP.CMLiussss.net", type: vless, name: "未知 0088", server: skk.moe, port: 8880, cipher: auto, sni: "", network: ws, tls: false, uuid: 4212034d-c18b-4060-b218-4f8372e5473a, ws-opts: {path: "/pyip=ProxyIP.JP.CMLiussss.net", headers: {Host: summer-hill-7f65.275-521.workers.dev}}}
+  - {host: super-mud-8b38.114-a90.workers.dev, path: "/pyip=ProxyIP.SG.CMLiussss.net", type: vless, name: "未知 0089", server: 162.159.48.193, port: 8880, cipher: auto, sni: "", network: ws, tls: false, uuid: 1bc8fb2a-3bee-4ae0-aa12-957885e63e18, ws-opts: {path: "/pyip=ProxyIP.SG.CMLiussss.net", headers: {Host: super-mud-8b38.114-a90.workers.dev}}}
+  - {host: jolly-glitter-123c.196-2b3.workers.dev, path: "/pyip=ProxyIP.SG.CMLiussss.net", type: vless, name: "未知 0090", server: 162.159.156.214, port: 8880, cipher: auto, sni: "", network: ws, tls: false, uuid: 999c9769-28db-425a-84d8-ccd7a3321406, ws-opts: {path: "/pyip=ProxyIP.SG.CMLiussss.net", headers: {Host: jolly-glitter-123c.196-2b3.workers.dev}}}
+  - {host: www.ignitelimit.com, path: "/assignment", security: tls, sni: www.ignitelimit.com, type: trojan, name: "未知 0093", server: 104.18.152.219, port: 443, cipher: "", network: ws, tls: true, password: humanity, ws-opts: {path: "/assignment", headers: {Host: www.ignitelimit.com}}}
+  - {fp: chrome, host: wz1.fum.ccwu.cc, path: "/proxyip=sjc.o00o.ooo", security: tls, sni: wz1.fum.ccwu.cc, type: vless, name: "未知 0094", server: cloudflare.182682.xyz, port: 443, cipher: auto, network: ws, tls: true, uuid: 4c1b83e4-5ade-46a8-966d-1eeb7a8dcc65, ws-opts: {path: "/proxyip=sjc.o00o.ooo", headers: {Host: wz1.fum.ccwu.cc}}}
+  - {fp: chrome, host: t1s1.rittbo.kdns.fr, path: "/", security: tls, sni: t1s1.rittbo.kdns.fr, type: vless, name: "未知 0095", server: cf.090227.xyz, port: 443, cipher: auto, network: ws, tls: true, uuid: eeb6823c-b926-4ea2-866a-5542edd26e59, ws-opts: {path: "/", headers: {Host: t1s1.rittbo.kdns.fr}}}
+  - {host: lingering-glade-21ce.61-b6f.workers.dev, path: "/pyip=ProxyIP.SG.CMLiussss.net", type: vless, name: "未知 0097", server: 104.16.107.139, port: 8880, cipher: auto, sni: "", network: ws, tls: false, uuid: 56eba3f8-94f8-48f2-920b-d79bb042d0bb, ws-opts: {path: "/pyip=ProxyIP.SG.CMLiussss.net", headers: {Host: lingering-glade-21ce.61-b6f.workers.dev}}}
+  - {add: ct.090227.xyz, aid: 0, host: google.whatsapp.snapp.torob.basalam.zula.uplaod-music.ir., id: f8975871-a7a0-4906-8835-a23c1258ca1e, net: ws, path: "/", port: 80, ps: "🏳️_未知_266", security: auto, name: "未知 0098", server: ct.090227.xyz, type: vmess, cipher: auto, sni: google.whatsapp.snapp.torob.basalam.zula.uplaod-music.ir., network: ws, tls: false, uuid: f8975871-a7a0-4906-8835-a23c1258ca1e, alterId: 0, ws-opts: {path: "/", headers: {Host: google.whatsapp.snapp.torob.basalam.zula.uplaod-music.ir.}}}
+  - {add: hl112.cowjump.site, aid: 0, host: hl112.cowjump.site, id: 0bf1cead-bdd4-4692-b3d4-6866ccb9f37a, net: ws, path: "/", port: 443, ps: "🏳️_未知_267", security: auto, tls: true, name: "未知 0099", server: hl112.cowjump.site, type: vmess, cipher: auto, sni: hl112.cowjump.site, network: ws, uuid: 0bf1cead-bdd4-4692-b3d4-6866ccb9f37a, alterId: 0, ws-opts: {path: "/", headers: {Host: hl112.cowjump.site}}}
+  - {add: yg2.ygkkk.dpdns.org, aid: 0, host: google.whatsapp.snapp.torob.basalam.zula.uplaod-music.ir., id: f8975871-a7a0-4906-8835-a23c1258ca1e, net: ws, path: "/", port: 80, ps: "🏳️_未知_268", security: auto, name: "未知 0100", server: yg2.ygkkk.dpdns.org, type: vmess, cipher: auto, sni: google.whatsapp.snapp.torob.basalam.zula.uplaod-music.ir., network: ws, tls: false, uuid: f8975871-a7a0-4906-8835-a23c1258ca1e, alterId: 0, ws-opts: {path: "/", headers: {Host: google.whatsapp.snapp.torob.basalam.zula.uplaod-music.ir.}}}
+  - {fp: chrome, host: t1s1.rittbo.kdns.fr, path: "/", security: tls, sni: t1s1.rittbo.kdns.fr, type: vless, name: "未知 0101", server: cloudflare-ip.mofashi.ltd, port: 443, cipher: auto, network: ws, tls: true, uuid: eeb6823c-b926-4ea2-866a-5542edd26e59, ws-opts: {path: "/", headers: {Host: t1s1.rittbo.kdns.fr}}}
+  - {host: support.zoom.us.yxls.eu.cc, path: "/sg-melbi", security: tls, sni: support.zoom.us.yxls.eu.cc, type: vless, name: "美国 0019", server: support.zoom.us, port: 443, cipher: auto, network: ws, tls: true, uuid: 4d10c997-4781-4cd9-82c3-15453523e12c, ws-opts: {path: "/sg-melbi", headers: {Host: support.zoom.us.yxls.eu.cc}}}
+  - {fp: chrome, host: support.zoom.us.yxls.eu.cc, path: "/sg-amz", security: tls, sni: support.zoom.us.yxls.eu.cc, type: vless, name: "美国 0020", server: support.zoom.us, port: 443, cipher: auto, network: ws, tls: true, uuid: 6680846a-8a57-4dfd-9a0e-63209cfc8535, ws-opts: {path: "/sg-amz", headers: {Host: support.zoom.us.yxls.eu.cc}}}
+  - {host: www.gamingdll.ir, path: "/usa=mitivpn", security: tls, sni: www.gamingdll.ir, type: trojan, name: "美国 0022", server: iranpoems.ir, port: 443, cipher: "", network: ws, tls: true, password: Mitivpn, ws-opts: {path: "/usa=mitivpn", headers: {Host: www.gamingdll.ir}}}
+  - {host: cdn.gamingdll.ir, path: "/de=mitivpn", security: tls, sni: cdn.gamingdll.ir, type: trojan, name: "美国 0023", server: iranpoems.ir, port: 443, cipher: "", network: ws, tls: true, password: Mitivpn, ws-opts: {path: "/de=mitivpn", headers: {Host: cdn.gamingdll.ir}}}
+  - {host: cdn.gamingdll.ir, path: "/", security: tls, sni: cdn.gamingdll.ir, type: trojan, name: "美国 0027", server: iranpoems.ir, port: 443, cipher: "", network: ws, tls: true, password: Mitivpn, ws-opts: {path: "/", headers: {Host: cdn.gamingdll.ir}}}
+  - {host: 4-4-3-mitivpn.global.ssl.fastly.net, path: "/fastly=mitivpn", security: tls, sni: ssl.fastly.com, type: trojan, name: "美国 0030", server: 151.101.56.6, port: 443, cipher: "", network: ws, tls: true, password: Mitivpn, ws-opts: {path: "/fastly=mitivpn", headers: {Host: 4-4-3-mitivpn.global.ssl.fastly.net}}}
+  - {fp: chrome, host: xcegj.redpixelport-zen.info, path: "/sea", security: tls, sni: xcegj.redpixelport-zen.info, type: vless, name: "未知 0105", server: love.ns.cloudflare.com, port: 443, cipher: auto, network: ws, tls: true, uuid: 8ad6f598-cd8d-4fca-848e-05fc9be15ff3, ws-opts: {path: "/sea", headers: {Host: xcegj.redpixelport-zen.info}}}
+  - {path: "/", security: tls, sni: cdn.gamingdll.ir, type: trojan, name: "美国 0031", server: iranpoems.ir, port: 443, cipher: "", network: ws, host: "", tls: true, password: Mitivpn, ws-opts: {path: "/"}}
+  - {host: 3-mitivpn.global.ssl.fastly.net, path: "/", security: tls, sni: ssl.fastly.com, type: trojan, name: "美国 0032", server: 151.101.110.219, port: 443, cipher: "", network: ws, tls: true, password: Mitivpn, ws-opts: {path: "/", headers: {Host: 3-mitivpn.global.ssl.fastly.net}}}
+  - {host: 3-mitivpn.global.ssl.fastly.net, path: "/de", security: tls, sni: ssl.fastly.com, type: trojan, name: "美国 0034", server: 151.101.110.219, port: 443, cipher: "", network: ws, tls: true, password: Mitivpn, ws-opts: {path: "/de", headers: {Host: 3-mitivpn.global.ssl.fastly.net}}}
+  - {add: planb.mojcn.com, aid: 0, host: 0513354beac93370008fd6be3cdf9ff1.mobgslb.tbcache.com, id: 2a81d8b1-0c20-48b4-9638-cd68d8f68ea3, net: ws, path: "/", port: 16622, ps: "🇫🇷_法国_305", security: auto, name: "香港 0032", server: planb.mojcn.com, type: vmess, cipher: auto, sni: 0513354beac93370008fd6be3cdf9ff1.mobgslb.tbcache.com, network: ws, tls: false, uuid: 2a81d8b1-0c20-48b4-9638-cd68d8f68ea3, alterId: 0, ws-opts: {path: "/", headers: {Host: 0513354beac93370008fd6be3cdf9ff1.mobgslb.tbcache.com}}}
+  - {fp: chrome, host: us2.wxgqlfx.icu, path: "/TG@wxgqlfx", security: tls, sni: us2.wxgqlfx.icu, type: vless, name: "波兰 0001", server: 31.133.0.124, port: 2053, cipher: auto, network: ws, tls: true, uuid: 05f7b98c-3cd4-4f15-cb80-ac38e1c08a96, ws-opts: {path: "/TG@wxgqlfx", headers: {Host: us2.wxgqlfx.icu}}}
+  - {fp: chrome, host: us2.wxgqlfx.icu, path: "/TG@wxgqlfx", security: tls, sni: us2.wxgqlfx.icu, type: vless, name: "波兰 0002", server: 31.133.0.55, port: 2053, cipher: auto, network: ws, tls: true, uuid: 05f7b98c-3cd4-4f15-cb80-ac38e1c08a96, ws-opts: {path: "/TG@wxgqlfx", headers: {Host: us2.wxgqlfx.icu}}}
+  - {host: dry-sunset-f3c4.282.workers.dev, path: "/pyip=ProxyIP.US.CMLiussss.net", type: vless, name: "未知 0106", server: 104.16.106.213, port: 8880, cipher: auto, sni: "", network: ws, tls: false, uuid: 75323b6f-184f-4d00-839d-323b8fc70221, ws-opts: {path: "/pyip=ProxyIP.US.CMLiussss.net", headers: {Host: dry-sunset-f3c4.282.workers.dev}}}
+  - {host: support.zoom.us.yxls.eu.cc, path: "/us-gllc", security: tls, sni: support.zoom.us.yxls.eu.cc, type: vless, name: "美国 0038", server: support.zoom.us, port: 443, cipher: auto, network: ws, tls: true, uuid: 192bc523-26fe-4233-b10d-725deb710ea5, ws-opts: {path: "/us-gllc", headers: {Host: support.zoom.us.yxls.eu.cc}}}
+  - {fp: firefox, path: "/LiL", security: tls, sni: kingcloud.biack.ir, type: vless, name: "瑞典 0003", server: 192.71.82.2, port: 443, cipher: auto, network: ws, host: "", tls: true, uuid: a5c05c1e-aa68-443f-8598-09800244bd4b, ws-opts: {path: "/LiL"}}
+  - {host: www.calmlunch.com, path: "/assignment", security: tls, sni: www.calmlunch.com, type: trojan, name: "未知 0107", server: 172.64.152.23, port: 443, cipher: "", network: ws, tls: true, password: humanity, ws-opts: {path: "/assignment", headers: {Host: www.calmlunch.com}}}
+  - {host: HKNTT1.mmm.uw.to, path: "/bc2f8931-cb3d-4a13-8198-ad0d9d5ef06a-tr", security: tls, sni: HKNTT1.mmm.uw.to, type: trojan, name: "未知 0108", server: hkntt1.mmm.uw.to, port: 443, cipher: "", network: ws, tls: true, password: bc2f8931-cb3d-4a13-8198-ad0d9d5ef06a, ws-opts: {path: "/bc2f8931-cb3d-4a13-8198-ad0d9d5ef06a-tr", headers: {Host: HKNTT1.mmm.uw.to}}}
+  - {fp: firefox, path: "/LiL?ed=#TELEGRAM-MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI?ed=512", security: tls, sni: kingcloud.biack.ir, type: vless, name: "瑞典 0004", server: 192.71.82.2, port: 443, cipher: auto, network: ws, host: "", tls: true, uuid: a5c05c1e-aa68-443f-8598-09800244bd4b, ws-opts: {path: "/LiL?ed=#TELEGRAM-MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI_MARAMBASHI?ed=512"}}
+  - {add: 69.84.182.49, aid: 0, host: google.whatsapp.snapp.torob.basalam.zula.uplaod-music.ir., id: f8975871-a7a0-4906-8835-a23c1258ca1e, net: ws, path: "/", port: 80, ps: "🇺🇸_美国_323", security: auto, name: "美国 0040", server: 69.84.182.49, type: vmess, cipher: auto, sni: google.whatsapp.snapp.torob.basalam.zula.uplaod-music.ir., network: ws, tls: false, uuid: f8975871-a7a0-4906-8835-a23c1258ca1e, alterId: 0, ws-opts: {path: "/", headers: {Host: google.whatsapp.snapp.torob.basalam.zula.uplaod-music.ir.}}}
+  - {host: opu-ao6.pages.dev, path: "/?https://t.me/WangCai2🇨🇳", security: tls, sni: opu-ao6.pages.dev, type: vless, name: "罗马尼亚 0007", server: 45.85.119.240, port: 443, cipher: auto, network: ws, tls: true, uuid: b991b390-dd0f-4061-9150-bee0cb467bce, ws-opts: {path: "/?https://t.me/WangCai2🇨🇳", headers: {Host: opu-ao6.pages.dev}}}
+  - {host: s5.868001.xyz, path: "/Telegram🇨🇳 @WangCai2", type: vless, name: "荷兰 0007", server: 5.10.247.140, port: 80, cipher: auto, sni: "", network: ws, tls: false, uuid: f9255507-1b65-433f-bfd8-193b35e068e2, ws-opts: {path: "/Telegram🇨🇳 @WangCai2", headers: {Host: s5.868001.xyz}}}
+  - {host: opu-ao6.pages.dev, path: "/?https://t.me/WangCai2🇨🇳", security: tls, sni: opu-ao6.pages.dev, type: vless, name: "新西兰 0001", server: 114.129.43.240, port: 443, cipher: auto, network: ws, tls: true, uuid: b991b390-dd0f-4061-9150-bee0cb467bce, ws-opts: {path: "/?https://t.me/WangCai2🇨🇳", headers: {Host: opu-ao6.pages.dev}}}
+  - {host: s5.868001.xyz, path: "/Telegram🇨🇳 @WangCai2", type: vless, name: "卢森堡 0001", server: 188.42.89.140, port: 80, cipher: auto, sni: "", network: ws, tls: false, uuid: f9255507-1b65-433f-bfd8-193b35e068e2, ws-opts: {path: "/Telegram🇨🇳 @WangCai2", headers: {Host: s5.868001.xyz}}}
+  - {host: max-gb1.global.ssl.fastly.net, path: "/", type: vless, name: "美国 0041", server: 199.232.197.131, port: 80, cipher: auto, sni: "", network: ws, tls: false, uuid: 0058c215-ab1e-400c-a403-b5b2fda7e846, ws-opts: {path: "/", headers: {Host: max-gb1.global.ssl.fastly.net}}}
+  - {host: max-gb1.global.ssl.fastly.net, path: "/", type: vless, name: "美国 0042", server: 151.101.130.219, port: 80, cipher: auto, sni: "", network: ws, tls: false, uuid: 0058c215-ab1e-400c-a403-b5b2fda7e846, ws-opts: {path: "/", headers: {Host: max-gb1.global.ssl.fastly.net}}}
+  - {host: max-gb1.global.ssl.fastly.net, path: "/", sni: max-gb1.global.ssl.fastly.net, type: vless, name: "美国 0044", server: 151.101.194.219, port: 80, cipher: auto, network: ws, tls: false, uuid: 0058c215-ab1e-400c-a403-b5b2fda7e846, ws-opts: {path: "/", headers: {Host: max-gb1.global.ssl.fastly.net}}}
+  - {host: max-gb1.global.ssl.fastly.net, path: "/", sni: max-gb1.global.ssl.fastly.net, type: vless, name: "美国 0045", server: speedtest.net, port: 80, cipher: auto, network: ws, tls: false, uuid: 0058c215-ab1e-400c-a403-b5b2fda7e846, ws-opts: {path: "/", headers: {Host: max-gb1.global.ssl.fastly.net}}}
+  - {host: max-gb1.global.ssl.fastly.net, path: "/", type: vless, name: "美国 0047", server: 167.82.0.1, port: 80, cipher: auto, sni: "", network: ws, tls: false, uuid: 0058c215-ab1e-400c-a403-b5b2fda7e846, ws-opts: {path: "/", headers: {Host: max-gb1.global.ssl.fastly.net}}}
+  - {host: t1s1.rittbo.kdns.fr, path: "/", security: tls, sni: t1s1.rittbo.kdns.fr, type: vless, name: "未知 0109", server: yx.cloudflare.182682.xyz, port: 443, cipher: auto, network: ws, tls: true, uuid: eeb6823c-b926-4ea2-866a-5542edd26e59, ws-opts: {path: "/", headers: {Host: t1s1.rittbo.kdns.fr}}}
+  - {fp: qq, path: "/ws", security: tls, sni: mms-2tets.hysteria.ltd, type: vless, name: "俄罗斯联邦 0005", server: 176.109.94.202, port: 9443, cipher: auto, network: ws, host: "", tls: true, uuid: 71b03803-5dfe-4dac-8406-a06e94b1bd70, ws-opts: {path: "/ws"}}
+  - {host: max-gb1.global.ssl.fastly.net, path: "/?https://t.me/WangCai2🇨🇳", type: vless, name: "德国 0010", server: 151.101.6.151, port: 80, cipher: auto, sni: "", network: ws, tls: false, uuid: 0058c215-ab1e-400c-a403-b5b2fda7e846, ws-opts: {path: "/?https://t.me/WangCai2🇨🇳", headers: {Host: max-gb1.global.ssl.fastly.net}}}
+  - {host: max-gb1.global.ssl.fastly.net, path: "/?https://t.me/WangCai2🇨🇳", type: vless, name: "意大利 0002", server: 151.101.242.151, port: 80, cipher: auto, sni: "", network: ws, tls: false, uuid: 0058c215-ab1e-400c-a403-b5b2fda7e846, ws-opts: {path: "/?https://t.me/WangCai2🇨🇳", headers: {Host: max-gb1.global.ssl.fastly.net}}}
+  - {host: max-gb1.global.ssl.fastly.net, path: "/?https://t.me/WangCai2🇨🇳", type: vless, name: "比利时 0001", server: 151.101.9.151, port: 80, cipher: auto, sni: "", network: ws, tls: false, uuid: 0058c215-ab1e-400c-a403-b5b2fda7e846, ws-opts: {path: "/?https://t.me/WangCai2🇨🇳", headers: {Host: max-gb1.global.ssl.fastly.net}}}
+  - {host: max-gb1.global.ssl.fastly.net, path: "/?https://t.me/WangCai2🇨🇳", type: vless, name: "法国 0003", server: 151.101.122.151, port: 80, cipher: auto, sni: "", network: ws, tls: false, uuid: 0058c215-ab1e-400c-a403-b5b2fda7e846, ws-opts: {path: "/?https://t.me/WangCai2🇨🇳", headers: {Host: max-gb1.global.ssl.fastly.net}}}
+  - {host: max-gb1.global.ssl.fastly.net, path: "/?https://t.me/WangCai2🇨🇳", type: vless, name: "荷兰 0008", server: 151.101.206.151, port: 80, cipher: auto, sni: "", network: ws, tls: false, uuid: 0058c215-ab1e-400c-a403-b5b2fda7e846, ws-opts: {path: "/?https://t.me/WangCai2🇨🇳", headers: {Host: max-gb1.global.ssl.fastly.net}}}
+  - {host: max-gb1.global.ssl.fastly.net, path: "/?https://t.me/WangCai2🇨🇳", type: vless, name: "比利时 0002", server: 151.101.10.151, port: 80, cipher: auto, sni: "", network: ws, tls: false, uuid: 0058c215-ab1e-400c-a403-b5b2fda7e846, ws-opts: {path: "/?https://t.me/WangCai2🇨🇳", headers: {Host: max-gb1.global.ssl.fastly.net}}}
+  - {host: max-gb1.global.ssl.fastly.net, path: "/?https://t.me/WangCai2🇨🇳", type: vless, name: "荷兰 0009", server: 151.101.205.151, port: 80, cipher: auto, sni: "", network: ws, tls: false, uuid: 0058c215-ab1e-400c-a403-b5b2fda7e846, ws-opts: {path: "/?https://t.me/WangCai2🇨🇳", headers: {Host: max-gb1.global.ssl.fastly.net}}}
+  - {host: max-gb1.global.ssl.fastly.net, path: "/?https://t.me/WangCai2🇨🇳", type: vless, name: "英国 0004", server: 151.101.60.151, port: 80, cipher: auto, sni: "", network: ws, tls: false, uuid: 0058c215-ab1e-400c-a403-b5b2fda7e846, ws-opts: {path: "/?https://t.me/WangCai2🇨🇳", headers: {Host: max-gb1.global.ssl.fastly.net}}}
+  - {host: max-gb1.global.ssl.fastly.net, path: "/?https://t.me/WangCai2🇨🇳", type: vless, name: "法国 0004", server: 151.101.120.151, port: 80, cipher: auto, sni: "", network: ws, tls: false, uuid: 0058c215-ab1e-400c-a403-b5b2fda7e846, ws-opts: {path: "/?https://t.me/WangCai2🇨🇳", headers: {Host: max-gb1.global.ssl.fastly.net}}}
+  - {host: max-gb1.global.ssl.fastly.net, path: "/?https://t.me/WangCai2🇨🇳", type: vless, name: "英国 0005", server: 151.101.61.151, port: 80, cipher: auto, sni: "", network: ws, tls: false, uuid: 0058c215-ab1e-400c-a403-b5b2fda7e846, ws-opts: {path: "/?https://t.me/WangCai2🇨🇳", headers: {Host: max-gb1.global.ssl.fastly.net}}}
+  - {path: "/", security: tls, type: vless, name: "未知 0110", server: fm3.pages.dev, port: 443, cipher: auto, sni: "", network: ws, host: "", tls: true, uuid: f0db70ae-559e-4cba-aa00-3a04eb04c3e0, ws-opts: {path: "/"}}
+  - {name: "未知 0111", network: ws, port: 80, server: www.speedtest.net, skip-cert-verify: false, tfo: false, tls: false, type: vless, uuid: 63f1ef69-92fd-427a-b3e4-98ffddf81ac6, ws-opts: {headers: {Host: young-rice-749e.heliy78750.workers.dev}, path: "/nPKoVRUdyuRZ6jpY/YnBiLnlvdXNlZi5pc2VnYXJvLmNvbSxwcm94eWlwLmNtbGl1c3Nzcy5uZXQsbmltYS5uc2NsLmlyLHR1cmsucmFkaWNhbGl6YXRpb24uaXI=?ed=2560"}, path: "/nPKoVRUdyuRZ6jpY/YnBiLnlvdXNlZi5pc2VnYXJvLmNvbSxwcm94eWlwLmNtbGl1c3Nzcy5uZXQsbmltYS5uc2NsLmlyLHR1cmsucmFkaWNhbGl6YXRpb24uaXI=?ed=2560", host: young-rice-749e.heliy78750.workers.dev, sni: "", cipher: auto}
+  - {alterId: 2, cipher: auto, client-fingerprint: chrome, name: "香港 0037", network: tcp, port: 30845, server: v45.hdacd.com, skip-cert-verify: true, tls: false, type: vmess, udp: true, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, path: "", host: "", sni: ""}
+  - {client-fingerprint: chrome, encryption: none, name: "未知 0112", network: ws, port: 443, server: cdn.7zz.cn, servername: vltj.qzz.io, tls: true, type: vless, udp: true, uuid: 506e4a91-1d05-5683-b84c-2113f673cb19, ws-opts: {headers: {Host: vltj.qzz.io, User-Agent: "Mozilla/5.0 (Linux; Android 6.0.1; SM-G532G Build/MMB29T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.83 Mobile Safari/537.36"}, path: "/id-pusat"}, xudp: true, path: "/id-pusat", host: vltj.qzz.io, sni: vltj.qzz.io, cipher: auto}
+  - {cipher: chacha20-ietf-poly1305, name: "香港 0040", password: 792e0bdb-01db-450c-94c4-925151eb396e, port: 19000, server: ss.048.node-for-bigairport.win, type: ss, network: tcp, path: "", host: "", sni: "", tls: false}
+  - {alterId: 0, cipher: auto, name: "香港 0041", port: 11971, server: board-02.ddnskunlun.com, skip-cert-verify: false, tls: false, type: vmess, uuid: a8bcce43-abda-315b-8e81-e3e65bcb3d07, network: tcp, path: "", host: "", sni: ""}
+  - {client-fingerprint: chrome, encryption: none, name: "未知 0113", network: ws, port: 443, server: 172.64.155.209, servername: aio.zxcore.biz.id, tls: true, type: vless, udp: true, uuid: da78f96e-01d3-4289-9d0b-fbbe3f0a5472, ws-opts: {headers: {Host: aio.zxcore.biz.id, User-Agent: "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36"}, path: "/aioproxybot/124.153.168.248-50001"}, xudp: true, path: "/aioproxybot/124.153.168.248-50001", host: aio.zxcore.biz.id, sni: aio.zxcore.biz.id, cipher: auto}
+  - {cipher: aes-256-gcm, name: "中国 0001", password: 123, port: 1001, server: 61.171.92.202, type: ss, udp: true, network: tcp, path: "", host: "", sni: "", tls: false}
+  - {client-fingerprint: chrome, name: "日本 0029", network: ws, password: 114514, port: 443, server: 43.165.175.34, skip-cert-verify: true, sni: tjaaa.hhllfly.kdns.fr, type: trojan, udp: true, ws-opts: {headers: {User-Agent: "Mozilla/5.0 (Linux; Android 7.0; SM-G570M Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Mobile Safari/537.36"}, path: "/"}, path: "/", host: "", tls: true}
+  - {client-fingerprint: chrome, name: "新加坡 0004", network: ws, password: 114514, port: 443, server: 129.212.225.217, skip-cert-verify: true, sni: tjaaa.hhllfly.kdns.fr, type: trojan, udp: true, ws-opts: {headers: {User-Agent: "Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36"}, path: "/"}, path: "/", host: "", tls: true}
+  - {name: "新加坡 0005", password: b585dac6-dc69-11ef-9f1c-f23c913c8d2b, port: 443, server: 2fef1722-t9zts0-tb5nzx-1mqag.sg.oshuawei.com, sni: 2fef1722-t9zts0-tb5nzx-1mqag.sg.oshuawei.com, tls: true, type: http, username: b585dac6-dc69-11ef-9f1c-f23c913c8d2b, network: tcp, path: "", host: ""}
+  - {client-fingerprint: chrome, name: "新加坡 0006", network: ws, password: 114514, port: 443, server: 134.209.101.154, skip-cert-verify: true, sni: tjaaa.hhllfly.kdns.fr, type: trojan, udp: true, ws-opts: {headers: {User-Agent: "Mozilla/5.0 (Linux; Android 7.1.1; CPH1723 Build/N6F26Q) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.98 Mobile Safari/537.36"}, path: "/"}, path: "/", host: "", tls: true}
+  - {name: "日本 0030", password: b585dac6-dc69-11ef-9f1c-f23c913c8d2b, port: 443, server: 0c6ae2bf-t9zts0-tb5nzx-1mqag.jp.oshuawei.com, sni: 0c6ae2bf-t9zts0-tb5nzx-1mqag.jp.oshuawei.com, tls: true, type: http, username: b585dac6-dc69-11ef-9f1c-f23c913c8d2b, network: tcp, path: "", host: ""}
+  - {name: "爱沙尼亚 0001", network: ws, port: 8880, server: 45.80.110.50, type: vless, uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d, ws-opts: {headers: {Host: vms.lifetime51.workers.dev}, path: "/?ed=2560"}, path: "/?ed=2560", host: vms.lifetime51.workers.dev, sni: "", tls: false, cipher: auto}
+  - {name: "美国 0051", network: ws, port: 8880, server: 80.93.202.40, type: vless, uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d, ws-opts: {headers: {Host: vms.lifetime02.workers.dev}, path: "/?ed=2560&https://t.me/youtube@ZYFXS\\U0001F1E8\\U0001F1F3"}, path: "/?ed=2560&https://t.me/youtube@ZYFXS\\U0001F1E8\\U0001F1F3", host: vms.lifetime02.workers.dev, sni: "", tls: false, cipher: auto}
+  - {name: "韩国 0008", password: "test.+", port: 30446, server: testkr3.ssv.vc, skip-cert-verify: true, tls: true, type: http, username: test, network: tcp, path: "", host: "", sni: ""}
+  - {alterId: 0, cipher: auto, name: "未知 0114", network: ws, port: 443, server: yg1.ygkkk.dpdns.org, servername: attitude-interracial-country-gen.trycloudflare.com, skip-cert-verify: false, tls: true, type: vmess, udp: true, uuid: 6a25f9ba-70a0-4d53-a2a9-19d8f1fcad76, ws-opts: {headers: {Host: attitude-interracial-country-gen.trycloudflare.com}, path: "/6a25f9ba-70a0-4d53-a2a9-19d8f1fcad76-vm"}, xudp: true, path: "/6a25f9ba-70a0-4d53-a2a9-19d8f1fcad76-vm", host: attitude-interracial-country-gen.trycloudflare.com, sni: attitude-interracial-country-gen.trycloudflare.com}
+  - {encryption: none, name: "斯洛文尼亚 0001", network: ws, port: 8880, server: 92.53.189.40, type: vless, udp: true, uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d, ws-opts: {early-data-header-name: Sec-WebSocket-Protocol, headers: {Host: vms.lifetime19.workers.dev, User-Agent: "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"}, max-early-data: 2560, path: "/"}, xudp: true, path: "/", host: vms.lifetime19.workers.dev, sni: "", tls: false, cipher: auto}
+  - {name: "塞舌尔 0008", network: ws, port: 8880, server: 154.83.2.50, type: vless, uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d, ws-opts: {headers: {Host: vms.lifetime28.workers.dev}, path: "/?ed=2560&https://t.me/youtube@ZYFXS\\U0001F1E8\\U0001F1F3"}, path: "/?ed=2560&https://t.me/youtube@ZYFXS\\U0001F1E8\\U0001F1F3", host: vms.lifetime28.workers.dev, sni: "", tls: false, cipher: auto}
+  - {name: "未知 0115", network: ws, port: 8880, server: www.baipiao.eu.org, type: vless, udp: true, uuid: 18a7834f-bf89-4c87-ad57-49927a56deed, ws-opts: {headers: {Host: holy-violet-858e.471.workers.dev, User-Agent: "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"}, path: "/pyip=ProxyIP.SG.CMLiussss.net"}, xudp: true, path: "/pyip=ProxyIP.SG.CMLiussss.net", host: holy-violet-858e.471.workers.dev, sni: "", tls: false, cipher: auto}
+  - {name: "美国 0052", network: ws, port: 8880, server: 199.181.197.40, type: vless, uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d, ws-opts: {headers: {Host: vms.lifetime19.workers.dev}, path: "/?ed=2560"}, path: "/?ed=2560", host: vms.lifetime19.workers.dev, sni: "", tls: false, cipher: auto}
+  - {alterId: 0, cipher: auto, name: "香港 0044", port: 11985, server: board-02.ddnskunlun.com, skip-cert-verify: false, tls: false, type: vmess, uuid: a8bcce43-abda-315b-8e81-e3e65bcb3d07, network: tcp, path: "", host: "", sni: ""}
+  - {name: "美国 0053", network: ws, port: 8880, server: 50.62.91.40, type: vless, uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d, ws-opts: {headers: {Host: vms.lifetime28.workers.dev}, path: "/?ed=2560&https://t.me/youtube@ZYFXS\\U0001F1E8\\U0001F1F3"}, path: "/?ed=2560&https://t.me/youtube@ZYFXS\\U0001F1E8\\U0001F1F3", host: vms.lifetime28.workers.dev, sni: "", tls: false, cipher: auto}
+  - {name: "未知 0118", network: ws, port: 8880, server: 8.34.70.30, type: vless, uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d, ws-opts: {headers: {Host: vms.lifetime09.workers.dev}}, path: "", host: vms.lifetime09.workers.dev, sni: "", tls: false, cipher: auto}
+  - {name: "斯洛文尼亚 0002", network: ws, port: 8880, server: 92.53.188.30, type: vless, uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d, ws-opts: {headers: {Host: vms.lifetime18.workers.dev}, path: "/"}, path: "/", host: vms.lifetime18.workers.dev, sni: "", tls: false, cipher: auto}
+  - {name: "美国 0054", password: gs4BXwT6SW, port: 10988, server: 154.26.192.123, skip-cert-verify: false, tls: false, type: http, username: fQ67Dpe5dU, network: tcp, path: "", host: "", sni: ""}
+  - {name: "罗马尼亚 0008", network: ws, port: 8880, server: 45.12.30.30, type: vless, uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d, ws-opts: {headers: {Host: vms.lifetime28.workers.dev}, path: "/"}, path: "/", host: vms.lifetime28.workers.dev, sni: "", tls: false, cipher: auto}
+  - {name: "香港 0045", password: 25b2699a-e18e-11ec-8e69-f23c91cfbbc9, port: 443, server: f2c7e090-te7og0-tfo5nb-yjq0.hk2.hyhuawei.com, skip-cert-verify: true, sni: f2c7e090-te7og0-tfo5nb-yjq0.hk2.hyhuawei.com, type: anytls, udp: true, network: tcp, path: "", host: "", tls: true}
+  - {name: "未知 0119", network: ws, port: 8880, server: 172.64.88.251, type: vless, udp: true, uuid: 87a5d3eb-afd4-4193-9787-c54ef7c26c8c, ws-opts: {headers: {Host: patient-cake-39c7.44-e7a.workers.dev, User-Agent: "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36"}, path: "/pyip=ProxyIP.KR.CMLiussss.net"}, xudp: true, path: "/pyip=ProxyIP.KR.CMLiussss.net", host: patient-cake-39c7.44-e7a.workers.dev, sni: "", tls: false, cipher: auto}
+  - {name: "塞舌尔 0009", network: ws, port: 8880, server: 154.83.2.30, type: vless, uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d, ws-opts: {headers: {Host: vms.lifetime28.workers.dev}, path: "/"}, path: "/", host: vms.lifetime28.workers.dev, sni: "", tls: false, cipher: auto}
+  - {encryption: none, name: "未知 0120", network: ws, port: 80, server: 104.16.27.134, type: vless, udp: true, uuid: df301b32-1152-4526-9a63-beedd93d3156, ws-opts: {headers: {Host: vl.dalazhi.cloudns.biz, User-Agent: "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36"}, path: "%2F%3Fed%3D2048"}, xudp: true, path: "%2F%3Fed%3D2048", host: vl.dalazhi.cloudns.biz, sni: "", tls: false, cipher: auto}
+  - {encryption: none, name: "未知 0121", network: ws, port: 80, server: 162.159.81.104, type: vless, udp: true, uuid: 4b00d726-e072-429b-997e-f07affea3b7f, ws-opts: {headers: {Host: icy-darkness-8ff1.farzambia12mo.workers.dev, User-Agent: "Mozilla/5.0 (Linux; Android 7.1.2; Redmi 4X Build/N2G47H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.111 Mobile Safari/537.36"}, path: "/eyJqdW5rIjoiUEVTdDRlR2hhc0JuYyIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJlZml4IiwicGFuZWxJUHMiOlsiWzI2MDI6ZmM1OTpiMDo2NDo6XSJdfQ=="}, xudp: true, path: "/eyJqdW5rIjoiUEVTdDRlR2hhc0JuYyIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJlZml4IiwicGFuZWxJUHMiOlsiWzI2MDI6ZmM1OTpiMDo2NDo6XSJdfQ==", host: icy-darkness-8ff1.farzambia12mo.workers.dev, sni: "", tls: false, cipher: auto}
+  - {encryption: none, name: "美国 0055", network: ws, port: 8880, server: 104.129.165.30, type: vless, udp: true, uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d, ws-opts: {headers: {Host: vms.lifetime42.workers.dev, User-Agent: "Mozilla/5.0 (Linux; Android 6.0.1; CPH1607 Build/MMB29M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/63.0.3239.111 Mobile Safari/537.36"}, path: "/"}, xudp: true, path: "/", host: vms.lifetime42.workers.dev, sni: "", tls: false, cipher: auto}
+  - {name: "美国 0056", network: ws, port: 8880, server: 63.141.128.30, type: vless, uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d, ws-opts: {headers: {Host: vms.lifetime42.workers.dev}, path: "/"}, path: "/", host: vms.lifetime42.workers.dev, sni: "", tls: false, cipher: auto}
+  - {name: "日本 0031", password: 6b7c1278-ff9d-11ee-84ca-f23c913c8d2b, port: 443, server: 5ea51ba1-tdups0-tf8z9r-1pr35.jp4.oshuawei.com, tls: true, type: http, username: 6b7c1278-ff9d-11ee-84ca-f23c913c8d2b, network: tcp, path: "", host: "", sni: ""}
+  - {name: "俄罗斯联邦 0010", network: ws, port: 8880, server: 194.53.53.30, type: vless, uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d, ws-opts: {headers: {Host: vms.lifetime51.workers.dev}, path: "/"}, path: "/", host: vms.lifetime51.workers.dev, sni: "", tls: false, cipher: auto}
+  - {name: "英国 0006", network: ws, port: 8880, server: 185.170.166.30, type: vless, uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d, ws-opts: {headers: {Host: vms.lifetime04.workers.dev}, path: "/"}, path: "/", host: vms.lifetime04.workers.dev, sni: "", tls: false, cipher: auto}
+  - {client-fingerprint: chrome, name: "香港 0047", network: tcp, password: OccIqeORGQwiNkwS, port: 19128, server: jpbgp.netvigor.cc, skip-cert-verify: false, sni: yazhou10.dynu.net, type: trojan, udp: true, path: "", host: "", tls: true}
+  - {name: "美国 0057", network: ws, port: 8880, server: 192.0.54.30, type: vless, uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d, ws-opts: {headers: {Host: vms.lifetime35.workers.dev}, path: "/"}, path: "/", host: vms.lifetime35.workers.dev, sni: "", tls: false, cipher: auto}
+  - {encryption: none, name: "未知 0124", network: ws, port: 8880, server: 162.159.156.214, type: vless, udp: true, uuid: 090e5985-bbeb-4400-8278-d3a8e9ae5d92, ws-opts: {headers: {Host: shy-star-7967.311-f0b.workers.dev, User-Agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36"}, path: "/pyip=ProxyIP.JP.CMLiussss.net"}, xudp: true, path: "/pyip=ProxyIP.JP.CMLiussss.net", host: shy-star-7967.311-f0b.workers.dev, sni: "", tls: false, cipher: auto}
+  - {name: "美国 0058", network: ws, port: 8880, server: 192.169.223.30, type: vless, uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d, ws-opts: {headers: {Host: vms.lifetime42.workers.dev}, path: "/"}, path: "/", host: vms.lifetime42.workers.dev, sni: "", tls: false, cipher: auto}
+  - {encryption: none, name: "阿联酋 0003", network: ws, port: 8880, server: 185.225.195.30, type: vless, uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d, ws-opts: {headers: {Host: vms.lifetime18.workers.dev}, path: "/"}, path: "/", host: vms.lifetime18.workers.dev, sni: "", tls: false, cipher: auto}
+  - {encryption: none, name: "美国 0061", network: ws, port: 8880, server: 50.62.91.30, type: vless, udp: true, uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d, ws-opts: {headers: {Host: vms.lifetime28.workers.dev, User-Agent: "Mozilla/5.0 (Windows NT 5.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36"}, path: "/"}, xudp: true, path: "/", host: vms.lifetime28.workers.dev, sni: "", tls: false, cipher: auto}
+  - {encryption: none, name: "美国 0062", network: ws, port: 8880, server: 155.46.213.30, type: vless, udp: true, uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d, ws-opts: {headers: {Host: vms.lifetime51.workers.dev, User-Agent: "Mozilla/5.0 (Windows; U; Windows NT 6.1; de-DE) AppleWebKit/534.17 (KHTML, like Gecko) Chrome/10.0.649.0 Safari/534.17"}, path: "/"}, xudp: true, path: "/", host: vms.lifetime51.workers.dev, sni: "", tls: false, cipher: auto}
+  - {name: "美国 0063", network: ws, port: 8880, server: 216.24.57.30, type: vless, uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d, ws-opts: {headers: {Host: vms.lifetime28.workers.dev}, path: "/"}, path: "/", host: vms.lifetime28.workers.dev, sni: "", tls: false, cipher: auto}
+  - {name: "韩国 0009", password: 8f7cb770-1305-11ee-b107-f23c91cfbbc9, port: 31433, server: 58f9445b-t9zts0-tg8syu-1nyy5.kr.oshuawei.com, sni: 58f9445b-t9zts0-tg8syu-1nyy5.kr.oshuawei.com, tls: true, type: http, username: 8f7cb770-1305-11ee-b107-f23c91cfbbc9, network: tcp, path: "", host: ""}
+  - {cipher: 2022-blake3-aes-128-gcm, name: "美国 0064", password: "YTE1ZWU4ZTEyZjc3YmEzZA==", plugin: gost-plugin, plugin-opts: {host: one.local, mode: websocket, mux: true, path: "/ws", tls: false}, port: 20090, server: 172.96.161.152, type: ss, udp: true, network: tcp, path: "", host: "", sni: "", tls: false}
+  - {name: "美国 0065", password: 1b609740-eec2-11ef-8543-f23c93136cb3, port: 443, server: 9420e530-te8ao0-tfnl0i-au6.fmtdc1.sghuawei.com, tls: true, type: http, username: 1b609740-eec2-11ef-8543-f23c93136cb3, network: tcp, path: "", host: "", sni: ""}
+  - {name: "美国 0066", password: b585dac6-dc69-11ef-9f1c-f23c913c8d2b, port: 443, server: 16cece4f-t9zts0-tb5nzx-1mqag.sjc.oshuawei.com, sni: 16cece4f-t9zts0-tb5nzx-1mqag.sjc.oshuawei.com, tls: true, type: http, username: b585dac6-dc69-11ef-9f1c-f23c913c8d2b, network: tcp, path: "", host: ""}
+  - {alterId: 2, cipher: auto, name: "香港 0049", network: tcp, port: 30833, server: v33.hdacd.com, skip-cert-verify: false, tls: false, type: vmess, udp: true, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, xudp: true, path: "", host: "", sni: ""}
+  - {name: "美国 0067", password: b585dac6-dc69-11ef-9f1c-f23c913c8d2b, port: 443, server: bb788fbf-t9zts0-tb5nzx-1mqag.sj.oshuawei.com, sni: bb788fbf-t9zts0-tb5nzx-1mqag.sj.oshuawei.com, tls: true, type: http, username: b585dac6-dc69-11ef-9f1c-f23c913c8d2b, network: tcp, path: "", host: ""}
+  - {name: "美国 0068", password: b585dac6-dc69-11ef-9f1c-f23c913c8d2b, port: 443, server: e1297502-te9j40-tfpmx4-1mqag.sjc.oshuawei.com, sni: e1297502-te9j40-tfpmx4-1mqag.sjc.oshuawei.com, tls: true, type: http, username: b585dac6-dc69-11ef-9f1c-f23c913c8d2b, network: tcp, path: "", host: ""}
+  - {name: "美国 0069", password: 16955d72-1794-11f0-a035-f23c95b6f51d, port: 443, server: 87992eef-te9j40-teq7xb-dnss.fmtdc1.sghuawei.com, tls: true, type: http, username: 16955d72-1794-11f0-a035-f23c95b6f51d, network: tcp, path: "", host: "", sni: ""}
+  - {alterId: 2, cipher: auto, name: "香港 0050", network: tcp, port: 30836, server: v36.hdacd.com, skip-cert-verify: false, tls: false, type: vmess, udp: true, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, xudp: true, path: "", host: "", sni: ""}
+  - {client-fingerprint: randomized, encryption: none, name: "未知 0125", network: ws, port: 443, server: fm3.pages.dev, servername: fm3.pages.dev, tls: true, type: vless, udp: true, uuid: f0db70ae-559e-4cba-aa00-3a04eb04c3e0, ws-opts: {headers: {Host: fm3.pages.dev, User-Agent: "Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36"}, path: "/?ed=2560"}, xudp: true, path: "/?ed=2560", host: fm3.pages.dev, sni: fm3.pages.dev, cipher: auto}
+  - {encryption: none, name: "未知 0126", network: ws, port: 80, server: 104.19.238.22, type: vless, udp: true, uuid: 69d38faa-21a1-4d18-82cb-796a942c181b, ws-opts: {headers: {Host: sfsl.ardomains1.dpdns.org, User-Agent: "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"}, path: "/?ed=2048"}, xudp: true, path: "/?ed=2048", host: sfsl.ardomains1.dpdns.org, sni: "", tls: false, cipher: auto}
+  - {client-fingerprint: chrome, name: "新加坡 0012", network: ws, password: 114514, port: 443, server: 157.230.44.100, skip-cert-verify: true, sni: tjaaa.hhllfly.kdns.fr, type: trojan, udp: true, ws-opts: {headers: {User-Agent: "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36"}, path: "/"}, path: "/", host: "", tls: true}
+  - {encryption: none, name: "美国 0070", network: ws, port: 8880, server: 155.46.167.30, type: vless, udp: true, uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d, ws-opts: {headers: {Host: vms.lifetime50.workers.dev, User-Agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36"}, path: ""}, xudp: true, path: "", host: vms.lifetime50.workers.dev, sni: "", tls: false, cipher: auto}
+  - {client-fingerprint: chrome, name: "美国 0071", network: ws, password: Mitivpn, port: 443, server: iranpoems.ir, skip-cert-verify: false, sni: www.gamingdll.ir, type: trojan, udp: true, ws-opts: {headers: {User-Agent: "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36"}, path: "/usa=mitivpn"}, path: "/usa=mitivpn", host: "", tls: true}
+  - {name: "美国 0073", password: 6b7c1278-ff9d-11ee-84ca-f23c913c8d2b, port: 443, server: ea6d06f3-tdsv40-tf8z9r-1pr35.los.hyhuawei.com, skip-cert-verify: true, type: anytls, udp: true, network: tcp, path: "", host: "", sni: "", tls: false}
+  - {name: "美国 0074", password: 8f7cb770-1305-11ee-b107-f23c91cfbbc9, port: 443, server: 754027a6-t9zts0-tg8syu-1nyy5.sjc.oshuawei.com, sni: 754027a6-t9zts0-tg8syu-1nyy5.sjc.oshuawei.com, tls: true, type: http, username: 8f7cb770-1305-11ee-b107-f23c91cfbbc9, network: tcp, path: "", host: ""}
+  - {name: "美国 0075", password: 1b609740-eec2-11ef-8543-f23c93136cb3, port: 5443, server: 9420e530-te8ao0-tfnl0i-au6.fmtdc1.sghuawei.com, sni: 9420e530-te8ao0-tfnl0i-au6.fmtdc1.sghuawei.com, tls: true, type: http, username: 1b609740-eec2-11ef-8543-f23c93136cb3, network: tcp, path: "", host: ""}
+  - {name: "罗马尼亚 0009", port: 9002, server: 193.176.84.36, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {client-fingerprint: chrome, encryption: none, flow: xtls-rprx-vision, name: "波兰 0003", network: tcp, port: 443, reality-opts: {public-key: PL-jIhHOxLpCUmnDvMEsB3YY3n8o7smiAT0P_SV6RCM, short-id: 19d6296d2621d9fa}, server: 95.85.227.25, servername: pol1.hatvpn.org, tls: true, type: vless, udp: true, uuid: e3e90161-fe65-443a-a3a4-e0e3a73704ca, xudp: true, path: "", host: "", sni: pol1.hatvpn.org, cipher: auto}
+  - {name: "荷兰 0012", port: 1080, server: 5.255.99.75, type: socks5, network: tcp, path: "", host: "", sni: "", tls: false, password: ""}
+  - {multiplexing: MULTIPLEXING_LOW, name: "美国 0076", password: dongtaiwang.com, port: 34567, server: 157.254.223.44, transport: TCP, type: mieru, username: dongtaiwang.com, network: tcp, path: "", host: "", sni: "", tls: false}
+  - {name: "罗马尼亚 0010", port: 9002, server: 193.176.84.19, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0011", port: 9002, server: 84.239.49.254, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0012", port: 9002, server: 193.176.84.24, skip-cert-verify: true, tls: true, type: http, network: tcp, path: "", host: "", sni: "", password: ""}
+  - {name: "罗马尼亚 0013", port: 9002, server: 193.176.84.26, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {client-fingerprint: firefox, encryption: none, flow: xtls-rprx-vision, name: "俄罗斯联邦 0012", network: tcp, port: 443, reality-opts: {public-key: 6QIHdF1dvSK8mDPOeWXvGIqJmZ2ySq5fyc7N15h1WFE, short-id: 34256b39b4ebb864}, server: 158.160.191.91, servername: rezerv8.yunus.guru, tls: true, type: vless, udp: true, uuid: a5ea9247-79f3-4655-aece-3fb51e1e669e, xudp: true, path: "", host: "", sni: rezerv8.yunus.guru, cipher: auto}
+  - {name: "罗马尼亚 0014", port: 9002, server: 84.239.49.160, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0015", port: 9002, server: 84.239.49.154, skip-cert-verify: true, tls: true, type: http, network: tcp, path: "", host: "", sni: "", password: ""}
+  - {name: "罗马尼亚 0016", port: 9002, server: 193.176.84.37, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0017", port: 9002, server: 84.239.49.57, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0018", port: 9002, server: 84.239.14.154, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0019", port: 9002, server: 84.239.14.159, skip-cert-verify: true, tls: true, type: http, network: tcp, path: "", host: "", sni: "", password: ""}
+  - {name: "罗马尼亚 0020", port: 9002, server: 84.239.49.191, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {client-fingerprint: chrome, name: "未知 0127", network: ws, password: humanity, port: 443, server: 104.16.174.71, skip-cert-verify: false, sni: www.ignitelimit.com, type: trojan, udp: true, ws-opts: {headers: {User-Agent: "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.110 Safari/537.36"}, path: "/assignment"}, path: "/assignment", host: "", tls: true}
+  - {name: "罗马尼亚 0021", port: 9002, server: 84.239.49.247, skip-cert-verify: true, tls: true, type: http, network: tcp, path: "", host: "", sni: "", password: ""}
+  - {name: "罗马尼亚 0022", port: 9002, server: 84.239.49.209, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0023", port: 9002, server: 84.239.49.187, skip-cert-verify: true, tls: true, type: http, network: tcp, path: "", host: "", sni: "", password: ""}
+  - {name: "罗马尼亚 0024", port: 9002, server: 84.239.14.158, skip-cert-verify: true, tls: true, type: http, udp: true, network: tcp, path: "", host: "", sni: "", password: ""}
+  - {name: "罗马尼亚 0025", port: 9002, server: 193.176.84.31, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0026", port: 9002, server: 84.239.49.231, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0027", port: 9002, server: 84.239.49.155, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {alterId: 2, cipher: auto, name: "香港 0054", port: 30806, server: v6.hdacd.com, skip-cert-verify: false, tls: false, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, network: tcp, path: "", host: "", sni: ""}
+  - {name: "罗马尼亚 0028", port: 9002, server: 84.239.49.183, skip-cert-verify: true, tls: true, type: http, network: tcp, path: "", host: "", sni: "", password: ""}
+  - {name: "罗马尼亚 0029", port: 9002, server: 84.239.49.238, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0030", port: 9002, server: 84.239.49.204, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {client-fingerprint: random, flow: xtls-rprx-vision, name: "台湾 0003", packet-encoding: 0, path: "/", port: 44001, reality-opts: {public-key: a6E2PaOe_nr7OQlmoZMv8VCpYxXvAudjV8hfaPRAs1E, short-id: d9d623e6}, server: 103.127.218.154, servername: addons.mozilla.org, skip-cert-verify: true, tfo: true, tls: true, type: vless, udp: true, uuid: 5001b8d8-76ce-474c-bc29-94e6caa61164, network: tcp, host: "", sni: addons.mozilla.org, cipher: auto}
+  - {name: "罗马尼亚 0031", port: 9002, server: 84.239.49.239, skip-cert-verify: true, tls: true, type: http, network: tcp, path: "", host: "", sni: "", password: ""}
+  - {name: "罗马尼亚 0032", port: 9002, server: 84.239.49.185, skip-cert-verify: true, tls: true, type: http, network: tcp, path: "", host: "", sni: "", password: ""}
+  - {name: "罗马尼亚 0033", port: 9002, server: 84.239.49.223, skip-cert-verify: true, tls: true, type: http, network: tcp, path: "", host: "", sni: "", password: ""}
+  - {name: "罗马尼亚 0034", port: 9002, server: 84.239.49.214, skip-cert-verify: true, tls: true, type: http, network: tcp, path: "", host: "", sni: "", password: ""}
+  - {name: "罗马尼亚 0035", port: 9002, server: 84.239.49.245, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0036", port: 9002, server: 84.239.49.176, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {client-fingerprint: chrome, name: "未知 0128", network: ws, password: humanity, port: 443, server: 8.6.112.0, skip-cert-verify: false, sni: www.multiplydose.com, type: trojan, udp: true, ws-opts: {headers: {User-Agent: "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"}, path: "/assignment"}, path: "/assignment", host: "", tls: true}
+  - {name: "罗马尼亚 0037", port: 9002, server: 84.239.49.240, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0039", port: 9002, server: 84.239.49.159, skip-cert-verify: true, tls: true, type: http, network: tcp, path: "", host: "", sni: "", password: ""}
+  - {name: "罗马尼亚 0040", port: 9002, server: 84.239.14.157, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0041", port: 9002, server: 84.239.49.224, skip-cert-verify: true, tls: true, type: http, network: tcp, path: "", host: "", sni: "", password: ""}
+  - {name: "罗马尼亚 0042", port: 9002, server: 84.239.49.55, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0043", port: 9002, server: 84.239.49.42, skip-cert-verify: true, tls: true, type: http, network: tcp, path: "", host: "", sni: "", password: ""}
+  - {name: "罗马尼亚 0044", port: 9002, server: 84.239.49.212, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0045", port: 9002, server: 193.176.84.27, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0046", port: 9002, server: 84.239.49.170, skip-cert-verify: true, tls: true, type: http, network: tcp, path: "", host: "", sni: "", password: ""}
+  - {name: "罗马尼亚 0047", port: 9002, server: 84.239.14.160, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0048", port: 9002, server: 84.239.49.161, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0049", port: 9002, server: 84.239.49.227, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0050", port: 9002, server: 84.239.49.40, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0051", port: 9002, server: 84.239.49.201, skip-cert-verify: true, tls: true, type: http, network: tcp, path: "", host: "", sni: "", password: ""}
+  - {name: "罗马尼亚 0053", port: 9002, server: 84.239.14.149, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0054", port: 9002, server: 84.239.49.38, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0055", port: 9002, server: 84.239.49.173, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0056", port: 9002, server: 84.239.49.178, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0057", port: 9002, server: 84.239.49.162, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0058", port: 9002, server: 84.239.49.163, skip-cert-verify: true, tls: true, type: http, network: tcp, path: "", host: "", sni: "", password: ""}
+  - {name: "罗马尼亚 0059", port: 9002, server: 84.239.49.157, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0060", port: 9002, server: 84.239.49.249, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0061", port: 9002, server: 84.239.49.37, skip-cert-verify: true, tls: true, type: http, network: tcp, path: "", host: "", sni: "", password: ""}
+  - {name: "罗马尼亚 0062", port: 9002, server: 84.239.49.215, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0063", port: 9002, server: 84.239.49.235, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0064", port: 9002, server: 84.239.14.148, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0065", port: 9002, server: 84.239.49.184, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0066", port: 9002, server: 84.239.49.202, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "法国 0007", password: 8f7cb770-1305-11ee-b107-f23c91cfbbc9, port: 443, server: 4257c453-t9zts0-tg8syu-1nyy5.fr.oshuawei.com, sni: 4257c453-t9zts0-tg8syu-1nyy5.fr.oshuawei.com, tls: true, type: http, username: 8f7cb770-1305-11ee-b107-f23c91cfbbc9, network: tcp, path: "", host: ""}
+  - {name: "罗马尼亚 0069", port: 9002, server: 84.239.14.152, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0070", port: 9002, server: 84.239.49.164, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {client-fingerprint: chrome, name: "台湾 0004", network: ws, password: 114514, port: 443, server: 151.242.189.137, skip-cert-verify: true, sni: tjaaa.hhllfly.kdns.fr, type: trojan, udp: true, ws-opts: {headers: {User-Agent: "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"}, path: "/"}, path: "/", host: "", tls: true}
+  - {name: "罗马尼亚 0071", port: 9002, server: 84.239.49.199, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0072", port: 9002, server: 84.239.49.219, skip-cert-verify: true, tls: true, type: http, network: tcp, path: "", host: "", sni: "", password: ""}
+  - {name: "罗马尼亚 0073", port: 9002, server: 84.239.49.196, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0074", port: 9002, server: 84.239.49.171, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0075", port: 9002, server: 193.176.84.32, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0076", port: 9002, server: 84.239.49.253, skip-cert-verify: true, tls: true, type: http, network: tcp, path: "", host: "", sni: "", password: ""}
+  - {name: "罗马尼亚 0077", port: 9002, server: 84.239.49.156, skip-cert-verify: true, tls: true, type: http, network: tcp, path: "", host: "", sni: "", password: ""}
+  - {name: "罗马尼亚 0078", port: 9002, server: 84.239.49.211, skip-cert-verify: true, tls: true, type: http, network: tcp, path: "", host: "", sni: "", password: ""}
+  - {name: "罗马尼亚 0079", port: 9002, server: 84.239.49.180, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0080", port: 9002, server: 193.176.84.25, skip-cert-verify: true, tls: true, type: http, network: tcp, path: "", host: "", sni: "", password: ""}
+  - {name: "罗马尼亚 0081", port: 9002, server: 84.239.49.175, skip-cert-verify: true, tls: true, type: http, network: tcp, path: "", host: "", sni: "", password: ""}
+  - {name: "罗马尼亚 0082", port: 9002, server: 84.239.49.233, skip-cert-verify: true, tls: true, type: http, network: tcp, path: "", host: "", sni: "", password: ""}
+  - {encryption: none, name: "未知 0129", network: ws, port: 80, server: 162.159.81.177, type: vless, udp: true, uuid: 4b00d726-e072-429b-997e-f07affea3b7f, ws-opts: {headers: {Host: icy-darkness-8ff1.farzambia12mo.workers.dev, User-Agent: "Mozilla/5.0 (Windows NT 5.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"}, path: "/eyJqdW5rIjoibHFUM0pwRHZXIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMjYwMjpmYzU5OmIwOjY0OjpdIl19"}, xudp: true, path: "/eyJqdW5rIjoibHFUM0pwRHZXIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMjYwMjpmYzU5OmIwOjY0OjpdIl19", host: icy-darkness-8ff1.farzambia12mo.workers.dev, sni: "", tls: false, cipher: auto}
+  - {name: "英国 0007", password: 8f7cb770-1305-11ee-b107-f23c91cfbbc9, port: 443, server: 9c667b09-t9zts0-tg8syu-1nyy5.uk.oshuawei.com, sni: 9c667b09-t9zts0-tg8syu-1nyy5.uk.oshuawei.com, tls: true, type: http, username: 8f7cb770-1305-11ee-b107-f23c91cfbbc9, network: tcp, path: "", host: ""}
+  - {name: "罗马尼亚 0083", port: 9002, server: 84.239.49.242, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0084", port: 9002, server: 84.239.49.182, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0085", port: 9002, server: 84.239.49.198, skip-cert-verify: true, tls: true, type: http, network: tcp, path: "", host: "", sni: "", password: ""}
+  - {name: "罗马尼亚 0086", port: 9002, server: 84.239.49.39, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {name: "罗马尼亚 0087", port: 9002, server: 84.239.14.146, skip-cert-verify: true, tls: true, type: http, network: tcp, path: "", host: "", sni: "", password: ""}
+  - {name: "罗马尼亚 0088", port: 9002, server: 193.176.84.39, skip-cert-verify: true, tls: true, type: http, network: tcp, path: "", host: "", sni: "", password: ""}
+  - {name: "立陶宛 0029", network: ws, port: 8880, server: 88.216.69.30, type: vless, uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d, ws-opts: {headers: {Host: vms.lifetime06.workers.dev}}, path: "", host: vms.lifetime06.workers.dev, sni: "", tls: false, cipher: auto}
+  - {client-fingerprint: chrome, encryption: none, name: "未知 0131", network: ws, port: 443, server: 172.64.33.162, servername: octopusss5.info, tls: true, type: vless, udp: true, uuid: c35050ce-01ab-45a9-91b8-54cec637d0a8, ws-opts: {headers: {Host: octopusss5.info, User-Agent: "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36"}, path: "/udfyfws"}, xudp: true, path: "/udfyfws", host: octopusss5.info, sni: octopusss5.info, cipher: auto}
+  - {alterId: 2, cipher: auto, name: "香港 0056", port: 30824, server: v24.hdacd.com, skip-cert-verify: false, tls: false, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, network: tcp, path: "", host: "", sni: ""}
+  - {client-fingerprint: chrome, name: "香港 0057", network: tcp, password: 4f4d1167-ef14-4304-9bce-0740472503ef, port: 45619, server: 103.177.136.45, skip-cert-verify: true, sni: fr.01.naiun.bilibili.com, type: trojan, udp: true, path: "", host: "", tls: true}
+  - {name: "加拿大 0002", network: ws, port: 8880, server: 23.227.60.30, type: vless, uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d, ws-opts: {headers: {Host: vms.lifetime18.workers.dev}, path: "/"}, path: "/", host: vms.lifetime18.workers.dev, sni: "", tls: false, cipher: auto}
+  - {client-fingerprint: chrome, flow: xtls-rprx-vision, name: "俄罗斯联邦 0013", network: tcp, port: 443, reality-opts: {public-key: jwT3lcIzJQMjzBKRNsmyRGrgaa1qNfE7pQF_nAKu0GA, short-id: a73cf719b624}, security: reality, server: ru9.aimodelhub.top, servername: ru9.aimodelhub.top, tls: true, type: vless, uuid: ba895ce4-8c24-0003-9f22-81ee227c89d0, path: "", host: "", sni: ru9.aimodelhub.top, cipher: auto}
+  - {client-fingerprint: chrome, name: "未知 0132", network: ws, password: rYuChHcwQZskq9E0zdoR, port: 443, server: ip4.vpean2.qzz.io, skip-cert-verify: false, sni: vpn5.rnmcnm.com, type: trojan, udp: true, ws-opts: {headers: {User-Agent: "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36"}, path: "/ws-79dffb8106db"}, path: "/ws-79dffb8106db", host: "", tls: true}
+  - {name: "英国 0008", password: b585dac6-dc69-11ef-9f1c-f23c913c8d2b, port: 443, server: 2b678c95-t9zts0-tb5nzx-1mqag.uk.oshuawei.com, sni: 2b678c95-t9zts0-tb5nzx-1mqag.uk.oshuawei.com, tls: true, type: http, username: b585dac6-dc69-11ef-9f1c-f23c913c8d2b, network: tcp, path: "", host: ""}
+  - {client-fingerprint: chrome, name: "香港 0059", network: tcp, password: 4f4d1167-ef14-4304-9bce-0740472503ef, port: 48697, server: 103.177.136.42, skip-cert-verify: true, sni: gh.01.naiun.bilibili.com, type: trojan, udp: true, path: "", host: "", tls: true}
+  - {client-fingerprint: chrome, name: "香港 0060", network: tcp, password: 4f4d1167-ef14-4304-9bce-0740472503ef, port: 45619, server: 103.177.136.42, skip-cert-verify: true, sni: fr.01.naiun.bilibili.com, type: trojan, udp: true, path: "", host: "", tls: true}
+  - {client-fingerprint: chrome, name: "香港 0061", network: tcp, password: 4f4d1167-ef14-4304-9bce-0740472503ef, port: 48697, server: 103.177.136.45, skip-cert-verify: true, sni: gh.01.naiun.bilibili.com, type: trojan, udp: true, path: "", host: "", tls: true}
+  - {client-fingerprint: chrome, name: "瑞士 0003", network: ws, password: humanity, port: 443, server: 185.18.250.245, skip-cert-verify: false, sni: www.calmlunch.com, type: trojan, udp: true, ws-opts: {headers: {User-Agent: "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.65 Safari/537.36"}, path: "/assignment"}, path: "/assignment", host: "", tls: true}
+  - {client-fingerprint: chrome, name: "塞舌尔 0010", network: ws, password: humanity, port: 443, server: 45.130.125.112, skip-cert-verify: false, sni: www.calmlunch.com, type: trojan, udp: true, ws-opts: {headers: {User-Agent: "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.3 (KHTML, like Gecko) Chrome/6.0.472.63 Safari/534.3"}, path: "/assignment"}, path: "/assignment", host: "", tls: true}
+  - {name: "罗马尼亚 0089", network: ws, port: 8880, server: 45.12.30.40, type: vless, uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d, ws-opts: {headers: {Host: vms.lifetime28.workers.dev}, path: "/?ed=2560"}, path: "/?ed=2560", host: vms.lifetime28.workers.dev, sni: "", tls: false, cipher: auto}
+  - {name: "美国 0077", password: 6b7c1278-ff9d-11ee-84ca-f23c913c8d2b, port: 443, server: 2352dd11-tdups0-tf8z9r-1pr35.sjc.oshuawei.com, sni: 2352dd11-tdups0-tf8z9r-1pr35.sjc.oshuawei.com, tls: true, type: http, username: 6b7c1278-ff9d-11ee-84ca-f23c913c8d2b, network: tcp, path: "", host: ""}
+  - {name: "英国 0009", network: ws, port: 8880, server: 185.193.30.30, type: vless, uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d, ws-opts: {headers: {Host: vms.lifetime09.workers.dev}}, path: "", host: vms.lifetime09.workers.dev, sni: "", tls: false, cipher: auto}
+  - {client-fingerprint: chrome, encryption: none, name: "未知 0134", network: ws, port: 443, server: 173.245.59.35, servername: ld.235231.xyz, tls: true, type: vless, udp: true, uuid: 65d3f9b3-d289-4a8e-9c87-90bba156de30, ws-opts: {headers: {Host: ld.235231.xyz, User-Agent: "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"}, path: "/"}, xudp: true, path: "/", host: ld.235231.xyz, sni: ld.235231.xyz, cipher: auto}
+  - {client-fingerprint: chrome, name: "未知 0135", network: ws, password: humanity, port: 443, server: 172.64.146.102, skip-cert-verify: true, sni: www.gossipglove.com, type: trojan, udp: true, ws-opts: {headers: {User-Agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36"}, path: "/assignment"}, path: "/assignment", host: "", tls: true}
+  - {client-fingerprint: chrome, name: "香港 0062", network: tcp, password: 4f4d1167-ef14-4304-9bce-0740472503ef, port: 46424, server: 103.177.136.42, skip-cert-verify: true, sni: de.01.naiun.bilibili.com, type: trojan, udp: true, path: "", host: "", tls: true}
+  - {client-fingerprint: chrome, name: "香港 0063", network: tcp, password: 4f4d1167-ef14-4304-9bce-0740472503ef, port: 46424, server: 103.177.136.45, skip-cert-verify: true, sni: de.01.naiun.bilibili.com, type: trojan, udp: true, path: "", host: "", tls: true}
+  - {client-fingerprint: chrome, name: "香港 0064", network: tcp, password: 4f4d1167-ef14-4304-9bce-0740472503ef, port: 47909, server: 103.177.136.42, skip-cert-verify: true, sni: is.01.naiun.bilibili.com, type: trojan, udp: true, path: "", host: "", tls: true}
+  - {name: "美国 0079", password: 8f7cb770-1305-11ee-b107-f23c91cfbbc9, port: 443, server: 467ba717-t9zts0-tg8syu-1nyy5.se.oshuawei.com, sni: 467ba717-t9zts0-tg8syu-1nyy5.se.oshuawei.com, tls: true, type: http, username: 8f7cb770-1305-11ee-b107-f23c91cfbbc9, network: tcp, path: "", host: ""}
+  - {client-fingerprint: chrome, name: "香港 0065", network: tcp, password: 4f4d1167-ef14-4304-9bce-0740472503ef, port: 47909, server: 103.177.136.45, skip-cert-verify: true, sni: is.01.naiun.bilibili.com, type: trojan, udp: true, path: "", host: "", tls: true}
+  - {client-fingerprint: chrome, name: "香港 0066", network: tcp, password: 4f4d1167-ef14-4304-9bce-0740472503ef, port: 45553, server: 103.177.136.45, skip-cert-verify: true, sni: ch.01.naiun.bilibili.com, type: trojan, udp: true, path: "", host: "", tls: true}
+  - {client-fingerprint: chrome, name: "香港 0067", network: tcp, password: 4f4d1167-ef14-4304-9bce-0740472503ef, port: 45553, server: 103.177.136.42, skip-cert-verify: true, sni: ch.01.naiun.bilibili.com, type: trojan, udp: true, path: "", host: "", tls: true}
+  - {client-fingerprint: chrome, name: "未知 0136", network: ws, port: 443, server: 104.21.227.134, servername: t1s1.rittbo.kdns.fr, tls: true, type: vless, udp: true, uuid: eeb6823c-b926-4ea2-866a-5542edd26e59, ws-opts: {headers: {Host: t1s1.rittbo.kdns.fr, User-Agent: "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.117 Safari/537.36"}, path: "/"}, xudp: true, path: "/", host: t1s1.rittbo.kdns.fr, sni: t1s1.rittbo.kdns.fr, cipher: auto}
+  - {client-fingerprint: chrome, name: "香港 0068", network: tcp, password: 4f4d1167-ef14-4304-9bce-0740472503ef, port: 41943, server: 103.177.136.45, skip-cert-verify: true, sni: az.01.naiun.bilibili.com, type: trojan, udp: true, path: "", host: "", tls: true}
+  - {client-fingerprint: chrome, name: "香港 0069", network: tcp, password: 4f4d1167-ef14-4304-9bce-0740472503ef, port: 41943, server: 103.177.136.42, skip-cert-verify: true, sni: az.01.naiun.bilibili.com, type: trojan, udp: true, path: "", host: "", tls: true}
+  - {client-fingerprint: chrome, encryption: none, flow: xtls-rprx-vision-udp443, name: "墨西哥 0001", network: tcp, port: 443, server: 159.54.134.203, servername: r1.mizulina.top, tls: true, type: vless, udp: true, uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8, xudp: true, path: "", host: "", sni: r1.mizulina.top, cipher: auto}
+  - {name: "法国 0009", password: bf36227c-0191-11f0-aee1-f23c91cfbbc9, port: 443, server: cb269db2-t9zts0-tc2sod-1tizo.fr.oshuawei.com, sni: cb269db2-t9zts0-tc2sod-1tizo.fr.oshuawei.com, tls: true, type: http, username: bf36227c-0191-11f0-aee1-f23c91cfbbc9, network: tcp, path: "", host: ""}
+  - {name: "韩国 0012", password: bf36227c-0191-11f0-aee1-f23c91cfbbc9, port: 31433, server: 163f9999-t9zts0-tc2sod-1tizo.kr.oshuawei.com, sni: 163f9999-t9zts0-tc2sod-1tizo.kr.oshuawei.com, tls: true, type: http, username: bf36227c-0191-11f0-aee1-f23c91cfbbc9, network: tcp, path: "", host: ""}
+  - {name: "美国 0081", password: 6b7c1278-ff9d-11ee-84ca-f23c913c8d2b, port: 443, server: b3a237ac-teisg0-tf8z9r-1pr35.se.oshuawei.com, sni: b3a237ac-teisg0-tf8z9r-1pr35.se.oshuawei.com, tls: true, type: http, username: 6b7c1278-ff9d-11ee-84ca-f23c913c8d2b, network: tcp, path: "", host: ""}
+  - {name: "美国 0082", password: 6b7c1278-ff9d-11ee-84ca-f23c913c8d2b, port: 443, server: 42249635-tegxs0-tf8z9r-1pr35.se.oshuawei.com, sni: 42249635-tegxs0-tf8z9r-1pr35.se.oshuawei.com, tls: true, type: http, username: 6b7c1278-ff9d-11ee-84ca-f23c913c8d2b, network: tcp, path: "", host: ""}
+  - {alterId: 2, cipher: auto, h2-opts: {}, http-opts: {}, name: "香港 0070", network: tcp, port: 30804, server: v4.hdacd.com, skip-cert-verify: true, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, path: "", host: "", sni: "", tls: false}
+  - {name: "美国 0083", password: bf36227c-0191-11f0-aee1-f23c91cfbbc9, port: 443, server: c3adc2ba-t9zts0-tc2sod-1tizo.sjc.oshuawei.com, sni: c3adc2ba-t9zts0-tc2sod-1tizo.sjc.oshuawei.com, tls: true, type: http, username: bf36227c-0191-11f0-aee1-f23c91cfbbc9, network: tcp, path: "", host: ""}
+  - {name: "未知 0137", network: ws, password: humanity, port: 443, server: 104.18.152.208, skip-cert-verify: false, sni: www.ignitelimit.com, type: trojan, ws-opts: {headers: {Host: www.ignitelimit.com}, path: "/assignment"}, path: "/assignment", host: www.ignitelimit.com, tls: true}
+  - {down: "", fingerprint: "", name: "德国 0012", obfs: salamander, obfs-password: "eNM/NfxTsBqQIKcN0ezARS1z0f5mIxRd9GSwhVsyJlo=", password: f7cb07a0-e6f9-4d22-a60e-c61854450c89, port: 443, server: ff2.yuntong.click, skip-cert-verify: false, sni: ff2.yuntong.click, type: hysteria2, up: "", network: tcp, path: "", host: "", tls: true}
+  - {client-fingerprint: chrome, encryption: none, name: "未知 0138", network: ws, port: 443, server: 8.35.211.32, servername: gddy.hhlfy.de5.net, tls: true, type: vless, udp: true, uuid: 5b9fa73b-b549-480b-add9-c45e650d236f, ws-opts: {headers: {Host: gddy.hhlfy.de5.net, User-Agent: "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36"}, path: "/fp=firefox"}, xudp: true, path: "/fp=firefox", host: gddy.hhlfy.de5.net, sni: gddy.hhlfy.de5.net, cipher: auto}
+  - {alterId: 2, cipher: auto, name: "香港 0072", network: tcp, port: 30807, server: v10.zgtfqs.click, skip-cert-verify: false, tls: false, type: vmess, udp: true, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, xudp: true, path: "", host: "", sni: ""}
+  - {name: "罗马尼亚 0090", port: 9002, server: 84.239.49.225, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {client-fingerprint: chrome, name: "台湾 0006", network: ws, password: 114514, port: 443, server: 103.115.108.45, skip-cert-verify: true, sni: tjaaa.hhllfly.kdns.fr, type: trojan, udp: true, ws-opts: {headers: {User-Agent: "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36"}, path: "/"}, path: "/", host: "", tls: true}
+  - {client-fingerprint: chrome, name: "日本 0036", password: 7e70223b-f331-41d5-9313-02b8d2df2885, port: 57106, server: d1.catcat321.com, skip-cert-verify: true, sni: d.usj1.cat.bilibili.com, type: trojan, udp: true, network: tcp, path: "", host: "", tls: true}
+  - {name: "罗马尼亚 0091", port: 9002, server: 84.239.14.147, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http, network: tcp, path: "", host: "", password: ""}
+  - {cipher: aes-128-gcm, name: "香港 0073", password: JVrsLLN1tkN8oXZO, port: 13223, server: chengbai02.ascwt179.com, type: ss, udp: true, network: tcp, path: "", host: "", sni: "", tls: false}
+  - {client-fingerprint: chrome, name: "未知 0139", network: ws, password: 257d8622-6701-4c98-a432-67a9696f58ae, port: 443, server: shazira.app, skip-cert-verify: true, sni: shazira.app, type: trojan, udp: true, ws-opts: {headers: {User-Agent: "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36"}, path: "/Novan-ID9"}, path: "/Novan-ID9", host: "", tls: true}
+  - {client-fingerprint: chrome, name: "韩国 0013", network: ws, password: 114514, port: 443, server: 211.49.57.175, skip-cert-verify: true, sni: tjaaa.hhllfly.kdns.fr, type: trojan, udp: true, ws-opts: {headers: {User-Agent: "Mozilla/5.0 (X11; U; Linux x86_64; en-US) AppleWebKit/533.2 (KHTML, like Gecko) Chrome/5.0.342.1 Safari/533.2"}, path: "/"}, path: "/", host: "", tls: true}
+  - {alterId: 2, cipher: auto, name: "香港 0074", port: 30807, server: v10.hdacd.com, skip-cert-verify: false, tls: false, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, network: tcp, path: "", host: "", sni: ""}
+  - {client-fingerprint: chrome, name: "日本 0037", network: ws, password: HutaoCloud, port: 11543, server: 185.220.238.77, skip-cert-verify: true, sni: 185.220.238.77, type: trojan, udp: true, ws-opts: {headers: {User-Agent: "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"}, path: "/api"}, path: "/api", host: "", tls: true}
+  - {alterId: 2, cipher: auto, client-fingerprint: chrome, name: "香港 0075", network: tcp, port: 30808, server: v8.hdacd.com, skip-cert-verify: true, tls: false, type: vmess, udp: true, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, path: "", host: "", sni: ""}
+  - {client-fingerprint: chrome, name: "未知 0140", network: ws, password: bc2f8931-cb3d-4a13-8198-ad0d9d5ef06a, port: 443, server: hkntt1.mmm.uw.to, skip-cert-verify: false, sni: HKNTT1.mmm.uw.to, type: trojan, udp: true, ws-opts: {headers: {User-Agent: "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"}, path: "/bc2f8931-cb3d-4a13-8198-ad0d9d5ef06a-tr"}, path: "/bc2f8931-cb3d-4a13-8198-ad0d9d5ef06a-tr", host: "", tls: true}
+  - {cipher: 2022-blake3-aes-128-gcm, name: "美国 0084", password: "YTE1ZWU4ZTEyZjc3YmEzZA==", plugin: gost-plugin, plugin-opts: {host: one.local, mode: websocket, mux: true, path: "/ws", tls: false}, port: 80, server: 104.128.72.119, type: ss, udp: true, network: tcp, path: "", host: "", sni: "", tls: false}
+  - {client-fingerprint: chrome, name: "法国 0010", password: 63872b0d-87dd-4474-b690-92773af2922e, port: 20035, server: kkvlvvq-a.catcat321.com, skip-cert-verify: false, sni: hk.catxstar.com, type: trojan, udp: true, network: tcp, path: "", host: "", tls: true}
+  - {alterId: 2, cipher: auto, name: "香港 0078", network: tcp, port: 30829, server: v29.hdacd.com, skip-cert-verify: false, tls: false, type: vmess, udp: true, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, xudp: true, path: "", host: "", sni: ""}
+  - {alterId: 2, cipher: auto, name: "香港 0079", network: tcp, port: 30809, server: v9.hdacd.com, skip-cert-verify: false, tls: false, type: vmess, udp: true, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, xudp: true, path: "", host: "", sni: ""}
+  - {client-fingerprint: chrome, encryption: none, flow: xtls-rprx-vision, name: "土耳其 0005", network: tcp, port: 443, reality-opts: {public-key: zCeRZCK7gCGFmPlOzBaTWHVkmysMFJlPqgDTPZRjRx0, short-id: 6ba85179e30d4fc2}, server: assets.hihidress.com, servername: m.media-amazon.com, tls: true, type: vless, udp: true, uuid: 27f914c5-bdcc-441a-9459-368daf552606, xudp: true, path: "", host: "", sni: m.media-amazon.com, cipher: auto}
+  - {name: "阿联酋 0004", network: ws, password: MITIVPN, port: 443, server: 94.140.0.100, skip-cert-verify: false, sni: 95r.ir, type: trojan, udp: true, ws-opts: {headers: {Host: 95r.ir}, path: "/MiTiVPN=Usa"}, path: "/MiTiVPN=Usa", host: 95r.ir, tls: true}
+  - {name: "荷兰 0013", network: ws, password: MiTiVPN, port: 443, server: 45.131.4.118, skip-cert-verify: false, sni: 95r.ir, type: trojan, udp: true, ws-opts: {headers: {Host: 95r.ir}, path: "/MiTiVPN=Se"}, path: "/MiTiVPN=Se", host: 95r.ir, tls: true}
+  - {alterId: 0, cipher: auto, name: "未知 0141", network: tcp, port: 80, server: 127.0.0.53, tls: false, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, path: "", host: "", sni: ""}
+  - {name: "美国 0086", network: ws, password: eeb6823c-b926-4ea2-866a-5542edd26e59, port: 443, server: 64.186.248.160, skip-cert-verify: false, sni: tjsp.hhxaf.cc.cd, type: trojan, ws-opts: {path: "/"}, path: "/", host: "", tls: true}
+  - {name: "香港 0088", password: a305ac08-d136-11ee-b6db-f23c91cfbbc9, port: 443, server: ffc60249-t53wg0-t92wi1-1qkeg.hk2.hyhuawei.com, sni: ffc60249-t53wg0-t92wi1-1qkeg.hk2.hyhuawei.com, tls: false, type: hysteria2, network: tcp, path: "", host: ""}
+  - {name: "荷兰 0015", obfs: salamander, obfs-password: 2a7e8084206388f4, password: gdubbi2zb6gdp0c8, port: 443, server: 103.251.167.168, skip-cert-verify: false, sni: gettestin.xxee.ru, tls: false, type: hysteria2, network: tcp, path: "", host: ""}
+  - {name: "法国 0014", password: 2b57ec48-0da4-11ef-8f35-f23c913c8d2b, port: 443, server: fe01bdcc-t9zts0-tan99f-1rdqg.fr.oshuawei.com, tls: true, type: http, udp: true, username: 2b57ec48-0da4-11ef-8f35-f23c913c8d2b, network: tcp, path: "", host: "", sni: ""}
+  - {name: "英国 0011", password: 25b2699a-e18e-11ec-8e69-f23c91cfbbc9, port: 443, server: 663a898a-t9zts0-tatrrz-yjq0.uk.oshuawei.com, tls: true, type: http, udp: true, username: 25b2699a-e18e-11ec-8e69-f23c91cfbbc9, network: tcp, path: "", host: "", sni: ""}
+  - {name: "英国 0012", password: 2b57ec48-0da4-11ef-8f35-f23c913c8d2b, port: 443, server: 48997541-t9zts0-tan99f-1rdqg.uk.oshuawei.com, tls: true, type: http, udp: true, username: 2b57ec48-0da4-11ef-8f35-f23c913c8d2b, network: tcp, path: "", host: "", sni: ""}
+  - {name: "香港 0089", password: 25b2699a-e18e-11ec-8e69-f23c91cfbbc9, port: 8443, server: 19016135-te7og0-tfo5nb-yjq0.hkt.cdnhuawei.com, tls: true, type: http, udp: true, username: 25b2699a-e18e-11ec-8e69-f23c91cfbbc9, network: tcp, path: "", host: "", sni: ""}
+  - {name: "日本 0044", password: 2b57ec48-0da4-11ef-8f35-f23c913c8d2b, port: 443, server: e760451b-ta1og0-tan99f-1rdqg.jp.oshuawei.com, tls: true, type: http, udp: true, username: 2b57ec48-0da4-11ef-8f35-f23c913c8d2b, network: tcp, path: "", host: "", sni: ""}
+  - {name: "日本 0045", password: 25b2699a-e18e-11ec-8e69-f23c91cfbbc9, port: 443, server: cffa61bc-t9zts0-tatrrz-yjq0.jp.oshuawei.com, tls: true, type: http, udp: true, username: 25b2699a-e18e-11ec-8e69-f23c91cfbbc9, network: tcp, path: "", host: "", sni: ""}
+  - {name: "美国 0089", password: 25b2699a-e18e-11ec-8e69-f23c91cfbbc9, port: 443, server: 786f666d-t9zts0-tatrrz-yjq0.sjc.oshuawei.com, tls: true, type: http, udp: true, username: 25b2699a-e18e-11ec-8e69-f23c91cfbbc9, network: tcp, path: "", host: "", sni: ""}
+  - {name: "美国 0090", password: 2b57ec48-0da4-11ef-8f35-f23c913c8d2b, port: 443, server: d6a15dd2-tegxs0-tejxhc-1rdqg.se.oshuawei.com, tls: true, type: http, udp: true, username: 2b57ec48-0da4-11ef-8f35-f23c913c8d2b, network: tcp, path: "", host: "", sni: ""}
+  - {name: "阿联酋 0006", server: 94.140.0.100, port: 443, type: trojan, password: MITIVPN, sni: 95r.ir, skip-cert-verify: false, network: ws, ws-opts: {}, headers: "{Host: 95r.ir", udp: true, path: "", host: "", tls: true}
+  - {name: "荷兰 0016", server: 45.131.4.118, port: 443, type: trojan, password: MiTiVPN, sni: 95r.ir, skip-cert-verify: false, network: ws, ws-opts: {}, headers: "{Host: 95r.ir", udp: true, path: "", host: "", tls: true}
+  - {name: "未知 0155", type: vmess, server: www.speedtest.net, port: 8080, cipher: auto, uuid: 72f5bd85-6d92-4644-a1c4-542a92896a8b, alterId: 0, tls: true, skip-cert-verify: true, network: httpupgrade, path: "", host: "", sni: ""}
+  - {name: "未知 0156", type: vmess, server: 104.17.77.77, port: 8443, cipher: auto, uuid: 60441548-b68e-43b2-8191-e3b884be4b3c, alterId: 0, tls: true, skip-cert-verify: true, network: ws, ws-opts: {}, headers: "{\"host\":\"v2ray1.dozapp.xyz\"", path: "", host: "", sni: ""}
+  - {name: "荷兰 0019", type: trojan, server: 91.221.190.80, port: 443, alterId: 0, tls: true, password: "8r%3C%5B9%27l6hAO%238ZQi", sni: Koma-YT.PAGeS.Dev, skip-cert-verify: true, udp: true, network: tcp, path: "", host: ""}
+  - {name: "日本 0048", type: trojan, server: d1.catcat321.com, port: 58995, alterId: 0, tls: true, password: 7e70223b-f331-41d5-9313-02b8d2df2885, sni: d.usj1.cat.bilibili.com, skip-cert-verify: true, udp: true, network: tcp, path: "", host: ""}
+  - {name: "美国 0095", type: vmess, server: 69.84.182.49, port: 80, cipher: auto, uuid: f8975871-a7a0-4906-8835-a23c1258ca1e, alterId: 0, tls: true, skip-cert-verify: true, network: ws, ws-opts: {}, headers: "{\"host\":\"google.whatsapp.snapp.torob.basalam.zula.uplaod-music.ir.\"", path: "", host: "", sni: ""}
+  - {name: "日本 0049", type: trojan, server: 103.125.216.68, port: 443, alterId: 0, tls: true, password: T9qoEuuxUEa9Dk3KxnTWrs6J8ilng9sCIf, skip-cert-verify: true, udp: true, network: tcp, path: "", host: "", sni: ""}
+  - {name: "新加坡 0023", type: ss, server: 45.32.122.179, port: 23027, cipher: chacha20-ietf-poly1305, alterId: 0, tls: true, password: "I-bP3lFh.dTG3XitF7XtVK83CZ7rI2Ut=n", skip-cert-verify: true, network: tcp, path: "", host: "", sni: ""}
+  - {name: "南非 0001", type: vmess, server: 102.177.189.101, port: 443, cipher: auto, uuid: 8f74ec8a-971c-11ed-a8fc-0242ac120002, alterId: 0, tls: true, skip-cert-verify: true, network: ws, ws-opts: {}, headers: "{\"host\":\"4fc128ce-4845-11f0-a948-6a75f667b472.ShomaParvazRoYadetonNist-BypassIsHere.lat\"", path: "", host: "", sni: ""}
+  - {name: "奥地利 0001", type: trojan, server: 212.183.88.136, port: 443, alterId: 0, tls: true, password: humanity, sni: www.calmlunch.com, skip-cert-verify: true, network: ws, udp: true, path: "", host: "", ws-opts: {}}
+  - {name: "未知 0159", type: trojan, server: 104.16.72.70, port: 443, alterId: 0, tls: true, password: 6c862415-30d2-4813-8e49-42e99a0bd415, sni: space.byu.id.yxls.eu.cc, skip-cert-verify: true, network: ws, udp: true, path: "", host: "", ws-opts: {}}
+  - {name: "未知 0161", type: trojan, server: 104.19.0.219, port: 8080, alterId: 0, tls: true, password: 9c521e24-7326-acd3-acec-d0afac2b465d, sni: red-cell-47f9.milaniomilan9.workers.dev, skip-cert-verify: true, network: ws, udp: true, path: "", host: "", ws-opts: {}}
+  - {name: "未知 0162", type: trojan, server: 104.17.121.43, port: 443, alterId: 0, tls: true, password: humanity, sni: www.calmlunch.com, skip-cert-verify: true, network: ws, udp: true, path: "", host: "", ws-opts: {}}
+  - {name: "德国 0023", type: trojan, server: 146.75.116.28, port: 80, alterId: 0, tls: true, password: Mitivpn, skip-cert-verify: true, udp: true, network: tcp, path: "", host: "", sni: ""}
+  - {name: "韩国 0016", type: trojan, server: 211.49.57.161, port: 443, alterId: 0, tls: true, password: eeb6823c-b926-4ea2-866a-5542edd26e59, sni: hhcm.hhxaf.cc.cd, skip-cert-verify: true, udp: true, network: tcp, path: "", host: ""}
+  - {name: "德国 0025", type: trojan, server: 185.137.157.154, port: 443, alterId: 0, tls: true, password: n-S5Kuz58YgwljisuLEJltip2OWf1ourWz, sni: fra154.clientfirewall.click, skip-cert-verify: true, network: tcp, udp: true, path: "", host: ""}
+  - {name: "未知 0164", type: vmess, server: 188.114.96.145, port: 80, cipher: auto, uuid: 43dcdce1-3cea-4193-bc8d-90b92071d779, alterId: 0, tls: true, skip-cert-verify: true, network: ws, ws-opts: {}, headers: "{\"host\":\"tr1-smart.adelping.com\"", path: "", host: "", sni: ""}
+  - {name: "韩国 0017", type: trojan, server: 121.178.83.161, port: 26214, alterId: 0, tls: true, password: GKHWMe2R4qwNcNxu6l3KMkdd, sni: vpn1.rnmcnm.com, skip-cert-verify: true, udp: true, network: tcp, path: "", host: ""}
+  - {name: "韩国 0018", type: trojan, server: 211.49.57.178, port: 443, alterId: 0, tls: true, password: eeb6823c-b926-4ea2-866a-5542edd26e59, sni: hhcm.hhxaf.cc.cd, skip-cert-verify: true, udp: true, network: tcp, path: "", host: ""}
+  - {name: "美国 0098", type: ss, server: 15.204.247.49, port: 12000, cipher: aes-256-gcm, alterId: 0, tls: true, password: "8JCsPssfgS8tiRwiMlhARg==", skip-cert-verify: true, network: tcp, path: "", host: "", sni: ""}
+  - {name: "德国 0026", type: trojan, server: 146.75.116.11, port: 80, alterId: 0, tls: true, password: Mitivpn, skip-cert-verify: true, udp: true, network: tcp, path: "", host: "", sni: ""}
+  - {name: "意大利 0003", type: trojan, server: 151.241.215.148, port: 443, alterId: 0, tls: true, password: "8r%3C%5B9%27l6hAO%238ZQi", sni: Koma-YT.PAGeS.Dev, skip-cert-verify: true, udp: true, network: tcp, path: "", host: ""}
+  - {name: "美国 0099", type: trojan, server: 151.101.56.6, port: 443, alterId: 0, tls: true, password: Mitivpn, sni: ssl.fastly.com, skip-cert-verify: true, udp: true, network: tcp, path: "", host: ""}
+  - {name: "英国 0015", type: vmess, server: vip3.sanaiehdasti.com, port: 1546, cipher: auto, uuid: 6c5fcae3-16e8-4a93-b28e-05588d5d9342, alterId: 0, tls: true, skip-cert-verify: true, network: tcp, path: "", host: "", sni: ""}
+  - {name: "未知 0166", type: vmess, server: 172.64.146.102, port: 8443, cipher: auto, uuid: c1a8dee0-bdad-4b6d-9926-5e15c3c8ed7d, alterId: 0, tls: true, skip-cert-verify: true, network: ws, ws-opts: {}, headers: "{\"host\":\"marco-visibility-tops-estimate.trycloudflare.com\"", path: "", host: "", sni: ""}
+  - {name: "塞舌尔 0022", type: trojan, server: 45.130.125.126, port: 443, alterId: 0, tls: true, password: 86957ec0-b213-433b-a43b-51f2175e0ec3, sni: space.byu.id.yxls.eu.cc, skip-cert-verify: true, network: ws, udp: true, path: "", host: "", ws-opts: {}}
+  - {name: "未知 0167", type: vmess, server: 172.64.155.209, port: 2053, cipher: auto, uuid: 0d40c06e-9f73-4642-b957-7a12ef333a62, alterId: 0, tls: true, skip-cert-verify: true, network: xhttp, path: "", host: "", sni: ""}
+  - {name: "德国 0027", type: trojan, server: 185.137.157.140, port: 443, alterId: 0, tls: true, password: dh-Ws-YoJIgTYLZ-A5VljeduVse-vhDl7Q, skip-cert-verify: true, udp: true, network: tcp, path: "", host: "", sni: ""}
+  - {name: "德国 0028", type: trojan, server: 92.119.35.105, port: 443, alterId: 0, tls: true, password: urhj8z8R8nBovrNsYzXhL35jLGC5ruguRh, skip-cert-verify: true, udp: true, network: tcp, path: "", host: "", sni: ""}
+  - {name: "德国 0029", type: trojan, server: 146.75.116.237, port: 80, alterId: 0, tls: true, password: Mitivpn, skip-cert-verify: true, udp: true, network: tcp, path: "", host: "", sni: ""}
+  - {name: "德国 0030", type: trojan, server: 185.137.157.59, port: 443, alterId: 0, tls: true, password: fFj7MAGy1VlAWmB_gMBG_27oPYTSHvV6MX, sni: www.lateralio.click, skip-cert-verify: true, network: tcp, udp: true, path: "", host: ""}
+  - {name: "日本 0055", type: trojan, server: d1.catcat321.com, port: 47803, alterId: 0, tls: true, password: 7e70223b-f331-41d5-9313-02b8d2df2885, sni: d.usj1.cat.bilibili.com, skip-cert-verify: true, udp: true, network: tcp, path: "", host: ""}
+  - {name: "日本 0056", type: trojan, server: d1.catcat321.com, port: 23796, alterId: 0, tls: true, password: 7e70223b-f331-41d5-9313-02b8d2df2885, sni: d.usj1.cat.bilibili.com, skip-cert-verify: true, udp: true, network: tcp, path: "", host: ""}
+  - {name: "日本 0057", type: trojan, server: d1.catcat321.com, port: 50888, alterId: 0, tls: true, password: 7e70223b-f331-41d5-9313-02b8d2df2885, sni: d.usj1.cat.bilibili.com, skip-cert-verify: true, udp: true, network: tcp, path: "", host: ""}
+  - {name: "伊朗 0002", type: vmess, server: nlt.reata.ir, port: 1020, cipher: auto, uuid: 6244c41a-f4c1-4733-a654-c38f7729b13c, alterId: 0, tls: true, skip-cert-verify: true, network: tcp, path: "", host: "", sni: ""}
+  - {name: "日本 0058", type: trojan, server: d1.catcat321.com, port: 54007, alterId: 0, tls: true, password: 7e70223b-f331-41d5-9313-02b8d2df2885, sni: d.usj1.cat.bilibili.com, skip-cert-verify: true, udp: true, network: tcp, path: "", host: ""}
+  - {name: "德国 0031", type: trojan, server: 146.75.116.134, port: 80, alterId: 0, tls: true, password: Mitivpn, skip-cert-verify: true, udp: true, network: tcp, path: "", host: "", sni: ""}
+  - {name: "日本 0059", type: trojan, server: d1.catcat321.com, port: 56887, alterId: 0, tls: true, password: 7e70223b-f331-41d5-9313-02b8d2df2885, sni: d.usj1.cat.bilibili.com, skip-cert-verify: true, udp: true, network: tcp, path: "", host: ""}
+  - {name: "英国 0016", type: vmess, server: vip2.sanaiehdasti.com, port: 1930, cipher: auto, uuid: 93616230-f701-42c2-83d6-6dd51b2651f0, alterId: 0, tls: true, skip-cert-verify: true, network: tcp, path: "", host: "", sni: ""}
+  - {name: "日本 0061", type: trojan, server: d1.catcat321.com, port: 14584, alterId: 0, tls: true, password: 7e70223b-f331-41d5-9313-02b8d2df2885, sni: d.usj1.cat.bilibili.com, skip-cert-verify: true, udp: true, network: tcp, path: "", host: ""}
+  - {name: "未知 0169", type: vmess, server: 104.16.90.120, port: 8443, cipher: auto, uuid: 01c0530f-168d-4645-a74c-f2b3b015c217, alterId: 0, tls: true, skip-cert-verify: true, network: ws, ws-opts: {}, headers: "{\"host\":\"node-de-1.e4e3e2.top\"", path: "", host: "", sni: ""}
+  - {name: "美国 0103", type: trojan, server: adak.sonofthewinds.com, port: 34470, alterId: 0, tls: true, password: 825929f4-c702-35ce-9124-00d3f95b8c32, sni: gj1.sonofthewinds.com, skip-cert-verify: true, udp: true, network: tcp, path: "", host: ""}
+  - {name: "巴西 0001", type: ss, server: 38.180.221.143, port: 17283, cipher: chacha20-ietf-poly1305, alterId: 0, tls: true, password: "bwjNPcwgz5+1gCyi+rB+nfqugw38B7tqVa", skip-cert-verify: true, network: tcp, path: "", host: "", sni: ""}
+  - {name: "未知 0170", type: vmess, server: heu83ujieiwoeu83j2ewjehuwehu8.dentiscan.ca, port: 80, cipher: auto, uuid: e2923bc6-8204-4768-98ea-379d48ea8a7a, alterId: 0, tls: true, skip-cert-verify: true, network: ws, ws-opts: {}, headers: "{\"host\":\"heu83ujieiwoeu83j2ewjehuwehu8.dentiscan.ca\"", path: "", host: "", sni: ""}
+  - {name: "德国 0032", type: trojan, server: 146.75.116.190, port: 80, alterId: 0, tls: true, password: Mitivpn, skip-cert-verify: true, udp: true, network: tcp, path: "", host: "", sni: ""}
+  - {name: "美国 0104", type: trojan, server: 151.101.110.219, port: 443, alterId: 0, tls: true, password: MITIVPN, sni: global.fastly.com, skip-cert-verify: true, network: ws, udp: true, path: "", host: "", ws-opts: {}}
+  - {name: "荷兰 0020", type: trojan, server: 152.53.200.89, port: 8443, alterId: 0, tls: true, password: "8r%3C%5B9%27l6hAO%238ZQi", sni: Koma-YT.PAGeS.Dev, skip-cert-verify: true, udp: true, network: tcp, path: "", host: ""}
+  - {name: "美国 0105", type: trojan, server: adak.sonofthewinds.com, port: 34450, alterId: 0, tls: true, password: 825929f4-c702-35ce-9124-00d3f95b8c32, sni: tt1.sonofthewinds.com, skip-cert-verify: true, udp: true, network: tcp, path: "", host: ""}
+  - {name: "未知 0171", type: trojan, server: 188.114.97.6, port: 443, alterId: 0, tls: true, password: mitivpn, sni: 2.1.mitivpn.dee.srfsl.gleobal.fastl3y.n3et.mitivpn.site, skip-cert-verify: true, udp: true, network: tcp, path: "", host: ""}
+  - {name: "德国 0033", type: vmess, server: daroo.iran-shop.co, port: 2087, cipher: auto, uuid: f192a2a2-b1f8-4acb-b51d-8f9aa276ef42, alterId: 0, tls: true, skip-cert-verify: true, network: ws, ws-opts: {}, path: "", host: "", sni: ""}
+  - {name: "未知 0172", type: trojan, server: 104.16.174.121, port: 443, alterId: 0, tls: true, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: true, network: ws, udp: true, path: "", host: "", ws-opts: {}}
+  - {name: "未知 0173", type: vmess, server: www.speedtest.net, port: 443, cipher: auto, uuid: c8b3fd38-cb60-434c-bd7e-63638226f4a8, alterId: 0, tls: true, skip-cert-verify: true, network: httpupgrade, path: "", host: "", sni: ""}
+  - {name: "日本 0063", type: trojan, server: d1.catcat321.com, port: 47339, alterId: 0, tls: true, password: 7e70223b-f331-41d5-9313-02b8d2df2885, sni: d.usj1.cat.bilibili.com, skip-cert-verify: true, udp: true, network: tcp, path: "", host: ""}
+  - {name: "德国 0034", type: vmess, server: de.connfull.org, port: 2053, cipher: auto, uuid: f2ff4ae6-cf2d-4d15-9f0d-b6d9980df9aa, alterId: 0, tls: true, skip-cert-verify: true, network: tcp, path: "", host: "", sni: ""}
+  - {name: "未知 0175", type: vmess, server: TM_AZARBAYJAB1.SERV.9.pagES.DEV, port: 80, cipher: auto, uuid: 43dcdce1-3cea-4193-bc8d-90b92071d779, alterId: 0, tls: true, skip-cert-verify: true, network: ws, ws-opts: {}, headers: "{\"host\":\"tr1-smart.adelping.com\"", path: "", host: "", sni: ""}
+  - {name: "加拿大 0006", type: ss, server: 144.217.164.29, port: 12000, cipher: aes-256-gcm, alterId: 0, tls: true, password: "8JCsPssfgS8tiRwiMlhARg==", skip-cert-verify: true, network: tcp, path: "", host: "", sni: ""}
+  - {name: "美国 0107", type: trojan, server: 165.215.250.14, port: 443, alterId: 0, tls: true, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: true, udp: true, network: tcp, path: "", host: ""}
+  - {name: "德国 0035", type: trojan, server: 146.75.116.213, port: 80, alterId: 0, tls: true, password: Mitivpn, skip-cert-verify: true, udp: true, network: tcp, path: "", host: "", sni: ""}
+  - {name: "意大利 0004", type: trojan, server: 151.101.242.172, port: 80, alterId: 0, tls: true, password: Mitivpn, skip-cert-verify: true, udp: true, network: tcp, path: "", host: "", sni: ""}
+  - {name: "日本 0067", type: trojan, server: d1.catcat321.com, port: 13320, alterId: 0, tls: true, password: 7e70223b-f331-41d5-9313-02b8d2df2885, sni: d.usj1.cat.bilibili.com, skip-cert-verify: true, udp: true, network: tcp, path: "", host: ""}
+  - {name: "芬兰 0009", type: vmess, server: marioci.sanaiehdasti.com, port: 1920, cipher: auto, uuid: 93616230-f701-42c2-83d6-6dd51b2651f0, alterId: 0, tls: true, skip-cert-verify: true, network: tcp, path: "", host: "", sni: ""}
+  - {name: "美国 0108", type: trojan, server: adak.sonofthewinds.com, port: 34436, alterId: 0, tls: true, password: 825929f4-c702-35ce-9124-00d3f95b8c32, sni: hh4.sonofthewinds.com, skip-cert-verify: true, udp: true, network: tcp, path: "", host: ""}
+  - {name: "美国 0110", type: trojan, server: 149.104.104.58, port: 443, alterId: 0, tls: true, password: "S.ibYdZshHTF-ne.M+.Fznp_-hyFFnCSix", sni: 149.104.104.58, skip-cert-verify: true, udp: true, network: tcp, path: "", host: ""}
+  - {name: "德国 0037", type: trojan, server: 92.119.35.127, port: 443, alterId: 0, tls: true, password: "aR9EJWEB2Jp3m6xKJK=Ct7kLyqFSU-iDBR", skip-cert-verify: true, network: tcp, udp: true, path: "", host: "", sni: ""}
+  - {name: "韩国 0023", type: trojan, server: 211.49.57.175, port: 443, alterId: 0, tls: true, password: eeb6823c-b926-4ea2-866a-5542edd26e59, sni: hhcm.hhxaf.cc.cd, skip-cert-verify: true, udp: true, network: tcp, path: "", host: ""}
+  - {name: "印度 0002", type: ss, server: 103.111.114.80, port: 28061, cipher: chacha20-ietf-poly1305, alterId: 0, tls: true, password: WOir3lXBhMHDcLFPQdEZXPu37_pTQDCXfm, skip-cert-verify: true, network: tcp, path: "", host: "", sni: ""}
+  - {name: "德国 0039", type: vmess, server: 159.89.29.136, port: 80, cipher: auto, uuid: d20d6ede-433c-11ed-b81f-cfd905df9958, alterId: 0, tls: true, skip-cert-verify: true, network: ws, ws-opts: {}, headers: "{\"host\":\"cx.com\"", path: "", host: "", sni: ""}
+  - {name: "美国 0114", server: 134.195.101.116, type: ss, country: "🏁ZZ", port: 2377, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, cipher: chacha20-ietf-poly1305, plugin: obfs, plugin-opts: {host: "817aa69.default.nintendo.com:112719", mode: tls}, delay: 1047, network: tcp, path: "", host: "", sni: "", tls: false}
+  - {name: "美国 0115", server: 134.195.101.117, type: ss, country: "🏁ZZ", port: 2377, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, cipher: chacha20-ietf-poly1305, plugin: obfs, plugin-opts: {host: "817aa69.default.nintendo.com:112719", mode: tls}, delay: 1712, network: tcp, path: "", host: "", sni: "", tls: false}
+  - {name: "美国 0116", server: 134.195.101.119, type: ss, country: "🏁ZZ", port: 2377, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, cipher: chacha20-ietf-poly1305, plugin: obfs, plugin-opts: {host: "817aa69.default.nintendo.com:112719", mode: tls}, delay: 1745, network: tcp, path: "", host: "", sni: "", tls: false}
+  - {name: "美国 0117", server: 134.195.101.118, type: ss, country: "🏁ZZ", port: 2377, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, cipher: chacha20-ietf-poly1305, plugin: obfs, plugin-opts: {host: "817aa69.default.nintendo.com:112719", mode: tls}, delay: 737, network: tcp, path: "", host: "", sni: "", tls: false}
+  - {name: "未知 0178", server: h1.bnm.uw.to, type: vmess, country: "🏁ZZ", port: 443, uuid: 32d7c5c7-ab96-4803-bff3-cb9c67e66a64, alterId: 0, cipher: auto, network: ws, servername: h1.bnm.uw.to, http-opts: {}, h2-opts: {}, tls: true, skip-cert-verify: true, ws-opts: {path: "/32d7c5c7-ab96-4803-bff3-cb9c67e66a64-vm", headers: {HOST: h1.bnm.uw.to}}, delay: 2518, path: "/32d7c5c7-ab96-4803-bff3-cb9c67e66a64-vm", host: "", sni: h1.bnm.uw.to}
+  - {name: "未知 0179", server: SL2.bnm.uw.to, type: vmess, country: "🏁ZZ", port: 443, uuid: bc1f0340-954a-4e69-8676-f916629e6f2a, alterId: 0, cipher: auto, network: ws, servername: SL2.bnm.uw.to, http-opts: {}, h2-opts: {}, tls: true, skip-cert-verify: true, ws-opts: {path: "/bc1f0340-954a-4e69-8676-f916629e6f2a-vm", headers: {HOST: SL2.bnm.uw.to}}, delay: 2072, path: "/bc1f0340-954a-4e69-8676-f916629e6f2a-vm", host: "", sni: SL2.bnm.uw.to}
+
+proxy-groups:
+  - name: 🚀 所有节点
+    type: select
+    proxies:
+      - "日本 0002"
+      - "美国 0004"
+      - "美国 0005"
+      - "美国 0006"
+      - "美国 0008"
+      - "美国 0009"
+      - "新加坡 0001"
+      - "韩国 0001"
+      - "日本 0004"
+      - "日本 0005"
+      - "日本 0006"
+      - "日本 0008"
+      - "日本 0009"
+      - "日本 0010"
+      - "日本 0011"
+      - "日本 0012"
+      - "日本 0014"
+      - "日本 0015"
+      - "日本 0016"
+      - "法国 0001"
+      - "日本 0017"
+      - "日本 0018"
+      - "香港 0001"
+      - "台湾 0001"
+      - "日本 0020"
+      - "日本 0022"
+      - "德国 0004"
+      - "香港 0002"
+      - "香港 0003"
+      - "香港 0004"
+      - "香港 0005"
+      - "香港 0007"
+      - "香港 0008"
+      - "日本 0024"
+      - "日本 0025"
+      - "香港 0009"
+      - "荷兰 0002"
+      - "荷兰 0003"
+      - "罗马尼亚 0002"
+      - "罗马尼亚 0003"
+      - "罗马尼亚 0005"
+      - "罗马尼亚 0006"
+      - "土耳其 0002"
+      - "土耳其 0003"
+      - "瑞典 0001"
+      - "土耳其 0004"
+      - "乌克兰 0001"
+      - "乌克兰 0002"
+      - "乌克兰 0003"
+      - "香港 0010"
+      - "香港 0011"
+      - "英国 0001"
+      - "英国 0002"
+      - "香港 0012"
+      - "香港 0013"
+      - "英国 0003"
+      - "香港 0023"
+      - "香港 0024"
+      - "法国 0002"
+      - "香港 0025"
+      - "香港 0026"
+      - "香港 0027"
+      - "香港 0028"
+      - "香港 0029"
+      - "香港 0030"
+      - "韩国 0002"
+      - "韩国 0003"
+      - "荷兰 0004"
+      - "塞舌尔 0006"
+      - "美国 0014"
+      - "荷兰 0005"
+      - "未知 0052"
+      - "未知 0053"
+      - "未知 0054"
+      - "未知 0055"
+      - "未知 0056"
+      - "未知 0057"
+      - "未知 0058"
+      - "未知 0059"
+      - "未知 0060"
+      - "未知 0061"
+      - "塞舌尔 0007"
+      - "未知 0062"
+      - "未知 0063"
+      - "未知 0064"
+      - "未知 0065"
+      - "未知 0067"
+      - "未知 0068"
+      - "未知 0070"
+      - "未知 0071"
+      - "未知 0072"
+      - "未知 0073"
+      - "未知 0074"
+      - "未知 0075"
+      - "未知 0078"
+      - "未知 0079"
+      - "未知 0080"
+      - "未知 0081"
+      - "未知 0082"
+      - "未知 0083"
+      - "未知 0084"
+      - "美国 0017"
+      - "美国 0018"
+      - "未知 0085"
+      - "未知 0086"
+      - "未知 0087"
+      - "未知 0088"
+      - "未知 0089"
+      - "未知 0090"
+      - "未知 0093"
+      - "未知 0094"
+      - "未知 0095"
+      - "未知 0097"
+      - "未知 0098"
+      - "未知 0099"
+      - "未知 0100"
+      - "未知 0101"
+      - "美国 0019"
+      - "美国 0020"
+      - "美国 0022"
+      - "美国 0023"
+      - "美国 0027"
+      - "美国 0030"
+      - "未知 0105"
+      - "美国 0031"
+      - "美国 0032"
+      - "美国 0034"
+      - "香港 0032"
+      - "波兰 0001"
+      - "波兰 0002"
+      - "未知 0106"
+      - "美国 0038"
+      - "瑞典 0003"
+      - "未知 0107"
+      - "未知 0108"
+      - "瑞典 0004"
+      - "美国 0040"
+      - "罗马尼亚 0007"
+      - "荷兰 0007"
+      - "新西兰 0001"
+      - "卢森堡 0001"
+      - "美国 0041"
+      - "美国 0042"
+      - "美国 0044"
+      - "美国 0045"
+      - "美国 0047"
+      - "未知 0109"
+      - "俄罗斯联邦 0005"
+      - "德国 0010"
+      - "意大利 0002"
+      - "比利时 0001"
+      - "法国 0003"
+      - "荷兰 0008"
+      - "比利时 0002"
+      - "荷兰 0009"
+      - "英国 0004"
+      - "法国 0004"
+      - "英国 0005"
+      - "未知 0110"
+      - "未知 0111"
+      - "香港 0037"
+      - "未知 0112"
+      - "香港 0040"
+      - "香港 0041"
+      - "未知 0113"
+      - "中国 0001"
+      - "日本 0029"
+      - "新加坡 0004"
+      - "新加坡 0005"
+      - "新加坡 0006"
+      - "日本 0030"
+      - "爱沙尼亚 0001"
+      - "美国 0051"
+      - "韩国 0008"
+      - "未知 0114"
+      - "斯洛文尼亚 0001"
+      - "塞舌尔 0008"
+      - "未知 0115"
+      - "美国 0052"
+      - "香港 0044"
+      - "美国 0053"
+      - "未知 0118"
+      - "斯洛文尼亚 0002"
+      - "美国 0054"
+      - "罗马尼亚 0008"
+      - "香港 0045"
+      - "未知 0119"
+      - "塞舌尔 0009"
+      - "未知 0120"
+      - "未知 0121"
+      - "美国 0055"
+      - "美国 0056"
+      - "日本 0031"
+      - "俄罗斯联邦 0010"
+      - "英国 0006"
+      - "香港 0047"
+      - "美国 0057"
+      - "未知 0124"
+      - "美国 0058"
+      - "阿联酋 0003"
+      - "美国 0061"
+      - "美国 0062"
+      - "美国 0063"
+      - "韩国 0009"
+      - "美国 0064"
+      - "美国 0065"
+      - "美国 0066"
+      - "香港 0049"
+      - "美国 0067"
+      - "美国 0068"
+      - "美国 0069"
+      - "香港 0050"
+      - "未知 0125"
+      - "未知 0126"
+      - "新加坡 0012"
+      - "美国 0070"
+      - "美国 0071"
+      - "美国 0073"
+      - "美国 0074"
+      - "美国 0075"
+      - "罗马尼亚 0009"
+      - "波兰 0003"
+      - "荷兰 0012"
+      - "美国 0076"
+      - "罗马尼亚 0010"
+      - "罗马尼亚 0011"
+      - "罗马尼亚 0012"
+      - "罗马尼亚 0013"
+      - "俄罗斯联邦 0012"
+      - "罗马尼亚 0014"
+      - "罗马尼亚 0015"
+      - "罗马尼亚 0016"
+      - "罗马尼亚 0017"
+      - "罗马尼亚 0018"
+      - "罗马尼亚 0019"
+      - "罗马尼亚 0020"
+      - "未知 0127"
+      - "罗马尼亚 0021"
+      - "罗马尼亚 0022"
+      - "罗马尼亚 0023"
+      - "罗马尼亚 0024"
+      - "罗马尼亚 0025"
+      - "罗马尼亚 0026"
+      - "罗马尼亚 0027"
+      - "香港 0054"
+      - "罗马尼亚 0028"
+      - "罗马尼亚 0029"
+      - "罗马尼亚 0030"
+      - "台湾 0003"
+      - "罗马尼亚 0031"
+      - "罗马尼亚 0032"
+      - "罗马尼亚 0033"
+      - "罗马尼亚 0034"
+      - "罗马尼亚 0035"
+      - "罗马尼亚 0036"
+      - "未知 0128"
+      - "罗马尼亚 0037"
+      - "罗马尼亚 0039"
+      - "罗马尼亚 0040"
+      - "罗马尼亚 0041"
+      - "罗马尼亚 0042"
+      - "罗马尼亚 0043"
+      - "罗马尼亚 0044"
+      - "罗马尼亚 0045"
+      - "罗马尼亚 0046"
+      - "罗马尼亚 0047"
+      - "罗马尼亚 0048"
+      - "罗马尼亚 0049"
+      - "罗马尼亚 0050"
+      - "罗马尼亚 0051"
+      - "罗马尼亚 0053"
+      - "罗马尼亚 0054"
+      - "罗马尼亚 0055"
+      - "罗马尼亚 0056"
+      - "罗马尼亚 0057"
+      - "罗马尼亚 0058"
+      - "罗马尼亚 0059"
+      - "罗马尼亚 0060"
+      - "罗马尼亚 0061"
+      - "罗马尼亚 0062"
+      - "罗马尼亚 0063"
+      - "罗马尼亚 0064"
+      - "罗马尼亚 0065"
+      - "罗马尼亚 0066"
+      - "法国 0007"
+      - "罗马尼亚 0069"
+      - "罗马尼亚 0070"
+      - "台湾 0004"
+      - "罗马尼亚 0071"
+      - "罗马尼亚 0072"
+      - "罗马尼亚 0073"
+      - "罗马尼亚 0074"
+      - "罗马尼亚 0075"
+      - "罗马尼亚 0076"
+      - "罗马尼亚 0077"
+      - "罗马尼亚 0078"
+      - "罗马尼亚 0079"
+      - "罗马尼亚 0080"
+      - "罗马尼亚 0081"
+      - "罗马尼亚 0082"
+      - "未知 0129"
+      - "英国 0007"
+      - "罗马尼亚 0083"
+      - "罗马尼亚 0084"
+      - "罗马尼亚 0085"
+      - "罗马尼亚 0086"
+      - "罗马尼亚 0087"
+      - "罗马尼亚 0088"
+      - "立陶宛 0029"
+      - "未知 0131"
+      - "香港 0056"
+      - "香港 0057"
+      - "加拿大 0002"
+      - "俄罗斯联邦 0013"
+      - "未知 0132"
+      - "英国 0008"
+      - "香港 0059"
+      - "香港 0060"
+      - "香港 0061"
+      - "瑞士 0003"
+      - "塞舌尔 0010"
+      - "罗马尼亚 0089"
+      - "美国 0077"
+      - "英国 0009"
+      - "未知 0134"
+      - "未知 0135"
+      - "香港 0062"
+      - "香港 0063"
+      - "香港 0064"
+      - "美国 0079"
+      - "香港 0065"
+      - "香港 0066"
+      - "香港 0067"
+      - "未知 0136"
+      - "香港 0068"
+      - "香港 0069"
+      - "墨西哥 0001"
+      - "法国 0009"
+      - "韩国 0012"
+      - "美国 0081"
+      - "美国 0082"
+      - "香港 0070"
+      - "美国 0083"
+      - "未知 0137"
+      - "德国 0012"
+      - "未知 0138"
+      - "香港 0072"
+      - "罗马尼亚 0090"
+      - "台湾 0006"
+      - "日本 0036"
+      - "罗马尼亚 0091"
+      - "香港 0073"
+      - "未知 0139"
+      - "韩国 0013"
+      - "香港 0074"
+      - "日本 0037"
+      - "香港 0075"
+      - "未知 0140"
+      - "美国 0084"
+      - "法国 0010"
+      - "香港 0078"
+      - "香港 0079"
+      - "土耳其 0005"
+      - "阿联酋 0004"
+      - "荷兰 0013"
+      - "未知 0141"
+      - "美国 0086"
+      - "香港 0088"
+      - "荷兰 0015"
+      - "法国 0014"
+      - "英国 0011"
+      - "英国 0012"
+      - "香港 0089"
+      - "日本 0044"
+      - "日本 0045"
+      - "美国 0089"
+      - "美国 0090"
+      - "阿联酋 0006"
+      - "荷兰 0016"
+      - "未知 0155"
+      - "未知 0156"
+      - "荷兰 0019"
+      - "日本 0048"
+      - "美国 0095"
+      - "日本 0049"
+      - "新加坡 0023"
+      - "南非 0001"
+      - "奥地利 0001"
+      - "未知 0159"
+      - "未知 0161"
+      - "未知 0162"
+      - "德国 0023"
+      - "韩国 0016"
+      - "德国 0025"
+      - "未知 0164"
+      - "韩国 0017"
+      - "韩国 0018"
+      - "美国 0098"
+      - "德国 0026"
+      - "意大利 0003"
+      - "美国 0099"
+      - "英国 0015"
+      - "未知 0166"
+      - "塞舌尔 0022"
+      - "未知 0167"
+      - "德国 0027"
+      - "德国 0028"
+      - "德国 0029"
+      - "德国 0030"
+      - "日本 0055"
+      - "日本 0056"
+      - "日本 0057"
+      - "伊朗 0002"
+      - "日本 0058"
+      - "德国 0031"
+      - "日本 0059"
+      - "英国 0016"
+      - "日本 0061"
+      - "未知 0169"
+      - "美国 0103"
+      - "巴西 0001"
+      - "未知 0170"
+      - "德国 0032"
+      - "美国 0104"
+      - "荷兰 0020"
+      - "美国 0105"
+      - "未知 0171"
+      - "德国 0033"
+      - "未知 0172"
+      - "未知 0173"
+      - "日本 0063"
+      - "德国 0034"
+      - "未知 0175"
+      - "加拿大 0006"
+      - "美国 0107"
+      - "德国 0035"
+      - "意大利 0004"
+      - "日本 0067"
+      - "芬兰 0009"
+      - "美国 0108"
+      - "美国 0110"
+      - "德国 0037"
+      - "韩国 0023"
+      - "印度 0002"
+      - "德国 0039"
+      - "美国 0114"
+      - "美国 0115"
+      - "美国 0116"
+      - "美国 0117"
+      - "未知 0178"
+      - "未知 0179"
+
+rule-providers:
+  reject:
+    type: http
+    behavior: domain
+    url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
+    path: ./ruleset/reject.txt
+    interval: 86400
+
+rules:
+  - RULE-SET,reject,REJECT
+  - GEOIP,LAN,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,🚀 所有节点
