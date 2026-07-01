@@ -87,7 +87,7 @@ jobs:
               # -timeout 2s: 2秒连接不上就判死节点
               # -concurrent 100: 100个节点并发同时测，速度极快
               # -size 1: 关键黑魔法！测速时只下载 1 字节（0 KB），连通后立刻闪断，达到不测速、不跑机场流量的目的
-              ./clash-speedtest -c ./clash.txt -output yaml -timeout 2s -concurrent 100 -size 1
+              ./clash-speedtest -c ./clash.txt -output yaml -timeout 2s -concurrent 100 -download-size 1 -min-download-speed 0
               
               if [ -f "./output/config.yaml" ]; then
                 mv ./output/config.yaml ./clash_check.txt
