@@ -3,235 +3,319 @@ ipv6: true
 allow-lan: true
 unified-delay: true
 tcp-concurrent: true
-external-controller: 127.0.0.1:9090
+external-controller: '127.0.0.1:9090'
 log-level: info
 mode: rule
-
 geox-url:
-  geoip: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat
-  geosite: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat
-  mmdb: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.metadb
-  asn: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/GeoLite2-ASN.mmdb
-
+  geoip: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat'
+  geosite: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat'
+  mmdb: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.metadb'
+  asn: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/GeoLite2-ASN.mmdb'
 dns:
   enable: true
-  listen: 0.0.0.0:1053
+  listen: '0.0.0.0:1053'
   ipv6: false
   use-system-hosts: false
   cache-algorithm: arc
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
-  fake-ip-filter:
-    - +.lan
-    - +.local
-    - +.msftconnecttest.com
-    - +.msftncsi.com
-  default-nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
-    - 1.1.1.1
-    - 8.8.8.8
-  nameserver:
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
+  fake-ip-filter: [+.lan, +.local, +.msftconnecttest.com, +.msftncsi.com]
+  default-nameserver: [223.5.5.5, 119.29.29.29, 1.1.1.1, 8.8.8.8]
+  nameserver: ['https://dns.alidns.com/dns-query', 'https://doh.pub/dns-query']
   respect-rules: true
-  proxy-server-nameserver:
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
-  nameserver-policy:
-    geosite:private,cn,geolocation-cn:
-      - https://dns.alidns.com/dns-query
-      - https://doh.pub/dns-query
-    geosite:google,youtube,telegram,gfw,geolocation-!cn:
-      - https://1.1.1.1/dns-query
-      - https://1.0.0.1/dns-query
-      - https://208.67.222.222/dns-query
-      - https://208.67.220.220/dns-query
-
-sniffer:
-  enable: true
-  sniff:
-    HTTP:
-      ports:
-        - 80
-        - 8080-8880
-      override-destination: true
-    TLS:
-      ports:
-        - 443
-        - 8443
-    QUIC:
-      ports:
-        - 443
-        - 8443
-  skip-domain:
-    - Mijia Cloud
-    - +.push.apple.com
-
+  proxy-server-nameserver: ['https://dns.alidns.com/dns-query', 'https://doh.pub/dns-query']
+  nameserver-policy: { 'geosite:private,cn,geolocation-cn': ['https://dns.alidns.com/dns-query', 'https://doh.pub/dns-query'], 'geosite:google,youtube,telegram,gfw,geolocation-!cn': ['https://1.1.1.1/dns-query', 'https://1.0.0.1/dns-query', 'https://208.67.222.222/dns-query', 'https://208.67.220.220/dns-query'] }
 proxies:
-  - {"host": "support.zoom.us.yxls.eu.cc", "path": "/sg-melbi", "security": "tls", "sni": "support.zoom.us.yxls.eu.cc", "type": "vless", "name": "未知 0049[461ms]", "server": "172.66.3.133", "port": 443, "cipher": "auto", "network": "ws", "client-fingerprint": "chrome", "tls": true, "uuid": "4d10c997-4781-4cd9-82c3-15453523e12c", "ws-opts": {"path": "/sg-melbi", "headers": {"Host": "support.zoom.us.yxls.eu.cc"}}}
-  - {"host": "support.zoom.us.yxls.eu.cc", "path": "/sg-melbi", "security": "tls", "sni": "support.zoom.us.yxls.eu.cc", "type": "vless", "name": "未知 0047[454ms]", "server": "104.17.136.118", "port": 443, "cipher": "auto", "network": "ws", "client-fingerprint": "chrome", "tls": true, "uuid": "4d10c997-4781-4cd9-82c3-15453523e12c", "ws-opts": {"path": "/sg-melbi", "headers": {"Host": "support.zoom.us.yxls.eu.cc"}}}
-  - {"security": "tls", "name": "澳大利亚 0001[880ms]", "server": "tight-possum.rooster465.autos", "port": 443, "type": "trojan", "cipher": "", "sni": "", "network": "tcp", "path": "", "host": "", "tls": true, "password": "PI36027154"}
-  - {"name": "罗马尼亚 0027[618ms]", "port": 9002, "server": "84.239.49.40", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"host": "support.zoom.us.yxls.eu.cc", "path": "/sg-melbi", "security": "tls", "sni": "support.zoom.us.yxls.eu.cc", "type": "vless", "name": "未知 0016[413ms]", "server": "104.17.158.173", "port": 443, "cipher": "auto", "network": "ws", "client-fingerprint": "chrome", "tls": true, "uuid": "4d10c997-4781-4cd9-82c3-15453523e12c", "ws-opts": {"path": "/sg-melbi", "headers": {"Host": "support.zoom.us.yxls.eu.cc"}}}
-  - {"name": "罗马尼亚 0018[592ms]", "port": 9002, "server": "84.239.49.42", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"name": "香港 0060[432ms]", "password": "<password>", "port": 8443, "server": "782f198b-te3z40-twuk0i-1hzyr.hkt.cdnhuawei.com", "sni": "782f198b-te3z40-twuk0i-1hzyr.hkt.cdnhuawei.com", "tls": true, "type": "http", "username": "3be8cba8-b721-11ec-8b04-f23c91cfbbc9", "network": "tcp", "path": "", "host": ""}
-  - {"host": "support.zoom.us.yxls.eu.cc", "path": "/sg-melbi", "security": "tls", "sni": "support.zoom.us.yxls.eu.cc", "type": "vless", "name": "未知 0040[277ms]", "server": "162.159.38.105", "port": 443, "cipher": "auto", "network": "ws", "client-fingerprint": "chrome", "tls": true, "uuid": "4d10c997-4781-4cd9-82c3-15453523e12c", "ws-opts": {"path": "/sg-melbi", "headers": {"Host": "support.zoom.us.yxls.eu.cc"}}}
-  - {"name": "罗马尼亚 0036[591ms]", "port": 9002, "server": "84.239.49.159", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"host": "support.zoom.us.yxls.eu.cc", "path": "/sg-melbi", "security": "tls", "sni": "support.zoom.us.yxls.eu.cc", "type": "vless", "name": "未知 0011[674ms]", "server": "104.26.2.173", "port": 443, "cipher": "auto", "network": "ws", "client-fingerprint": "chrome", "tls": true, "uuid": "4d10c997-4781-4cd9-82c3-15453523e12c", "ws-opts": {"path": "/sg-melbi", "headers": {"Host": "support.zoom.us.yxls.eu.cc"}}}
-  - {"name": "罗马尼亚 0039[512ms]", "port": 9002, "server": "84.239.14.152", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"name": "罗马尼亚 0034[558ms]", "port": 9002, "server": "84.239.49.175", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"name": "罗马尼亚 0042[700ms]", "port": 9002, "server": "193.176.84.31", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"name": "罗马尼亚 0012[566ms]", "port": 9002, "server": "84.239.14.149", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"name": "罗马尼亚 0011[505ms]", "port": 9002, "server": "84.239.49.154", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"name": "美国 0004", "type": "vless", "server": "jiang.jiangniao.de", "port": 44779, "uuid": "6ae3ada1-49c6-48ab-8cd3-53b63ae2e9f1", "network": "tcp", "tls": true, "udp": true, "flow": "xtls-rprx-vision-udp443", "servername": "icloud.com", "client-fingerprint": "chrome", "reality-opts": {"public-key": "l9y_VNGHADyIsENlPgZxkhGPy8u3YzIJKC73GD8fuS4", "short-id": "6eb946ae72a615", "spider-x": "/"}, "path": "", "host": "", "sni": "icloud.com", "cipher": "auto"}
-  - {"name": "罗马尼亚 0025[654ms]", "port": 9002, "server": "84.239.49.239", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"name": "罗马尼亚 0019[596ms]", "port": 9002, "server": "84.239.49.196", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"host": "support.zoom.us.yxls.eu.cc", "path": "/sg-melbi", "security": "tls", "sni": "support.zoom.us.yxls.eu.cc", "type": "vless", "name": "未知 0039[516ms]", "server": "104.25.244.217", "port": 443, "cipher": "auto", "network": "ws", "client-fingerprint": "chrome", "tls": true, "uuid": "4d10c997-4781-4cd9-82c3-15453523e12c", "ws-opts": {"path": "/sg-melbi", "headers": {"Host": "support.zoom.us.yxls.eu.cc"}}}
-  - {"name": "罗马尼亚 0032[590ms]", "port": 9002, "server": "84.239.49.185", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"host": "support.zoom.us.yxls.eu.cc", "path": "/sg-melbi", "security": "tls", "sni": "support.zoom.us.yxls.eu.cc", "type": "vless", "name": "未知 0031[238ms]", "server": "108.162.198.201", "port": 443, "cipher": "auto", "network": "ws", "client-fingerprint": "chrome", "tls": true, "uuid": "4d10c997-4781-4cd9-82c3-15453523e12c", "ws-opts": {"path": "/sg-melbi", "headers": {"Host": "support.zoom.us.yxls.eu.cc"}}}
-  - {"name": "罗马尼亚 0016[718ms]", "port": 9002, "server": "84.239.49.202", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"host": "support.zoom.us.yxls.eu.cc", "path": "/sg-melbi", "security": "tls", "sni": "support.zoom.us.yxls.eu.cc", "type": "vless", "name": "未知 0012[438ms]", "server": "104.26.12.41", "port": 443, "cipher": "auto", "network": "ws", "client-fingerprint": "chrome", "tls": true, "uuid": "4d10c997-4781-4cd9-82c3-15453523e12c", "ws-opts": {"path": "/sg-melbi", "headers": {"Host": "support.zoom.us.yxls.eu.cc"}}}
-  - {"host": "t1s1.rittbo.kdns.fr", "path": "/", "security": "tls", "sni": "t1s1.rittbo.kdns.fr", "type": "vless", "name": "未知 0052[350ms]", "server": "cf.877774.xyz", "port": 443, "cipher": "auto", "network": "ws", "client-fingerprint": "chrome", "tls": true, "uuid": "eeb6823c-b926-4ea2-866a-5542edd26e59", "ws-opts": {"path": "/", "headers": {"Host": "t1s1.rittbo.kdns.fr"}}}
-  - {"name": "罗马尼亚 0009[709ms]", "port": 9002, "server": "84.239.49.225", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"host": "support.zoom.us.yxls.eu.cc", "path": "/sg-melbi", "security": "tls", "sni": "support.zoom.us.yxls.eu.cc", "type": "vless", "name": "未知 0050[488ms]", "server": "104.19.35.206", "port": 443, "cipher": "auto", "network": "ws", "client-fingerprint": "chrome", "tls": true, "uuid": "4d10c997-4781-4cd9-82c3-15453523e12c", "ws-opts": {"path": "/sg-melbi", "headers": {"Host": "support.zoom.us.yxls.eu.cc"}}}
-  - {"host": "support.zoom.us.yxls.eu.cc", "path": "/sg-melbi", "security": "tls", "sni": "support.zoom.us.yxls.eu.cc", "type": "vless", "name": "未知 0044[431ms]", "server": "104.21.2.192", "port": 443, "cipher": "auto", "network": "ws", "client-fingerprint": "chrome", "tls": true, "uuid": "4d10c997-4781-4cd9-82c3-15453523e12c", "ws-opts": {"path": "/sg-melbi", "headers": {"Host": "support.zoom.us.yxls.eu.cc"}}}
-  - {"name": "罗马尼亚 0017[601ms]", "port": 9002, "server": "84.239.49.253", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"host": "support.zoom.us.yxls.eu.cc", "path": "/sg-melbi", "security": "tls", "sni": "support.zoom.us.yxls.eu.cc", "type": "vless", "name": "德国 0010[611ms]", "server": "49.13.64.206", "port": 443, "cipher": "auto", "network": "ws", "client-fingerprint": "chrome", "tls": true, "uuid": "4d10c997-4781-4cd9-82c3-15453523e12c", "ws-opts": {"path": "/sg-melbi", "headers": {"Host": "support.zoom.us.yxls.eu.cc"}}}
-  - {"security": "tls", "name": "新加坡 0003[185ms]", "server": "rich-mule.rooster465.autos", "port": 443, "type": "trojan", "cipher": "", "sni": "", "network": "tcp", "path": "", "host": "", "tls": true, "password": "PI36027154"}
-  - {"host": "support.zoom.us.yxls.eu.cc", "path": "/sg-amz", "security": "tls", "sni": "support.zoom.us.yxls.eu.cc", "type": "vless", "name": "美国 0015[550ms]", "server": "support.zoom.us", "port": 443, "cipher": "auto", "network": "ws", "client-fingerprint": "chrome", "tls": true, "uuid": "6680846a-8a57-4dfd-9a0e-63209cfc8535", "ws-opts": {"path": "/sg-amz", "headers": {"Host": "support.zoom.us.yxls.eu.cc"}}}
-  - {"host": "support.zoom.us.yxls.eu.cc", "path": "/sg-amz", "security": "tls", "sni": "support.zoom.us.yxls.eu.cc", "type": "vless", "name": "美国 0011[582ms]", "server": "104.168.146.122", "port": 443, "cipher": "auto", "network": "ws", "client-fingerprint": "chrome", "tls": true, "uuid": "6680846a-8a57-4dfd-9a0e-63209cfc8535", "ws-opts": {"path": "/sg-amz", "headers": {"Host": "support.zoom.us.yxls.eu.cc"}}}
-  - {"name": "罗马尼亚 0023[575ms]", "port": 9002, "server": "84.239.49.178", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"host": "support.zoom.us.yxls.eu.cc", "path": "/sg-melbi", "security": "tls", "sni": "support.zoom.us.yxls.eu.cc", "type": "vless", "name": "未知 0034[449ms]", "server": "162.159.43.121", "port": 443, "cipher": "auto", "network": "ws", "client-fingerprint": "chrome", "tls": true, "uuid": "4d10c997-4781-4cd9-82c3-15453523e12c", "ws-opts": {"path": "/sg-melbi", "headers": {"Host": "support.zoom.us.yxls.eu.cc"}}}
-  - {"name": "美国 0002", "type": "vless", "server": "jiang.jiangniao.de", "port": 41236, "uuid": "1a16fad3-3182-445f-b27b-db018e4e5746", "network": "tcp", "tls": true, "udp": true, "flow": "xtls-rprx-vision-udp443", "servername": "yahoo.com", "client-fingerprint": "chrome", "reality-opts": {"public-key": "lDSUkgWuvxEQ1RzMbuwGCqdX7bn3uDetAYJmP4HGhXA", "short-id": "c5475819", "spider-x": "/"}, "path": "", "host": "", "sni": "yahoo.com", "cipher": "auto"}
-  - {"name": "罗马尼亚 0020[557ms]", "port": 9002, "server": "84.239.49.211", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"name": "罗马尼亚 0026[558ms]", "port": 9002, "server": "84.239.49.234", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"host": "support.zoom.us.yxls.eu.cc", "path": "/sg-melbi", "security": "tls", "sni": "support.zoom.us.yxls.eu.cc", "type": "vless", "name": "未知 0015[471ms]", "server": "104.16.253.69", "port": 443, "cipher": "auto", "network": "ws", "client-fingerprint": "chrome", "tls": true, "uuid": "4d10c997-4781-4cd9-82c3-15453523e12c", "ws-opts": {"path": "/sg-melbi", "headers": {"Host": "support.zoom.us.yxls.eu.cc"}}}
-  - {"name": "罗马尼亚 0014[610ms]", "port": 9002, "server": "84.239.49.191", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"name": "美国 0003", "type": "vless", "server": "jiang.jiangniao.de", "port": 42025, "uuid": "bed8750e-36e0-425d-ae14-48d5b70cedd9", "network": "tcp", "tls": true, "udp": true, "flow": "xtls-rprx-vision-udp443", "servername": "yahoo.com", "client-fingerprint": "chrome", "reality-opts": {"public-key": "6baH2z3cSHXyNF-y60uOu15VRrHIA1s0w-c7DXvNLG4", "short-id": "e5d928499470", "spider-x": "/"}, "path": "", "host": "", "sni": "yahoo.com", "cipher": "auto"}
-  - {"name": "罗马尼亚 0033[574ms]", "port": 9002, "server": "84.239.49.39", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"name": "罗马尼亚 0030[581ms]", "port": 9002, "server": "84.239.49.245", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"name": "罗马尼亚 0021[564ms]", "port": 9002, "server": "84.239.49.204", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"name": "美国 0001", "type": "vless", "server": "jiang.jiangniao.de", "port": 12852, "uuid": "e96ab706-0aa6-4ff6-820a-6f3549dd3319", "network": "tcp", "tls": true, "udp": true, "flow": "xtls-rprx-vision-udp443", "servername": "icloud.com", "client-fingerprint": "chrome", "reality-opts": {"public-key": "uInXYi-6Bd6C061wSjWpFZTaE8Hd1fS3MBsU57geT0I", "short-id": "28fcba0ec25e", "spider-x": "/"}, "path": "", "host": "", "sni": "icloud.com", "cipher": "auto"}
-  - {"name": "罗马尼亚 0015[761ms]", "port": 9002, "server": "84.239.49.207", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"name": "罗马尼亚 0029[624ms]", "port": 9002, "server": "84.239.49.57", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"name": "罗马尼亚 0041[622ms]", "port": 9002, "server": "193.176.84.32", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"host": "support.zoom.us.yxls.eu.cc", "path": "/sg-melbi", "security": "tls", "sni": "support.zoom.us.yxls.eu.cc", "type": "vless", "name": "未知 0028[450ms]", "server": "104.20.39.109", "port": 443, "cipher": "auto", "network": "ws", "client-fingerprint": "chrome", "tls": true, "uuid": "4d10c997-4781-4cd9-82c3-15453523e12c", "ws-opts": {"path": "/sg-melbi", "headers": {"Host": "support.zoom.us.yxls.eu.cc"}}}
-  - {"host": "support.zoom.us.yxls.eu.cc", "path": "/sg-melbi", "security": "tls", "sni": "support.zoom.us.yxls.eu.cc", "type": "vless", "name": "未知 0032[252ms]", "server": "108.162.198.5", "port": 443, "cipher": "auto", "network": "ws", "client-fingerprint": "chrome", "tls": true, "uuid": "4d10c997-4781-4cd9-82c3-15453523e12c", "ws-opts": {"path": "/sg-melbi", "headers": {"Host": "support.zoom.us.yxls.eu.cc"}}}
-  - {"name": "罗马尼亚 0010[663ms]", "port": 9002, "server": "84.239.14.159", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"host": "support.zoom.us.yxls.eu.cc", "path": "/sg-amz", "security": "tls", "sni": "support.zoom.us.yxls.eu.cc", "type": "vless", "name": "未知 0013[568ms]", "server": "104.26.5.39", "port": 443, "cipher": "auto", "network": "ws", "client-fingerprint": "chrome", "tls": true, "uuid": "6680846a-8a57-4dfd-9a0e-63209cfc8535", "ws-opts": {"path": "/sg-amz", "headers": {"Host": "support.zoom.us.yxls.eu.cc"}}}
-  - {"name": "美国 0005", "type": "vless", "server": "jiang.jiangniao.de", "port": 50682, "uuid": "41fe730f-127b-4c27-81ef-7e2a240b5e2e", "network": "tcp", "tls": true, "udp": true, "flow": "xtls-rprx-vision-udp443", "servername": "yahoo.com", "client-fingerprint": "chrome", "reality-opts": {"public-key": "zIIPhsd4pP9omVPxtUbusaJq9UcY7artFMY70MLQiWg", "short-id": "6f110ee0d9fd", "spider-x": "/"}, "path": "", "host": "", "sni": "yahoo.com", "cipher": "auto"}
-  - {"host": "support.zoom.us.yxls.eu.cc", "path": "/sg-melbi", "security": "tls", "sni": "support.zoom.us.yxls.eu.cc", "type": "vless", "name": "未知 0038[407ms]", "server": "198.41.209.43", "port": 443, "cipher": "auto", "network": "ws", "client-fingerprint": "chrome", "tls": true, "uuid": "4d10c997-4781-4cd9-82c3-15453523e12c", "ws-opts": {"path": "/sg-melbi", "headers": {"Host": "support.zoom.us.yxls.eu.cc"}}}
-  - {"host": "support.zoom.us.yxls.eu.cc", "path": "/sg-melbi", "security": "tls", "sni": "support.zoom.us.yxls.eu.cc", "type": "vless", "name": "法国 0006[718ms]", "server": "37.59.96.21", "port": 443, "cipher": "auto", "network": "ws", "client-fingerprint": "chrome", "tls": true, "uuid": "4d10c997-4781-4cd9-82c3-15453523e12c", "ws-opts": {"path": "/sg-melbi", "headers": {"Host": "support.zoom.us.yxls.eu.cc"}}}
-  - {"name": "罗马尼亚 0028[602ms]", "port": 9002, "server": "84.239.49.55", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"security": "tls", "sni": "yazhou10.dynu.net", "name": "香港 0036[950ms]", "server": "jpbgp.netvigor.cc", "port": 19128, "type": "trojan", "cipher": "", "network": "tcp", "path": "", "host": "", "tls": true, "password": "OccIqeORGQwiNkwS"}
-  - {"name": "罗马尼亚 0035[702ms]", "port": 9002, "server": "84.239.49.209", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"host": "support.zoom.us.yxls.eu.cc", "path": "/sg-melbi", "security": "tls", "sni": "support.zoom.us.yxls.eu.cc", "type": "vless", "name": "未知 0036[411ms]", "server": "162.159.2.228", "port": 443, "cipher": "auto", "network": "ws", "client-fingerprint": "chrome", "tls": true, "uuid": "4d10c997-4781-4cd9-82c3-15453523e12c", "ws-opts": {"path": "/sg-melbi", "headers": {"Host": "support.zoom.us.yxls.eu.cc"}}}
-  - {"name": "罗马尼亚 0043[614ms]", "port": 9002, "server": "193.176.84.37", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"name": "罗马尼亚 0031[525ms]", "port": 9002, "server": "84.239.14.160", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"name": "罗马尼亚 0008[648ms]", "port": 9002, "server": "84.239.49.187", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"name": "罗马尼亚 0013[676ms]", "port": 9002, "server": "84.239.49.227", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"name": "罗马尼亚 0038[685ms]", "port": 9002, "server": "84.239.49.235", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"host": "support.zoom.us.yxls.eu.cc", "path": "/sg-melbi", "security": "tls", "sni": "support.zoom.us.yxls.eu.cc", "type": "vless", "name": "英国 0005[546ms]", "server": "57.129.137.208", "port": 443, "cipher": "auto", "network": "ws", "tls": true, "uuid": "4d10c997-4781-4cd9-82c3-15453523e12c", "ws-opts": {"path": "/sg-melbi", "headers": {"Host": "support.zoom.us.yxls.eu.cc"}}}
-  - {"host": "support.zoom.us.yxls.eu.cc", "path": "/sg-melbi", "security": "tls", "sni": "support.zoom.us.yxls.eu.cc", "type": "vless", "name": "未知 0029[260ms]", "server": "172.64.146.86", "port": 443, "cipher": "auto", "network": "ws", "client-fingerprint": "chrome", "tls": true, "uuid": "4d10c997-4781-4cd9-82c3-15453523e12c", "ws-opts": {"path": "/sg-melbi", "headers": {"Host": "support.zoom.us.yxls.eu.cc"}}}
-  - {"name": "罗马尼亚 0024[597ms]", "port": 9002, "server": "84.239.49.160", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-  - {"host": "support.zoom.us.yxls.eu.cc", "path": "/sg-melbi", "security": "tls", "sni": "support.zoom.us.yxls.eu.cc", "type": "vless", "name": "未知 0043[408ms]", "server": "198.41.208.112", "port": 443, "cipher": "auto", "network": "ws", "client-fingerprint": "chrome", "tls": true, "uuid": "4d10c997-4781-4cd9-82c3-15453523e12c", "ws-opts": {"path": "/sg-melbi", "headers": {"Host": "support.zoom.us.yxls.eu.cc"}}}
-  - {"host": "support.zoom.us.yxls.eu.cc", "path": "/sg-melbi", "security": "tls", "sni": "support.zoom.us.yxls.eu.cc", "type": "vless", "name": "未知 0048[227ms]", "server": "162.159.23.117", "port": 443, "cipher": "auto", "network": "ws", "client-fingerprint": "chrome", "tls": true, "uuid": "4d10c997-4781-4cd9-82c3-15453523e12c", "ws-opts": {"path": "/sg-melbi", "headers": {"Host": "support.zoom.us.yxls.eu.cc"}}}
-  - {"host": "support.zoom.us.yxls.eu.cc", "path": "/sg-amz", "security": "tls", "sni": "support.zoom.us.yxls.eu.cc", "type": "vless", "name": "德国 0011[466ms]", "server": "217.154.94.41", "port": 443, "cipher": "auto", "network": "ws", "tls": true, "uuid": "6680846a-8a57-4dfd-9a0e-63209cfc8535", "ws-opts": {"path": "/sg-amz", "headers": {"Host": "support.zoom.us.yxls.eu.cc"}}}
-  - {"host": "support.zoom.us.yxls.eu.cc", "path": "/sg-melbi", "security": "tls", "sni": "support.zoom.us.yxls.eu.cc", "type": "vless", "name": "未知 0030[412ms]", "server": "104.17.112.113", "port": 443, "cipher": "auto", "network": "ws", "client-fingerprint": "chrome", "tls": true, "uuid": "4d10c997-4781-4cd9-82c3-15453523e12c", "ws-opts": {"path": "/sg-melbi", "headers": {"Host": "support.zoom.us.yxls.eu.cc"}}}
-  - {"host": "support.zoom.us.yxls.eu.cc", "path": "/sg-amz", "security": "tls", "sni": "support.zoom.us.yxls.eu.cc", "type": "vless", "name": "未知 0014[368ms]", "server": "108.162.198.108", "port": 443, "cipher": "auto", "network": "ws", "client-fingerprint": "chrome", "tls": true, "uuid": "6680846a-8a57-4dfd-9a0e-63209cfc8535", "ws-opts": {"path": "/sg-amz", "headers": {"Host": "support.zoom.us.yxls.eu.cc"}}}
-  - {"name": "罗马尼亚 0040[640ms]", "port": 9002, "server": "84.239.49.219", "skip-cert-verify": true, "tls": true, "type": "http", "udp": true, "network": "tcp", "path": "", "host": "", "sni": "", "password": ""}
-
-
+  - { name: '罗马尼亚 0123[632ms]', port: 9002, server: 84.239.49.202, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0158[657ms]', port: 9002, server: 84.239.49.40, skip-cert-verify: true, sni: www.bing.com, sub_tag: R002-260618, tls: true, type: http }
+  - { name: '新加坡 0366[281ms]', type: http, server: 929a4b9a-t9zts0-tnnrly-g43g.sg.oshuawei.com, port: 443, password: 6ddb6a68-d5f5-ca30-3943-cf0c9876d50c, tls: true, sni: 929a4b9a-t9zts0-tnnrly-g43g.sg.oshuawei.com, username: 6ddb6a68-d5f5-ca30-3943-cf0c9876d50c }
+  - { name: '美国 1496[608ms]', port: 9002, server: 156.146.59.41, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '塞舌尔 0970[690ms]', server: 45.198.80.36, port: 443, type: vless, uuid: eece4171-e025-40a3-9027-e395036ff99d, network: tcp, sni: storage.yandex.net, servername: storage.yandex.net, flow: xtls-rprx-vision, client-fingerprint: chrome, reality-opts: { public-key: zr8_rtHm86s_G1gfRwNtunStGngYZSdYkA3PyBFXpDg, short-id: 28047c78b3f5ee2c }, tls: true, skip-cert-verify: false, udp: true }
+  - { name: '芬兰 0324[608ms]', type: vless, server: meowfin.nethcloud.top, port: 443, client-fingerprint: chrome, encryption: none, flow: xtls-rprx-vision, network: tcp, packet-encoding: xudp, reality-opts: { public-key: HKpd1sbrhBds8SJSL0d22MAq_QyTR6EP6y5b5DYol3U }, servername: www.wikihow.com, skip-cert-verify: false, tls: true, udp: true, uuid: a34b5e88-cf0d-4c01-8199-2d1002d3c787 }
+  - { name: '法国 0368[648ms]', server: 173.212.252.150, port: 1080, type: socks5, udp: true }
+  - { name: '罗马尼亚 0182[653ms]', port: 9002, server: 193.176.84.33, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 1532[685ms]', port: 9002, server: 156.146.59.28, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0170[582ms]', port: 9002, server: 84.239.49.181, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 1453[626ms]', port: 9002, server: 156.146.59.32, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '荷兰 0624[533ms]', type: http, server: 146.103.33.227, port: 8443, skip-cert-verify: true, tls: true }
+  - { name: '罗马尼亚 0080[601ms]', port: 9002, server: 84.239.49.156, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 0003[529ms]', type: vless, server: jiang.jiangniao.de, port: 42025, uuid: bed8750e-36e0-425d-ae14-48d5b70cedd9, network: tcp, tls: true, udp: true, flow: xtls-rprx-vision-udp443, servername: yahoo.com, client-fingerprint: chrome, reality-opts: { public-key: 6baH2z3cSHXyNF-y60uOu15VRrHIA1s0w-c7DXvNLG4, short-id: e5d928499470, spider-x: / } }
+  - { name: '罗马尼亚 0180[624ms]', port: 9002, server: 84.239.49.200, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '美国 1477[685ms]', port: 9002, server: 156.146.59.7, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0174[621ms]', port: 9002, server: 84.239.49.165, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0113[655ms]', port: 9002, server: 193.176.84.36, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0085[718ms]', port: 9002, server: 193.176.84.17, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 1611[518ms]', password: 20f87b02-0eaa-11eb-8684-f23c913c8d2b, port: 443, server: 106ec660-t9zts0-tbao5v-gacy.se.oshuawei.com, sni: 106ec660-t9zts0-tbao5v-gacy.se.oshuawei.com, tls: true, type: http, username: 20f87b02-0eaa-11eb-8684-f23c913c8d2b }
+  - { name: '罗马尼亚 0175[802ms]', port: 9002, server: 193.176.84.23, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 1066[825ms]', server: 155.117.137.46, port: 443, type: vless, uuid: 9480871a-3843-441c-9b83-aa8c5c96b209, network: tcp, sni: cdn6-49.yahoo.com, servername: cdn6-49.yahoo.com, flow: xtls-rprx-vision, client-fingerprint: chrome, reality-opts: { public-key: CMkW1axrhEXoiJ6anMz9XEjlfqlAtEZya7L0b5ZPMyw, short-id: 3c9c5d01c6f824dd }, tls: true, skip-cert-verify: false, udp: true }
+  - { name: '法国 0354[677ms]', password: f5c0eda2-4b97-11ed-bd7c-f23c913c8d2b, port: 443, server: 01d9eacf-t9zts0-taxf6m-ieln.fr.oshuawei.com, sni: 01d9eacf-t9zts0-taxf6m-ieln.fr.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: f5c0eda2-4b97-11ed-bd7c-f23c913c8d2b }
+  - { name: '罗马尼亚 0100[701ms]', port: 9002, server: 84.239.49.214, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '韩国 0001[376ms]', server: 217.142.138.61, port: 80, type: vmess, uuid: ac1b933d-afff-4487-93ef-f57130a55dff, alterId: 0, cipher: auto, network: http, tls: false, skip-cert-verify: false, udp: true }
+  - { name: '韩国 0102[678ms]', password: 22308988-8548-11ea-a22e-f23c91cfbbc9, port: 31433, server: 5b23dea8-t9zts0-tiaexf-ufc0.kr.oshuawei.com, sni: 5b23dea8-t9zts0-tiaexf-ufc0.kr.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: 22308988-8548-11ea-a22e-f23c91cfbbc9 }
+  - { name: '韩国 0106[845ms]', password: 1ec223c0-1ed9-11ec-a8bf-f23c91cfbbc9, port: 31433, server: b0e5a712-t9zts0-tsjk4v-1atkp.kr.oshuawei.com, sni: b0e5a712-t9zts0-tsjk4v-1atkp.kr.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: 1ec223c0-1ed9-11ec-a8bf-f23c91cfbbc9 }
+  - { name: '美国 1554[502ms]', password: a2b0fd2b-716f-0df8-d4e2-03a1c00e5f1a, port: 443, server: 4d32fdfa-t9zts0-tb08pe-luwe.sj.oshuawei.com, sni: 4d32fdfa-t9zts0-tb08pe-luwe.sj.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: a2b0fd2b-716f-0df8-d4e2-03a1c00e5f1a }
+  - { name: '罗马尼亚 0125[688ms]', port: 9002, server: 193.176.84.35, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '塞舌尔 0905[667ms]', server: 45.196.182.1, port: 443, type: vless, uuid: 701ea834-7c31-4544-95d6-f0a4dfe40b36, network: tcp, sni: storage.yandex.net, servername: storage.yandex.net, flow: xtls-rprx-vision, client-fingerprint: chrome, reality-opts: { public-key: KYlgK96xPZJq10GbhF-BaCXRxXc9XzxzfICdooYvMlg, short-id: d020b987f84eb78a }, tls: true, skip-cert-verify: false, udp: true }
+  - { name: '韩国 0090[368ms]', password: test.+, port: 30446, server: testkr3.ssv.vc, skip-cert-verify: true, tls: true, type: http, udp: true, username: test, sni: testkr3.ssv.vc }
+  - { name: '美国 1458[509ms]', port: 9002, server: 138.199.35.217, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0163[662ms]', port: 9002, server: 84.239.14.147, skip-cert-verify: true, sni: www.bing.com, sub_tag: R002-260618, tls: true, type: http }
+  - { name: '罗马尼亚 0116[594ms]', port: 9002, server: 193.176.84.39, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 1045[686ms]', server: 155.117.137.228, port: 443, type: vless, uuid: 9480871a-3843-441c-9b83-aa8c5c96b209, network: tcp, sni: cdn6-49.yahoo.com, servername: cdn6-49.yahoo.com, flow: xtls-rprx-vision, client-fingerprint: firefox, reality-opts: { public-key: CMkW1axrhEXoiJ6anMz9XEjlfqlAtEZya7L0b5ZPMyw, short-id: 3c9c5d01c6f824dd }, tls: true, skip-cert-verify: false, udp: true }
+  - { name: '美国 1536[653ms]', password: '', port: 1088, server: 204.48.29.137, skip-cert-verify: true, sub_tag: K001-260618, type: socks5, username: '' }
+  - { name: '美国 1454[621ms]', port: 9002, server: 156.146.59.35, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '英国 0276[704ms]', password: a4c9b7cc-a816-11ed-9f65-f23c9164ca5d, port: 443, server: aa254e35-t9zts0-tb592v-4lg6.uk.oshuawei.com, sni: aa254e35-t9zts0-tb592v-4lg6.uk.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: a4c9b7cc-a816-11ed-9f65-f23c9164ca5d }
+  - { name: '美国 1517[599ms]', port: 9002, server: 138.199.35.201, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '荷兰 0626[598ms]', type: http, server: 2.59.183.62, port: 8443, skip-cert-verify: true, tls: true }
+  - { name: '罗马尼亚 0186[673ms]', port: 9002, server: 84.239.49.41, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { client-fingerprint: chrome, encryption: none, flow: xtls-rprx-vision, name: '美国 1552[699ms]', network: tcp, port: 443, reality-opts: { public-key: CMkW1axrhEXoiJ6anMz9XEjlfqlAtEZya7L0b5ZPMyw, short-id: 3c9c5d01c6f824dd }, server: 155.117.137.42, sub_tag: V002-260618, tls: true, type: vless, udp: true, uuid: 9480871a-3843-441c-9b83-aa8c5c96b209, xudp: true, packet-encoding: xudp, servername: cdn6-49.yahoo.com }
+  - { name: '美国 1471[622ms]', port: 9002, server: 156.146.59.39, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0127[635ms]', port: 9002, server: 84.239.49.186, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0183[673ms]', port: 9002, server: 193.176.84.40, skip-cert-verify: true, tls: true, type: http }
+  - { name: '美国 1439[602ms]', port: 9002, server: 156.146.59.42, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '英国 0296[600ms]', password: f13f964e-f06c-11ec-a858-f23c91cfbbc9, port: 443, server: 96c0a507-t9zts0-ta5i1s-1j61y.uk.oshuawei.com, sni: 96c0a507-t9zts0-ta5i1s-1j61y.uk.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: f13f964e-f06c-11ec-a858-f23c91cfbbc9 }
+  - { name: '塞舌尔 0934[530ms]', server: 45.196.182.118, port: 443, type: vless, uuid: 701ea834-7c31-4544-95d6-f0a4dfe40b36, network: tcp, sni: storage.yandex.net, servername: storage.yandex.net, flow: xtls-rprx-vision, client-fingerprint: chrome, reality-opts: { public-key: KYlgK96xPZJq10GbhF-BaCXRxXc9XzxzfICdooYvMlg, short-id: d020b987f84eb78a }, tls: true, skip-cert-verify: false, udp: true }
+  - { name: '美国 1555[475ms]', password: 520b9126-9870-11ef-81b0-f23c9164ca5d, port: 443, server: a73e118e-t9zts0-tipjoa-1slop.sj.oshuawei.com, sni: a73e118e-t9zts0-tipjoa-1slop.sj.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: 520b9126-9870-11ef-81b0-f23c9164ca5d }
+  - { name: '罗马尼亚 0087[590ms]', port: 9002, server: 84.239.49.162, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 1556[808ms]', password: 91df5a86-fcdd-11ef-94aa-f23c913c8d2b, port: 443, server: ba99435c-ta1og0-tbnk1n-ueq.sj.oshuawei.com, sni: ba99435c-ta1og0-tbnk1n-ueq.sj.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: 91df5a86-fcdd-11ef-94aa-f23c913c8d2b }
+  - { name: '罗马尼亚 0135[754ms]', port: 9002, server: 193.176.84.20, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0160[571ms]', port: 9002, server: 84.239.49.170, skip-cert-verify: true, sub_tag: R002-260618, tls: true, type: http }
+  - { name: '韩国 0180[524ms]', type: ss, server: 27.255.82.134, port: 2078, cipher: aes-256-cfb, password: qwerREWQ@@, skip-cert-verify: false, udp: false }
+  - { name: '美国 1586[695ms]', type: http, server: 156.146.59.47, port: 9002, skip-cert-verify: true, tls: true }
+  - { name: '罗马尼亚 0149[704ms]', port: 9002, server: 84.239.49.238, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { name: '罗马尼亚 0111[597ms]', port: 9002, server: 84.239.49.199, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { name: '罗马尼亚 0167[643ms]', port: 9002, server: 84.239.49.59, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 1491[630ms]', port: 9002, server: 156.146.59.31, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '新加坡 0362[274ms]', password: 9d80dd14-ac44-11ee-a116-f23c9164ca5d, port: 443, server: f6990909-ta1og0-tb74a6-1q9g2.sg.oshuawei.com, sni: f6990909-ta1og0-tb74a6-1q9g2.sg.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: 9d80dd14-ac44-11ee-a116-f23c9164ca5d }
+  - { name: '罗马尼亚 0082[568ms]', port: 9002, server: 84.239.49.60, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '英国 0278[626ms]', password: 2c01eae6-0b6a-11ee-a058-f23c91369f2d, port: 443, server: a1925a5d-t9zts0-tgl02u-1jr1u.uk.oshuawei.com, sni: a1925a5d-t9zts0-tgl02u-1jr1u.uk.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: 2c01eae6-0b6a-11ee-a058-f23c91369f2d }
+  - { name: '罗马尼亚 0136[625ms]', port: 9002, server: 84.239.49.159, skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0166[754ms]', port: 9002, server: 193.176.84.26, skip-cert-verify: true, sni: www.bing.com, sub_tag: R002-260618, tls: true, type: http }
+  - { name: '美国 0334[705ms]', server: 155.117.137.224, port: 443, type: vless, uuid: 9480871a-3843-441c-9b83-aa8c5c96b209, network: tcp, sni: cdn6-49.yahoo.com, servername: cdn6-49.yahoo.com, flow: xtls-rprx-vision, packet-encoding: xudp, client-fingerprint: chrome, reality-opts: { public-key: CMkW1axrhEXoiJ6anMz9XEjlfqlAtEZya7L0b5ZPMyw, short-id: 3c9c5d01c6f824dd }, tls: true, skip-cert-verify: false, udp: true }
+  - { name: '英国 0282[527ms]', password: a2313fba-74a6-11ed-a8bf-f23c91cfbbc9, port: 443, server: 87b1270a-t9zts0-trg4wh-z65w.uk.oshuawei.com, sni: 87b1270a-t9zts0-trg4wh-z65w.uk.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: a2313fba-74a6-11ed-a8bf-f23c91cfbbc9 }
+  - { name: '罗马尼亚 0081[616ms]', port: 9002, server: 84.239.14.152, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '法国 0352[688ms]', password: c1785de0-212f-11ef-92aa-f23c9164ca5d, port: 443, server: ca6467d1-t9zts0-tfpsin-1q3dm.fr.oshuawei.com, sni: ca6467d1-t9zts0-tfpsin-1q3dm.fr.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: c1785de0-212f-11ef-92aa-f23c9164ca5d }
+  - { name: '美国 1504[607ms]', port: 9002, server: 156.146.59.11, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0105[692ms]', port: 9002, server: 84.239.49.39, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 1476[641ms]', port: 9002, server: 156.146.59.38, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0150[678ms]', port: 9002, server: 193.176.84.37, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0122[616ms]', port: 9002, server: 84.239.49.248, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0157[613ms]', port: 9002, server: 193.176.84.31, skip-cert-verify: true, sub_tag: P002-260618, tls: true, type: http, udp: true }
+  - { name: '罗马尼亚 0169[666ms]', port: 9002, server: 84.239.49.48, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0205[594ms]', type: http, server: 84.239.49.241, port: 9002, skip-cert-verify: true, tls: true, sni: www.bing.com }
+  - { name: '荷兰 0606[538ms]', password: '', port: 1080, server: 5.255.117.127, skip-cert-verify: true, sub_tag: K001-260618, type: socks5, username: '' }
+  - { name: '荷兰 0608[632ms]', port: 9002, server: 84.17.47.148, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0094[657ms]', port: 9002, server: 84.239.49.212, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { name: '罗马尼亚 0188[588ms]', port: 9002, server: 84.239.49.184, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { name: '塞舌尔 0831[663ms]', server: 45.196.182.54, port: 443, type: vless, uuid: 701ea834-7c31-4544-95d6-f0a4dfe40b36, network: tcp, sni: storage.yandex.net, servername: storage.yandex.net, flow: xtls-rprx-vision, client-fingerprint: chrome, reality-opts: { public-key: KYlgK96xPZJq10GbhF-BaCXRxXc9XzxzfICdooYvMlg, short-id: d020b987f84eb78a }, tls: true, skip-cert-verify: false, udp: true }
+  - { name: '罗马尼亚 0139[647ms]', port: 9002, server: 84.239.49.201, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { name: '芬兰 0192[779ms]', server: 66.234.150.145, port: 443, type: vless, uuid: 701ea834-7c31-4544-95d6-f0a4dfe40b36, network: tcp, sni: storage.yandex.net, servername: storage.yandex.net, flow: xtls-rprx-vision, client-fingerprint: chrome, reality-opts: { public-key: KYlgK96xPZJq10GbhF-BaCXRxXc9XzxzfICdooYvMlg, short-id: d020b987f84eb78a }, tls: true, skip-cert-verify: false, udp: true }
+  - { name: '美国 1490[571ms]', port: 9002, server: 138.199.35.214, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '韩国 0105[425ms]', password: 3085fcf8-a69c-11ec-bd7c-f23c913c8d2b, port: 31433, server: 6e60bc72-t9zts0-tnsc3a-1f0gu.kr.oshuawei.com, sni: 6e60bc72-t9zts0-tnsc3a-1f0gu.kr.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: 3085fcf8-a69c-11ec-bd7c-f23c913c8d2b }
+  - { delay: 2195, name: '罗马尼亚 0154[685ms]', port: 9002, server: 84.239.49.239, skip-cert-verify: true, sub_tag: G001-260618, tls: true, type: http, udp: true }
+  - { name: '美国 1498[641ms]', port: 9002, server: 138.199.35.206, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0140[568ms]', port: 9002, server: 84.239.49.215, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 1548[611ms]', password: '', port: 9002, server: 156.146.59.49, skip-cert-verify: true, tls: true, type: http, username: '' }
+  - { name: '美国 0005', type: vless, server: jiang.jiangniao.de, port: 50682, uuid: 41fe730f-127b-4c27-81ef-7e2a240b5e2e, network: tcp, tls: true, udp: true, flow: xtls-rprx-vision-udp443, servername: yahoo.com, client-fingerprint: chrome, reality-opts: { public-key: zIIPhsd4pP9omVPxtUbusaJq9UcY7artFMY70MLQiWg, short-id: 6f110ee0d9fd, spider-x: / } }
+  - { name: '美国 1441[862ms]', port: 9002, server: 156.146.59.48, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0148[642ms]', port: 9002, server: 84.239.49.197, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '英国 0291[507ms]', password: a2b0fd2b-716f-0df8-d4e2-03a1c00e5f1a, port: 443, server: ec736d7b-t9zts0-tb08pe-luwe.uk.oshuawei.com, sni: ec736d7b-t9zts0-tb08pe-luwe.uk.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: a2b0fd2b-716f-0df8-d4e2-03a1c00e5f1a }
+  - { name: '罗马尼亚 0171[622ms]', port: 9002, server: 84.239.14.156, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 1455[510ms]', port: 9002, server: 138.199.35.204, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0091[571ms]', port: 9002, server: 84.239.49.235, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 1612[508ms]', password: e4499a62-0cfe-11eb-ad8c-f23c9164ca5d, port: 443, server: 42bb1294-t9zts0-tpftcp-13x18.se.oshuawei.com, sni: 42bb1294-t9zts0-tpftcp-13x18.se.oshuawei.com, tls: true, type: http, username: e4499a62-0cfe-11eb-ad8c-f23c9164ca5d }
+  - { name: '罗马尼亚 0133[677ms]', port: 9002, server: 84.239.49.207, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0089[547ms]', port: 9002, server: 84.239.49.196, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '德国 0092[590ms]', server: 157.90.183.51, port: 5555, type: socks5, network: tcp, tls: false, skip-cert-verify: false, udp: true }
+  - { name: '美国 1447[645ms]', port: 9002, server: 156.146.59.33, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '美国 1430[503ms]', port: 9002, server: 138.199.35.205, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0095[770ms]', port: 9002, server: 193.176.84.21, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '法国 0364[651ms]', password: 861726bb-c61a-b0e0-99fa-5ddfdcf21902, port: 443, server: dcbc3188-t9zts0-ta5nd4-e06r.fr.oshuawei.com, sni: dcbc3188-t9zts0-ta5nd4-e06r.fr.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: 861726bb-c61a-b0e0-99fa-5ddfdcf21902 }
+  - { name: '日本 0223[416ms]', password: de629d50-1711-11ed-bd7c-f23c913c8d2b, port: 443, server: 483e462a-tegxs0-tlpfci-1jdha.jp.oshuawei.com, sni: 483e462a-tegxs0-tlpfci-1jdha.jp.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: de629d50-1711-11ed-bd7c-f23c913c8d2b }
+  - { name: '英国 0279[771ms]', password: 45bc25b2-1a10-11ed-91c0-f23c91cfbbc9, port: 443, server: c6132f4c-t9zts0-tm23vf-1jk6u.uk.oshuawei.com, sni: c6132f4c-t9zts0-tm23vf-1jk6u.uk.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: 45bc25b2-1a10-11ed-91c0-f23c91cfbbc9 }
+  - { name: '新加坡 0369[275ms]', type: http, server: 38aa4bb3-t9zts0-td5oia-1m49t.sg.oshuawei.com, port: 443, password: c357a728-1211-11f0-9a65-f23c9164ca5d, tls: true, sni: 38aa4bb3-t9zts0-td5oia-1m49t.sg.oshuawei.com, username: c357a728-1211-11f0-9a65-f23c9164ca5d }
+  - { name: '芬兰 0177[804ms]', server: 66.234.150.154, port: 443, type: vless, uuid: 701ea834-7c31-4544-95d6-f0a4dfe40b36, network: tcp, sni: storage.yandex.net, servername: storage.yandex.net, flow: xtls-rprx-vision, client-fingerprint: chrome, reality-opts: { public-key: KYlgK96xPZJq10GbhF-BaCXRxXc9XzxzfICdooYvMlg, short-id: d020b987f84eb78a }, tls: true, skip-cert-verify: false, udp: true }
+  - { name: '美国 1606[617ms]', password: 19dd9c70-e4a5-11ed-8347-f23c9164ca5d, port: 443, server: 81578c1d-tegxs0-tug19l-1go3q.se.oshuawei.com, sni: 81578c1d-tegxs0-tug19l-1go3q.se.oshuawei.com, tls: true, type: http, username: 19dd9c70-e4a5-11ed-8347-f23c9164ca5d }
+  - { name: '美国 1492[720ms]', port: 9002, server: 138.199.35.211, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '美国 1433[646ms]', port: 9002, server: 156.146.59.27, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '塞舌尔 0865[707ms]', server: 45.196.182.49, port: 443, type: vless, uuid: 701ea834-7c31-4544-95d6-f0a4dfe40b36, network: tcp, sni: storage.yandex.net, servername: storage.yandex.net, flow: xtls-rprx-vision, client-fingerprint: chrome, reality-opts: { public-key: KYlgK96xPZJq10GbhF-BaCXRxXc9XzxzfICdooYvMlg, short-id: d020b987f84eb78a }, tls: true, skip-cert-verify: false, udp: true }
+  - { name: '罗马尼亚 0137[637ms]', port: 9002, server: 193.176.84.16, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '美国 1485[541ms]', port: 9002, server: 138.199.35.219, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0088[710ms]', port: 9002, server: 84.239.49.245, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 1511[641ms]', port: 9002, server: 156.146.59.36, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '美国 1528[575ms]', password: '', port: 443, server: 38.28.193.1, skip-cert-verify: true, sub_tag: P002-260618, tls: true, type: http, username: '' }
+  - { name: '美国 1515[618ms]', port: 9002, server: 156.146.59.30, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0191[605ms]', port: 9002, server: 84.239.49.249, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { name: '美国 1529[456ms]', password: 6d56436c-150d-11f0-b0c8-f23c913c8d2b, port: 443, server: 6a181e1d-t9zts0-tg010c-1r7od.sj.oshuawei.com, sni: 6a181e1d-t9zts0-tg010c-1r7od.sj.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: 6d56436c-150d-11f0-b0c8-f23c913c8d2b }
+  - { name: '新加坡 0359[249ms]', password: 91df5a86-fcdd-11ef-94aa-f23c913c8d2b, port: 443, server: d39d6b46-ta1og0-tbnk1n-ueq.sg.oshuawei.com, sni: d39d6b46-ta1og0-tbnk1n-ueq.sg.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: 91df5a86-fcdd-11ef-94aa-f23c913c8d2b }
+  - { name: '美国 1493[646ms]', port: 9002, server: 156.146.59.16, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '美国 1531[674ms]', port: 9002, server: 156.146.59.34, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0129[625ms]', port: 9002, server: 84.239.49.253, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 1440[654ms]', port: 9002, server: 156.146.59.10, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '美国 1618[701ms]', password: a18ef18e-293a-11ef-b76e-f23c91cfbbc9, port: 8443, server: d3caec03-tegxs0-tifnix-1ro8s.isp.cdnkuaishou.com, sni: d3caec03-tegxs0-tifnix-1ro8s.isp.cdnkuaishou.com, tls: true, type: http, username: a18ef18e-293a-11ef-b76e-f23c91cfbbc9 }
+  - { name: '罗马尼亚 0112[648ms]', port: 9002, server: 84.239.49.219, skip-cert-verify: true, tls: true, type: http }
+  - { name: '美国 1520[687ms]', port: 9002, server: 156.146.59.15, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '新加坡 0367[306ms]', type: http, server: bb7c1f57-t9zts0-tcmifz-1s3lb.sg.oshuawei.com, port: 443, password: fbf91120-50ba-11ef-a203-f23c91cfbbc9, tls: true, sni: bb7c1f57-t9zts0-tcmifz-1s3lb.sg.oshuawei.com, username: fbf91120-50ba-11ef-a203-f23c91cfbbc9 }
+  - { name: '美国 1431[594ms]', port: 9002, server: 138.199.35.215, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '英国 0277[617ms]', password: f5c0eda2-4b97-11ed-bd7c-f23c913c8d2b, port: 443, server: d299fec1-ta1og0-taxf6m-ieln.uk.oshuawei.com, sni: d299fec1-ta1og0-taxf6m-ieln.uk.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: f5c0eda2-4b97-11ed-bd7c-f23c913c8d2b }
+  - { name: '英国 0274[526ms]', password: 61c4be90-6235-11ec-a8bf-f23c91cfbbc9, port: 443, server: 3051f36a-t9zts0-tr9h64-1f1f1.uk.oshuawei.com, sni: 3051f36a-t9zts0-tr9h64-1f1f1.uk.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: 61c4be90-6235-11ec-a8bf-f23c91cfbbc9 }
+  - { name: '塞舌尔 1221[686ms]', type: vless, server: 45.196.182.106, port: 443, uuid: 701ea834-7c31-4544-95d6-f0a4dfe40b36, servername: storage.yandex.net, tls: true, flow: xtls-rprx-vision, client-fingerprint: chrome, reality-opts: { public-key: KYlgK96xPZJq10GbhF-BaCXRxXc9XzxzfICdooYvMlg, short-id: d020b987f84eb78a }, skip-cert-verify: true, udp: true }
+  - { name: '罗马尼亚 0143[647ms]', port: 9002, server: 193.176.84.24, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 1588[480ms]', type: http, server: 198.2.210.70, port: 443, skip-cert-verify: true, tls: true }
+  - { name: '罗马尼亚 0141[639ms]', port: 9002, server: 84.239.49.229, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 1616[607ms]', password: b2c6384c-f63d-11ec-b1b3-f23c91cfbbc9, port: 443, server: 9deb50af-t9zts0-thv9l4-1jbj0.se.oshuawei.com, sni: 9deb50af-t9zts0-thv9l4-1jbj0.se.oshuawei.com, tls: true, type: http, username: b2c6384c-f63d-11ec-b1b3-f23c91cfbbc9 }
+  - { name: '塞舌尔 0916[809ms]', server: 45.196.182.105, port: 443, type: vless, uuid: 701ea834-7c31-4544-95d6-f0a4dfe40b36, network: tcp, sni: storage.yandex.net, servername: storage.yandex.net, flow: xtls-rprx-vision, client-fingerprint: chrome, reality-opts: { public-key: KYlgK96xPZJq10GbhF-BaCXRxXc9XzxzfICdooYvMlg, short-id: d020b987f84eb78a }, tls: true, skip-cert-verify: false, udp: true }
+  - { name: '罗马尼亚 0103[602ms]', port: 9002, server: 84.239.49.234, skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0200[581ms]', type: http, server: 84.239.49.192, port: 9002, skip-cert-verify: true, tls: true, sni: www.bing.com }
+  - { name: '罗马尼亚 0179[676ms]', port: 9002, server: 84.239.49.224, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 1533[685ms]', password: b2c6384c-f63d-11ec-b1b3-f23c91cfbbc9, port: 8443, server: 29d3e631-tegxs0-thv9l4-1jbj0.isp.cdnkuaishou.com, sni: 29d3e631-tegxs0-thv9l4-1jbj0.isp.cdnkuaishou.com, sub_tag: R002-260618, tls: true, type: http, username: b2c6384c-f63d-11ec-b1b3-f23c91cfbbc9 }
+  - { name: '美国 1587[625ms]', type: http, server: 209.148.53.153, port: 8090, skip-cert-verify: true, tls: true }
+  - { name: '罗马尼亚 0204[706ms]', type: http, server: 84.239.49.244, port: 9002, skip-cert-verify: true, tls: true, sni: www.bing.com }
+  - { name: '罗马尼亚 0107[672ms]', port: 9002, server: 84.239.49.242, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0108[581ms]', port: 9002, server: 84.239.49.223, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0119[654ms]', port: 9002, server: 84.239.49.180, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { name: '罗马尼亚 0192[579ms]', port: 9002, server: 84.239.49.240, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { name: '罗马尼亚 0114[685ms]', port: 9002, server: 84.239.49.220, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0134[679ms]', port: 9002, server: 84.239.14.157, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '荷兰 0609[628ms]', port: 9002, server: 84.17.47.147, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0201[607ms]', type: http, server: 84.239.49.164, port: 9002, skip-cert-verify: true, tls: true, udp: true, sni: www.bing.com }
+  - { name: '罗马尼亚 0131[719ms]', port: 9002, server: 193.176.84.25, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0090[603ms]', port: 9002, server: 84.239.49.58, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '荷兰 0157[607ms]', server: 31.77.157.177, port: 2055, type: vless, uuid: 040782e7-07a7-4e15-b2a0-ea63aaac17fc, network: tcp, sni: www.icloud.com, servername: www.icloud.com, flow: xtls-rprx-vision, client-fingerprint: chrome, reality-opts: { public-key: CWfqf06pemmlwAM8Ju1SMmnrYnAxoxMdGve0Bnu3yQ0, short-id: a1b2c3d4e5f6a7b8 }, tls: true, skip-cert-verify: false, udp: true }
+  - { name: '美国 1494[992ms]', port: 9002, server: 156.146.59.19, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0156[671ms]', port: 9002, server: 84.239.49.168, skip-cert-verify: true, sni: www.bing.com, sub_tag: P002-260618, tls: true, type: http }
+  - { name: '荷兰 0208[744ms]', server: 103.112.70.204, port: 443, type: vless, uuid: 7c51a617-2f7d-495c-aeb2-f75e3824f73a, network: tcp, sni: www.sony.com, servername: www.sony.com, flow: xtls-rprx-vision, client-fingerprint: firefox, reality-opts: { public-key: W3_mz6WgMSWv6emDJjkjdJ3gIEnPrxcKST6THwPTxCs, short-id: 7a0e32399d1f3d01 }, tls: true, skip-cert-verify: false, udp: true }
+  - { name: '美国 1518[606ms]', port: 9002, server: 156.146.59.17, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '芬兰 0198[657ms]', server: 66.234.150.136, port: 443, type: vless, uuid: 701ea834-7c31-4544-95d6-f0a4dfe40b36, network: tcp, sni: storage.yandex.net, servername: storage.yandex.net, flow: xtls-rprx-vision, client-fingerprint: chrome, reality-opts: { public-key: KYlgK96xPZJq10GbhF-BaCXRxXc9XzxzfICdooYvMlg, short-id: d020b987f84eb78a }, tls: true, skip-cert-verify: false, udp: true }
+  - { name: '罗马尼亚 0181[584ms]', port: 9002, server: 84.239.49.203, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '美国 1538[588ms]', password: '', port: 1080, server: 47.253.211.16, sub_tag: P002-260618, type: socks5, username: '' }
+  - { name: '韩国 0097[432ms]', password: af7ddbb2-3567-11ec-bd7c-f23c913c8d2b, port: 31433, server: 891f3762-ta1og0-tiqsce-t6fv.kr.oshuawei.com, sni: 891f3762-ta1og0-tiqsce-t6fv.kr.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: af7ddbb2-3567-11ec-bd7c-f23c913c8d2b }
+  - { name: '罗马尼亚 0142[633ms]', port: 9002, server: 84.239.49.55, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '新加坡 0348[242ms]', password: 4b9ca118-7fab-11eb-bd3a-f23c9164ca5d, port: 443, server: 657c72ce-t9zts0-tcq5zn-19qpt.sg.oshuawei.com, sni: 657c72ce-t9zts0-tcq5zn-19qpt.sg.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: 4b9ca118-7fab-11eb-bd3a-f23c9164ca5d }
+  - { name: '罗马尼亚 0101[660ms]', port: 9002, server: 84.239.14.154, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0203[616ms]', type: http, server: 84.239.49.230, port: 9002, skip-cert-verify: true, tls: true, sni: www.bing.com }
+  - { name: '英国 0293[563ms]', password: 51362ab6-b5e6-11ea-ad28-f23c913c8d2b, port: 443, server: b7342ec0-t9zts0-tnkuks-wujn.uk.oshuawei.com, sni: b7342ec0-t9zts0-tnkuks-wujn.uk.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: 51362ab6-b5e6-11ea-ad28-f23c913c8d2b }
+  - { name: '塞舌尔 0955[736ms]', server: 45.196.182.34, port: 443, type: vless, uuid: 701ea834-7c31-4544-95d6-f0a4dfe40b36, network: tcp, sni: storage.yandex.net, servername: storage.yandex.net, flow: xtls-rprx-vision, client-fingerprint: chrome, reality-opts: { public-key: KYlgK96xPZJq10GbhF-BaCXRxXc9XzxzfICdooYvMlg, short-id: d020b987f84eb78a }, tls: true, skip-cert-verify: false, udp: true }
+  - { name: '美国 1464[524ms]', port: 9002, server: 138.199.35.220, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '美国 1523[596ms]', password: c1785de0-212f-11ef-92aa-f23c9164ca5d, port: 443, server: 69f5fa11-t9zts0-tfpsin-1q3dm.sjc.oshuawei.com, sni: 69f5fa11-t9zts0-tfpsin-1q3dm.sjc.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: c1785de0-212f-11ef-92aa-f23c9164ca5d }
+  - { name: '新加坡 0368[405ms]', type: http, server: 02da54f5-t9zts0-tlm64c-xm0q.sg.oshuawei.com, port: 443, password: 3437f34e-1b77-11eb-8684-f23c913c8d2b, tls: true, sni: 02da54f5-t9zts0-tlm64c-xm0q.sg.oshuawei.com, username: 3437f34e-1b77-11eb-8684-f23c913c8d2b }
+  - { name: '罗马尼亚 0092[669ms]', port: 9002, server: 84.239.49.191, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { name: '荷兰 0164[724ms]', server: 5.255.99.75, port: 1080, type: socks5, network: tcp, tls: false, skip-cert-verify: false, udp: true }
+  - { name: '罗马尼亚 0162[644ms]', port: 9002, server: 84.239.49.176, skip-cert-verify: true, sni: www.bing.com, sub_tag: R002-260618, tls: true, type: http }
+  - { name: '罗马尼亚 0098[597ms]', port: 9002, server: 84.239.49.37, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { name: '罗马尼亚 0104[574ms]', port: 9002, server: 84.239.49.227, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0106[632ms]', port: 9002, server: 84.239.49.233, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0178[633ms]', port: 9002, server: 84.239.49.189, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0164[658ms]', port: 9002, server: 193.176.84.34, skip-cert-verify: true, sub_tag: R002-260618, tls: true, type: http }
+  - { name: '美国 1559[514ms]', password: c357a728-1211-11f0-9a65-f23c9164ca5d, port: 443, server: f7f65757-t9zts0-td5oia-1m49t.sjc.oshuawei.com, sni: f7f65757-t9zts0-td5oia-1m49t.sjc.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: c357a728-1211-11f0-9a65-f23c9164ca5d }
+  - { name: '罗马尼亚 0118[615ms]', port: 9002, server: 193.176.84.38, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '德国 0503[646ms]', server: 45.157.233.47, port: 443, type: vless, uuid: c82343d1-3302-4d2a-83c8-241c9d06fa4e, network: tcp, sni: ads.x5.ru, servername: ads.x5.ru, flow: xtls-rprx-vision, client-fingerprint: chrome, reality-opts: { public-key: 8h8t5eBWL9oERK7xWHQLFJE5j6sZdgNDQAs3EGnNbho, short-id: b76dcf9e1183fe1b }, tls: true, skip-cert-verify: false, udp: true }
+  - { name: '英国 0285[636ms]', password: d6abdbda-fe9d-11ec-bb74-f23c9164ca5d, port: 443, server: 703dc447-t9zts0-td95qh-1isea.uk.oshuawei.com, sni: 703dc447-t9zts0-td95qh-1isea.uk.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: d6abdbda-fe9d-11ec-bb74-f23c9164ca5d }
+  - { name: '罗马尼亚 0199[656ms]', type: http, server: 193.176.84.30, port: 9002, skip-cert-verify: true, tls: true, sni: www.bing.com }
+  - { name: '罗马尼亚 0165[609ms]', port: 9002, server: 84.239.49.182, skip-cert-verify: true, sni: www.bing.com, sub_tag: R002-260618, tls: true, type: http }
+  - { name: '美国 1507[966ms]', port: 9002, server: 156.146.59.8, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0097[634ms]', port: 9002, server: 84.239.14.148, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 1514[732ms]', port: 9002, server: 156.146.59.46, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '英国 0294[527ms]', password: 3085fcf8-a69c-11ec-bd7c-f23c913c8d2b, port: 443, server: 9ddfd892-t9zts0-tnsc3a-1f0gu.uk.oshuawei.com, sni: 9ddfd892-t9zts0-tnsc3a-1f0gu.uk.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: 3085fcf8-a69c-11ec-bd7c-f23c913c8d2b }
+  - { name: '罗马尼亚 0197[584ms]', server: 84.239.49.209, port: 9002, type: http, tls: true, skip-cert-verify: true, udp: true }
+  - { name: '美国 1481[537ms]', port: 9002, server: 138.199.35.208, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '未知 0348[885ms]', server: 104.18.152.246, port: 443, type: trojan, password: humanity, network: ws, sni: www.calmloud.com, servername: www.calmloud.com, alpn: [http/1.1], client-fingerprint: chrome, ws-opts: { path: /assignment, headers: { Host: www.calmloud.com } }, tls: true, skip-cert-verify: false, udp: true }
+  - { name: '罗马尼亚 0173[613ms]', port: 9002, server: 84.239.14.158, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 1615[741ms]', password: b02327ac-a49a-11ef-a673-f23c913c8d2b, port: 8443, server: 34f047db-tegxs0-tqruo0-1pqhp.isp.cdnkuaishou.com, sni: 34f047db-tegxs0-tqruo0-1pqhp.isp.cdnkuaishou.com, tls: true, type: http, username: b02327ac-a49a-11ef-a673-f23c913c8d2b }
+  - { name: '英国 0292[585ms]', password: f5c0eda2-4b97-11ed-bd7c-f23c913c8d2b, port: 443, server: 5e7b8fa5-t9zts0-taxf6m-ieln.uk.oshuawei.com, sni: 5e7b8fa5-t9zts0-taxf6m-ieln.uk.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: f5c0eda2-4b97-11ed-bd7c-f23c913c8d2b }
+  - { name: '罗马尼亚 0096[635ms]', port: 9002, server: 84.239.49.38, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { name: '美国 1461[496ms]', port: 9002, server: 138.199.35.195, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '英国 0281[528ms]', password: e29de954-ea01-11ef-a271-f23c91cfbbc9, port: 443, server: 7770dfdb-t9zts0-taj9mo-1tco3.uk.oshuawei.com, sni: 7770dfdb-t9zts0-taj9mo-1tco3.uk.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: e29de954-ea01-11ef-a271-f23c91cfbbc9 }
+  - { name: '罗马尼亚 0155[646ms]', port: 9002, server: 84.239.14.149, skip-cert-verify: true, sni: www.bing.com, sub_tag: P002-260618, tls: true, type: http, udp: true }
+  - { name: '美国 1435[668ms]', port: 9002, server: 156.146.59.45, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '韩国 0104[588ms]', password: 2e42c1ee-aaaa-11ec-bb74-f23c9164ca5d, port: 31433, server: 4595054a-ta1og0-tdh9w7-ahsb.kr.oshuawei.com, sni: 4595054a-ta1og0-tdh9w7-ahsb.kr.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: 2e42c1ee-aaaa-11ec-bb74-f23c9164ca5d }
+  - { name: '罗马尼亚 0195[718ms]', server: 84.239.49.204, port: 9002, type: http, tls: true, skip-cert-verify: true, udp: true }
+  - { name: '罗马尼亚 0189[615ms]', port: 9002, server: 84.239.49.43, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '美国 1438[622ms]', port: 9002, server: 156.146.59.21, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0187[630ms]', port: 9002, server: 84.239.14.146, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { name: '罗马尼亚 0144[675ms]', port: 9002, server: 84.239.49.163, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '塞舌尔 1000[739ms]', server: 45.198.80.72, port: 443, type: vless, uuid: eece4171-e025-40a3-9027-e395036ff99d, network: tcp, sni: storage.yandex.net, servername: storage.yandex.net, flow: xtls-rprx-vision, client-fingerprint: chrome, reality-opts: { public-key: zr8_rtHm86s_G1gfRwNtunStGngYZSdYkA3PyBFXpDg, short-id: 28047c78b3f5ee2c }, tls: true, skip-cert-verify: false, udp: true }
+  - { name: '美国 1465[528ms]', port: 9002, server: 138.199.35.207, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0147[648ms]', port: 9002, server: 84.239.49.173, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0138[680ms]', port: 9002, server: 84.239.14.159, skip-cert-verify: true, tls: true, type: http }
+  - { name: '塞舌尔 0401[699ms]', server: 45.198.87.187, port: 8443, type: vless, uuid: 7896c501-248f-4068-bc2f-363c91ba5122, network: tcp, sni: storage.yandex.net, servername: storage.yandex.net, flow: xtls-rprx-vision, client-fingerprint: chrome, reality-opts: { public-key: 7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg, short-id: 2715592069f36fe7 }, tls: true, skip-cert-verify: false, udp: true }
+  - { name: '罗马尼亚 0190[606ms]', port: 9002, server: 84.239.49.225, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { name: '美国 1613[680ms]', password: af7ddbb2-3567-11ec-bd7c-f23c913c8d2b, port: 8443, server: 4806b6f0-tegxs0-tiqsce-t6fv.isp.cdnkuaishou.com, sni: 4806b6f0-tegxs0-tiqsce-t6fv.isp.cdnkuaishou.com, tls: true, type: http, username: af7ddbb2-3567-11ec-bd7c-f23c913c8d2b }
+  - { name: '美国 1508[540ms]', port: 9002, server: 138.199.35.212, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0196[589ms]', server: 84.239.49.157, port: 9002, type: http, tls: true, skip-cert-verify: true, udp: true }
+  - { name: '俄罗斯联邦 0061[668ms]', server: 158.160.191.91, port: 443, type: vless, uuid: a5ea9247-79f3-4655-aece-3fb51e1e669e, network: tcp, sni: rezerv8.yunus.guru, servername: rezerv8.yunus.guru, flow: xtls-rprx-vision, client-fingerprint: firefox, reality-opts: { public-key: 6QIHdF1dvSK8mDPOeWXvGIqJmZ2ySq5fyc7N15h1WFE, short-id: 34256b39b4ebb864 }, tls: true, skip-cert-verify: false, udp: true }
+  - { name: '罗马尼亚 0128[689ms]', port: 9002, server: 193.176.84.19, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 1446[639ms]', port: 9002, server: 156.146.59.4, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '英国 0286[553ms]', password: f13f964e-f06c-11ec-a858-f23c91cfbbc9, port: 443, server: 5f4bce09-ta1og0-ta5i1s-1j61y.uk.oshuawei.com, sni: 5f4bce09-ta1og0-ta5i1s-1j61y.uk.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: f13f964e-f06c-11ec-a858-f23c91cfbbc9 }
+  - { name: '美国 1469[824ms]', port: 9002, server: 156.146.59.43, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0083[670ms]', port: 9002, server: 193.176.84.32, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '荷兰 0615[801ms]', password: '', port: 1080, server: 93.177.116.84, skip-cert-verify: true, sub_tag: A001-260618, type: socks5, username: '' }
+  - { name: '美国 1444[611ms]', port: 9002, server: 156.146.59.20, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0132[622ms]', port: 9002, server: 84.239.49.155, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0145[605ms]', port: 9002, server: 84.239.49.154, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0086[618ms]', port: 9002, server: 84.239.49.183, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 1463[639ms]', port: 9002, server: 138.199.35.196, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '日本 0001', type: vless, server: green.jiangniao.de, port: 51790, uuid: 1b69afb7-9f0a-4e6c-9a4b-1fcf7621b0be, network: tcp, tls: true, udp: true, flow: xtls-rprx-vision-udp443, servername: icloud.com, client-fingerprint: chrome, reality-opts: { public-key: XJa0ZYOvtfwRz7aF8GprVrnEjc4S1rokGFhc-tI1YFk, short-id: 02c40852, spider-x: / } }
+  - { name: '美国 0001', type: vless, server: jiang.jiangniao.de, port: 12852, uuid: e96ab706-0aa6-4ff6-820a-6f3549dd3319, network: tcp, tls: true, udp: true, flow: xtls-rprx-vision-udp443, servername: icloud.com, client-fingerprint: chrome, reality-opts: { public-key: uInXYi-6Bd6C061wSjWpFZTaE8Hd1fS3MBsU57geT0I, short-id: 28fcba0ec25e, spider-x: / } }
+  - { name: '罗马尼亚 0102[583ms]', port: 9002, server: 84.239.49.42, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '澳大利亚 0018[818ms]', port: 443, server: 103.62.50.130, skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0117[593ms]', port: 9002, server: 84.239.49.161, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '爱沙尼亚 0002[541ms]', server: 185.155.97.58, port: 45176, type: vless, uuid: dc7940e0-6bff-45e3-853d-4007561803c3, network: tcp, sni: www.googletagmanager.com, servername: www.googletagmanager.com, flow: xtls-rprx-vision, client-fingerprint: chrome, reality-opts: { public-key: A1Qf_rMG4KDfLzfCK-M5R9qW_0uThfeSosQnv6LBL1M, short-id: 8433cb66b6c3ab6d }, tls: true, skip-cert-verify: false, udp: true }
+  - { name: '罗马尼亚 0126[653ms]', port: 9002, server: 84.239.49.171, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { name: '英国 0275[559ms]', password: 22308988-8548-11ea-a22e-f23c91cfbbc9, port: 443, server: ff28cfb9-t9zts0-tiaexf-ufc0.uk.oshuawei.com, sni: ff28cfb9-t9zts0-tiaexf-ufc0.uk.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: 22308988-8548-11ea-a22e-f23c91cfbbc9 }
+  - { name: '塞舌尔 0965[621ms]', server: 45.196.182.58, port: 443, type: vless, uuid: 701ea834-7c31-4544-95d6-f0a4dfe40b36, network: tcp, sni: storage.yandex.net, servername: storage.yandex.net, flow: xtls-rprx-vision, client-fingerprint: chrome, reality-opts: { public-key: KYlgK96xPZJq10GbhF-BaCXRxXc9XzxzfICdooYvMlg, short-id: d020b987f84eb78a }, tls: true, skip-cert-verify: false, udp: true }
+  - { name: '立陶宛 0421[580ms]', type: vless, server: 45.194.10.139, port: 8443, uuid: 3e7cede4-721a-4807-b0a2-5fe6586af907, servername: storage.yandex.net, tls: true, flow: xtls-rprx-vision, client-fingerprint: chrome, reality-opts: { public-key: L3X1eh1Jq_6PKJ6LlwjgiWq0XNaDOqCVKgIElJ5nkVA, short-id: 2cfb5a0ae8ab0cb0 }, skip-cert-verify: true, udp: true }
+  - { name: '美国 0004', type: vless, server: jiang.jiangniao.de, port: 44779, uuid: 6ae3ada1-49c6-48ab-8cd3-53b63ae2e9f1, network: tcp, tls: true, udp: true, flow: xtls-rprx-vision-udp443, servername: icloud.com, client-fingerprint: chrome, reality-opts: { public-key: l9y_VNGHADyIsENlPgZxkhGPy8u3YzIJKC73GD8fuS4, short-id: 6eb946ae72a615, spider-x: / } }
+  - { name: '罗马尼亚 0177[606ms]', port: 9002, server: 84.239.49.208, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 1497[718ms]', port: 9002, server: 156.146.59.12, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '荷兰 0622[610ms]', type: http, server: 84.17.47.150, port: 9002, skip-cert-verify: true, tls: true }
+  - { name: '美国 1475[619ms]', port: 9002, server: 156.146.59.9, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '德国 0684[584ms]', server: 45.80.111.7, port: 443, type: trojan, password: MITIVPN, network: ws, sni: u---as.MaQror.ir, servername: u---as.MaQror.ir, alpn: [http/1.1], client-fingerprint: chrome, ws-opts: { path: /---@MiTiVPN/---@MiTiVPN/---@MiTiVPN/---@MiTiVPN/---@MiTiVPN=usa, headers: { Host: us-sss-us.MaQror.ir } }, tls: true, skip-cert-verify: true, udp: true }
+  - { name: '罗马尼亚 0198[646ms]', type: http, server: 84.239.49.53, port: 9002, skip-cert-verify: true, tls: true, sni: www.bing.com }
+  - { name: '美国 1457[515ms]', port: 9002, server: 138.199.35.209, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { cipher: aes-256-cfb, name: '日本 0222[296ms]', password: amazonskr05, port: 443, server: 18.183.135.29, sub_tag: S001-260618, type: ss, udp: true }
+  - { name: '美国 1551[601ms]', password: 6ddb6a68-d5f5-ca30-3943-cf0c9876d50c, port: 443, server: 3bcad594-tekn40-tnnrly-g43g.sj.hyhuawei.com, sni: 3bcad594-tekn40-tnnrly-g43g.sj.hyhuawei.com, sub_tag: R002-260618, tls: true, type: http, username: 6ddb6a68-d5f5-ca30-3943-cf0c9876d50c }
+  - { name: '法国 0355[654ms]', password: f13f964e-f06c-11ec-a858-f23c91cfbbc9, port: 443, server: 8a7d3033-ta1og0-ta5i1s-1j61y.fr.oshuawei.com, sni: 8a7d3033-ta1og0-ta5i1s-1j61y.fr.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: f13f964e-f06c-11ec-a858-f23c91cfbbc9 }
+  - { name: '美国 1614[718ms]', password: d095ecc6-7b69-11eb-b77b-f23c913c8d2b, port: 8443, server: 09fb7a75-teisg0-tvk1qn-19les.isp.cdnkuaishou.com, sni: 09fb7a75-teisg0-tvk1qn-19les.isp.cdnkuaishou.com, tls: true, type: http, username: d095ecc6-7b69-11eb-b77b-f23c913c8d2b }
+  - { name: '美国 1456[724ms]', port: 9002, server: 138.199.35.197, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '美国 1467[637ms]', port: 9002, server: 138.199.35.200, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '荷兰 0623[675ms]', type: http, server: 51.159.225.196, port: 23856, skip-cert-verify: true, tls: true }
+  - { name: '罗马尼亚 0152[644ms]', port: 9002, server: 84.239.49.247, skip-cert-verify: true, tls: true, type: http }
+  - { name: '荷兰 0604[602ms]', port: 9002, server: 84.17.47.146, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0110[682ms]', port: 9002, server: 84.239.49.57, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0084[574ms]', port: 9002, server: 84.239.49.187, skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0159[593ms]', port: 9002, server: 84.239.49.198, skip-cert-verify: true, sub_tag: R002-260618, tls: true, type: http }
+  - { name: '美国 1495[489ms]', port: 9002, server: 138.199.35.210, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0130[643ms]', port: 9002, server: 84.239.49.178, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { name: '塞舌尔 0998[679ms]', server: 45.198.80.147, port: 443, type: vless, uuid: eece4171-e025-40a3-9027-e395036ff99d, network: tcp, sni: storage.yandex.net, servername: storage.yandex.net, flow: xtls-rprx-vision, client-fingerprint: chrome, reality-opts: { public-key: zr8_rtHm86s_G1gfRwNtunStGngYZSdYkA3PyBFXpDg, short-id: 28047c78b3f5ee2c }, tls: true, skip-cert-verify: false, udp: true }
+  - { name: '罗马尼亚 0121[567ms]', port: 9002, server: 84.239.49.217, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0151[655ms]', port: 9002, server: 84.239.49.166, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { delay: 1159, name: '罗马尼亚 0153[547ms]', port: 9002, server: 84.239.49.211, skip-cert-verify: true, sub_tag: G001-260618, tls: true, type: http, udp: true }
+  - { name: '罗马尼亚 0120[630ms]', port: 9002, server: 84.239.49.213, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0172[609ms]', port: 9002, server: 84.239.49.49, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0115[587ms]', port: 9002, server: 84.239.49.160, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 0002', type: vless, server: jiang.jiangniao.de, port: 41236, uuid: 1a16fad3-3182-445f-b27b-db018e4e5746, network: tcp, tls: true, udp: true, flow: xtls-rprx-vision-udp443, servername: yahoo.com, client-fingerprint: chrome, reality-opts: { public-key: lDSUkgWuvxEQ1RzMbuwGCqdX7bn3uDetAYJmP4HGhXA, short-id: c5475819, spider-x: / } }
+  - { name: '罗马尼亚 0185[582ms]', port: 9002, server: 84.239.14.160, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { name: '英国 0284[535ms]', password: 3437f34e-1b77-11eb-8684-f23c913c8d2b, port: 443, server: 0bfaae1c-t9zts0-tlm64c-xm0q.uk.oshuawei.com, sni: 0bfaae1c-t9zts0-tlm64c-xm0q.uk.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: 3437f34e-1b77-11eb-8684-f23c913c8d2b }
+  - { name: '英国 0287[540ms]', password: d095ecc6-7b69-11eb-b77b-f23c913c8d2b, port: 443, server: 9035056e-t9zts0-tcmken-19les.uk.oshuawei.com, sni: 9035056e-t9zts0-tcmken-19les.uk.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: d095ecc6-7b69-11eb-b77b-f23c913c8d2b }
+  - { name: '英国 0297[548ms]', password: 0fcf5a7a-e1b7-11ec-a352-f23c91cfbbc9, port: 443, server: 1e32fec0-t9zts0-tq9o8d-1d3bw.uk.oshuawei.com, sni: 1e32fec0-t9zts0-tq9o8d-1d3bw.uk.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: 0fcf5a7a-e1b7-11ec-a352-f23c91cfbbc9 }
+  - { name: '罗马尼亚 0099[649ms]', port: 9002, server: 84.239.49.254, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { client-fingerprint: edge, encryption: mlkem768x25519plus.native.0rtt.81v4M2zT2d7WOF84cR0ruUfDKkCNlH-aAGYPoR6yGlU, name: '美国 1574[711ms]', network: tcp, port: 20609, reality-opts: { public-key: Nd1Efm_-pq3EJNcQU5WOU7d2lSgjtc5JFxLFQjQP-nA, short-id: 8818bd449f3dd400 }, server: 31.76.21.111, sub_tag: F003-260618, tls: true, type: vless, udp: true, uuid: 52a3d9c0-7249-4999-ab62-6b6ae0f84af4, xudp: true, packet-encoding: xudp, servername: okko.tv }
+  - { name: '美国 1516[604ms]', port: 9002, server: 138.199.35.216, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '塞舌尔 0961[688ms]', server: 45.198.80.230, port: 443, type: vless, uuid: eece4171-e025-40a3-9027-e395036ff99d, network: tcp, sni: storage.yandex.net, servername: storage.yandex.net, flow: xtls-rprx-vision, client-fingerprint: chrome, reality-opts: { public-key: zr8_rtHm86s_G1gfRwNtunStGngYZSdYkA3PyBFXpDg, short-id: 28047c78b3f5ee2c }, tls: true, skip-cert-verify: false, udp: true }
+  - { name: '罗马尼亚 0176[613ms]', port: 9002, server: 84.239.49.175, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0202[739ms]', type: http, server: 193.176.84.22, port: 9002, skip-cert-verify: true, tls: true, sni: www.bing.com }
+  - { name: '罗马尼亚 0124[662ms]', port: 9002, server: 193.176.84.27, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0161[658ms]', port: 9002, server: 84.239.49.231, skip-cert-verify: true, sni: www.bing.com, sub_tag: R002-260618, tls: true, type: http }
+  - { name: '美国 1519[625ms]', port: 9002, server: 156.146.59.23, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '塞舌尔 0926[684ms]', server: 45.198.80.146, port: 443, type: vless, uuid: eece4171-e025-40a3-9027-e395036ff99d, network: tcp, sni: storage.yandex.net, servername: storage.yandex.net, flow: xtls-rprx-vision, client-fingerprint: chrome, reality-opts: { public-key: zr8_rtHm86s_G1gfRwNtunStGngYZSdYkA3PyBFXpDg, short-id: 28047c78b3f5ee2c }, tls: true, skip-cert-verify: false, udp: true }
+  - { name: '香港 0450[557ms]', password: c1785de0-212f-11ef-92aa-f23c9164ca5d, port: 443, server: 5f977250-tegxs0-tfpsin-1q3dm.hk2.hyhuawei.com, skip-cert-verify: true, sni: 5f977250-tegxs0-tfpsin-1q3dm.hk2.hyhuawei.com, type: anytls, udp: true }
 proxy-groups:
-  - name: 🚀 所有节点
-    type: select
-    proxies:
-      - "未知 0049[461ms]"
-      - "未知 0047[454ms]"
-      - "澳大利亚 0001[880ms]"
-      - "罗马尼亚 0027[618ms]"
-      - "未知 0016[413ms]"
-      - "罗马尼亚 0018[592ms]"
-      - "香港 0060[432ms]"
-      - "未知 0040[277ms]"
-      - "罗马尼亚 0036[591ms]"
-      - "未知 0011[674ms]"
-      - "罗马尼亚 0039[512ms]"
-      - "罗马尼亚 0034[558ms]"
-      - "罗马尼亚 0042[700ms]"
-      - "罗马尼亚 0012[566ms]"
-      - "罗马尼亚 0011[505ms]"
-      - "美国 0004"
-      - "罗马尼亚 0025[654ms]"
-      - "罗马尼亚 0019[596ms]"
-      - "未知 0039[516ms]"
-      - "罗马尼亚 0032[590ms]"
-      - "未知 0031[238ms]"
-      - "罗马尼亚 0016[718ms]"
-      - "未知 0012[438ms]"
-      - "未知 0052[350ms]"
-      - "罗马尼亚 0009[709ms]"
-      - "未知 0050[488ms]"
-      - "未知 0044[431ms]"
-      - "罗马尼亚 0017[601ms]"
-      - "德国 0010[611ms]"
-      - "新加坡 0003[185ms]"
-      - "美国 0015[550ms]"
-      - "美国 0011[582ms]"
-      - "罗马尼亚 0023[575ms]"
-      - "未知 0034[449ms]"
-      - "美国 0002"
-      - "罗马尼亚 0020[557ms]"
-      - "罗马尼亚 0026[558ms]"
-      - "未知 0015[471ms]"
-      - "罗马尼亚 0014[610ms]"
-      - "美国 0003"
-      - "罗马尼亚 0033[574ms]"
-      - "罗马尼亚 0030[581ms]"
-      - "罗马尼亚 0021[564ms]"
-      - "美国 0001"
-      - "罗马尼亚 0015[761ms]"
-      - "罗马尼亚 0029[624ms]"
-      - "罗马尼亚 0041[622ms]"
-      - "未知 0028[450ms]"
-      - "未知 0032[252ms]"
-      - "罗马尼亚 0010[663ms]"
-      - "未知 0013[568ms]"
-      - "美国 0005"
-      - "未知 0038[407ms]"
-      - "法国 0006[718ms]"
-      - "罗马尼亚 0028[602ms]"
-      - "香港 0036[950ms]"
-      - "罗马尼亚 0035[702ms]"
-      - "未知 0036[411ms]"
-      - "罗马尼亚 0043[614ms]"
-      - "罗马尼亚 0031[525ms]"
-      - "罗马尼亚 0008[648ms]"
-      - "罗马尼亚 0013[676ms]"
-      - "罗马尼亚 0038[685ms]"
-      - "英国 0005[546ms]"
-      - "未知 0029[260ms]"
-      - "罗马尼亚 0024[597ms]"
-      - "未知 0043[408ms]"
-      - "未知 0048[227ms]"
-      - "德国 0011[466ms]"
-      - "未知 0030[412ms]"
-      - "未知 0014[368ms]"
-      - "罗马尼亚 0040[640ms]"
-
-
+  - { name: '🚀 所有节点', type: select, proxies: ['罗马尼亚 0123[632ms]', '罗马尼亚 0158[657ms]', '新加坡 0366[281ms]', '美国 1496[608ms]', '塞舌尔 0970[690ms]', '芬兰 0324[608ms]', '法国 0368[648ms]', '罗马尼亚 0182[653ms]', '美国 1532[685ms]', '罗马尼亚 0170[582ms]', '美国 1453[626ms]', '荷兰 0624[533ms]', '罗马尼亚 0080[601ms]', '美国 0003[529ms]', '罗马尼亚 0180[624ms]', '美国 1477[685ms]', '罗马尼亚 0174[621ms]', '罗马尼亚 0113[655ms]', '罗马尼亚 0085[718ms]', '美国 1611[518ms]', '罗马尼亚 0175[802ms]', '美国 1066[825ms]', '法国 0354[677ms]', '罗马尼亚 0100[701ms]', '韩国 0001[376ms]', '韩国 0102[678ms]', '韩国 0106[845ms]', '美国 1554[502ms]', '罗马尼亚 0125[688ms]', '塞舌尔 0905[667ms]', '韩国 0090[368ms]', '美国 1458[509ms]', '罗马尼亚 0163[662ms]', '罗马尼亚 0116[594ms]', '美国 1045[686ms]', '美国 1536[653ms]', '美国 1454[621ms]', '英国 0276[704ms]', '美国 1517[599ms]', '荷兰 0626[598ms]', '罗马尼亚 0186[673ms]', '美国 1552[699ms]', '美国 1471[622ms]', '罗马尼亚 0127[635ms]', '罗马尼亚 0183[673ms]', '美国 1439[602ms]', '英国 0296[600ms]', '塞舌尔 0934[530ms]', '美国 1555[475ms]', '罗马尼亚 0087[590ms]', '美国 1556[808ms]', '罗马尼亚 0135[754ms]', '罗马尼亚 0160[571ms]', '韩国 0180[524ms]', '美国 1586[695ms]', '罗马尼亚 0149[704ms]', '罗马尼亚 0111[597ms]', '罗马尼亚 0167[643ms]', '美国 1491[630ms]', '新加坡 0362[274ms]', '罗马尼亚 0082[568ms]', '英国 0278[626ms]', '罗马尼亚 0136[625ms]', '罗马尼亚 0166[754ms]', '美国 0334[705ms]', '英国 0282[527ms]', '罗马尼亚 0081[616ms]', '法国 0352[688ms]', '美国 1504[607ms]', '罗马尼亚 0105[692ms]', '美国 1476[641ms]', '罗马尼亚 0150[678ms]', '罗马尼亚 0122[616ms]', '罗马尼亚 0157[613ms]', '罗马尼亚 0169[666ms]', '罗马尼亚 0205[594ms]', '荷兰 0606[538ms]', '荷兰 0608[632ms]', '罗马尼亚 0094[657ms]', '罗马尼亚 0188[588ms]', '塞舌尔 0831[663ms]', '罗马尼亚 0139[647ms]', '芬兰 0192[779ms]', '美国 1490[571ms]', '韩国 0105[425ms]', '罗马尼亚 0154[685ms]', '美国 1498[641ms]', '罗马尼亚 0140[568ms]', '美国 1548[611ms]', '美国 0005', '美国 1441[862ms]', '罗马尼亚 0148[642ms]', '英国 0291[507ms]', '罗马尼亚 0171[622ms]', '美国 1455[510ms]', '罗马尼亚 0091[571ms]', '美国 1612[508ms]', '罗马尼亚 0133[677ms]', '罗马尼亚 0089[547ms]', '德国 0092[590ms]', '美国 1447[645ms]', '美国 1430[503ms]', '罗马尼亚 0095[770ms]', '法国 0364[651ms]', '日本 0223[416ms]', '英国 0279[771ms]', '新加坡 0369[275ms]', '芬兰 0177[804ms]', '美国 1606[617ms]', '美国 1492[720ms]', '美国 1433[646ms]', '塞舌尔 0865[707ms]', '罗马尼亚 0137[637ms]', '美国 1485[541ms]', '罗马尼亚 0088[710ms]', '美国 1511[641ms]', '美国 1528[575ms]', '美国 1515[618ms]', '罗马尼亚 0191[605ms]', '美国 1529[456ms]', '新加坡 0359[249ms]', '美国 1493[646ms]', '美国 1531[674ms]', '罗马尼亚 0129[625ms]', '美国 1440[654ms]', '美国 1618[701ms]', '罗马尼亚 0112[648ms]', '美国 1520[687ms]', '新加坡 0367[306ms]', '美国 1431[594ms]', '英国 0277[617ms]', '英国 0274[526ms]', '塞舌尔 1221[686ms]', '罗马尼亚 0143[647ms]', '美国 1588[480ms]', '罗马尼亚 0141[639ms]', '美国 1616[607ms]', '塞舌尔 0916[809ms]', '罗马尼亚 0103[602ms]', '罗马尼亚 0200[581ms]', '罗马尼亚 0179[676ms]', '美国 1533[685ms]', '美国 1587[625ms]', '罗马尼亚 0204[706ms]', '罗马尼亚 0107[672ms]', '罗马尼亚 0108[581ms]', '罗马尼亚 0119[654ms]', '罗马尼亚 0192[579ms]', '罗马尼亚 0114[685ms]', '罗马尼亚 0134[679ms]', '荷兰 0609[628ms]', '罗马尼亚 0201[607ms]', '罗马尼亚 0131[719ms]', '罗马尼亚 0090[603ms]', '荷兰 0157[607ms]', '美国 1494[992ms]', '罗马尼亚 0156[671ms]', '荷兰 0208[744ms]', '美国 1518[606ms]', '芬兰 0198[657ms]', '罗马尼亚 0181[584ms]', '美国 1538[588ms]', '韩国 0097[432ms]', '罗马尼亚 0142[633ms]', '新加坡 0348[242ms]', '罗马尼亚 0101[660ms]', '罗马尼亚 0203[616ms]', '英国 0293[563ms]', '塞舌尔 0955[736ms]', '美国 1464[524ms]', '美国 1523[596ms]', '新加坡 0368[405ms]', '罗马尼亚 0092[669ms]', '荷兰 0164[724ms]', '罗马尼亚 0162[644ms]', '罗马尼亚 0098[597ms]', '罗马尼亚 0104[574ms]', '罗马尼亚 0106[632ms]', '罗马尼亚 0178[633ms]', '罗马尼亚 0164[658ms]', '美国 1559[514ms]', '罗马尼亚 0118[615ms]', '德国 0503[646ms]', '英国 0285[636ms]', '罗马尼亚 0199[656ms]', '罗马尼亚 0165[609ms]', '美国 1507[966ms]', '罗马尼亚 0097[634ms]', '美国 1514[732ms]', '英国 0294[527ms]', '罗马尼亚 0197[584ms]', '美国 1481[537ms]', '未知 0348[885ms]', '罗马尼亚 0173[613ms]', '美国 1615[741ms]', '英国 0292[585ms]', '罗马尼亚 0096[635ms]', '美国 1461[496ms]', '英国 0281[528ms]', '罗马尼亚 0155[646ms]', '美国 1435[668ms]', '韩国 0104[588ms]', '罗马尼亚 0195[718ms]', '罗马尼亚 0189[615ms]', '美国 1438[622ms]', '罗马尼亚 0187[630ms]', '罗马尼亚 0144[675ms]', '塞舌尔 1000[739ms]', '美国 1465[528ms]', '罗马尼亚 0147[648ms]', '罗马尼亚 0138[680ms]', '塞舌尔 0401[699ms]', '罗马尼亚 0190[606ms]', '美国 1613[680ms]', '美国 1508[540ms]', '罗马尼亚 0196[589ms]', '俄罗斯联邦 0061[668ms]', '罗马尼亚 0128[689ms]', '美国 1446[639ms]', '英国 0286[553ms]', '美国 1469[824ms]', '罗马尼亚 0083[670ms]', '荷兰 0615[801ms]', '美国 1444[611ms]', '罗马尼亚 0132[622ms]', '罗马尼亚 0145[605ms]', '罗马尼亚 0086[618ms]', '美国 1463[639ms]', '日本 0001', '美国 0001', '罗马尼亚 0102[583ms]', '澳大利亚 0018[818ms]', '罗马尼亚 0117[593ms]', '爱沙尼亚 0002[541ms]', '罗马尼亚 0126[653ms]', '英国 0275[559ms]', '塞舌尔 0965[621ms]', '立陶宛 0421[580ms]', '美国 0004', '罗马尼亚 0177[606ms]', '美国 1497[718ms]', '荷兰 0622[610ms]', '美国 1475[619ms]', '德国 0684[584ms]', '罗马尼亚 0198[646ms]', '美国 1457[515ms]', '日本 0222[296ms]', '美国 1551[601ms]', '法国 0355[654ms]', '美国 1614[718ms]', '美国 1456[724ms]', '美国 1467[637ms]', '荷兰 0623[675ms]', '罗马尼亚 0152[644ms]', '荷兰 0604[602ms]', '罗马尼亚 0110[682ms]', '罗马尼亚 0084[574ms]', '罗马尼亚 0159[593ms]', '美国 1495[489ms]', '罗马尼亚 0130[643ms]', '塞舌尔 0998[679ms]', '罗马尼亚 0121[567ms]', '罗马尼亚 0151[655ms]', '罗马尼亚 0153[547ms]', '罗马尼亚 0120[630ms]', '罗马尼亚 0172[609ms]', '罗马尼亚 0115[587ms]', '美国 0002', '罗马尼亚 0185[582ms]', '英国 0284[535ms]', '英国 0287[540ms]', '英国 0297[548ms]', '罗马尼亚 0099[649ms]', '美国 1574[711ms]', '美国 1516[604ms]', '塞舌尔 0961[688ms]', '罗马尼亚 0176[613ms]', '罗马尼亚 0202[739ms]', '罗马尼亚 0124[662ms]', '罗马尼亚 0161[658ms]', '美国 1519[625ms]', '塞舌尔 0926[684ms]', '香港 0450[557ms]'] }
 rule-providers:
-  reject:
-    type: http
-    behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
-    path: ./ruleset/reject.txt
-    interval: 86400
-
+  reject: { type: http, behavior: domain, url: 'https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt', path: ./ruleset/reject.txt, interval: 86400 }
 rules:
-  - DOMAIN-SUFFIX,local,DIRECT
-  - DOMAIN-SUFFIX,lan,DIRECT
-  - GEOSITE,CN,DIRECT
-  - GEOIP,CN,DIRECT
-  - MATCH,🚀 所有节点   
+  - 'DOMAIN-SUFFIX,local,DIRECT'
+  - 'DOMAIN-SUFFIX,lan,DIRECT'
+  - 'GEOSITE,CN,DIRECT'
+  - 'GEOIP,CN,DIRECT'
+  - 'MATCH,🚀 所有节点'
