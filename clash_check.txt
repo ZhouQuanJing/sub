@@ -26,171 +26,323 @@ dns:
   proxy-server-nameserver: ['https://dns.alidns.com/dns-query', 'https://doh.pub/dns-query']
   nameserver-policy: { 'geosite:private,cn,geolocation-cn': ['https://dns.alidns.com/dns-query', 'https://doh.pub/dns-query'], 'geosite:google,youtube,telegram,gfw,geolocation-!cn': ['https://1.1.1.1/dns-query', 'https://1.0.0.1/dns-query', 'https://208.67.222.222/dns-query', 'https://208.67.220.220/dns-query'] }
 proxies:
-  - { name: '罗马尼亚 0033[573ms]', port: 9002, server: 84.239.49.225, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '荷兰 0081[967ms]', port: 9002, server: 84.17.47.125, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '罗马尼亚 0108[572ms]', port: 9002, server: 193.176.84.24, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '美国 0329[441ms]', port: 9002, server: 138.199.35.197, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '罗马尼亚 0029[596ms]', port: 9002, server: 84.239.49.233, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '罗马尼亚 0070[591ms]', port: 9002, server: 84.239.49.219, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '罗马尼亚 0055[535ms]', port: 9002, server: 84.239.49.185, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '未知 0633[791ms]', type: trojan, server: 104.16.89.120, port: 443, network: ws, password: humanity, sni: www.creationlong.org, ws-opts: { headers: { Host: www.creationlong.org }, path: /assignment } }
-  - { name: '芬兰 0037[717ms]', server: 144.31.27.179, port: 443, type: vless, uuid: 94878fe1-5e8b-4676-9ee0-a90267a596e5, network: tcp, sni: site.rumedia-cdn.com, servername: site.rumedia-cdn.com, flow: xtls-rprx-vision, packet-encoding: xudp, client-fingerprint: qq, reality-opts: { public-key: 8jwT95mGT7dW1VkMVt8vtwbWLgHN39tnhnt6PN1FTmU, short-id: b08c5eb124a5877e }, tls: true, skip-cert-verify: false, udp: true }
-  - { name: '美国 0333[505ms]', port: 9002, server: 138.199.35.200, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '罗马尼亚 0022[576ms]', port: 9002, server: 84.239.49.38, skip-cert-verify: true, tls: true, type: http, udp: true }
-  - { name: '罗马尼亚 0035[572ms]', port: 9002, server: 84.239.49.161, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '美国 0356[494ms]', port: 9002, server: 138.199.35.203, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '罗马尼亚 0042[553ms]', port: 9002, server: 193.176.84.19, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { client-fingerprint: chrome, name: '未知 0239[526ms]', network: ws, password: humanity, port: 443, server: 172.64.146.28, skip-cert-verify: true, sni: www.gossipglove.com, type: trojan, udp: true, ws-opts: { headers: { User-Agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/534.7 (KHTML, like Gecko) Chrome/7.0.517.44 Safari/534.7' }, path: /assignment } }
-  - { name: '罗马尼亚 0087[560ms]', port: 9002, server: 84.239.49.180, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '罗马尼亚 0088[566ms]', port: 9002, server: 84.239.49.41, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '罗马尼亚 0134[662ms]', type: http, server: 193.176.84.34, port: 9002, skip-cert-verify: true, tls: true, sni: www.bing.com }
-  - { name: '法国 0069[552ms]', server: 173.212.252.150, port: 1080, type: socks5, udp: true }
-  - { name: '罗马尼亚 0038[592ms]', port: 9002, server: 84.239.49.213, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '罗马尼亚 0099[567ms]', port: 9002, server: 84.239.49.199, skip-cert-verify: true, tls: true, type: http, udp: true }
-  - { name: '美国 0365[466ms]', port: 9002, server: 138.199.35.201, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '美国 0283[578ms]', port: 9002, server: 138.199.35.208, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '罗马尼亚 0006[606ms]', port: 9002, server: 84.239.49.211, skip-cert-verify: true, tls: true, type: http, udp: true }
-  - { name: '美国 0332[541ms]', port: 9002, server: 156.146.59.25, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '罗马尼亚 0138[607ms]', type: http, server: 84.239.49.229, port: 9002, skip-cert-verify: true, tls: true, sni: www.bing.com }
-  - { name: '罗马尼亚 0118[570ms]', port: 9002, server: 84.239.49.253, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '法国 0062[475ms]', password: 5dc6fa05-a601-aba6-7761-ecde22d2b0fc, port: 443, server: eac88fe8-t9zts0-tonrmx-8n27.fr.oshuawei.com, sni: eac88fe8-t9zts0-tonrmx-8n27.fr.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: 5dc6fa05-a601-aba6-7761-ecde22d2b0fc }
-  - { name: '美国 0353[534ms]', port: 9002, server: 156.146.59.22, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '罗马尼亚 0121[633ms]', port: 9002, server: 84.239.49.171, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '罗马尼亚 0137[605ms]', type: http, server: 193.176.84.38, port: 9002, skip-cert-verify: true, tls: true, sni: www.bing.com }
-  - { name: '土耳其 0007[559ms]', server: tr.linuxbase.ir, port: 1152, type: vless, uuid: eb6f13cb-da91-4f6f-adf3-aad51788812f, network: tcp, sni: yahoo.com, servername: yahoo.com, flow: xtls-rprx-vision, client-fingerprint: chrome, reality-opts: { public-key: YzQz4D9KFIpJ5YB4W5UqPs8wgowbeujf9KEOyuATSE4, short-id: e5115b6a2127146d, spider-x: / }, tls: true, skip-cert-verify: false, udp: true }
-  - { name: '罗马尼亚 0129[580ms]', port: 9002, server: 193.176.84.40, skip-cert-verify: true, tls: true, type: http }
-  - { name: '罗马尼亚 0125[500ms]', password: '', port: 9002, server: 84.239.49.251, skip-cert-verify: true, tls: true, type: http, username: '' }
-  - { name: '罗马尼亚 0132[534ms]', type: http, server: 84.239.49.173, port: 9002, skip-cert-verify: true, tls: true, udp: true, sni: www.bing.com }
-  - { name: '罗马尼亚 0135[637ms]', type: http, server: 84.239.49.197, port: 9002, skip-cert-verify: true, tls: true, sni: www.bing.com }
-  - { client-fingerprint: chrome, name: '未知 0359[606ms]', network: ws, password: humanity, port: 443, server: 104.16.72.41, skip-cert-verify: false, sni: www.calmlunch.com, sub_tag: B007-260618, type: trojan, udp: true, ws-opts: { headers: { User-Agent: 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.57 Safari/537.36' }, path: /assignment } }
-  - { name: '罗马尼亚 0069[565ms]', port: 9002, server: 84.239.49.59, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '罗马尼亚 0016[590ms]', port: 9002, server: 84.239.49.183, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { client-fingerprint: chrome, name: '未知 0333[639ms]', network: ws, password: humanity, port: 443, server: 172.64.147.52, skip-cert-verify: false, sni: www.multiplydose.com, type: trojan, udp: true, ws-opts: { headers: { User-Agent: 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36' }, path: /assignment } }
-  - { name: '罗马尼亚 0058[612ms]', port: 9002, server: 84.239.49.166, skip-cert-verify: true, tls: true, type: http, udp: true }
-  - { name: '韩国 0025[397ms]', server: 43.201.98.143, port: 8686, type: vless, uuid: 1a17b19d-4896-4531-af79-6e91d8ef8228, tls: true, servername: www.apple.com, client-fingerprint: chrome, network: tcp, reality-opts: { public-key: A3NXnUIT-W0m1Y_leRnv5so2IeCvk9FCFgL31PulfTw, short-id: 628b3c90c98ead4f } }
-  - { name: '罗马尼亚 0071[584ms]', port: 9002, server: 84.239.49.54, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '美国 0348[468ms]', port: 9002, server: 138.199.35.211, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '美国 0360[452ms]', port: 9002, server: 138.199.35.212, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { delay: 1233, name: '罗马尼亚 0057[516ms]', port: 9002, server: 193.176.84.37, skip-cert-verify: true, sub_tag: G001-260618, tls: true, type: http, udp: true }
-  - { name: '美国 0309[493ms]', port: 9002, server: 138.199.35.205, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '罗马尼亚 0026[479ms]', port: 9002, server: 84.239.49.42, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '韩国 0057[841ms]', type: http, server: 64.110.88.200, port: 30000, skip-cert-verify: true, tls: true }
-  - { name: '罗马尼亚 0117[499ms]', port: 9002, server: 84.239.49.196, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '罗马尼亚 0124[516ms]', password: '', port: 9002, server: 84.239.14.155, skip-cert-verify: true, tls: true, type: http, username: '' }
-  - { name: '罗马尼亚 0008[527ms]', port: 9002, server: 84.239.49.184, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '罗马尼亚 0100[562ms]', port: 9002, server: 84.239.49.220, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '新加坡 0053[209ms]', network: tcp, password: CF68213490, port: 443, server: internal-krill.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: internal-krill.rooster465.autos }
+  - { client-fingerprint: chrome, name: '日本 0071[262ms]', network: tcp, password: CF68213490, port: 443, server: fair-werewolf.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: fair-werewolf.rooster465.autos }
+  - { name: '罗马尼亚 0046[571ms]', port: 9002, server: 84.239.49.160, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { name: '罗马尼亚 0018[578ms]', port: 9002, server: 84.239.49.161, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { client-fingerprint: chrome, flow: xtls-rprx-vision, name: '美国 0330[432ms]', network: tcp, port: 18441, reality-opts: { public-key: FDMBkI47TGJidpx9oHVG4g577zXmPu1RA5xl2It7tzQ, short-id: '' }, server: 69.63.193.0, sub_tag: K001-260618, tls: true, type: vless, udp: true, uuid: 916634b2-4d0e-4b09-a56a-af05990dbfcb, xudp: true, packet-encoding: xudp, servername: dash.cloudflare.com }
+  - { name: '罗马尼亚 0073[539ms]', port: 9002, server: 84.239.49.200, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '日本 0095[280ms]', network: tcp, password: CF68213490, port: 443, server: alert-redfish.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: alert-redfish.rooster465.autos }
+  - { name: '罗马尼亚 0014[551ms]', port: 9002, server: 84.239.49.219, skip-cert-verify: true, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '日本 0072[265ms]', network: tcp, password: CF68213490, port: 443, server: loyal-molly.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: loyal-molly.rooster465.autos }
+  - { name: '罗马尼亚 0091[629ms]', port: 9002, server: 84.239.49.209, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '德国 0108[546ms]', network: tcp, password: OD90375861, port: 443, server: busy-hermit.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: busy-hermit.rooster465.autos }
+  - { name: '罗马尼亚 0074[532ms]', port: 9002, server: 84.239.49.203, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '日本 0053[238ms]', network: tcp, password: CF68213490, port: 443, server: welcome-monitor.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: welcome-monitor.rooster465.autos }
+  - { client-fingerprint: chrome, name: '新加坡 0059[242ms]', network: tcp, password: CF68213490, port: 443, server: sacred-treefrog.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: sacred-treefrog.rooster465.autos }
+  - { name: '美国 0003[475ms]', type: vless, server: jiang.jiangniao.de, port: 42025, uuid: bed8750e-36e0-425d-ae14-48d5b70cedd9, network: tcp, tls: true, udp: true, flow: xtls-rprx-vision-udp443, servername: yahoo.com, client-fingerprint: chrome, reality-opts: { public-key: 6baH2z3cSHXyNF-y60uOu15VRrHIA1s0w-c7DXvNLG4, short-id: e5d928499470, spider-x: / } }
+  - { name: '罗马尼亚 0064[589ms]', port: 9002, server: 193.176.84.21, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0044[581ms]', port: 9002, server: 84.239.49.157, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0092[542ms]', port: 9002, server: 84.239.49.234, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 0200[533ms]', port: 9002, server: 138.199.35.200, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0060[569ms]', port: 9002, server: 84.239.49.182, skip-cert-verify: true, sni: www.bing.com, sub_tag: R002-260618, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '德国 0106[705ms]', network: tcp, password: KV63147582, port: 443, server: evolving-baboon.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: evolving-baboon.rooster465.autos }
+  - { name: '罗马尼亚 0115[520ms]', password: '', port: 9002, server: 84.239.14.155, skip-cert-verify: true, tls: true, type: http, username: '' }
+  - { client-fingerprint: chrome, name: '日本 0050[243ms]', network: tcp, password: CF68213490, port: 443, server: smashing-fawn.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: smashing-fawn.rooster465.autos }
+  - { name: '罗马尼亚 0072[612ms]', port: 9002, server: 84.239.49.224, skip-cert-verify: true, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '日本 0063[239ms]', network: tcp, password: CF68213490, port: 443, server: eminent-panther.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: eminent-panther.rooster465.autos }
+  - { client-fingerprint: qq, encryption: none, grpc-opts: { grpc-service-name: nl-br-yandex }, name: '俄罗斯联邦 0041[645ms]', network: grpc, port: 443, reality-opts: { public-key: _QeslG3rHGM7DoM99pYC8-jpc16pM2MbNZ6NRMoxmHA, short-id: 10ffb85da1c2d986 }, server: 164.138.100.198, sub_tag: S001-260618, tls: true, type: vless, udp: true, uuid: d4e1d555-0cd4-4cbd-98c2-1e2c0d6128cd, xudp: true, packet-encoding: xudp, servername: api-maps.yandex.ru }
+  - { client-fingerprint: chrome, name: '日本 0064[252ms]', network: tcp, password: CF68213490, port: 443, server: accurate-frog.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: accurate-frog.rooster465.autos }
+  - { name: '罗马尼亚 0052[576ms]', port: 9002, server: 84.239.49.168, skip-cert-verify: true, sni: www.bing.com, sub_tag: P002-260618, tls: true, type: http }
+  - { name: '罗马尼亚 0121[579ms]', port: 9002, server: 193.176.84.24, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 0232[446ms]', port: 9002, server: 138.199.35.211, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0009[565ms]', port: 9002, server: 84.239.49.39, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 0216[491ms]', port: 9002, server: 138.199.35.213, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '韩国 0062[407ms]', network: tcp, password: CF68213490, port: 443, server: pure-ram.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: pure-ram.rooster465.autos }
+  - { client-fingerprint: chrome, name: '日本 0093[221ms]', network: tcp, password: CF68213490, port: 443, server: real-cardinal.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: real-cardinal.rooster465.autos }
+  - { name: '罗马尼亚 0077[559ms]', port: 9002, server: 84.239.49.162, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { name: '美国 0363[446ms]', type: http, server: 209.148.53.153, port: 8090, skip-cert-verify: true, tls: true }
+  - { client-fingerprint: chrome, name: '新加坡 0062[220ms]', network: tcp, password: CF68213490, port: 443, server: star-hagfish.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: star-hagfish.rooster465.autos }
+  - { name: '罗马尼亚 0061[610ms]', port: 9002, server: 84.239.49.59, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { client-fingerprint: chrome, flow: xtls-rprx-vision, name: '新加坡 0077[191ms]', network: tcp, port: 12972, reality-opts: { public-key: k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0, short-id: 48050fab }, server: 3.0.111.82, sub_tag: K001-260618, tls: true, type: vless, udp: true, uuid: 814bd064-544d-4255-a070-5705c03f6da9, xudp: true, packet-encoding: xudp, servername: www.apple.com }
+  - { name: '罗马尼亚 0011[562ms]', port: 9002, server: 84.239.49.223, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '日本 0102[297ms]', network: tcp, password: CF68213490, port: 443, server: innocent-rattler.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: innocent-rattler.rooster465.autos }
+  - { name: '美国 0219[483ms]', port: 9002, server: 138.199.35.208, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0129[586ms]', type: http, server: 84.239.14.156, port: 9002, skip-cert-verify: true, tls: true, sni: www.bing.com }
+  - { client-fingerprint: chrome, name: '日本 0075[209ms]', network: tcp, password: CF68213490, port: 443, server: definite-ladybird.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: definite-ladybird.rooster465.autos }
+  - { client-fingerprint: chrome, name: '韩国 0064[390ms]', network: tcp, password: CF68213490, port: 443, server: central-jawfish.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: central-jawfish.rooster465.autos }
+  - { name: '罗马尼亚 0097[559ms]', port: 9002, server: 84.239.49.176, skip-cert-verify: true, sni: www.bing.com, sub_tag: R002-260618, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '美国 0312[699ms]', network: tcp, password: OD90375861, port: 443, server: nearby-muskrat.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: nearby-muskrat.rooster465.autos }
+  - { client-fingerprint: chrome, name: '日本 0062[275ms]', network: tcp, password: CF68213490, port: 443, server: gentle-honeybee.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: gentle-honeybee.rooster465.autos }
+  - { client-fingerprint: chrome, name: '日本 0106[254ms]', network: tcp, password: CF68213490, port: 443, server: easy-barnacle.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: easy-barnacle.rooster465.autos }
+  - { client-fingerprint: chrome, name: '日本 0090[228ms]', network: tcp, password: CF68213490, port: 443, server: concrete-aardvark.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: concrete-aardvark.rooster465.autos }
+  - { client-fingerprint: chrome, name: '日本 0059[237ms]', network: tcp, password: CF68213490, port: 443, server: smiling-fowl.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: smiling-fowl.rooster465.autos }
+  - { client-fingerprint: chrome, name: '日本 0067[207ms]', network: tcp, password: CF68213490, port: 443, server: adapting-basilisk.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: adapting-basilisk.rooster465.autos }
+  - { name: '荷兰 0098[479ms]', type: http, server: 51.159.225.196, port: 23856, skip-cert-verify: true, tls: true }
+  - { name: '香港 0076[491ms]', password: d6Z20UbTCF, port: 57028, server: sub.whome.life, skip-cert-verify: true, sni: sub.whome.life, sub_tag: K001-260618, type: anytls, udp: true, username: d6Z20UbTCF, client-fingerprint: '' }
+  - { name: '罗马尼亚 0017[531ms]', port: 9002, server: 84.239.14.160, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '韩国 0063[409ms]', network: tcp, password: CF68213490, port: 443, server: gentle-mastiff.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: gentle-mastiff.rooster465.autos }
   - { name: '美国 0004', type: vless, server: jiang.jiangniao.de, port: 44779, uuid: 6ae3ada1-49c6-48ab-8cd3-53b63ae2e9f1, network: tcp, tls: true, udp: true, flow: xtls-rprx-vision-udp443, servername: icloud.com, client-fingerprint: chrome, reality-opts: { public-key: l9y_VNGHADyIsENlPgZxkhGPy8u3YzIJKC73GD8fuS4, short-id: 6eb946ae72a615, spider-x: / } }
-  - { name: '美国 0002', type: vless, server: jiang.jiangniao.de, port: 41236, uuid: 1a16fad3-3182-445f-b27b-db018e4e5746, network: tcp, tls: true, udp: true, flow: xtls-rprx-vision-udp443, servername: yahoo.com, client-fingerprint: chrome, reality-opts: { public-key: lDSUkgWuvxEQ1RzMbuwGCqdX7bn3uDetAYJmP4HGhXA, short-id: c5475819, spider-x: / } }
-  - { name: '美国 0444[520ms]', type: http, server: 209.148.53.153, port: 8090, skip-cert-verify: true, tls: true }
-  - { name: '美国 0323[450ms]', port: 9002, server: 138.199.35.199, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '美国 0342[484ms]', port: 9002, server: 138.199.35.219, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '罗马尼亚 0014[572ms]', port: 9002, server: 84.239.49.60, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '罗马尼亚 0098[567ms]', port: 9002, server: 84.239.49.192, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { client-fingerprint: chrome, name: '加拿大 0014[734ms]', network: ws, password: 13d29042-ab82-4195-9cd4-2bafc518e201, port: 443, server: 23.227.38.178, skip-cert-verify: true, sni: q6clkp794liy3y90.hktimecsgo.xyz, sub_tag: M002-260618, type: trojan, udp: true, ws-opts: { headers: { User-Agent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36' }, path: /images } }
-  - { name: '罗马尼亚 0073[540ms]', port: 9002, server: 84.239.14.156, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '美国 0302[547ms]', port: 9002, server: 156.146.59.8, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '罗马尼亚 0085[506ms]', port: 9002, server: 84.239.49.242, skip-cert-verify: true, tls: true, type: http, udp: true }
-  - { name: '罗马尼亚 0036[563ms]', port: 9002, server: 84.239.49.209, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '罗马尼亚 0040[588ms]', port: 9002, server: 84.239.49.175, skip-cert-verify: true, tls: true, type: http, udp: true }
-  - { name: '罗马尼亚 0027[542ms]', port: 9002, server: 84.239.49.234, skip-cert-verify: true, tls: true, type: http }
-  - { name: '罗马尼亚 0074[477ms]', port: 9002, server: 84.239.49.49, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '美国 0368[558ms]', port: 9002, server: 156.146.59.23, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '罗马尼亚 0102[630ms]', port: 9002, server: 84.239.49.178, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '罗马尼亚 0052[492ms]', port: 9002, server: 84.239.49.215, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0087[546ms]', port: 9002, server: 84.239.49.240, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { client-fingerprint: chrome, name: '日本 0065[237ms]', network: tcp, password: CF68213490, port: 443, server: composed-sheep.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: composed-sheep.rooster465.autos }
+  - { name: '美国 0275[561ms]', port: 9002, server: 156.146.59.8, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0114[561ms]', password: '', port: 9002, server: 84.239.49.192, skip-cert-verify: true, sub_tag: P002-260618, tls: true, type: http, username: '' }
+  - { name: '香港 0074[691ms]', password: d6Z20UbTCF, port: 33851, server: sub.whome.life, skip-cert-verify: true, sni: sub.whome.life, sub_tag: K001-260618, type: anytls, udp: true, username: d6Z20UbTCF, client-fingerprint: '' }
+  - { name: '罗马尼亚 0071[666ms]', port: 9002, server: 84.239.49.189, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0122[561ms]', type: http, server: 84.239.49.220, port: 9002, skip-cert-verify: true, tls: true, sni: www.bing.com }
+  - { name: '罗马尼亚 0096[579ms]', port: 9002, server: 84.239.14.152, skip-cert-verify: true, sni: www.bing.com, sub_tag: R002-260618, tls: true, type: http }
+  - { name: '罗马尼亚 0103[514ms]', port: 9002, server: 84.239.49.197, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '新加坡 0065[181ms]', network: tcp, password: CF68213490, port: 443, server: prime-buzzard.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: prime-buzzard.rooster465.autos }
+  - { client-fingerprint: chrome, name: '新加坡 0067[189ms]', network: tcp, password: CF68213490, port: 443, server: active-hippo.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: active-hippo.rooster465.autos }
+  - { name: '香港 0018[158ms]', server: 47.76.127.88, port: 5566, type: vmess, uuid: ad298d1d-2ae9-46fa-895c-f0401f38b02c, alterId: 0, cipher: auto, network: tcp, tls: false, skip-cert-verify: false, udp: true }
+  - { name: '罗马尼亚 0025[570ms]', port: 9002, server: 193.176.84.19, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '日本 0086[215ms]', network: tcp, password: CF68213490, port: 443, server: skilled-lioness.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: skilled-lioness.rooster465.autos }
+  - { name: '罗马尼亚 0082[547ms]', port: 9002, server: 84.239.49.43, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0047[560ms]', port: 9002, server: 84.239.49.247, skip-cert-verify: true, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '日本 0099[279ms]', network: tcp, password: CF68213490, port: 443, server: wealthy-gobbler.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: wealthy-gobbler.rooster465.autos }
+  - { name: '罗马尼亚 0041[621ms]', port: 9002, server: 84.239.49.215, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '芬兰 0031[621ms]', password: '', port: 1080, server: 193.221.203.192, skip-cert-verify: true, sub_tag: P002-260618, type: socks5, username: '' }
+  - { name: '罗马尼亚 0095[553ms]', port: 9002, server: 84.239.49.214, skip-cert-verify: true, tls: true, type: http }
+  - { multiplexing: MULTIPLEXING_LOW, name: '美国 0190[630ms]', password: dongtaiwang.com, port: 34567, server: 157.254.223.44, transport: TCP, type: mieru, username: dongtaiwang.com }
+  - { client-fingerprint: chrome, name: '香港 0072[530ms]', network: tcp, password: OD90375861, port: 443, server: modest-foal.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: modest-foal.rooster465.autos }
+  - { client-fingerprint: chrome, name: '日本 0087[283ms]', network: tcp, password: CF68213490, port: 443, server: eager-platypus.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: eager-platypus.rooster465.autos }
+  - { client-fingerprint: chrome, name: '日本 0083[214ms]', network: tcp, password: CF68213490, port: 443, server: thankful-mustang.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: thankful-mustang.rooster465.autos }
+  - { client-fingerprint: chrome, name: '新加坡 0066[183ms]', network: tcp, password: CF68213490, port: 443, server: grateful-owl.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: grateful-owl.rooster465.autos }
+  - { name: '罗马尼亚 0006[492ms]', port: 9002, server: 84.239.49.249, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '香港 0068[511ms]', network: tcp, password: CF68213490, port: 443, server: well-marmot.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: well-marmot.rooster465.autos }
   - { name: '美国 0001', type: vless, server: jiang.jiangniao.de, port: 12852, uuid: e96ab706-0aa6-4ff6-820a-6f3549dd3319, network: tcp, tls: true, udp: true, flow: xtls-rprx-vision-udp443, servername: icloud.com, client-fingerprint: chrome, reality-opts: { public-key: uInXYi-6Bd6C061wSjWpFZTaE8Hd1fS3MBsU57geT0I, short-id: 28fcba0ec25e, spider-x: / } }
-  - { name: '美国 0287[443ms]', port: 9002, server: 138.199.35.195, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '罗马尼亚 0041[624ms]', port: 9002, server: 84.239.49.186, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '美国 0345[470ms]', port: 9002, server: 138.199.35.214, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '美国 0364[465ms]', port: 9002, server: 138.199.35.216, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '罗马尼亚 0007[547ms]', port: 9002, server: 84.239.14.160, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '罗马尼亚 0063[527ms]', port: 9002, server: 84.239.49.168, skip-cert-verify: true, sni: www.bing.com, sub_tag: P002-260618, tls: true, type: http }
-  - { name: '罗马尼亚 0025[517ms]', port: 9002, server: 84.239.49.214, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '澳大利亚 0009[861ms]', port: 443, server: 103.62.50.130, skip-cert-verify: true, tls: true, type: http }
-  - { name: '罗马尼亚 0131[623ms]', port: 9002, server: 193.176.84.35, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '罗马尼亚 0068[561ms]', port: 9002, server: 193.176.84.26, skip-cert-verify: true, sni: www.bing.com, sub_tag: R002-260618, tls: true, type: http }
-  - { name: '罗马尼亚 0056[484ms]', port: 9002, server: 84.239.49.160, skip-cert-verify: true, tls: true, type: http, udp: true }
-  - { name: '罗马尼亚 0013[550ms]', port: 9002, server: 84.239.14.152, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { delay: 1172, name: '罗马尼亚 0060[537ms]', port: 9002, server: 84.239.49.40, skip-cert-verify: true, sub_tag: G001-260618, tls: true, type: http, udp: true }
-  - { name: '日本 0001[316ms]', type: vless, server: green.jiangniao.de, port: 51790, uuid: 1b69afb7-9f0a-4e6c-9a4b-1fcf7621b0be, network: tcp, tls: true, udp: true, flow: xtls-rprx-vision-udp443, servername: icloud.com, client-fingerprint: chrome, reality-opts: { public-key: XJa0ZYOvtfwRz7aF8GprVrnEjc4S1rokGFhc-tI1YFk, short-id: 02c40852, spider-x: / } }
-  - { name: '罗马尼亚 0126[520ms]', password: '', port: 9002, server: 84.239.49.179, skip-cert-verify: true, tls: true, type: http, username: '' }
-  - { name: '香港 0017[171ms]', server: 47.83.221.185, port: 80, type: vmess, uuid: 771a590c-5eac-5732-b796-17251132f8d2, alterId: 0, cipher: auto, network: tcp, tls: false, skip-cert-verify: false, udp: true }
-  - { name: '罗马尼亚 0047[641ms]', port: 9002, server: 84.239.49.37, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '罗马尼亚 0080[519ms]', port: 9002, server: 84.239.49.200, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '美国 0296[470ms]', port: 9002, server: 138.199.35.207, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '荷兰 0117[539ms]', type: http, server: 146.103.33.227, port: 8443, skip-cert-verify: true, tls: true }
-  - { name: '美国 0362[533ms]', port: 9002, server: 156.146.59.46, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '罗马尼亚 0082[550ms]', port: 9002, server: 84.239.49.247, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '罗马尼亚 0034[565ms]', port: 9002, server: 193.176.84.39, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '罗马尼亚 0009[569ms]', port: 9002, server: 84.239.14.154, skip-cert-verify: true, tls: true, type: http, udp: true }
-  - { name: '美国 0284[387ms]', port: 9002, server: 138.199.35.217, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { delay: 1356, name: '罗马尼亚 0061[571ms]', port: 9002, server: 84.239.49.235, skip-cert-verify: true, sub_tag: G001-260618, tls: true, type: http, udp: true }
-  - { name: '美国 0311[468ms]', port: 9002, server: 156.146.59.14, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '美国 0282[507ms]', port: 9002, server: 138.199.35.196, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '香港 0204[160ms]', type: http, server: 47.238.199.39, port: 36735, password: VCYBW8pH4z, tls: false, username: 2XPTvGKBjj }
-  - { name: '罗马尼亚 0133[512ms]', type: http, server: 84.239.49.230, port: 9002, skip-cert-verify: true, tls: true, sni: www.bing.com }
-  - { name: '罗马尼亚 0104[612ms]', port: 9002, server: 84.239.49.207, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '罗马尼亚 0112[572ms]', port: 9002, server: 84.239.49.231, skip-cert-verify: true, sni: www.bing.com, sub_tag: R002-260618, tls: true, type: http }
-  - { name: '美国 0443[581ms]', type: http, server: 156.146.59.47, port: 9002, skip-cert-verify: true, tls: true }
-  - { delay: 2135, name: '罗马尼亚 0062[555ms]', port: 9002, server: 84.239.14.149, skip-cert-verify: true, sub_tag: G001-260618, tls: true, type: http, udp: true }
-  - { name: '罗马尼亚 0015[629ms]', port: 9002, server: 193.176.84.17, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '荷兰 0114[531ms]', type: http, server: 51.159.225.196, port: 23856, skip-cert-verify: true, tls: true }
-  - { name: '罗马尼亚 0020[562ms]', port: 9002, server: 84.239.49.191, skip-cert-verify: true, tls: true, type: http, udp: true }
-  - { name: '罗马尼亚 0128[597ms]', server: 84.239.49.57, port: 9002, type: http, tls: true, skip-cert-verify: true, udp: true }
-  - { name: '罗马尼亚 0072[560ms]', port: 9002, server: 84.239.49.48, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '罗马尼亚 0049[486ms]', port: 9002, server: 84.239.49.50, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '香港 0021[156ms]', server: 47.76.127.88, port: 5566, type: vmess, uuid: ad298d1d-2ae9-46fa-895c-f0401f38b02c, alterId: 0, cipher: auto, network: tcp, tls: false, skip-cert-verify: false, udp: true }
-  - { name: '美国 0003[612ms]', type: vless, server: jiang.jiangniao.de, port: 42025, uuid: bed8750e-36e0-425d-ae14-48d5b70cedd9, network: tcp, tls: true, udp: true, flow: xtls-rprx-vision-udp443, servername: yahoo.com, client-fingerprint: chrome, reality-opts: { public-key: 6baH2z3cSHXyNF-y60uOu15VRrHIA1s0w-c7DXvNLG4, short-id: e5d928499470, spider-x: / } }
-  - { name: '罗马尼亚 0109[567ms]', port: 9002, server: 84.239.49.163, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '美国 0310[472ms]', port: 9002, server: 138.199.35.215, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '罗马尼亚 0018[600ms]', port: 9002, server: 84.239.49.198, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '罗马尼亚 0083[513ms]', port: 9002, server: 193.176.84.27, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '罗马尼亚 0075[557ms]', port: 9002, server: 84.239.14.158, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '罗马尼亚 0010[560ms]', port: 9002, server: 84.239.14.146, skip-cert-verify: true, tls: true, type: http, udp: true }
-  - { name: '荷兰 0101[548ms]', port: 9002, server: 84.17.47.147, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '罗马尼亚 0012[538ms]', port: 9002, server: 84.239.49.254, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '罗马尼亚 0067[557ms]', port: 9002, server: 84.239.49.182, skip-cert-verify: true, sni: www.bing.com, sub_tag: R002-260618, tls: true, type: http }
-  - { name: '美国 0290[522ms]', port: 9002, server: 138.199.35.204, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '美国 0306[999ms]', port: 9002, server: 138.199.35.198, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '美国 0316[542ms]', port: 9002, server: 156.146.59.21, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '澳大利亚 0010[840ms]', type: http, server: 159.13.44.228, port: 443, skip-cert-verify: true, tls: true }
-  - { name: '罗马尼亚 0064[560ms]', port: 9002, server: 84.239.49.159, skip-cert-verify: true, sni: www.bing.com, sub_tag: P002-260618, tls: true, type: http, udp: true }
-  - { delay: 2195, name: '罗马尼亚 0110[559ms]', port: 9002, server: 84.239.49.239, skip-cert-verify: true, sub_tag: G001-260618, tls: true, type: http, udp: true }
-  - { name: '罗马尼亚 0116[538ms]', port: 9002, server: 84.239.14.159, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '美国 0334[628ms]', port: 9002, server: 156.146.59.43, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '罗马尼亚 0050[600ms]', port: 9002, server: 193.176.84.20, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '罗马尼亚 0078[597ms]', port: 9002, server: 193.176.84.31, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '罗马尼亚 0079[616ms]', port: 9002, server: 84.239.49.224, skip-cert-verify: true, tls: true, type: http }
-  - { name: '罗马尼亚 0136[564ms]', type: http, server: 193.176.84.21, port: 9002, skip-cert-verify: true, tls: true, sni: www.bing.com }
-  - { name: '日本 0168[876ms]', type: trojan, server: 150.230.212.247, port: 443, client-fingerprint: chrome, network: ws, password: eeb6823c-b926-4ea2-866a-5542edd26e59, sni: hhcm.hhxaf.cc.cd, ws-opts: { headers: { Host: hhcm.hhxaf.cc.cd }, path: / } }
-  - { name: '罗马尼亚 0051[556ms]', port: 9002, server: 84.239.49.201, skip-cert-verify: true, tls: true, type: http, udp: true }
-  - { name: '罗马尼亚 0095[519ms]', port: 9002, server: 84.239.49.240, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '罗马尼亚 0127[578ms]', server: 84.239.49.55, port: 9002, type: http, tls: true, skip-cert-verify: true, udp: true }
-  - { name: '罗马尼亚 0114[643ms]', port: 9002, server: 84.239.49.164, skip-cert-verify: true, tls: true, type: http, udp: true }
-  - { name: '香港 0179[324ms]', server: 47.244.120.197, port: 44867, type: vmess, uuid: 845e6b08-2919-4290-ade0-5dc7dcea59ca, alterId: 0, cipher: auto, network: ws, tls: false, skip-cert-verify: false, ws-opts: { path: '/arki?ed=2048', headers: {  } }, udp: true }
-  - { name: '罗马尼亚 0032[604ms]', port: 9002, server: 193.176.84.36, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '罗马尼亚 0084[497ms]', port: 9002, server: 84.239.49.244, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '罗马尼亚 0107[615ms]', port: 9002, server: 193.176.84.16, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '罗马尼亚 0113[633ms]', port: 9002, server: 193.176.84.23, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 0186[516ms]', port: 9002, server: 138.199.35.197, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '日本 0001[951ms]', type: vless, server: green.jiangniao.de, port: 51790, uuid: 1b69afb7-9f0a-4e6c-9a4b-1fcf7621b0be, network: tcp, tls: true, udp: true, flow: xtls-rprx-vision-udp443, servername: icloud.com, client-fingerprint: chrome, reality-opts: { public-key: XJa0ZYOvtfwRz7aF8GprVrnEjc4S1rokGFhc-tI1YFk, short-id: 02c40852, spider-x: / } }
+  - { name: '罗马尼亚 0008[530ms]', port: 9002, server: 84.239.14.148, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { name: '罗马尼亚 0084[600ms]', port: 9002, server: 84.239.49.233, skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0099[546ms]', port: 9002, server: 84.239.49.181, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0045[561ms]', port: 9002, server: 84.239.49.173, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0021[601ms]', port: 9002, server: 84.239.49.213, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { cipher: chacha20-ietf-poly1305, name: '美国 0331[443ms]', password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, plugin: obfs, plugin-opts: { host: '(Telegram🇨🇳 @WangCai2)f6e348d:70852', mode: tls }, port: 2377, server: 88.210.36.106, sub_tag: K001-260618, type: ss, udp: true }
+  - { name: '中国 0005[237ms]', type: trojan, server: 114.80.8.128, port: 39001, password: 1df3ece1218bedba28c6c6ac726a07bb, sni: 114.80.8.128, skip-cert-verify: true, tls: true, udp: true }
+  - { name: '罗马尼亚 0058[602ms]', port: 9002, server: 84.239.49.164, skip-cert-verify: true, sni: www.bing.com, sub_tag: R002-260618, tls: true, type: http }
+  - { name: '罗马尼亚 0035[551ms]', port: 9002, server: 84.239.49.241, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0123[518ms]', type: http, server: 84.239.14.147, port: 9002, skip-cert-verify: true, tls: true, udp: true, sni: www.bing.com }
+  - { client-fingerprint: chrome, encryption: none, name: '美国 0301[582ms]', network: tcp, port: 443, reality-opts: { public-key: zdUruFsb8e_EEIqEMyykFbpNaOZCk_RDRaYInsgD9y0, short-id: 0a076a46 }, server: 85.209.134.58, sub_tag: V001-260618, tls: true, type: vless, udp: true, uuid: 7bdb9235-68bd-418f-912e-4cc590f50c35, xudp: true, packet-encoding: xudp }
+  - { client-fingerprint: chrome, name: '美国 0308[537ms]', network: tcp, password: CF68213490, port: 443, server: balanced-puma.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: balanced-puma.rooster465.autos }
+  - { client-fingerprint: chrome, name: '新加坡 0061[215ms]', network: tcp, password: CF68213490, port: 443, server: lucky-chimp.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: lucky-chimp.rooster465.autos }
+  - { name: '罗马尼亚 0028[531ms]', port: 9002, server: 84.239.49.178, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { client-fingerprint: chrome, name: '新加坡 0071[217ms]', network: tcp, password: CF68213490, port: 443, server: gentle-raptor.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: gentle-raptor.rooster465.autos }
+  - { client-fingerprint: chrome, name: '日本 0070[353ms]', network: tcp, password: CF68213490, port: 443, server: alert-fish.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: alert-fish.rooster465.autos }
+  - { name: '罗马尼亚 0132[581ms]', type: http, server: 84.239.49.48, port: 9002, skip-cert-verify: true, tls: true, sni: www.bing.com }
+  - { client-fingerprint: chrome, name: '日本 0081[253ms]', network: tcp, password: CF68213490, port: 443, server: moved-bluegill.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: moved-bluegill.rooster465.autos }
+  - { client-fingerprint: chrome, name: '日本 0082[245ms]', network: tcp, password: CF68213490, port: 443, server: eternal-woodcock.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: eternal-woodcock.rooster465.autos }
+  - { delay: 2825, name: '罗马尼亚 0050[576ms]', port: 9002, server: 84.239.49.183, skip-cert-verify: true, sub_tag: G001-260618, tls: true, type: http, udp: true }
+  - { client-fingerprint: chrome, name: '日本 0103[248ms]', network: tcp, password: CF68213490, port: 443, server: ultimate-jaguar.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: ultimate-jaguar.rooster465.autos }
+  - { client-fingerprint: chrome, name: '新加坡 0051[174ms]', network: tcp, password: CF68213490, port: 443, server: learning-wren.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: learning-wren.rooster465.autos }
+  - { name: '罗马尼亚 0094[558ms]', port: 9002, server: 84.239.49.185, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 0187[490ms]', port: 9002, server: 138.199.35.209, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { client-fingerprint: firefox, encryption: none, grpc-opts: { grpc-service-name: neurex }, name: '美国 0350[806ms]', network: grpc, port: 16923, reality-opts: { public-key: _QeslG3rHGM7DoM99pYC8-jpc16pM2MbNZ6NRMoxmHA, short-id: 10ffb85da1c2d986 }, server: 152.53.31.54, sub_tag: S001-260618, tls: true, type: vless, udp: true, uuid: 4cbecc04-ea0c-44e7-a9da-8fe952526322, xudp: true, packet-encoding: xudp, servername: api-maps.yandex.ru }
+  - { name: '罗马尼亚 0088[569ms]', port: 9002, server: 193.176.84.36, skip-cert-verify: true, sub_tag: P002-260618, tls: true, type: http, udp: true }
+  - { name: '罗马尼亚 0076[536ms]', port: 9002, server: 84.239.49.229, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '美国 0251[549ms]', port: 9002, server: 156.146.59.46, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { client-fingerprint: chrome, flow: xtls-rprx-vision, name: '日本 0115[312ms]', network: tcp, port: 2096, reality-opts: { public-key: xEMm08RoX-QUA4FF94lAOvDcKBWJhkHjj8egtENeYnw, short-id: '' }, server: 38.226.195.144, sub_tag: K001-260618, tls: true, type: vless, udp: true, uuid: 7fcad981-da4c-4017-9189-c90cc2bd3ff2, xudp: true, packet-encoding: xudp, servername: www.apple.com }
+  - { name: '罗马尼亚 0120[569ms]', port: 9002, server: 84.239.49.62, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 0194[452ms]', port: 9002, server: 138.199.35.195, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '法国 0036[581ms]', password: '', port: 1088, server: 144.91.111.48, skip-cert-verify: true, sub_tag: S001-260618, type: socks5, username: '' }
+  - { name: '罗马尼亚 0104[636ms]', port: 9002, server: 84.239.49.166, skip-cert-verify: true, sni: www.bing.com, sub_tag: R002-260618, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '美国 0303[410ms]', network: tcp, password: CF68213490, port: 443, server: tolerant-rattler.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: tolerant-rattler.rooster465.autos }
+  - { client-fingerprint: chrome, name: '美国 0310[655ms]', network: tcp, password: KV63147582, port: 443, server: winning-manatee.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: winning-manatee.rooster465.autos }
+  - { client-fingerprint: chrome, name: '香港 0073[519ms]', network: tcp, password: KV63147582, port: 443, server: electric-sturgeon.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: electric-sturgeon.rooster465.autos }
+  - { name: '美国 0198[555ms]', port: 9002, server: 156.146.59.25, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '新加坡 0050[206ms]', network: tcp, password: CF68213490, port: 443, server: vast-werewolf.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: vast-werewolf.rooster465.autos }
+  - { client-fingerprint: chrome, name: '日本 0096[198ms]', network: tcp, password: CF68213490, port: 443, server: caring-wallaby.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: caring-wallaby.rooster465.autos }
+  - { name: '美国 0214[540ms]', port: 9002, server: 138.199.35.199, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '荷兰 0089[515ms]', network: tcp, password: KV63147582, port: 443, server: game-firefly.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: game-firefly.rooster465.autos }
+  - { name: '罗马尼亚 0026[542ms]', port: 9002, server: 84.239.49.191, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 0195[578ms]', port: 9002, server: 138.199.35.196, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '日本 0084[295ms]', network: tcp, password: CF68213490, port: 443, server: star-cheetah.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: star-cheetah.rooster465.autos }
+  - { name: '罗马尼亚 0085[587ms]', port: 9002, server: 84.239.49.204, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0063[596ms]', port: 9002, server: 84.239.49.54, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { client-fingerprint: chrome, flow: xtls-rprx-vision, name: '新加坡 0072[183ms]', network: tcp, port: 10574, reality-opts: { public-key: k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0, short-id: 48050fab }, server: 3.0.111.82, sub_tag: K001-260618, tls: true, type: vless, udp: true, uuid: 814bd064-544d-4255-a070-5705c03f6da9, xudp: true, packet-encoding: xudp, servername: www.apple.com }
+  - { name: '美国 0257[633ms]', port: 9002, server: 156.146.59.17, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '荷兰 0105[473ms]', server: 93.177.116.84, port: 1080, type: socks5, udp: true, username: Og==, password: '' }
+  - { client-fingerprint: chrome, name: '美国 0311[477ms]', network: tcp, password: CF68213490, port: 443, server: popular-meerkat.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: popular-meerkat.rooster465.autos }
+  - { client-fingerprint: chrome, flow: xtls-rprx-vision, name: '新加坡 0075[210ms]', network: tcp, port: 443, reality-opts: { public-key: MFWvapbEkZlwKHt-_McBwgCCjWsyiAnPd4fzzvhmoVA, short-id: 6a62793494249798 }, server: 43.163.64.216, sub_tag: K001-260618, tls: true, type: vless, udp: true, uuid: 5f9dd0ad-f436-4be8-8678-c1cae33551b2, xudp: true, packet-encoding: xudp, servername: www.cloudflare.com }
+  - { name: '罗马尼亚 0081[576ms]', port: 9002, server: 84.239.14.146, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { client-fingerprint: chrome, name: '日本 0066[238ms]', network: tcp, password: CF68213490, port: 443, server: communal-sunbird.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: communal-sunbird.rooster465.autos }
+  - { name: '美国 0258[565ms]', port: 9002, server: 156.146.59.23, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '美国 0274[502ms]', port: 9002, server: 156.146.59.50, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '新加坡 0070[189ms]', network: tcp, password: CF68213490, port: 443, server: intimate-moray.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: intimate-moray.rooster465.autos }
+  - { name: '美国 0244[480ms]', port: 9002, server: 156.146.59.33, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0069[610ms]', port: 9002, server: 193.176.84.17, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '日本 0105[250ms]', network: tcp, password: CF68213490, port: 443, server: free-hare.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: free-hare.rooster465.autos }
+  - { name: '美国 0248[524ms]', port: 9002, server: 156.146.59.11, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0119[585ms]', port: 9002, server: 193.176.84.26, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0107[624ms]', port: 9002, server: 84.239.49.225, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { name: '韩国 0053[301ms]', password: test.+, port: 30446, server: testkr3.ssv.vc, skip-cert-verify: true, tls: true, type: http, udp: true, username: test, sni: testkr3.ssv.vc }
+  - { name: '罗马尼亚 0010[616ms]', port: 9002, server: 84.239.49.242, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 0202[493ms]', port: 9002, server: 156.146.59.39, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '日本 0094[250ms]', network: tcp, password: CF68213490, port: 443, server: settling-humpback.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: settling-humpback.rooster465.autos }
+  - { delay: 2317, name: '罗马尼亚 0048[536ms]', port: 9002, server: 84.239.49.196, skip-cert-verify: true, sub_tag: G001-260618, tls: true, type: http, udp: true }
+  - { client-fingerprint: chrome, name: '日本 0060[286ms]', network: tcp, password: CF68213490, port: 443, server: musical-manatee.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: musical-manatee.rooster465.autos }
+  - { name: '香港 0086[147ms]', type: http, server: 47.238.199.39, port: 36735, password: VCYBW8pH4z, tls: false, username: 2XPTvGKBjj }
+  - { name: '未知 0516[650ms]', type: trojan, server: 104.18.152.133, port: 443, network: ws, password: humanity, skip-cert-verify: false, sni: www.ignitelimit.com, ws-opts: { headers: { Host: www.ignitelimit.com }, path: /assignment } }
+  - { name: '罗马尼亚 0093[595ms]', port: 9002, server: 84.239.49.217, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '日本 0104[353ms]', network: tcp, password: CF68213490, port: 443, server: informed-stud.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: informed-stud.rooster465.autos }
+  - { name: '罗马尼亚 0054[568ms]', port: 9002, server: 84.239.49.198, skip-cert-verify: true, sni: www.bing.com, sub_tag: P002-260618, tls: true, type: http }
+  - { name: '罗马尼亚 0042[585ms]', port: 9002, server: 84.239.49.238, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0106[818ms]', port: 9002, server: 84.239.49.201, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '日本 0068[343ms]', network: tcp, password: CF68213490, port: 443, server: smooth-hornet.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: smooth-hornet.rooster465.autos }
+  - { name: '美国 0197[505ms]', port: 9002, server: 138.199.35.207, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0067[525ms]', port: 9002, server: 84.239.14.158, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '波兰 0013[623ms]', network: tcp, password: CF68213490, port: 443, server: emerging-weevil.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: emerging-weevil.rooster465.autos }
+  - { client-fingerprint: chrome, name: '新加坡 0068[234ms]', network: tcp, password: CF68213490, port: 443, server: immense-eagle.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: immense-eagle.rooster465.autos }
+  - { delay: 2135, name: '罗马尼亚 0051[535ms]', port: 9002, server: 84.239.14.149, skip-cert-verify: true, sub_tag: G001-260618, tls: true, type: http, udp: true }
+  - { name: '法国 0038[724ms]', password: 5dc6fa05-a601-aba6-7761-ecde22d2b0fc, port: 443, server: eac88fe8-t9zts0-tonrmx-8n27.fr.oshuawei.com, sni: eac88fe8-t9zts0-tonrmx-8n27.fr.oshuawei.com, sub_tag: R002-260618, tls: true, type: http, username: 5dc6fa05-a601-aba6-7761-ecde22d2b0fc }
+  - { name: '美国 0255[376ms]', port: 9002, server: 138.199.35.201, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '美国 0260[547ms]', port: 9002, server: 156.146.59.10, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0086[544ms]', port: 9002, server: 84.239.49.163, skip-cert-verify: true, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '新加坡 0064[210ms]', network: tcp, password: CF68213490, port: 443, server: powerful-troll.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: powerful-troll.rooster465.autos }
+  - { name: '美国 0240[482ms]', port: 9002, server: 156.146.59.12, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '美国 0220[522ms]', port: 9002, server: 156.146.59.4, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '日本 0080[234ms]', network: tcp, password: CF68213490, port: 443, server: sincere-crappie.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: sincere-crappie.rooster465.autos }
+  - { name: '未知 0557[679ms]', type: trojan, server: 104.18.152.113, port: 443, network: ws, password: humanity, skip-cert-verify: false, sni: www.ignitelimit.com, ws-opts: { headers: { Host: www.ignitelimit.com }, path: /assignment } }
+  - { client-fingerprint: chrome, name: '澳大利亚 0008[920ms]', network: tcp, password: OD90375861, port: 443, server: big-bonefish.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: big-bonefish.rooster465.autos }
+  - { client-fingerprint: chrome, name: '香港 0071[502ms]', network: tcp, password: KV63147582, port: 443, server: desired-tahr.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: desired-tahr.rooster465.autos }
+  - { name: '香港 0075[737ms]', password: d6Z20UbTCF, port: 21248, server: sub.whome.life, skip-cert-verify: true, sni: r.bing.com, sub_tag: K001-260618, type: anytls, udp: true, username: d6Z20UbTCF, client-fingerprint: '' }
+  - { client-fingerprint: chrome, name: '日本 0091[318ms]', network: tcp, password: CF68213490, port: 443, server: evolving-mollusk.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: evolving-mollusk.rooster465.autos }
+  - { name: '美国 0226[541ms]', port: 9002, server: 138.199.35.214, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '日本 0077[340ms]', network: tcp, password: CF68213490, port: 443, server: sacred-shepherd.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: sacred-shepherd.rooster465.autos }
+  - { name: '美国 0217[474ms]', port: 9002, server: 138.199.35.215, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0102[538ms]', port: 9002, server: 84.239.49.239, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0039[671ms]', port: 9002, server: 193.176.84.16, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '新加坡 0055[219ms]', network: tcp, password: CF68213490, port: 443, server: tight-gator.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: tight-gator.rooster465.autos }
+  - { name: '美国 0591[486ms]', type: trojan, server: 45.76.169.250, port: 443, client-fingerprint: chrome, network: ws, password: eeb6823c-b926-4ea2-866a-5542edd26e59, sni: hhcm.hhxaf.cc.cd, ws-opts: { headers: { Host: hhcm.hhxaf.cc.cd }, path: / } }
+  - { name: '未知 0523[553ms]', type: trojan, server: 104.26.14.137, port: 443, network: ws, password: humanity, sni: www.ignitelimit.com, ws-opts: { headers: { Host: www.ignitelimit.com }, path: /assignment } }
+  - { client-fingerprint: chrome, name: '新加坡 0049[235ms]', network: tcp, password: CF68213490, port: 443, server: musical-terrier.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: musical-terrier.rooster465.autos }
+  - { client-fingerprint: chrome, name: '日本 0049[334ms]', network: tcp, password: CF68213490, port: 443, server: immune-mullet.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: immune-mullet.rooster465.autos }
+  - { client-fingerprint: chrome, name: '日本 0048[301ms]', network: tcp, password: CF68213490, port: 443, server: eminent-dogfish.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: eminent-dogfish.rooster465.autos }
+  - { name: '罗马尼亚 0109[569ms]', port: 9002, server: 84.239.49.230, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0117[596ms]', server: 84.239.49.202, port: 9002, type: http, tls: true, skip-cert-verify: true, udp: true }
+  - { delay: 1216, name: '罗马尼亚 0049[565ms]', port: 9002, server: 84.239.49.245, skip-cert-verify: true, sub_tag: G001-260618, tls: true, type: http, udp: true }
+  - { cipher: aes-256-cfb, name: '美国 0356[896ms]', password: amazonskr05, port: 443, server: 18.190.176.112, type: ss, udp: true }
+  - { client-fingerprint: chrome, name: '爱尔兰 0006[687ms]', network: tcp, password: OD90375861, port: 443, server: wired-tick.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: wired-tick.rooster465.autos }
+  - { name: '罗马尼亚 0019[584ms]', port: 9002, server: 193.176.84.38, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '加拿大 0015[748ms]', network: ws, password: 13d29042-ab82-4195-9cd4-2bafc518e201, port: 443, server: 23.227.38.178, skip-cert-verify: true, sni: q6clkp794liy3y90.hktimecsgo.xyz, type: trojan, udp: true, ws-opts: { headers: { User-Agent: 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36' }, path: /images } }
+  - { client-fingerprint: chrome, name: '日本 0097[245ms]', network: tcp, password: CF68213490, port: 443, server: rested-osprey.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: rested-osprey.rooster465.autos }
+  - { client-fingerprint: chrome, name: '新加坡 0060[211ms]', network: tcp, password: CF68213490, port: 443, server: normal-macaque.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: normal-macaque.rooster465.autos }
+  - { name: '罗马尼亚 0128[603ms]', type: http, server: 193.176.84.23, port: 9002, skip-cert-verify: true, tls: true, sni: www.bing.com }
+  - { delay: 1233, name: '罗马尼亚 0089[632ms]', port: 9002, server: 193.176.84.37, skip-cert-verify: true, sub_tag: G001-260618, tls: true, type: http, udp: true }
+  - { client-fingerprint: chrome, name: '日本 0054[339ms]', network: tcp, password: CF68213490, port: 443, server: live-drake.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: live-drake.rooster465.autos }
+  - { cipher: chacha20-ietf-poly1305, name: '美国 0322[439ms]', password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, plugin: obfs, plugin-opts: { host: '(Telegram🇨🇳 @VPNine1)6db9d46:44797', mode: tls }, port: 2377, server: 88.210.36.109, sub_tag: K001-260618, type: ss, udp: true }
+  - { name: '美国 0201[443ms]', port: 9002, server: 138.199.35.204, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0037[649ms]', port: 9002, server: 84.239.49.42, skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0116[485ms]', password: '', port: 9002, server: 84.239.49.251, skip-cert-verify: true, tls: true, type: http, username: '' }
+  - { client-fingerprint: chrome, name: '日本 0092[281ms]', network: tcp, password: CF68213490, port: 443, server: present-ram.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: present-ram.rooster465.autos }
+  - { client-fingerprint: chrome, name: '韩国 0061[338ms]', network: tcp, password: CF68213490, port: 443, server: helping-shark.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: helping-shark.rooster465.autos }
+  - { name: '罗马尼亚 0125[593ms]', type: http, server: 193.176.84.27, port: 9002, skip-cert-verify: true, tls: true, sni: www.bing.com }
+  - { name: '罗马尼亚 0075[585ms]', port: 9002, server: 84.239.49.37, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { name: '罗马尼亚 0133[564ms]', type: http, server: 84.239.49.208, port: 9002, skip-cert-verify: true, tls: true, sni: www.bing.com }
+  - { name: '罗马尼亚 0043[592ms]', port: 9002, server: 84.239.49.55, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '新加坡 0057[215ms]', network: tcp, password: CF68213490, port: 443, server: summary-lemming.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: summary-lemming.rooster465.autos }
+  - { name: '美国 0271[491ms]', password: '', port: 9002, server: 156.146.59.49, skip-cert-verify: true, tls: true, type: http, username: '' }
+  - { name: '美国 0241[554ms]', port: 9002, server: 156.146.59.22, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '日本 0098[310ms]', network: tcp, password: CF68213490, port: 443, server: adapting-giraffe.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: adapting-giraffe.rooster465.autos }
+  - { name: '罗马尼亚 0124[622ms]', type: http, server: 193.176.84.35, port: 9002, skip-cert-verify: true, tls: true, sni: www.bing.com }
   - { name: '美国 0005', type: vless, server: jiang.jiangniao.de, port: 50682, uuid: 41fe730f-127b-4c27-81ef-7e2a240b5e2e, network: tcp, tls: true, udp: true, flow: xtls-rprx-vision-udp443, servername: yahoo.com, client-fingerprint: chrome, reality-opts: { public-key: zIIPhsd4pP9omVPxtUbusaJq9UcY7artFMY70MLQiWg, short-id: 6f110ee0d9fd, spider-x: / } }
-  - { name: '韩国 0027[408ms]', password: test.+, port: 30446, server: testkr3.ssv.vc, skip-cert-verify: true, tls: true, type: http, udp: true, username: test, sni: testkr3.ssv.vc }
-  - { multiplexing: MULTIPLEXING_LOW, name: '美国 0331[739ms]', password: dongtaiwang.com, port: 34567, server: 157.254.223.44, transport: TCP, type: mieru, username: dongtaiwang.com }
-  - { name: '美国 0295[487ms]', port: 9002, server: 156.146.59.4, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '罗马尼亚 0011[477ms]', port: 9002, server: 84.239.49.62, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '罗马尼亚 0105[522ms]', port: 9002, server: 84.239.49.241, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { delay: 1186, name: '罗马尼亚 0059[599ms]', port: 9002, server: 84.239.49.204, skip-cert-verify: true, sub_tag: G001-260618, tls: true, type: http, udp: true }
-  - { name: '美国 0319[603ms]', port: 9002, server: 156.146.59.48, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '罗马尼亚 0086[540ms]', port: 9002, server: 84.239.49.53, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '美国 0312[496ms]', port: 9002, server: 156.146.59.27, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '美国 0378[491ms]', password: '', port: 9002, server: 156.146.59.49, skip-cert-verify: true, tls: true, type: http, username: '' }
-  - { name: '罗马尼亚 0024[591ms]', port: 9002, server: 84.239.49.176, skip-cert-verify: true, tls: true, type: http, udp: true }
-  - { name: '罗马尼亚 0019[556ms]', port: 9002, server: 84.239.49.58, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '美国 0367[565ms]', port: 9002, server: 156.146.59.17, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '美国 0300[557ms]', port: 9002, server: 138.199.35.202, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
-  - { name: '罗马尼亚 0103[478ms]', port: 9002, server: 193.176.84.25, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '罗马尼亚 0039[574ms]', port: 9002, server: 84.239.49.217, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
-  - { name: '罗马尼亚 0089[540ms]', port: 9002, server: 84.239.49.43, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '日本 0101[259ms]', network: tcp, password: CF68213490, port: 443, server: sacred-anemone.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: sacred-anemone.rooster465.autos }
+  - { client-fingerprint: firefox, encryption: none, grpc-opts: { grpc-service-name: neurex }, name: '瑞士 0005[497ms]', network: grpc, port: 16923, reality-opts: { public-key: _QeslG3rHGM7DoM99pYC8-jpc16pM2MbNZ6NRMoxmHA, short-id: 10ffb85da1c2d986 }, server: 152.233.31.72, sub_tag: S001-260618, tls: true, type: vless, udp: true, uuid: 83f76cc0-ebcd-4805-a408-f6c8e30ff3ee, xudp: true, packet-encoding: xudp, servername: api-maps.yandex.ru }
+  - { name: '罗马尼亚 0029[609ms]', port: 9002, server: 84.239.49.156, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { client-fingerprint: chrome, flow: xtls-rprx-vision, name: '日本 0112[668ms]', network: tcp, port: 11452, reality-opts: { public-key: k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0, short-id: 48050fab }, server: 103.75.118.228, sub_tag: K001-260618, tls: true, type: vless, udp: true, uuid: 814bd064-544d-4255-a070-5705c03f6da9, xudp: true, packet-encoding: xudp, servername: www.apple.com }
+  - { name: '美国 0002[380ms]', type: vless, server: jiang.jiangniao.de, port: 41236, uuid: 1a16fad3-3182-445f-b27b-db018e4e5746, network: tcp, tls: true, udp: true, flow: xtls-rprx-vision-udp443, servername: yahoo.com, client-fingerprint: chrome, reality-opts: { public-key: lDSUkgWuvxEQ1RzMbuwGCqdX7bn3uDetAYJmP4HGhXA, short-id: c5475819, spider-x: / } }
+  - { name: '罗马尼亚 0101[534ms]', port: 9002, server: 193.176.84.40, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0130[632ms]', type: http, server: 84.239.49.244, port: 9002, skip-cert-verify: true, tls: true, sni: www.bing.com }
+  - { name: '罗马尼亚 0053[605ms]', port: 9002, server: 84.239.49.159, skip-cert-verify: true, sni: www.bing.com, sub_tag: P002-260618, tls: true, type: http, udp: true }
+  - { client-fingerprint: chrome, name: '波兰 0016[632ms]', network: tcp, password: KV63147582, port: 443, server: legible-possum.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: legible-possum.rooster465.autos }
+  - { name: '澳大利亚 0011[817ms]', type: http, server: 159.13.44.228, port: 443, skip-cert-verify: true, tls: true }
+  - { client-fingerprint: chrome, name: '日本 0088[253ms]', network: tcp, password: CF68213490, port: 443, server: careful-penguin.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: careful-penguin.rooster465.autos }
+  - { client-fingerprint: chrome, name: '香港 0069[427ms]', network: tcp, password: KV63147582, port: 443, server: amused-peacock.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: amused-peacock.rooster465.autos }
+  - { client-fingerprint: chrome, name: '日本 0061[268ms]', network: tcp, password: CF68213490, port: 443, server: eternal-perch.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: eternal-perch.rooster465.autos }
+  - { client-fingerprint: chrome, name: '日本 0073[231ms]', network: tcp, password: CF68213490, port: 443, server: darling-mongrel.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: darling-mongrel.rooster465.autos }
+  - { client-fingerprint: chrome, name: '澳大利亚 0009[885ms]', network: tcp, password: KV63147582, port: 443, server: selected-bison.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: selected-bison.rooster465.autos }
+  - { client-fingerprint: chrome, name: '日本 0069[287ms]', network: tcp, password: CF68213490, port: 443, server: star-moray.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: star-moray.rooster465.autos }
+  - { name: '罗马尼亚 0100[636ms]', port: 9002, server: 193.176.84.33, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0127[808ms]', type: http, server: 84.239.49.171, port: 9002, skip-cert-verify: true, tls: true, sni: www.bing.com }
+  - { client-fingerprint: chrome, name: '日本 0074[248ms]', network: tcp, password: CF68213490, port: 443, server: funny-hen.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: funny-hen.rooster465.autos }
+  - { name: '日本 0153[473ms]', type: trojan, server: 150.230.212.247, port: 443, client-fingerprint: chrome, network: ws, password: eeb6823c-b926-4ea2-866a-5542edd26e59, sni: hhcm.hhxaf.cc.cd, ws-opts: { headers: { Host: hhcm.hhxaf.cc.cd }, path: / } }
+  - { name: '美国 0253[457ms]', port: 9002, server: 138.199.35.216, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '香港 0077[415ms]', password: d6Z20UbTCF, port: 12258, server: sub.whome.life, skip-cert-verify: true, sni: r.bing.com, sub_tag: K001-260618, type: anytls, udp: true, username: d6Z20UbTCF, client-fingerprint: '' }
+  - { name: '荷兰 0108[621ms]', port: 1080, server: 5.255.99.75, type: socks5 }
+  - { name: '罗马尼亚 0059[490ms]', port: 9002, server: 84.239.49.170, skip-cert-verify: true, sub_tag: R002-260618, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '日本 0079[311ms]', network: tcp, password: CF68213490, port: 443, server: nearby-egret.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: nearby-egret.rooster465.autos }
+  - { client-fingerprint: chrome, name: '日本 0089[231ms]', network: tcp, password: CF68213490, port: 443, server: summary-firefly.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: summary-firefly.rooster465.autos }
+  - { name: '美国 0238[393ms]', port: 9002, server: 138.199.35.205, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '美国 0228[589ms]', port: 9002, server: 156.146.59.20, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0055[576ms]', port: 9002, server: 193.176.84.31, skip-cert-verify: true, sub_tag: P002-260618, tls: true, type: http, udp: true }
+  - { name: '美国 0227[472ms]', port: 9002, server: 156.146.59.14, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '美国 0215[365ms]', port: 9002, server: 138.199.35.202, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0024[596ms]', port: 9002, server: 84.239.49.186, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0056[543ms]', port: 9002, server: 193.176.84.39, skip-cert-verify: true, sub_tag: R002-260618, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '日本 0076[233ms]', network: tcp, password: CF68213490, port: 443, server: in-oriole.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: in-oriole.rooster465.autos }
+  - { client-fingerprint: chrome, name: '荷兰 0090[448ms]', network: tcp, password: XG59623478, port: 443, server: upward-hedgehog.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: upward-hedgehog.rooster465.autos }
+  - { delay: 1277, name: '罗马尼亚 0110[547ms]', port: 9002, server: 84.239.49.253, skip-cert-verify: true, sub_tag: G001-260618, tls: true, type: http, udp: true }
+  - { name: '罗马尼亚 0131[725ms]', type: http, server: 84.239.14.154, port: 9002, skip-cert-verify: true, tls: true, sni: www.bing.com }
+  - { name: '美国 0196[419ms]', port: 9002, server: 138.199.35.220, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '法国 0044[600ms]', server: 173.212.252.150, port: 1080, type: socks5, udp: true }
+  - { name: '印度 0009[686ms]', password: '', port: 1088, server: 144.24.111.128, skip-cert-verify: true, sub_tag: K001-260618, type: socks5, username: '' }
+  - { client-fingerprint: chrome, name: '日本 0052[245ms]', network: tcp, password: CF68213490, port: 443, server: shining-piranha.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: shining-piranha.rooster465.autos }
+  - { name: '罗马尼亚 0057[588ms]', port: 9002, server: 84.239.49.40, skip-cert-verify: true, sni: www.bing.com, sub_tag: R002-260618, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '新加坡 0069[190ms]', network: tcp, password: CF68213490, port: 443, server: modest-bat.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: modest-bat.rooster465.autos }
+  - { name: '美国 0207[486ms]', port: 9002, server: 156.146.59.9, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0007[538ms]', port: 9002, server: 84.239.49.235, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 0266[630ms]', port: 9002, server: 156.146.59.28, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0038[564ms]', port: 9002, server: 84.239.49.199, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 0264[558ms]', port: 9002, server: 156.146.59.21, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '韩国 0072[796ms]', type: http, server: 64.110.88.200, port: 30000, skip-cert-verify: true, tls: true }
+  - { name: '罗马尼亚 0033[716ms]', port: 9002, server: 84.239.49.207, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0040[570ms]', port: 9002, server: 84.239.14.159, skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0113[552ms]', password: '', port: 9002, server: 84.239.49.248, skip-cert-verify: true, tls: true, type: http, username: '' }
+  - { name: '美国 0259[507ms]', port: 9002, server: 156.146.59.15, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '荷兰 0088[445ms]', password: '', port: 1080, server: 5.255.123.162, skip-cert-verify: true, sub_tag: A001-260618, type: socks5, username: '' }
+  - { client-fingerprint: chrome, encryption: none, name: '美国 0338[467ms]', network: tcp, port: 51963, reality-opts: { public-key: 96R745HIUgKX33-bqiqB5F9uQFTacNEwP2W4ZYD7kVE, short-id: e2 }, server: panel1.legendcr.ir, sub_tag: V010-260618, tls: true, type: vless, udp: true, uuid: ec99e107-8d2f-4767-a9ac-689424a55d3a, xudp: true, packet-encoding: xudp, servername: www.yahoo.com }
+  - { name: '罗马尼亚 0118[582ms]', server: 193.176.84.32, port: 9002, type: http, tls: true, skip-cert-verify: true, udp: true }
+  - { client-fingerprint: chrome, name: '爱尔兰 0007[628ms]', network: tcp, password: OD90375861, port: 443, server: fit-calf.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: fit-calf.rooster465.autos }
+  - { client-fingerprint: chrome, name: '新加坡 0052[204ms]', network: tcp, password: CF68213490, port: 443, server: brief-warthog.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: brief-warthog.rooster465.autos }
+  - { client-fingerprint: chrome, name: '日本 0078[262ms]', network: tcp, password: CF68213490, port: 443, server: steady-prawn.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: steady-prawn.rooster465.autos }
+  - { name: '罗马尼亚 0083[541ms]', port: 9002, server: 84.239.49.184, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 0189[508ms]', port: 9002, server: 156.146.59.32, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '日本 0085[260ms]', network: tcp, password: CF68213490, port: 443, server: united-molly.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: united-molly.rooster465.autos }
+  - { name: '荷兰 0101[581ms]', type: http, server: 5.255.118.82, port: 443, skip-cert-verify: true, tls: true }
+  - { name: '未知 0548[757ms]', type: trojan, server: 104.16.89.120, port: 443, network: ws, password: humanity, sni: www.creationlong.org, ws-opts: { headers: { Host: www.creationlong.org }, path: /assignment } }
+  - { name: '罗马尼亚 0015[605ms]', port: 9002, server: 84.239.49.38, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { name: '罗马尼亚 0027[585ms]', port: 9002, server: 84.239.49.187, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 0246[583ms]', port: 9002, server: 138.199.35.203, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0022[596ms]', port: 9002, server: 84.239.49.175, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { client-fingerprint: chrome, name: '日本 0051[334ms]', network: tcp, password: CF68213490, port: 443, server: funny-hawk.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: funny-hawk.rooster465.autos }
+  - { name: '罗马尼亚 0062[552ms]', port: 9002, server: 193.176.84.34, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '德国 0103[526ms]', network: tcp, password: XG59623478, port: 443, server: enabling-asp.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: enabling-asp.rooster465.autos }
+  - { name: '罗马尼亚 0078[548ms]', port: 9002, server: 84.239.49.53, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { client-fingerprint: chrome, encryption: none, grpc-opts: { grpc-service-name: web.max.ru }, name: '美国 0349[408ms]', network: grpc, port: 444, reality-opts: { public-key: MF_E-_CYAXdWxC1N_wTkdFyk3K7_1cNqNDPb0vnwl20, short-id: 8311761729abcdef }, server: usa.vrsvpn.com, sub_tag: S001-260618, tls: true, type: vless, udp: true, uuid: 0b9bcbc1-b289-4a64-86fa-a5b731b65384, xudp: true, packet-encoding: xudp, servername: web.max.ru }
+  - { name: '罗马尼亚 0098[572ms]', port: 9002, server: 84.239.49.60, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '新加坡 0063[220ms]', network: tcp, password: CF68213490, port: 443, server: evolving-platypus.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: evolving-platypus.rooster465.autos }
+  - { name: '罗马尼亚 0020[563ms]', port: 9002, server: 84.239.49.180, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { name: '美国 0250[490ms]', port: 9002, server: 138.199.35.212, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { name: '罗马尼亚 0013[777ms]', port: 9002, server: 193.176.84.22, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 0252[461ms]', port: 9002, server: 156.146.59.30, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '新加坡 0056[208ms]', network: tcp, password: CF68213490, port: 443, server: bright-cicada.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: bright-cicada.rooster465.autos }
+  - { client-fingerprint: chrome, name: '新加坡 0058[203ms]', network: tcp, password: CF68213490, port: 443, server: relevant-oryx.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: relevant-oryx.rooster465.autos }
+  - { client-fingerprint: chrome, name: '美国 0304[550ms]', network: tcp, password: CF68213490, port: 443, server: alert-monster.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: alert-monster.rooster465.autos }
+  - { client-fingerprint: chrome, name: '德国 0105[334ms]', network: tcp, password: OD90375861, port: 443, server: together-insect.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: together-insect.rooster465.autos }
+  - { name: '罗马尼亚 0105[621ms]', port: 9002, server: 84.239.49.227, skip-cert-verify: true, sni: www.bing.com, sub_tag: R002-260618, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '日本 0055[260ms]', network: tcp, password: CF68213490, port: 443, server: next-turkey.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: next-turkey.rooster465.autos }
+  - { name: '美国 0362[979ms]', type: http, server: 156.146.59.47, port: 9002, skip-cert-verify: true, tls: true }
+  - { name: '美国 0210[519ms]', port: 9002, server: 156.146.59.7, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { client-fingerprint: chrome, name: '日本 0100[240ms]', network: tcp, password: CF68213490, port: 443, server: upright-rhino.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: upright-rhino.rooster465.autos }
+  - { name: '罗马尼亚 0065[508ms]', port: 9002, server: 84.239.49.49, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '罗马尼亚 0090[571ms]', port: 9002, server: 84.239.49.212, skip-cert-verify: true, tls: true, type: http, udp: true }
+  - { client-fingerprint: chrome, name: '新加坡 0054[214ms]', network: tcp, password: CF68213490, port: 443, server: moral-basilisk.rooster465.autos, skip-cert-verify: false, type: trojan, udp: true, sni: moral-basilisk.rooster465.autos }
+  - { name: '美国 0236[603ms]', port: 9002, server: 156.146.59.19, sin: 'https://t.me/WangCai2🇨🇳', skip-cert-verify: true, tls: true, type: http }
+  - { client-fingerprint: chrome, flow: xtls-rprx-vision, name: '中国 0003[581ms]', network: tcp, port: 40082, reality-opts: { public-key: GBCcf9j7irjlYN4Z5SW5ssP9ACHCnTvHk8PI9LHkqmI, short-id: d32620c540976780 }, server: 159.75.20.13, sub_tag: K001-260618, tls: true, type: vless, udp: true, uuid: 26bb3a99-4583-4744-bb8e-a5c823ad29e9, xudp: true, packet-encoding: xudp, servername: www.cloudflare.com }
+  - { name: '罗马尼亚 0036[516ms]', port: 9002, server: 193.176.84.30, skip-cert-verify: true, sni: www.bing.com, tls: true, type: http }
+  - { name: '美国 0085[450ms]', server: 151.101.1.194, port: 443, type: trojan, password: MiTiVPN, network: ws, sni: ssl.fastly.com, servername: ssl.fastly.com, alpn: [h2, http/1.1], client-fingerprint: chrome, ws-opts: { path: /---@MiTiVPN/---@MiTiVPN/---@MiTiVPN/---@MiTiVPN/---@MiTiVPN=s---W, headers: { Host: mitivpn--mitivpn--mitivpn-mitivpn--mitivpn-mitivpn.global.ssl.fastly.net } }, tls: true, skip-cert-verify: true, udp: true }
 proxy-groups:
-  - { name: '🚀 所有节点', type: select, proxies: ['罗马尼亚 0033[573ms]', '荷兰 0081[967ms]', '罗马尼亚 0108[572ms]', '美国 0329[441ms]', '罗马尼亚 0029[596ms]', '罗马尼亚 0070[591ms]', '罗马尼亚 0055[535ms]', '未知 0633[791ms]', '芬兰 0037[717ms]', '美国 0333[505ms]', '罗马尼亚 0022[576ms]', '罗马尼亚 0035[572ms]', '美国 0356[494ms]', '罗马尼亚 0042[553ms]', '未知 0239[526ms]', '罗马尼亚 0087[560ms]', '罗马尼亚 0088[566ms]', '罗马尼亚 0134[662ms]', '法国 0069[552ms]', '罗马尼亚 0038[592ms]', '罗马尼亚 0099[567ms]', '美国 0365[466ms]', '美国 0283[578ms]', '罗马尼亚 0006[606ms]', '美国 0332[541ms]', '罗马尼亚 0138[607ms]', '罗马尼亚 0118[570ms]', '法国 0062[475ms]', '美国 0353[534ms]', '罗马尼亚 0121[633ms]', '罗马尼亚 0137[605ms]', '土耳其 0007[559ms]', '罗马尼亚 0129[580ms]', '罗马尼亚 0125[500ms]', '罗马尼亚 0132[534ms]', '罗马尼亚 0135[637ms]', '未知 0359[606ms]', '罗马尼亚 0069[565ms]', '罗马尼亚 0016[590ms]', '未知 0333[639ms]', '罗马尼亚 0058[612ms]', '韩国 0025[397ms]', '罗马尼亚 0071[584ms]', '美国 0348[468ms]', '美国 0360[452ms]', '罗马尼亚 0057[516ms]', '美国 0309[493ms]', '罗马尼亚 0026[479ms]', '韩国 0057[841ms]', '罗马尼亚 0117[499ms]', '罗马尼亚 0124[516ms]', '罗马尼亚 0008[527ms]', '罗马尼亚 0100[562ms]', '美国 0004', '美国 0002', '美国 0444[520ms]', '美国 0323[450ms]', '美国 0342[484ms]', '罗马尼亚 0014[572ms]', '罗马尼亚 0098[567ms]', '加拿大 0014[734ms]', '罗马尼亚 0073[540ms]', '美国 0302[547ms]', '罗马尼亚 0085[506ms]', '罗马尼亚 0036[563ms]', '罗马尼亚 0040[588ms]', '罗马尼亚 0027[542ms]', '罗马尼亚 0074[477ms]', '美国 0368[558ms]', '罗马尼亚 0102[630ms]', '罗马尼亚 0052[492ms]', '美国 0001', '美国 0287[443ms]', '罗马尼亚 0041[624ms]', '美国 0345[470ms]', '美国 0364[465ms]', '罗马尼亚 0007[547ms]', '罗马尼亚 0063[527ms]', '罗马尼亚 0025[517ms]', '澳大利亚 0009[861ms]', '罗马尼亚 0131[623ms]', '罗马尼亚 0068[561ms]', '罗马尼亚 0056[484ms]', '罗马尼亚 0013[550ms]', '罗马尼亚 0060[537ms]', '日本 0001[316ms]', '罗马尼亚 0126[520ms]', '香港 0017[171ms]', '罗马尼亚 0047[641ms]', '罗马尼亚 0080[519ms]', '美国 0296[470ms]', '荷兰 0117[539ms]', '美国 0362[533ms]', '罗马尼亚 0082[550ms]', '罗马尼亚 0034[565ms]', '罗马尼亚 0009[569ms]', '美国 0284[387ms]', '罗马尼亚 0061[571ms]', '美国 0311[468ms]', '美国 0282[507ms]', '香港 0204[160ms]', '罗马尼亚 0133[512ms]', '罗马尼亚 0104[612ms]', '罗马尼亚 0112[572ms]', '美国 0443[581ms]', '罗马尼亚 0062[555ms]', '罗马尼亚 0015[629ms]', '荷兰 0114[531ms]', '罗马尼亚 0020[562ms]', '罗马尼亚 0128[597ms]', '罗马尼亚 0072[560ms]', '罗马尼亚 0049[486ms]', '香港 0021[156ms]', '美国 0003[612ms]', '罗马尼亚 0109[567ms]', '美国 0310[472ms]', '罗马尼亚 0018[600ms]', '罗马尼亚 0083[513ms]', '罗马尼亚 0075[557ms]', '罗马尼亚 0010[560ms]', '荷兰 0101[548ms]', '罗马尼亚 0012[538ms]', '罗马尼亚 0067[557ms]', '美国 0290[522ms]', '美国 0306[999ms]', '美国 0316[542ms]', '澳大利亚 0010[840ms]', '罗马尼亚 0064[560ms]', '罗马尼亚 0110[559ms]', '罗马尼亚 0116[538ms]', '美国 0334[628ms]', '罗马尼亚 0050[600ms]', '罗马尼亚 0078[597ms]', '罗马尼亚 0079[616ms]', '罗马尼亚 0136[564ms]', '日本 0168[876ms]', '罗马尼亚 0051[556ms]', '罗马尼亚 0095[519ms]', '罗马尼亚 0127[578ms]', '罗马尼亚 0114[643ms]', '香港 0179[324ms]', '罗马尼亚 0032[604ms]', '罗马尼亚 0084[497ms]', '罗马尼亚 0107[615ms]', '罗马尼亚 0113[633ms]', '美国 0005', '韩国 0027[408ms]', '美国 0331[739ms]', '美国 0295[487ms]', '罗马尼亚 0011[477ms]', '罗马尼亚 0105[522ms]', '罗马尼亚 0059[599ms]', '美国 0319[603ms]', '罗马尼亚 0086[540ms]', '美国 0312[496ms]', '美国 0378[491ms]', '罗马尼亚 0024[591ms]', '罗马尼亚 0019[556ms]', '美国 0367[565ms]', '美国 0300[557ms]', '罗马尼亚 0103[478ms]', '罗马尼亚 0039[574ms]', '罗马尼亚 0089[540ms]'] }
+  - { name: '🚀 所有节点', type: select, proxies: ['新加坡 0053[209ms]', '日本 0071[262ms]', '罗马尼亚 0046[571ms]', '罗马尼亚 0018[578ms]', '美国 0330[432ms]', '罗马尼亚 0073[539ms]', '日本 0095[280ms]', '罗马尼亚 0014[551ms]', '日本 0072[265ms]', '罗马尼亚 0091[629ms]', '德国 0108[546ms]', '罗马尼亚 0074[532ms]', '日本 0053[238ms]', '新加坡 0059[242ms]', '美国 0003[475ms]', '罗马尼亚 0064[589ms]', '罗马尼亚 0044[581ms]', '罗马尼亚 0092[542ms]', '美国 0200[533ms]', '罗马尼亚 0060[569ms]', '德国 0106[705ms]', '罗马尼亚 0115[520ms]', '日本 0050[243ms]', '罗马尼亚 0072[612ms]', '日本 0063[239ms]', '俄罗斯联邦 0041[645ms]', '日本 0064[252ms]', '罗马尼亚 0052[576ms]', '罗马尼亚 0121[579ms]', '美国 0232[446ms]', '罗马尼亚 0009[565ms]', '美国 0216[491ms]', '韩国 0062[407ms]', '日本 0093[221ms]', '罗马尼亚 0077[559ms]', '美国 0363[446ms]', '新加坡 0062[220ms]', '罗马尼亚 0061[610ms]', '新加坡 0077[191ms]', '罗马尼亚 0011[562ms]', '日本 0102[297ms]', '美国 0219[483ms]', '罗马尼亚 0129[586ms]', '日本 0075[209ms]', '韩国 0064[390ms]', '罗马尼亚 0097[559ms]', '美国 0312[699ms]', '日本 0062[275ms]', '日本 0106[254ms]', '日本 0090[228ms]', '日本 0059[237ms]', '日本 0067[207ms]', '荷兰 0098[479ms]', '香港 0076[491ms]', '罗马尼亚 0017[531ms]', '韩国 0063[409ms]', '美国 0004', '罗马尼亚 0087[546ms]', '日本 0065[237ms]', '美国 0275[561ms]', '罗马尼亚 0114[561ms]', '香港 0074[691ms]', '罗马尼亚 0071[666ms]', '罗马尼亚 0122[561ms]', '罗马尼亚 0096[579ms]', '罗马尼亚 0103[514ms]', '新加坡 0065[181ms]', '新加坡 0067[189ms]', '香港 0018[158ms]', '罗马尼亚 0025[570ms]', '日本 0086[215ms]', '罗马尼亚 0082[547ms]', '罗马尼亚 0047[560ms]', '日本 0099[279ms]', '罗马尼亚 0041[621ms]', '芬兰 0031[621ms]', '罗马尼亚 0095[553ms]', '美国 0190[630ms]', '香港 0072[530ms]', '日本 0087[283ms]', '日本 0083[214ms]', '新加坡 0066[183ms]', '罗马尼亚 0006[492ms]', '香港 0068[511ms]', '美国 0001', '美国 0186[516ms]', '日本 0001[951ms]', '罗马尼亚 0008[530ms]', '罗马尼亚 0084[600ms]', '罗马尼亚 0099[546ms]', '罗马尼亚 0045[561ms]', '罗马尼亚 0021[601ms]', '美国 0331[443ms]', '中国 0005[237ms]', '罗马尼亚 0058[602ms]', '罗马尼亚 0035[551ms]', '罗马尼亚 0123[518ms]', '美国 0301[582ms]', '美国 0308[537ms]', '新加坡 0061[215ms]', '罗马尼亚 0028[531ms]', '新加坡 0071[217ms]', '日本 0070[353ms]', '罗马尼亚 0132[581ms]', '日本 0081[253ms]', '日本 0082[245ms]', '罗马尼亚 0050[576ms]', '日本 0103[248ms]', '新加坡 0051[174ms]', '罗马尼亚 0094[558ms]', '美国 0187[490ms]', '美国 0350[806ms]', '罗马尼亚 0088[569ms]', '罗马尼亚 0076[536ms]', '美国 0251[549ms]', '日本 0115[312ms]', '罗马尼亚 0120[569ms]', '美国 0194[452ms]', '法国 0036[581ms]', '罗马尼亚 0104[636ms]', '美国 0303[410ms]', '美国 0310[655ms]', '香港 0073[519ms]', '美国 0198[555ms]', '新加坡 0050[206ms]', '日本 0096[198ms]', '美国 0214[540ms]', '荷兰 0089[515ms]', '罗马尼亚 0026[542ms]', '美国 0195[578ms]', '日本 0084[295ms]', '罗马尼亚 0085[587ms]', '罗马尼亚 0063[596ms]', '新加坡 0072[183ms]', '美国 0257[633ms]', '荷兰 0105[473ms]', '美国 0311[477ms]', '新加坡 0075[210ms]', '罗马尼亚 0081[576ms]', '日本 0066[238ms]', '美国 0258[565ms]', '美国 0274[502ms]', '新加坡 0070[189ms]', '美国 0244[480ms]', '罗马尼亚 0069[610ms]', '日本 0105[250ms]', '美国 0248[524ms]', '罗马尼亚 0119[585ms]', '罗马尼亚 0107[624ms]', '韩国 0053[301ms]', '罗马尼亚 0010[616ms]', '美国 0202[493ms]', '日本 0094[250ms]', '罗马尼亚 0048[536ms]', '日本 0060[286ms]', '香港 0086[147ms]', '未知 0516[650ms]', '罗马尼亚 0093[595ms]', '日本 0104[353ms]', '罗马尼亚 0054[568ms]', '罗马尼亚 0042[585ms]', '罗马尼亚 0106[818ms]', '日本 0068[343ms]', '美国 0197[505ms]', '罗马尼亚 0067[525ms]', '波兰 0013[623ms]', '新加坡 0068[234ms]', '罗马尼亚 0051[535ms]', '法国 0038[724ms]', '美国 0255[376ms]', '美国 0260[547ms]', '罗马尼亚 0086[544ms]', '新加坡 0064[210ms]', '美国 0240[482ms]', '美国 0220[522ms]', '日本 0080[234ms]', '未知 0557[679ms]', '澳大利亚 0008[920ms]', '香港 0071[502ms]', '香港 0075[737ms]', '日本 0091[318ms]', '美国 0226[541ms]', '日本 0077[340ms]', '美国 0217[474ms]', '罗马尼亚 0102[538ms]', '罗马尼亚 0039[671ms]', '新加坡 0055[219ms]', '美国 0591[486ms]', '未知 0523[553ms]', '新加坡 0049[235ms]', '日本 0049[334ms]', '日本 0048[301ms]', '罗马尼亚 0109[569ms]', '罗马尼亚 0117[596ms]', '罗马尼亚 0049[565ms]', '美国 0356[896ms]', '爱尔兰 0006[687ms]', '罗马尼亚 0019[584ms]', '加拿大 0015[748ms]', '日本 0097[245ms]', '新加坡 0060[211ms]', '罗马尼亚 0128[603ms]', '罗马尼亚 0089[632ms]', '日本 0054[339ms]', '美国 0322[439ms]', '美国 0201[443ms]', '罗马尼亚 0037[649ms]', '罗马尼亚 0116[485ms]', '日本 0092[281ms]', '韩国 0061[338ms]', '罗马尼亚 0125[593ms]', '罗马尼亚 0075[585ms]', '罗马尼亚 0133[564ms]', '罗马尼亚 0043[592ms]', '新加坡 0057[215ms]', '美国 0271[491ms]', '美国 0241[554ms]', '日本 0098[310ms]', '罗马尼亚 0124[622ms]', '美国 0005', '日本 0101[259ms]', '瑞士 0005[497ms]', '罗马尼亚 0029[609ms]', '日本 0112[668ms]', '美国 0002[380ms]', '罗马尼亚 0101[534ms]', '罗马尼亚 0130[632ms]', '罗马尼亚 0053[605ms]', '波兰 0016[632ms]', '澳大利亚 0011[817ms]', '日本 0088[253ms]', '香港 0069[427ms]', '日本 0061[268ms]', '日本 0073[231ms]', '澳大利亚 0009[885ms]', '日本 0069[287ms]', '罗马尼亚 0100[636ms]', '罗马尼亚 0127[808ms]', '日本 0074[248ms]', '日本 0153[473ms]', '美国 0253[457ms]', '香港 0077[415ms]', '荷兰 0108[621ms]', '罗马尼亚 0059[490ms]', '日本 0079[311ms]', '日本 0089[231ms]', '美国 0238[393ms]', '美国 0228[589ms]', '罗马尼亚 0055[576ms]', '美国 0227[472ms]', '美国 0215[365ms]', '罗马尼亚 0024[596ms]', '罗马尼亚 0056[543ms]', '日本 0076[233ms]', '荷兰 0090[448ms]', '罗马尼亚 0110[547ms]', '罗马尼亚 0131[725ms]', '美国 0196[419ms]', '法国 0044[600ms]', '印度 0009[686ms]', '日本 0052[245ms]', '罗马尼亚 0057[588ms]', '新加坡 0069[190ms]', '美国 0207[486ms]', '罗马尼亚 0007[538ms]', '美国 0266[630ms]', '罗马尼亚 0038[564ms]', '美国 0264[558ms]', '韩国 0072[796ms]', '罗马尼亚 0033[716ms]', '罗马尼亚 0040[570ms]', '罗马尼亚 0113[552ms]', '美国 0259[507ms]', '荷兰 0088[445ms]', '美国 0338[467ms]', '罗马尼亚 0118[582ms]', '爱尔兰 0007[628ms]', '新加坡 0052[204ms]', '日本 0078[262ms]', '罗马尼亚 0083[541ms]', '美国 0189[508ms]', '日本 0085[260ms]', '荷兰 0101[581ms]', '未知 0548[757ms]', '罗马尼亚 0015[605ms]', '罗马尼亚 0027[585ms]', '美国 0246[583ms]', '罗马尼亚 0022[596ms]', '日本 0051[334ms]', '罗马尼亚 0062[552ms]', '德国 0103[526ms]', '罗马尼亚 0078[548ms]', '美国 0349[408ms]', '罗马尼亚 0098[572ms]', '新加坡 0063[220ms]', '罗马尼亚 0020[563ms]', '美国 0250[490ms]', '罗马尼亚 0013[777ms]', '美国 0252[461ms]', '新加坡 0056[208ms]', '新加坡 0058[203ms]', '美国 0304[550ms]', '德国 0105[334ms]', '罗马尼亚 0105[621ms]', '日本 0055[260ms]', '美国 0362[979ms]', '美国 0210[519ms]', '日本 0100[240ms]', '罗马尼亚 0065[508ms]', '罗马尼亚 0090[571ms]', '新加坡 0054[214ms]', '美国 0236[603ms]', '中国 0003[581ms]', '罗马尼亚 0036[516ms]', '美国 0085[450ms]'] }
 rule-providers:
   reject: { type: http, behavior: domain, url: 'https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt', path: ./ruleset/reject.txt, interval: 86400 }
 rules:
