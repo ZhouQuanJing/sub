@@ -1,4 +1,0 @@
-clash_sub GitHub 上传测试
-仓库: ZhouQuanJing/sub
-上传时间: 2026-08-13
-这是一次验证 GitHub 自动同步配置的测试文件。
