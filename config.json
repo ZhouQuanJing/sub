@@ -65,15 +65,15 @@ github_upload=true;
 // 是否支持 IPv6 服务器节点（true/false，默认 false 时跳过 IPv6 地址的节点）
 ipv6=false;
 // DNS 解析超时(秒)，用于 hostname 节点反查地区；解析失败会跳过该节点（默认 2 秒）
-dns_timeout=2;
+dns_timeout=1;
 // TCP 探活超时（默认 2 秒）
-tcp_timeout=2;
+tcp_timeout=1;
 // 延迟测试地址（留空 = 默认 https://www.gstatic.com/generate_204）
-latency_url=;
+latency_url=https://www.google.com;
 // 单节点超时(秒)
 latency_timeout=2;
 // 测速下载地址：留空 = 不测速，只测延迟（节点名仅带 [Xms]）；填写后才下载测速（带 [X.XXMB/s]）默认：https://speed.cloudflare.com/__down?bytes=10485760
-speedtest_url=https://speed.cloudflare.com/__down?bytes=10485760;
+speedtest_url=;
 // 单节点测速超时(秒)
 speedtest_timeout=20;
 // 测速下载字节数（影响速度估算，默认 10MB）
