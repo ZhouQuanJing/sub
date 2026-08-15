@@ -1,0 +1,54 @@
+// 并发数（同时测速的节点数量）
+thread=100;
+// 地址解析（GeoLite2-Country.mmdb 文件名，位于本程序同级目录）
+geolite=GeoLite2-Country.mmdb;
+// 订阅代理（拉取 GitHub raw 时自动加前缀）
+proxy=https://ghproxy.net/;
+// 订阅记录：每行一个。本地导入（非 http(s) 链接，如本地 yaml 文件）视为固定节点：仅地区改名，不探活不测速，置于输出头部；标签 => 目标 仅用于显示
+subscribes=[
+// 本地测试节点（冒烟自测用，可删除）
+	yanjianyecao.yaml
+    
+// 固定节点示例（本地 yaml 自动视为固定节点，仅改名不探活）：
+// yanjianyecao.yaml
+// （如需显示标签可写：我的节点 => yanjianyecao.yaml）
+// 远程订阅示例：
+// https://raw.githubusercontent.com/xxx/xxx/main/clash.yaml
+]
+
+// 存活节点输出（解析+去重+GeoIP 重命名，不做连通性测试）
+v2ray=v2ray.json
+clash=clash.json
+// 可连通节点输出（经 Go 代理测速库实测通过的节点）
+v2ray_check=v2ray_check.json
+clash_check=clash_check.json
+
+// ====== GitHub 自动同步配置 ======
+// 目标 GitHub 仓库 (格式: 用户名/仓库名)
+github_repo=ZhouQuanJing/sub;
+// 提交到哪个分支 (默认通常是 main 或 master)
+github_branch=main;
+// 提交时附带的 Git 提交信息
+github_commit_message=Auto-update speedtest results;
+// 个人访问令牌 (建议通过环境变量或 GitHub Secrets 传入，如 ${GITHUB_TOKEN})
+github_token=;
+// 是否启用 GitHub 自动上传/提交 (true / false)
+github_upload=true;
+
+// ====== 测速可选配置（缺省走默认值）======
+// 是否支持 IPv6 服务器节点（true/false，默认 false 时跳过 IPv6 地址的节点）
+ipv6=false;
+// DNS 解析超时(秒)，用于 hostname 节点反查地区；解析失败会跳过该节点（默认 2 秒）
+dns_timeout=2;
+// TCP 探活超时（默认 2 秒）
+tcp_timeout=2;
+// 延迟测试地址（留空 = 默认 https://www.gstatic.com/generate_204）
+latency_url=;
+// 单节点超时(秒)
+latency_timeout=2;
+// 测速下载地址：留空 = 不测速，只测延迟（节点名仅带 [Xms]）；填写后才下载测速（带 [X.XXMB/s]）默认：https://speed.cloudflare.com/__down?bytes=10485760
+speedtest_url=;
+// 单节点测速超时(秒)
+speedtest_timeout=20;
+// 测速下载字节数（影响速度估算，默认 10MB）
+download_size=10485760;
