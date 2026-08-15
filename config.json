@@ -4,14 +4,40 @@ thread=100;
 geolite=GeoLite2-Country.mmdb;
 // 订阅代理（拉取 GitHub raw 时自动加前缀）
 proxy=https://ghproxy.net/;
-// 订阅记录：每行一个。本地导入（非 http(s) 链接，如本地 yaml 文件）视为固定节点：仅地区改名，不探活不测速，置于输出头部；标签 => 目标 仅用于显示
+// 订阅记录：每行一个，支持  标签名 => 文件路径/链接  形式（带标签表示固定节点，测速失败也保留）
 subscribes=[
-// 本地测试节点（冒烟自测用，可删除）
-	yanjianyecao.yaml
-    
-// 固定节点示例（本地 yaml 自动视为固定节点，仅改名不探活）：
-// yanjianyecao.yaml
-// （如需显示标签可写：我的节点 => yanjianyecao.yaml）
+	// https://raw.githubusercontent.com/mheidari98/.proxy/refs/heads/main/all, // 15137
+	// https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/All_Configs_base64_Sub.txt, // 6440 dongchengjie 已收集
+	// https://raw.githubusercontent.com/cxddgtb/dljdsjq/refs/heads/main/output/nodes_base64.txt, // 8000
+	https://raw.githubusercontent.com/ishalumi/proxy-node-collector/refs/heads/main/output/nodes_base64.txt, // 1054 dongchengjie 已收集
+	https://raw.githubusercontent.com/maimengmeng/mysub/refs/heads/main/valid_content.txt, // 1700 dongchengjie 已收集
+	https://raw.githubusercontent.com/ALIILAPRO/v2rayNG-Config/refs/heads/main/sub.txt, // 860
+	https://raw.githubusercontent.com/PangTouY00/Auto_proxy/refs/heads/main/Long_term_subscription_num, // 117
+	https://raw.githubusercontent.com/Pawdroid/Free-servers/refs/heads/main/sub, // 15 dongchengjie 已收集
+    // // /** clash */
+    // https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge_yaml.yml, // 5368 dongchengjie 已收集
+    https://raw.githubusercontent.com/Ruk1ng001/freeSub/refs/heads/main/clash.yaml, // 503 dongchengjie 已收集
+    https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/c.yaml, // 359 dongchengjie 已收集
+    https://raw.githubusercontent.com/LeilaoMi/AutoMergePublicNodes-Optimized/refs/heads/main/output/global.yaml, // 301
+    https://raw.githubusercontent.com/anaer/Sub/refs/heads/main/proxies.yaml, // 186 dongchengjie 已收集
+    https://raw.githubusercontent.com/peasoft/NoMoreWalls/refs/heads/master/list.meta.yml, // 175 dongchengjie 已收集
+    https://raw.githubusercontent.com/ts-sf/fly/main/clash, // 124 dongchengjie 已收集
+    https://raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.meta.yml, // 97 dongchengjie 已收集
+    https://raw.githubusercontent.com/zhangkaiitugithub/passcro/refs/heads/main/meta.yaml, // 64 dongchengjie 已收集
+    https://raw.githubusercontent.com/marshall888666/free_clash_subscribe/refs/heads/main/source/clash-meta.yaml, // 62 dongchengjie 已收集
+    // https://raw.githubusercontent.com/snakem982/proxypool/refs/heads/main/source/clash-meta-2.yaml, // 【重复 marshall888666】dongchengjie 已收集
+    // https://raw.githubusercontent.com/marshall888666/free_clash_subscribe/refs/heads/main/source/clash-meta-2.yaml, // 16 dongchengjie 已收集
+    // https://raw.githubusercontent.com/ripaojiedian/freenode/main/clash, // 16 dongchengjie 已收集
+    // https://raw.githubusercontent.com/go4sharing/sub/refs/heads/main/clash.yaml, // 2 dongchengjie 已收集
+    https://raw.githubusercontent.com/cbusifabcap/daily_free_vpn/refs/heads/main/sub/ClashMeta.yml, // 100
+    https://raw.githubusercontent.com/Misaka-blog/chromego_merge/refs/heads/main/sub/merged_proxies_new.yaml, // 51
+    https://raw.githubusercontent.com/wisebobo/clashNodes/refs/heads/master/rules_clash.yaml, // 10
+    https://raw.githubusercontent.com/NZNL31/node/refs/heads/main/clash.yaml, // 5
+    https://raw.githubusercontent.com/hello-world-1989/cn-news/refs/heads/main/clash.yaml, // 2
+    // // // // 以下数量巨大
+    https://raw.githubusercontent.com/dongchengjie/airport/main/subs/merged/tested_within.yaml, // 1617
+// 固定节点示例（本地 yaml，强制保留）：
+// 固定节点 => D:/Go/clash_sub/yanjianyecao.yaml
 // 远程订阅示例：
 // https://raw.githubusercontent.com/xxx/xxx/main/clash.yaml
 ]
@@ -47,7 +73,7 @@ latency_url=;
 // 单节点超时(秒)
 latency_timeout=2;
 // 测速下载地址：留空 = 不测速，只测延迟（节点名仅带 [Xms]）；填写后才下载测速（带 [X.XXMB/s]）默认：https://speed.cloudflare.com/__down?bytes=10485760
-speedtest_url=;
+speedtest_url=https://speed.cloudflare.com/__down?bytes=10485760;
 // 单节点测速超时(秒)
 speedtest_timeout=20;
 // 测速下载字节数（影响速度估算，默认 10MB）
