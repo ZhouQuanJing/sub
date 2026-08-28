@@ -55,523 +55,249 @@
   "mode": "rule",
   "proxies": [
     {
-      "name": "未知 0454[189ms]",
-      "network": "ws",
-      "port": 2086,
-      "server": "108.162.198.178",
-      "type": "vless",
-      "udp": true,
-      "uuid": "47fcef29-ab4e-4aa6-932b-d95a18f28a4e",
-      "ws-opts": {
-        "headers": {
-          "Host": "8nj2r.2k8t.f88.hh.vavava.kdns.fr"
-        },
-        "path": "/"
-      }
+      "cipher": "aes-256-cfb",
+      "name": "中国 0051[465ms]",
+      "password": "7eadc6dbe2ae",
+      "port": 65443,
+      "server": "121.46.230.232",
+      "type": "ss"
     },
     {
-      "name": "台湾 0009[251ms]",
+      "name": "香港 0330[534ms]",
+      "password": "HOrViv",
+      "port": 28102,
+      "server": "209.248.32.117",
+      "skip-cert-verify": true,
+      "sni": "ctldl.windowsupdate.com",
+      "type": "trojan"
+    },
+    {
+      "name": "香港 0217[535ms]",
+      "password": "HOrViv",
+      "port": 28126,
+      "server": "209.248.32.117",
+      "skip-cert-verify": true,
+      "sni": "ctldl.windowsupdate.com",
+      "type": "trojan"
+    },
+    {
+      "name": "香港 0211[558ms]",
+      "password": "HOrViv",
+      "port": 28122,
+      "server": "209.248.32.117",
+      "skip-cert-verify": true,
+      "sni": "ctldl.windowsupdate.com",
+      "type": "trojan"
+    },
+    {
+      "name": "香港 0219[559ms]",
+      "password": "HOrViv",
+      "port": 28110,
+      "server": "209.248.32.117",
+      "skip-cert-verify": true,
+      "sni": "download.windowsupdate.com",
+      "type": "trojan"
+    },
+    {
+      "name": "日本 0591[578ms]",
+      "password": null,
+      "port": 443,
+      "server": "fan.571589.xyz",
+      "skip-cert-verify": false,
+      "tls": true,
+      "type": "http",
+      "username": null
+    },
+    {
+      "name": "香港 0210[590ms]",
+      "password": "HOrViv",
+      "port": 28122,
+      "server": "209.248.32.116",
+      "skip-cert-verify": true,
+      "sni": "ctldl.windowsupdate.com",
+      "type": "trojan"
+    },
+    {
+      "name": "香港 0295[629ms]",
+      "password": "HOrViv",
+      "port": 28104,
+      "server": "209.248.32.117",
+      "skip-cert-verify": true,
+      "sni": "ctldl.windowsupdate.com",
+      "type": "trojan"
+    },
+    {
+      "alterId": 2,
+      "cipher": "auto",
+      "name": "中国 0010[713ms]",
       "network": "tcp",
-      "port": 10000,
-      "server": "220.130.75.248",
+      "port": 30833,
+      "server": "v33.hdacd.com",
       "skip-cert-verify": false,
       "tls": false,
-      "type": "vless",
+      "type": "vmess",
       "udp": true,
-      "uuid": "6f361c37-bc54-43dd-8c8b-0f59354745a5"
+      "uuid": "cbb3f877-d1fb-344c-87a9-d153bffd5484"
     },
     {
-      "name": "香港 0232[448ms]",
-      "password": "4kch6iOn",
+      "name": "香港 0319[719ms]",
       "port": 443,
-      "server": "cn13.somethingstranges.com",
+      "server": "fan.240104.xyz",
       "skip-cert-verify": true,
-      "sni": "down413.mihoyo.yuanshen.com",
-      "type": "anytls"
-    },
-    {
-      "name": "韩国 0064[505ms]",
-      "password": "29204996-a723-4291-8c70-30843b592d40",
-      "port": 25135,
-      "server": "yazhouany02.downapptwo.cc",
-      "skip-cert-verify": true,
-      "sni": "hk27.pulsarcore.site",
-      "type": "anytls"
-    },
-    {
-      "name": "日本 0018[695ms]",
-      "network": "tcp",
-      "port": 10000,
-      "server": "14.137.238.136",
-      "skip-cert-verify": false,
-      "tls": false,
-      "type": "vless",
-      "udp": true,
-      "uuid": "6f361c37-bc54-43dd-8c8b-0f59354745a5"
-    },
-    {
-      "name": "美国 0813[753ms]",
-      "port": 443,
-      "server": "crosscards.site",
-      "sni": "crosscards.site",
+      "sni": "fan.240104.xyz",
       "tls": true,
       "type": "http"
     },
     {
-      "name": "美国 0821[781ms]",
-      "port": 9002,
-      "server": "138.199.35.198",
+      "name": "香港 0218[751ms]",
+      "password": "HOrViv",
+      "port": 28126,
+      "server": "209.248.32.116",
       "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
+      "sni": "ctldl.windowsupdate.com",
+      "type": "trojan"
+    },
+    {
+      "name": "美国 0816[797ms]",
+      "password": "3407a014-429c-497c-a859-3e597d1a8520",
+      "port": 443,
+      "server": "us2.443ds443.com",
+      "sni": "us2.443ds443.com",
+      "type": "anytls",
       "udp": true
     },
     {
-      "name": "美国 0934[793ms]",
-      "port": 9002,
-      "server": "138.199.35.215",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "name": "美国 0809[845ms]",
-      "port": 443,
-      "server": "fan.596189.xyz",
-      "skip-cert-verify": true,
-      "sni": "fan.596189.xyz",
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "name": "罗马尼亚 0179[899ms]",
-      "password": "",
-      "port": 9002,
-      "server": "193.176.84.31",
-      "skip-cert-verify": true,
+      "name": "印度尼西亚 0011[833ms]",
+      "password": "freeuser1",
+      "port": 9251,
+      "server": "sr2-id.freeconnect.link",
       "tls": true,
       "type": "http",
-      "username": ""
+      "username": "freeuser1"
     },
     {
-      "name": "美国 0847[926ms]",
-      "password": "None",
-      "port": 9002,
-      "server": "138.199.35.205",
+      "name": "香港 0209[836ms]",
+      "password": "HOrViv",
+      "port": 28105,
+      "server": "209.248.32.116",
       "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": null
+      "sni": "ctldl.windowsupdate.com",
+      "type": "trojan"
     },
     {
-      "name": "美国 0811[953ms]",
-      "password": "null",
-      "port": 9002,
-      "server": "138.199.35.216",
+      "name": "香港 0222[964ms]",
+      "password": "HOrViv",
+      "port": 28133,
+      "server": "209.248.32.116",
       "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": "null"
+      "sni": "ctldl.windowsupdate.com",
+      "type": "trojan"
     },
     {
-      "name": "瑞典 0069[1006ms]",
-      "password": "None",
-      "port": 443,
-      "server": "149.50.216.65",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": null
-    },
-    {
-      "insecure": "1",
-      "name": "新加坡 0033[1059ms]",
+      "name": "阿联酋 0035[1246ms]",
       "network": "tcp",
-      "password": "b492c1192f7aa3433c9818baf5ebb4ff",
+      "password": "BPvdjudCGodsF67hRP3xgBYvcKp48coTsh6ANydLhQs=",
       "port": 443,
-      "server": "134.185.87.191",
-      "skip-cert-verify": true,
-      "sni": "sb.jmx666.eu.cc",
+      "server": "fin14qr.wwwinternetvideo.click",
+      "skip-cert-verify": false,
+      "sni": "fin14qr.wwwinternetvideo.click",
       "tls": false,
       "type": "hysteria2",
       "udp": true
     },
     {
-      "name": "德国 0437[1098ms]",
-      "password": "None",
-      "port": 443,
-      "server": "149.36.50.157",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": null
-    },
-    {
-      "name": "波兰 0102[1136ms]",
-      "password": null,
-      "port": 443,
-      "server": "151.115.54.133",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": null
-    },
-    {
-      "name": "英国 0208[1162ms]",
-      "password": "None",
-      "port": 443,
-      "server": "193.36.118.210",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": null
-    },
-    {
-      "name": "罗马尼亚 0170[1177ms]",
-      "password": null,
-      "port": 9002,
-      "server": "193.176.84.17",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": null
-    },
-    {
-      "name": "美国 0862[1236ms]",
-      "password": "null",
-      "port": 9002,
-      "server": "138.199.35.213",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": "null"
-    },
-    {
-      "name": "香港 0235[1251ms]",
-      "password": "null",
-      "port": 443,
-      "server": "fan.240104.xyz",
-      "sni": "fan.240104.xyz",
-      "tls": true,
-      "type": "http",
-      "username": "null"
-    },
-    {
-      "name": "塞尔维亚 0006[1256ms]",
-      "password": "None",
-      "port": 443,
-      "server": "146.70.221.34",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": null
-    },
-    {
       "client-fingerprint": "chrome",
-      "encryption": "none",
-      "headerType": "none",
-      "host": "cdn.asshole.eu.cc",
-      "insecure": "1",
-      "name": "未知 0047[1259ms]",
-      "network": "ws",
-      "port": 2095,
-      "quicSecurity": "none",
-      "server": "cdn.asshole.eu.cc",
-      "skip-cert-verify": true,
-      "tls": false,
-      "type": "vless",
-      "udp": true,
-      "uuid": "86c50e3a-5b87-49dd-bd20-03c7f2735e40",
-      "ws-opts": {
-        "headers": {
-          "Host": "cdn.asshole.eu.cc"
-        },
-        "path": "/"
-      }
-    },
-    {
-      "name": "荷兰 0326[1377ms]",
-      "port": 9002,
-      "server": "84.17.47.147",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "name": "美国 0824[1381ms]",
-      "password": "",
-      "port": 9002,
-      "server": "138.199.35.199",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": ""
-    },
-    {
-      "name": "意大利 0026[1483ms]",
+      "flow": "xtls-rprx-vision",
+      "name": "美国 1132[1266ms]",
+      "network": "tcp",
       "port": 443,
-      "server": "91.243.118.217",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "alpn": [
-        "h3",
-        "h2",
-        "http/1.1"
-      ],
-      "client-fingerprint": "chrome",
-      "encryption": "none",
-      "name": "未知 0347[1528ms]",
-      "network": "ws",
-      "port": 443,
-      "server": "188.114.97.3",
-      "sni": "fast.iqiraq.shop.",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "5d8fae5f-0427-4da3-99ab-242905fa5c69",
-      "ws-opts": {
-        "headers": {
-          "Host": "fast.iqiraq.shop.",
-          "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36"
-        },
-        "path": "/"
+      "reality-opts": {
+        "public-key": "XOcyZvF63CHDPnh3UCL-u-X8HYeNGiRtrwDVRLBC1DI",
+        "short-id": "f41bc0b00ca1a978"
       },
-      "xudp": true
-    },
-    {
-      "client-fingerprint": "chrome",
-      "name": "未知 0471[1572ms]",
-      "network": "ws",
-      "password": "humanity",
-      "port": "443",
-      "server": "104.18.152.230",
-      "skip-cert-verify": false,
-      "sni": "www.ignitelimit.com",
-      "type": "trojan",
-      "udp": true,
-      "ws-opts": {
-        "headers": {
-          "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
-        },
-        "path": "/assignment"
-      }
-    },
-    {
-      "allowInsecure": "0",
-      "client-fingerprint": "firefox",
-      "encryption": "none",
-      "host": "vod.ensf.top",
-      "insecure": "0",
-      "name": "荷兰 0090[1595ms]",
-      "network": "ws",
-      "port": 443,
-      "server": "77.247.178.238",
-      "skip-cert-verify": false,
-      "sni": "vod.ensf.top",
+      "server": "nl6.murhost.network",
+      "skip-cert-verify": true,
+      "sni": "nl6.murhost.network",
+      "tfo": false,
       "tls": true,
       "type": "vless",
-      "udp": true,
-      "uuid": "e911c552-3a98-41e0-b5fb-0dd3879887b7",
-      "ws-opts": {
-        "headers": {
-          "Host": "vod.ensf.top"
-        },
-        "path": "/api/v1/irc"
-      }
+      "uuid": "419f25c1-bc35-412e-93fb-258efee859b5"
     },
     {
-      "client-fingerprint": "chrome",
-      "name": "未知 0350[1602ms]",
-      "network": "ws",
-      "port": 2087,
-      "server": "104.19.213.131",
+      "name": "中国 0061[1459ms]",
+      "port": 8443,
+      "server": "112.28.149.152",
+      "type": "socks5",
+      "username": "T2c6T2c="
+    },
+    {
+      "name": "香港 0228[1489ms]",
+      "password": "HOrViv",
+      "port": 18293,
+      "server": "209.248.32.117",
       "skip-cert-verify": true,
-      "sni": "wzknb.pages.dev",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "73bcd72f-9545-4cb8-8daf-7d004501880d",
-      "ws-opts": {
-        "headers": {
-          "Host": "wzknb.pages.dev"
-        },
-        "path": "/proxyip=179.255.104.87,179.255.116.198,179.255.101.56,142.248.218.6,142.248.218.4,45.76.79.239,179.255.152.163,208.68.180.240"
-      }
+      "sni": "ctldl.windowsupdate.com",
+      "type": "trojan"
     },
     {
-      "name": "拉脱维亚 0040[1681ms]",
+      "name": "香港 0380[1659ms]",
+      "password": "3QZglKmlgzc9zBCDD5W8tQ==",
       "port": 443,
-      "server": "109.248.149.34",
+      "server": "45.144.136.244",
       "skip-cert-verify": true,
-      "tls": true,
-      "type": "http"
+      "sni": "www.bing.com",
+      "type": "anytls"
     },
     {
-      "name": "美国 0093[1745ms]",
-      "network": "ws",
-      "port": 4100,
-      "server": "201.34.137.15",
+      "alterId": 2,
+      "cipher": "auto",
+      "name": "中国 0012[1707ms]",
+      "network": "tcp",
+      "port": 30804,
+      "server": "v4.hdacd.com",
       "skip-cert-verify": false,
       "tls": false,
-      "type": "vless",
+      "type": "vmess",
       "udp": true,
-      "uuid": "716903b1-e6bf-4420-9e27-65e4451692e9",
-      "ws-opts": {
-        "headers": {},
-        "path": "/v1"
-      }
+      "uuid": "cbb3f877-d1fb-344c-87a9-d153bffd5484"
     },
     {
-      "cipher": "aes-256-cfb",
-      "name": "中国 0034[1750ms]",
-      "password": "7eadc6dbe2ae",
-      "port": 65443,
-      "server": "121.46.230.233",
-      "type": "ss",
+      "name": "美国 0907[1957ms]",
+      "password": "https://xship.2fa.cat",
+      "port": 443,
+      "server": "starlink-ft.251313.xyz",
+      "skip-cert-verify": true,
+      "sni": "www.cloudflare.com",
+      "type": "hysteria2",
       "udp": true
-    },
-    {
-      "name": "美国 0940[1776ms]",
-      "password": "None",
-      "port": 443,
-      "server": "jewelscollecti.icu",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": null
-    },
-    {
-      "name": "英国 0201[1807ms]",
-      "port": 443,
-      "server": "185.235.0.34",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "client-fingerprint": "chrome",
-      "ech-opts": {
-        "enable": true,
-        "query-server-name": "cloudflare-ech.com"
-      },
-      "name": "未知 0344[1842ms]",
-      "network": "ws",
-      "port": 2053,
-      "server": "104.26.7.195",
-      "skip-cert-verify": false,
-      "sni": "wzknb.pages.dev",
-      "tls": true,
-      "type": "vless",
-      "uuid": "73bcd72f-9545-4cb8-8daf-7d004501880d",
-      "ws-opts": {
-        "headers": {
-          "Host": "wzknb.pages.dev"
-        },
-        "path": "/proxyip=179.255.104.87,179.255.116.198,179.255.101.56,142.248.218.6,142.248.218.4,45.76.79.239,179.255.152.163,208.68.180.240"
-      }
-    },
-    {
-      "Telegram": "Cfox_Server-----Cfox_Server-----Cfox_Server-----Cfox_Server-----Cfox_Server-----Cfox_Server-----Cfox_Server-----Cfox_Server-----Cfox_Server-----Cfox_Server-----Cfox_Server-----Cfox_Server-----Cfox_Server-----Cfox_Server",
-      "encryption": "none",
-      "name": "土耳其 0007[1850ms]",
-      "network": "ws",
-      "port": 2082,
-      "server": "212.87.199.76",
-      "skip-cert-verify": false,
-      "tls": false,
-      "type": "vless",
-      "udp": true,
-      "uuid": "e2c6905e-46ec-434b-8400-0bc5bf0363e6",
-      "ws-opts": {
-        "headers": {},
-        "path": "/v-ws-de"
-      }
-    },
-    {
-      "name": "日本 0250[1875ms]",
-      "password": "null",
-      "port": 443,
-      "server": "fan.571589.xyz",
-      "sni": "fan.571589.xyz",
-      "tls": true,
-      "type": "http",
-      "username": "null"
-    },
-    {
-      "name": "美国 0841[1885ms]",
-      "port": 9002,
-      "server": "138.199.35.211",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "udp": true
-    },
-    {
-      "encryption": "none",
-      "host": "images.mzstatic.com",
-      "name": "德国 0358[1912ms]",
-      "network": "ws",
-      "port": 2055,
-      "server": "www.homaxcorp.com.homaxcorp.com",
-      "skip-cert-verify": false,
-      "tls": false,
-      "type": "vless",
-      "udp": true,
-      "uuid": "042adee0-9b4f-43f5-a915-a627313f28c0",
-      "ws-opts": {
-        "headers": {
-          "Host": "images.mzstatic.com"
-        },
-        "path": "/"
-      }
     }
   ],
   "proxy-groups": [
     {
       "name": "🚀 所有节点",
       "proxies": [
-        "未知 0454[189ms]",
-        "台湾 0009[251ms]",
-        "香港 0232[448ms]",
-        "韩国 0064[505ms]",
-        "日本 0018[695ms]",
-        "美国 0813[753ms]",
-        "美国 0821[781ms]",
-        "美国 0934[793ms]",
-        "美国 0809[845ms]",
-        "罗马尼亚 0179[899ms]",
-        "美国 0847[926ms]",
-        "美国 0811[953ms]",
-        "瑞典 0069[1006ms]",
-        "新加坡 0033[1059ms]",
-        "德国 0437[1098ms]",
-        "波兰 0102[1136ms]",
-        "英国 0208[1162ms]",
-        "罗马尼亚 0170[1177ms]",
-        "美国 0862[1236ms]",
-        "香港 0235[1251ms]",
-        "塞尔维亚 0006[1256ms]",
-        "未知 0047[1259ms]",
-        "荷兰 0326[1377ms]",
-        "美国 0824[1381ms]",
-        "意大利 0026[1483ms]",
-        "未知 0347[1528ms]",
-        "未知 0471[1572ms]",
-        "荷兰 0090[1595ms]",
-        "未知 0350[1602ms]",
-        "拉脱维亚 0040[1681ms]",
-        "美国 0093[1745ms]",
-        "中国 0034[1750ms]",
-        "美国 0940[1776ms]",
-        "英国 0201[1807ms]",
-        "未知 0344[1842ms]",
-        "土耳其 0007[1850ms]",
-        "日本 0250[1875ms]",
-        "美国 0841[1885ms]",
-        "德国 0358[1912ms]"
+        "中国 0051[465ms]",
+        "香港 0330[534ms]",
+        "香港 0217[535ms]",
+        "香港 0211[558ms]",
+        "香港 0219[559ms]",
+        "日本 0591[578ms]",
+        "香港 0210[590ms]",
+        "香港 0295[629ms]",
+        "中国 0010[713ms]",
+        "香港 0319[719ms]",
+        "香港 0218[751ms]",
+        "美国 0816[797ms]",
+        "印度尼西亚 0011[833ms]",
+        "香港 0209[836ms]",
+        "香港 0222[964ms]",
+        "阿联酋 0035[1246ms]",
+        "美国 1132[1266ms]",
+        "中国 0061[1459ms]",
+        "香港 0228[1489ms]",
+        "香港 0380[1659ms]",
+        "中国 0012[1707ms]",
+        "美国 0907[1957ms]"
       ],
       "type": "select"
     }
