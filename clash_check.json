@@ -55,112 +55,74 @@
   "mode": "rule",
   "proxies": [
     {
-      "name": "香港 0578[375ms]",
+      "insecure": "0",
+      "name": "香港 0536[342ms]",
+      "network": "tcp",
+      "password": "ac956a1d-3892-4a46-a2ef-45005d3c8e60",
+      "port": 11881,
+      "server": "byhk918.luoyun2.com",
+      "skip-cert-verify": false,
+      "sni": "byhk918.luoyun2.com",
+      "tls": false,
+      "type": "anytls",
+      "udp": true
+    },
+    {
+      "name": "香港 0541[378ms]",
+      "password": null,
       "port": 443,
       "server": "fan.240104.xyz",
       "skip-cert-verify": true,
-      "sni": "fan.240104.xyz",
       "tls": true,
-      "type": "http"
+      "type": "http",
+      "username": null
     },
     {
-      "client-fingerprint": "chrome",
-      "name": "日本 0656[413ms]",
-      "network": "ws",
-      "port": 443,
-      "server": "92.113.124.228",
-      "skip-cert-verify": true,
-      "sni": "shuma.ccwu.cc",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
-      "ws-opts": {
-        "headers": {
-          "Host": "shuma.ccwu.cc"
-        },
-        "path": "/"
-      }
-    },
-    {
-      "client-fingerprint": "chrome",
-      "name": "日本 0664[417ms]",
-      "network": "ws",
-      "port": 443,
-      "server": "45.202.254.133",
-      "skip-cert-verify": true,
-      "sni": "shuma.ccwu.cc",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
-      "ws-opts": {
-        "headers": {
-          "Host": "shuma.ccwu.cc"
-        },
-        "path": "/"
-      }
-    },
-    {
-      "name": "日本 0654[431ms]",
-      "password": null,
+      "name": "日本 0696[408ms]",
+      "password": "",
       "port": 443,
       "server": "fan.571589.xyz",
-      "skip-cert-verify": false,
+      "skip-cert-verify": true,
+      "sni": "fan.571589.xyz",
       "tls": true,
       "type": "http",
-      "username": null
+      "udp": true,
+      "username": ""
     },
     {
       "client-fingerprint": "chrome",
-      "ech-opts": {
-        "enable": true,
-        "query-server-name": "cloudflare-ech.com"
-      },
-      "name": "未知 2474[451ms]",
+      "name": "美国 4688[416ms]",
       "network": "ws",
       "port": 443,
-      "server": "104.17.112.132",
+      "server": "38.147.172.176",
       "skip-cert-verify": true,
-      "sni": "cdn8848.776676.xyz",
+      "sni": "shuma.ccwu.cc",
       "tls": true,
       "type": "vless",
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
+      "udp": true,
+      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
       "ws-opts": {
         "headers": {
-          "Host": "cdn8848.776676.xyz"
+          "Host": "shuma.ccwu.cc"
         },
-        "path": "/note?ed=2560"
+        "path": "/"
       }
     },
     {
-      "client-fingerprint": "chrome",
-      "ech-opts": {
-        "enable": true,
-        "query-server-name": "cloudflare-ech.com"
-      },
-      "name": "未知 2465[522ms]",
-      "network": "ws",
-      "port": 443,
-      "server": "162.159.237.99",
-      "skip-cert-verify": true,
-      "sni": "cdn8848.776676.xyz",
+      "name": "印度尼西亚 0023[462ms]",
+      "password": "freeuser1",
+      "port": 9251,
+      "server": "sr2-id.freeconnect.link",
       "tls": true,
-      "type": "vless",
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
-      "ws-opts": {
-        "headers": {
-          "Host": "cdn8848.776676.xyz"
-        },
-        "path": "/files/doc?ed=2560"
-      }
+      "type": "http",
+      "username": "freeuser1"
     },
     {
       "client-fingerprint": "chrome",
-      "name": "香港 0585[575ms]",
+      "name": "美国 4691[630ms]",
       "network": "ws",
       "port": 443,
-      "server": "103.143.81.178",
+      "server": "179.255.109.171",
       "skip-cert-verify": true,
       "sni": "shuma.ccwu.cc",
       "tls": true,
@@ -176,229 +138,11 @@
     },
     {
       "client-fingerprint": "chrome",
-      "ech-opts": {
-        "enable": true,
-        "query-server-name": "cloudflare-ech.com"
-      },
-      "name": "未知 2461[577ms]",
-      "network": "ws",
-      "port": 443,
-      "server": "172.64.79.63",
-      "skip-cert-verify": true,
-      "sni": "cdn8848.776676.xyz",
-      "tls": true,
-      "type": "vless",
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
-      "ws-opts": {
-        "headers": {
-          "Host": "cdn8848.776676.xyz"
-        },
-        "path": "/redirect.php?ed=2560"
-      }
-    },
-    {
-      "client-fingerprint": "chrome",
-      "ech-opts": {
-        "enable": true,
-        "query-server-name": "cloudflare-ech.com"
-      },
-      "name": "未知 2459[593ms]",
-      "network": "ws",
-      "port": 2096,
-      "server": "172.64.79.63",
-      "skip-cert-verify": true,
-      "sni": "cdn8848.776676.xyz",
-      "tls": true,
-      "type": "vless",
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
-      "ws-opts": {
-        "headers": {
-          "Host": "cdn8848.776676.xyz"
-        },
-        "path": "/vod/doujin?ed=2560"
-      }
-    },
-    {
-      "client-fingerprint": "chrome",
-      "ech-opts": {
-        "enable": true,
-        "query-server-name": "cloudflare-ech.com"
-      },
-      "name": "未知 2472[597ms]",
-      "network": "ws",
-      "port": 8443,
-      "server": "172.64.79.52",
-      "skip-cert-verify": true,
-      "sni": "cdn8848.776676.xyz",
-      "tls": true,
-      "type": "vless",
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
-      "ws-opts": {
-        "headers": {
-          "Host": "cdn8848.776676.xyz"
-        },
-        "path": "/html/topic/source?ed=2560"
-      }
-    },
-    {
-      "client-fingerprint": "chrome",
-      "ech-opts": {
-        "enable": true,
-        "query-server-name": "cloudflare-ech.com"
-      },
-      "name": "未知 2460[597ms]",
+      "name": "未知 2859[640ms]",
       "network": "ws",
       "port": 2053,
-      "server": "172.64.79.241",
+      "server": "172.64.159.66",
       "skip-cert-verify": true,
-      "sni": "cdn8848.776676.xyz",
-      "tls": true,
-      "type": "vless",
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
-      "ws-opts": {
-        "headers": {
-          "Host": "cdn8848.776676.xyz"
-        },
-        "path": "/game/about/test?ed=2560"
-      }
-    },
-    {
-      "client-fingerprint": "chrome",
-      "ech-opts": {
-        "enable": true,
-        "query-server-name": "cloudflare-ech.com"
-      },
-      "name": "未知 2473[616ms]",
-      "network": "ws",
-      "port": 2096,
-      "server": "172.64.79.241",
-      "skip-cert-verify": true,
-      "sni": "cdn8848.776676.xyz",
-      "tls": true,
-      "type": "vless",
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
-      "ws-opts": {
-        "headers": {
-          "Host": "cdn8848.776676.xyz"
-        },
-        "path": "/group/htm?ed=2560"
-      }
-    },
-    {
-      "client-fingerprint": "chrome",
-      "ech-opts": {
-        "enable": true,
-        "query-server-name": "cloudflare-ech.com"
-      },
-      "name": "未知 2471[618ms]",
-      "network": "ws",
-      "port": 443,
-      "server": "172.64.79.241",
-      "skip-cert-verify": true,
-      "sni": "cdn8848.776676.xyz",
-      "tls": true,
-      "type": "vless",
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
-      "ws-opts": {
-        "headers": {
-          "Host": "cdn8848.776676.xyz"
-        },
-        "path": "/pics?ed=2560"
-      }
-    },
-    {
-      "client-fingerprint": "chrome",
-      "ech-opts": {
-        "enable": true,
-        "query-server-name": "cloudflare-ech.com"
-      },
-      "name": "未知 2476[618ms]",
-      "network": "ws",
-      "port": 2053,
-      "server": "172.64.79.63",
-      "skip-cert-verify": true,
-      "sni": "cdn8848.776676.xyz",
-      "tls": true,
-      "type": "vless",
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
-      "ws-opts": {
-        "headers": {
-          "Host": "cdn8848.776676.xyz"
-        },
-        "path": "/v/activity?ed=2560"
-      }
-    },
-    {
-      "client-fingerprint": "chrome",
-      "ech-opts": {
-        "enable": true,
-        "query-server-name": "cloudflare-ech.com"
-      },
-      "name": "未知 2462[623ms]",
-      "network": "ws",
-      "port": 443,
-      "server": "162.159.237.80",
-      "skip-cert-verify": true,
-      "sni": "cdn8848.776676.xyz",
-      "tls": true,
-      "type": "vless",
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
-      "ws-opts": {
-        "headers": {
-          "Host": "cdn8848.776676.xyz"
-        },
-        "path": "/magnet?ed=2560"
-      }
-    },
-    {
-      "client-fingerprint": "chrome",
-      "ech-opts": {
-        "enable": true,
-        "query-server-name": "cloudflare-ech.com"
-      },
-      "name": "未知 2470[630ms]",
-      "network": "ws",
-      "port": 2087,
-      "server": "104.16.191.7",
-      "skip-cert-verify": true,
-      "sni": "cdn8848.776676.xyz",
-      "tls": true,
-      "type": "vless",
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
-      "ws-opts": {
-        "headers": {
-          "Host": "cdn8848.776676.xyz"
-        },
-        "path": "/china?ed=2560"
-      }
-    },
-    {
-      "name": "美国 4521[680ms]",
-      "password": "",
-      "port": 9002,
-      "server": "138.199.35.211",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": ""
-    },
-    {
-      "name": "美国 4496[681ms]",
-      "password": null,
-      "port": 9002,
-      "server": "138.199.35.204",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": null
-    },
-    {
-      "host": "shuma.ccwu.cc",
-      "name": "日本 0368[682ms]",
-      "network": "ws",
-      "port": 443,
-      "server": "92.113.124.228",
-      "skip-cert-verify": false,
       "sni": "shuma.ccwu.cc",
       "tls": true,
       "type": "vless",
@@ -408,132 +152,50 @@
         "headers": {
           "Host": "shuma.ccwu.cc"
         },
-        "path": "/fp=chrome"
+        "path": "/"
       }
     },
     {
-      "name": "美国 4506[686ms]",
-      "port": 9002,
-      "server": "138.199.35.202",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "udp": true
-    },
-    {
-      "name": "美国 4530[687ms]",
-      "password": "",
-      "port": 9002,
-      "server": "138.199.35.203",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": ""
-    },
-    {
-      "name": "美国 4512[693ms]",
-      "port": 9002,
-      "server": "138.199.35.205",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "udp": true
-    },
-    {
-      "name": "美国 4520[696ms]",
+      "name": "美国 4653[669ms]",
       "password": "null",
       "port": 9002,
-      "server": "138.199.35.220",
+      "server": "138.199.35.213",
       "skip-cert-verify": true,
       "tls": true,
       "type": "http",
       "username": "null"
     },
     {
-      "client-fingerprint": "chrome",
-      "ech-opts": {
-        "enable": true,
-        "query-server-name": "cloudflare-ech.com"
-      },
-      "name": "荷兰 1176[702ms]",
-      "network": "ws",
-      "port": 8443,
-      "server": "64.225.65.116",
-      "skip-cert-verify": true,
-      "sni": "cdn8848.776676.xyz",
-      "tls": true,
-      "type": "vless",
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
-      "ws-opts": {
-        "headers": {
-          "Host": "cdn8848.776676.xyz"
-        },
-        "path": "/bd/pictures?ed=2560"
-      }
-    },
-    {
-      "client-fingerprint": "chrome",
-      "ech-opts": {
-        "enable": true,
-        "query-server-name": "cloudflare-ech.com"
-      },
-      "name": "未知 2466[721ms]",
-      "network": "ws",
-      "port": 443,
-      "server": "172.64.145.166",
-      "skip-cert-verify": true,
-      "sni": "cdn8848.776676.xyz",
-      "tls": true,
-      "type": "vless",
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
-      "ws-opts": {
-        "headers": {
-          "Host": "cdn8848.776676.xyz"
-        },
-        "path": "/manhua/streams/index?ed=2560"
-      }
-    },
-    {
-      "host": "shuma.ccwu.cc",
-      "name": "香港 0398[764ms]",
-      "network": "ws",
-      "port": 443,
-      "server": "103.143.81.178",
-      "skip-cert-verify": false,
-      "sni": "shuma.ccwu.cc",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
-      "ws-opts": {
-        "headers": {
-          "Host": "shuma.ccwu.cc"
-        },
-        "path": "/fp=chrome"
-      }
-    },
-    {
-      "name": "美国 4518[770ms]",
-      "password": "",
+      "name": "美国 4644[692ms]",
       "port": 9002,
-      "server": "138.199.35.196",
+      "server": "138.199.35.210",
       "skip-cert-verify": true,
       "tls": true,
       "type": "http",
-      "username": ""
+      "udp": true
     },
     {
-      "name": "美国 4517[772ms]",
+      "name": "美国 4624[695ms]",
+      "password": "null",
+      "port": 9002,
+      "server": "138.199.35.211",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http",
+      "username": "null"
+    },
+    {
+      "name": "美国 4654[697ms]",
       "password": "None",
       "port": 9002,
-      "server": "138.199.35.197",
+      "server": "138.199.35.201",
       "skip-cert-verify": true,
       "tls": true,
       "type": "http",
       "username": null
     },
     {
-      "name": "美国 4527[774ms]",
+      "name": "美国 4605[701ms]",
       "password": "",
       "port": 9002,
       "server": "138.199.35.212",
@@ -544,115 +206,113 @@
       "username": ""
     },
     {
-      "name": "美国 4504[775ms]",
-      "password": "None",
+      "name": "美国 4629[717ms]",
+      "password": null,
       "port": 9002,
-      "server": "138.199.35.217",
+      "server": "138.199.35.218",
       "skip-cert-verify": true,
       "tls": true,
       "type": "http",
       "username": null
     },
     {
-      "name": "美国 4508[779ms]",
-      "password": "null",
-      "port": 9002,
-      "server": "138.199.35.206",
+      "client-fingerprint": "chrome",
+      "name": "未知 2860[725ms]",
+      "network": "ws",
+      "port": 443,
+      "server": "172.67.68.168",
       "skip-cert-verify": true,
+      "sni": "shuma.ccwu.cc",
       "tls": true,
-      "type": "http",
-      "username": "null"
+      "type": "vless",
+      "udp": true,
+      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
+      "ws-opts": {
+        "headers": {
+          "Host": "shuma.ccwu.cc"
+        },
+        "path": "/"
+      }
     },
     {
-      "name": "美国 4509[781ms]",
-      "port": 9002,
-      "server": "138.199.35.199",
+      "client-fingerprint": "chrome",
+      "name": "美国 4693[725ms]",
+      "network": "ws",
+      "port": 443,
+      "server": "205.186.76.242",
       "skip-cert-verify": true,
+      "sni": "shuma.ccwu.cc",
       "tls": true,
-      "type": "http",
-      "udp": true
+      "type": "vless",
+      "udp": true,
+      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
+      "ws-opts": {
+        "headers": {
+          "Host": "shuma.ccwu.cc"
+        },
+        "path": "/"
+      }
     },
     {
-      "name": "美国 4511[783ms]",
-      "password": "null",
-      "port": 9002,
-      "server": "138.199.35.200",
+      "client-fingerprint": "chrome",
+      "name": "美国 4689[752ms]",
+      "network": "ws",
+      "port": 443,
+      "server": "179.255.144.153",
       "skip-cert-verify": true,
+      "sni": "shuma.ccwu.cc",
       "tls": true,
-      "type": "http",
-      "username": "null"
+      "type": "vless",
+      "udp": true,
+      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
+      "ws-opts": {
+        "headers": {
+          "Host": "shuma.ccwu.cc"
+        },
+        "path": "/"
+      }
     },
     {
-      "name": "美国 4539[784ms]",
-      "port": 9002,
-      "server": "138.199.35.216",
+      "client-fingerprint": "chrome",
+      "name": "未知 2856[770ms]",
+      "network": "ws",
+      "port": 443,
+      "server": "172.67.77.58",
       "skip-cert-verify": true,
+      "sni": "shuma.ccwu.cc",
       "tls": true,
-      "type": "http",
-      "udp": true
+      "type": "vless",
+      "udp": true,
+      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
+      "ws-opts": {
+        "headers": {
+          "Host": "shuma.ccwu.cc"
+        },
+        "path": "/"
+      }
     },
     {
-      "name": "美国 4522[787ms]",
+      "name": "美国 4635[780ms]",
+      "password": null,
       "port": 9002,
       "server": "138.199.35.195",
       "skip-cert-verify": true,
       "tls": true,
       "type": "http",
-      "udp": true
+      "username": null
     },
     {
-      "client-fingerprint": "chrome",
-      "ech-opts": {
-        "enable": true,
-        "query-server-name": "cloudflare-ech.com"
-      },
-      "name": "未知 2458[791ms]",
-      "network": "ws",
-      "port": 443,
-      "server": "162.159.152.31",
-      "skip-cert-verify": true,
-      "sni": "cdn8848.776676.xyz",
-      "tls": true,
-      "type": "vless",
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
-      "ws-opts": {
-        "headers": {
-          "Host": "cdn8848.776676.xyz"
-        },
-        "path": "/urls?ed=2560"
-      }
-    },
-    {
-      "name": "美国 4475[793ms]",
-      "password": "github.com/Alvin9999-newpac/fanqiang",
-      "port": 19000,
-      "server": "anytls2.864106.xyz",
-      "skip-cert-verify": true,
-      "sni": "anytls2.864106.xyz",
-      "type": "anytls"
-    },
-    {
-      "name": "美国 4505[794ms]",
+      "name": "美国 4630[785ms]",
       "password": "None",
       "port": 9002,
-      "server": "138.199.35.207",
+      "server": "138.199.35.206",
       "skip-cert-verify": true,
       "tls": true,
       "type": "http",
       "username": null
     },
     {
-      "name": "美国 4497[794ms]",
-      "password": null,
-      "port": 9002,
-      "server": "138.199.35.210",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": null
-    },
-    {
-      "name": "美国 4510[796ms]",
+      "name": "美国 4640[785ms]",
       "password": "null",
       "port": 9002,
       "server": "138.199.35.209",
@@ -662,74 +322,85 @@
       "username": "null"
     },
     {
-      "name": "美国 4543[796ms]",
-      "password": "None",
-      "port": 9002,
-      "server": "138.199.35.214",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": null
-    },
-    {
-      "name": "美国 4523[797ms]",
-      "port": 9002,
-      "server": "138.199.35.215",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "udp": true
-    },
-    {
-      "name": "美国 4499[798ms]",
-      "port": 9002,
-      "server": "138.199.35.219",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "udp": true
-    },
-    {
-      "name": "美国 4495[802ms]",
-      "port": 9002,
-      "server": "138.199.35.218",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "udp": true
-    },
-    {
-      "name": "美国 4490[804ms]",
-      "port": 9002,
-      "server": "138.199.35.213",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "udp": true
-    },
-    {
-      "name": "美国 4486[808ms]",
+      "name": "美国 4616[791ms]",
       "password": "null",
       "port": 9002,
-      "server": "138.199.35.198",
+      "server": "138.199.35.207",
       "skip-cert-verify": true,
-      "sni": "138.199.35.198",
       "tls": true,
       "type": "http",
       "username": "null"
     },
     {
-      "name": "美国 4538[809ms]",
+      "name": "美国 4636[794ms]",
       "password": "None",
       "port": 9002,
-      "server": "138.199.35.201",
+      "server": "138.199.35.197",
       "skip-cert-verify": true,
       "tls": true,
       "type": "http",
       "username": null
     },
     {
-      "name": "美国 4528[810ms]",
+      "name": "美国 4594[800ms]",
+      "password": "github.com/Alvin9999-newpac/fanqiang",
+      "port": 19000,
+      "server": "anytls2.864106.xyz",
+      "skip-cert-verify": true,
+      "sni": "anytls2.864106.xyz",
+      "type": "anytls"
+    },
+    {
+      "name": "美国 4626[801ms]",
+      "password": "null",
+      "port": 9002,
+      "server": "138.199.35.199",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http",
+      "username": "null"
+    },
+    {
+      "name": "美国 4656[802ms]",
+      "password": "null",
+      "port": 9002,
+      "server": "138.199.35.214",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http",
+      "username": "null"
+    },
+    {
+      "alpn": [
+        "h2",
+        "http/1.1"
+      ],
+      "client-fingerprint": "firefox",
+      "encryption": "none",
+      "flow": "xtls-rprx-vision",
+      "name": "德国 1793[805ms]",
+      "network": "tcp",
+      "port": 7443,
+      "server": "dedicated.pivo.lol",
+      "skip-cert-verify": false,
+      "sni": "dedicated.pivo.lol",
+      "tls": true,
+      "type": "vless",
+      "udp": true,
+      "uuid": "44e1105d-b46e-402f-933b-eaa136fcbb24"
+    },
+    {
+      "name": "美国 4638[806ms]",
+      "password": null,
+      "port": 9002,
+      "server": "138.199.35.204",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http",
+      "username": null
+    },
+    {
+      "name": "美国 4617[806ms]",
       "password": "",
       "port": 9002,
       "server": "138.199.35.208",
@@ -739,159 +410,70 @@
       "username": ""
     },
     {
-      "alpn": [
-        "http/1.1"
-      ],
-      "client-fingerprint": "chrome",
-      "host": "mitivpn---ss--s---mitivpn-44e.global.ssl.fastly.net",
-      "name": "美国 1233[819ms]",
-      "network": "ws",
-      "password": "MiTIVPN",
-      "port": 443,
-      "server": "199.232.78.160",
-      "skip-cert-verify": false,
-      "sni": "ssl.fastly.com",
-      "tls": true,
-      "type": "trojan",
-      "udp": true,
-      "ws-opts": {
-        "headers": {
-          "Host": "mitivpn---ss--s---mitivpn-44e.global.ssl.fastly.net"
-        },
-        "path": "/"
-      }
-    },
-    {
-      "allowInsecure": "0",
-      "alpn": [
-        "http/1.1"
-      ],
-      "client-fingerprint": "chrome",
-      "host": "mitivpn---ss--s---mitivpn-22e.global.ssl.fastly.net",
-      "insecure": "0",
-      "name": "美国 1228[830ms]",
-      "network": "ws",
-      "password": "MiTIVPN",
-      "port": 443,
-      "server": "151.101.56.7",
-      "skip-cert-verify": false,
-      "sni": "ssl.fastly.com",
-      "tls": true,
-      "type": "trojan",
-      "udp": true,
-      "ws-opts": {
-        "headers": {
-          "Host": "mitivpn---ss--s---mitivpn-22e.global.ssl.fastly.net"
-        },
-        "path": "/---@MetiVIP---@MetiVIP/---@MetiVIP---@MetiVIP/---@MetiVIP---@MetiVIP/des---@MetiVIP---@MetiVIP/---@MetiVIP---@MetiVIP/---@MetiVIP---@MetiVIP"
-      }
-    },
-    {
-      "name": "法国 0656[840ms]",
-      "password": "freeuser1",
-      "port": 9251,
-      "server": "fr003.freeconnect.link",
-      "sni": "fr003.freeconnect.link",
+      "name": "美国 4649[808ms]",
+      "password": null,
+      "port": 9002,
+      "server": "138.199.35.198",
+      "skip-cert-verify": true,
       "tls": true,
       "type": "http",
-      "username": "freeuser1"
+      "username": null
     },
     {
-      "allowInsecure": "0",
-      "alpn": [
-        "http/1.1"
-      ],
-      "client-fingerprint": "chrome",
-      "host": "mitivpn---ss--s---mitivpn-11e.global.ssl.fastly.net",
-      "insecure": "0",
-      "name": "美国 1231[844ms]",
-      "network": "ws",
-      "password": "MiTIVPN",
-      "port": 443,
-      "server": "199.232.78.101",
-      "skip-cert-verify": false,
-      "sni": "ssl.fastly.com",
-      "tls": true,
-      "type": "trojan",
-      "udp": true,
-      "ws-opts": {
-        "headers": {
-          "Host": "mitivpn---ss--s---mitivpn-11e.global.ssl.fastly.net"
-        },
-        "path": "/"
-      }
-    },
-    {
-      "client-fingerprint": "chrome",
-      "ech-opts": {
-        "enable": true,
-        "query-server-name": "cloudflare-ech.com"
-      },
-      "name": "荷兰 1168[851ms]",
-      "network": "ws",
-      "port": 8443,
-      "server": "107.189.23.153",
+      "name": "美国 4632[812ms]",
+      "password": "None",
+      "port": 9002,
+      "server": "138.199.35.220",
       "skip-cert-verify": true,
-      "sni": "cdn8848.776676.xyz",
       "tls": true,
-      "type": "vless",
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
-      "ws-opts": {
-        "headers": {
-          "Host": "cdn8848.776676.xyz"
-        },
-        "path": "/archives/note/read?ed=2560"
-      }
+      "type": "http",
+      "username": null
     },
     {
-      "allowInsecure": "0",
-      "alpn": [
-        "http/1.1"
-      ],
-      "client-fingerprint": "chrome",
-      "host": "mitivpn---ss--s---mitivpn-55e.global.ssl.fastly.net",
-      "insecure": "0",
-      "name": "美国 1234[871ms]",
-      "network": "ws",
-      "password": "MiTIVPN",
-      "port": 443,
-      "server": "199.232.78.160",
-      "skip-cert-verify": false,
-      "sni": "ssl.fastly.com",
+      "name": "美国 4628[814ms]",
+      "password": "None",
+      "port": 9002,
+      "server": "138.199.35.217",
+      "skip-cert-verify": true,
       "tls": true,
-      "type": "trojan",
-      "udp": true,
-      "ws-opts": {
-        "headers": {
-          "Host": "mitivpn---ss--s---mitivpn-55e.global.ssl.fastly.net"
-        },
-        "path": "/---@MetiVIP---@MetiVIP/---@MetiVIP---@MetiVIP/---@MetiVIP---@MetiVIP/des---@MetiVIP---@MetiVIP/---@MetiVIP---@MetiVIP/---@MetiVIP---@MetiVIP"
-      }
+      "type": "http",
+      "username": null
     },
     {
-      "host": "shuma.ccwu.cc",
-      "name": "新加坡 0374[891ms]",
-      "network": "ws",
-      "port": 443,
-      "server": "103.195.188.192",
-      "skip-cert-verify": false,
-      "sni": "shuma.ccwu.cc",
+      "name": "美国 4604[815ms]",
+      "password": null,
+      "port": 9002,
+      "server": "138.199.35.215",
+      "skip-cert-verify": true,
       "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
-      "ws-opts": {
-        "headers": {
-          "Host": "shuma.ccwu.cc"
-        },
-        "path": "/fp=chrome"
-      }
+      "type": "http",
+      "username": null
     },
     {
-      "name": "新加坡 0693[900ms]",
+      "name": "美国 4652[817ms]",
+      "password": null,
+      "port": 9002,
+      "server": "138.199.35.219",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http",
+      "username": null
+    },
+    {
+      "name": "美国 4655[819ms]",
       "password": "",
-      "port": 9443,
-      "server": "149.88.99.209",
+      "port": 9002,
+      "server": "138.199.35.205",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http",
+      "username": ""
+    },
+    {
+      "name": "美国 4646[820ms]",
+      "password": "",
+      "port": 9002,
+      "server": "138.199.35.200",
       "skip-cert-verify": true,
       "tls": true,
       "type": "http",
@@ -899,134 +481,58 @@
       "username": ""
     },
     {
-      "client-fingerprint": "chrome",
-      "ech-opts": {
-        "enable": true,
-        "query-server-name": "cloudflare-ech.com"
-      },
-      "name": "德国 1733[906ms]",
-      "network": "ws",
-      "port": 2083,
-      "server": "164.92.137.46",
+      "name": "美国 4639[826ms]",
+      "password": "None",
+      "port": 9002,
+      "server": "138.199.35.216",
       "skip-cert-verify": true,
-      "sni": "cdn8848.776676.xyz",
-      "tls": true,
-      "type": "vless",
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
-      "ws-opts": {
-        "headers": {
-          "Host": "cdn8848.776676.xyz"
-        },
-        "path": "/bt/streaming/ad?ed=2560"
-      }
-    },
-    {
-      "client-fingerprint": "chrome",
-      "name": "新加坡 0699[909ms]",
-      "network": "ws",
-      "port": 443,
-      "server": "103.195.188.206",
-      "skip-cert-verify": true,
-      "sni": "shuma.ccwu.cc",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
-      "ws-opts": {
-        "headers": {
-          "Host": "shuma.ccwu.cc"
-        },
-        "path": "/"
-      }
-    },
-    {
-      "client-fingerprint": "chrome",
-      "name": "新加坡 0700[921ms]",
-      "network": "ws",
-      "port": 443,
-      "server": "103.195.188.192",
-      "skip-cert-verify": true,
-      "sni": "shuma.ccwu.cc",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
-      "ws-opts": {
-        "headers": {
-          "Host": "shuma.ccwu.cc"
-        },
-        "path": "/"
-      }
-    },
-    {
-      "client-fingerprint": "chrome",
-      "encryption": "none",
-      "host": "cdn8848.776676.xyz",
-      "name": "英国 0347[933ms]",
-      "network": "ws",
-      "port": 8443,
-      "server": "157.228.142.148",
-      "skip-cert-verify": false,
-      "sni": "cdn8848.776676.xyz",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
-      "ws-opts": {
-        "headers": {
-          "Host": "cdn8848.776676.xyz"
-        },
-        "path": "/act/rank/lang?ed=2560"
-      }
-    },
-    {
-      "name": "法国 0657[937ms]",
-      "password": "freeuser1",
-      "port": 9251,
-      "server": "fr012.freeconnect.link",
-      "sni": "fr012.freeconnect.link",
       "tls": true,
       "type": "http",
-      "username": "freeuser1"
+      "username": null
     },
     {
-      "name": "荷兰 1177[940ms]",
-      "password": "freeuser1",
-      "port": 9251,
-      "server": "nl205.freeconnect.link",
-      "sni": "nl205.freeconnect.link",
+      "name": "美国 4625[826ms]",
+      "port": 9002,
+      "server": "138.199.35.202",
+      "skip-cert-verify": true,
       "tls": true,
       "type": "http",
-      "username": "freeuser1"
+      "udp": true
     },
     {
-      "client-fingerprint": "chrome",
-      "ech-opts": {
-        "enable": true,
-        "query-server-name": "cloudflare-ech.com"
-      },
-      "name": "日本 0642[951ms]",
-      "network": "ws",
-      "port": 2053,
-      "server": "167.179.114.75",
+      "name": "美国 4648[833ms]",
+      "password": "",
+      "port": 9002,
+      "server": "138.199.35.203",
       "skip-cert-verify": true,
-      "sni": "cdn8848.776676.xyz",
       "tls": true,
-      "type": "vless",
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
-      "ws-opts": {
-        "headers": {
-          "Host": "cdn8848.776676.xyz"
-        },
-        "path": "/anime/payment?ed=2560"
-      }
+      "type": "http",
+      "username": ""
+    },
+    {
+      "name": "美国 4633[835ms]",
+      "password": null,
+      "port": 9002,
+      "server": "138.199.35.196",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http",
+      "username": null
+    },
+    {
+      "name": "法国 0699[841ms]",
+      "port": 6103,
+      "server": "87.98.174.157",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http"
     },
     {
       "client-fingerprint": "chrome",
-      "name": "罗马尼亚 0254[954ms]",
+      "name": "美国 4701[853ms]",
       "network": "ws",
-      "port": 8443,
-      "server": "103.126.50.196",
+      "port": 443,
+      "server": "172.96.254.25",
       "skip-cert-verify": true,
       "sni": "shuma.ccwu.cc",
       "tls": true,
@@ -1041,8 +547,10 @@
       }
     },
     {
+      "client-fingerprint": "chrome",
+      "headerType": "none",
       "host": "shuma.ccwu.cc",
-      "name": "西班牙 0054[957ms]",
+      "name": "西班牙 0030[902ms]",
       "network": "ws",
       "port": 8443,
       "server": "152.114.195.163",
@@ -1056,30 +564,217 @@
         "headers": {
           "Host": "shuma.ccwu.cc"
         },
-        "path": "/fp=chrome"
+        "path": "/"
       }
     },
     {
-      "name": "法国 0654[961ms]",
-      "port": 6103,
-      "server": "87.98.174.157",
+      "name": "新加坡 0754[928ms]",
+      "password": "",
+      "port": 9443,
+      "server": "149.88.99.209",
       "skip-cert-verify": true,
       "tls": true,
-      "type": "http"
+      "type": "http",
+      "udp": true,
+      "username": ""
     },
     {
-      "name": "丹麦 0027[966ms]",
-      "password": "None",
-      "port": 9443,
-      "server": "185.245.84.50",
+      "client-fingerprint": "chrome",
+      "name": "法国 0714[937ms]",
+      "network": "ws",
+      "port": 8443,
+      "server": "217.60.37.28",
+      "skip-cert-verify": true,
+      "sni": "shuma.ccwu.cc",
+      "tls": true,
+      "type": "vless",
+      "udp": true,
+      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
+      "ws-opts": {
+        "headers": {
+          "Host": "shuma.ccwu.cc"
+        },
+        "path": "/"
+      }
+    },
+    {
+      "client-fingerprint": "chrome",
+      "name": "拉脱维亚 0158[945ms]",
+      "network": "ws",
+      "port": 443,
+      "server": "31.58.77.174",
+      "skip-cert-verify": true,
+      "sni": "shuma.ccwu.cc",
+      "tls": true,
+      "type": "vless",
+      "udp": true,
+      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
+      "ws-opts": {
+        "headers": {
+          "Host": "shuma.ccwu.cc"
+        },
+        "path": "/"
+      }
+    },
+    {
+      "client-fingerprint": "chrome",
+      "name": "荷兰 1309[948ms]",
+      "network": "ws",
+      "port": 8443,
+      "server": "31.59.150.88",
+      "skip-cert-verify": true,
+      "sni": "shuma.ccwu.cc",
+      "tls": true,
+      "type": "vless",
+      "udp": true,
+      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
+      "ws-opts": {
+        "headers": {
+          "Host": "shuma.ccwu.cc"
+        },
+        "path": "/"
+      }
+    },
+    {
+      "name": "荷兰 1295[974ms]",
+      "password": null,
+      "port": 9002,
+      "server": "84.17.47.149",
       "skip-cert-verify": true,
       "tls": true,
       "type": "http",
       "username": null
     },
     {
+      "name": "印度尼西亚 0022[977ms]",
+      "password": "freeuser1",
+      "port": 9251,
+      "server": "cr1-id.freeconnect.link",
+      "tls": true,
+      "type": "http",
+      "username": "freeuser1"
+    },
+    {
+      "name": "荷兰 1282[983ms]",
+      "port": 9002,
+      "server": "84.17.47.148",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http",
+      "udp": true
+    },
+    {
+      "client-fingerprint": "chrome",
+      "host": "api-gateway-1.f00f.ccwu.cc",
+      "name": "未知 0491[988ms]",
+      "network": "ws",
+      "packet-encoding": "xudp",
+      "port": 443,
+      "server": "104.21.16.18",
+      "skip-cert-verify": false,
+      "sni": "api-gateway-1.f00f.ccwu.cc",
+      "tls": true,
+      "type": "vless",
+      "udp": true,
+      "uuid": "2240d8f8-898f-4988-8c08-ac724aa06ddb",
+      "ws-opts": {
+        "headers": {
+          "Host": "api-gateway-1.f00f.ccwu.cc"
+        },
+        "path": "/BzuntJ8qZN0TRKbC8TveMxJ0"
+      }
+    },
+    {
+      "client-fingerprint": "chrome",
+      "name": "未知 2858[992ms]",
+      "network": "ws",
+      "port": 443,
+      "server": "172.64.159.66",
+      "skip-cert-verify": true,
+      "sni": "shuma.ccwu.cc",
+      "tls": true,
+      "type": "vless",
+      "udp": true,
+      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
+      "ws-opts": {
+        "headers": {
+          "Host": "shuma.ccwu.cc"
+        },
+        "path": "/"
+      }
+    },
+    {
+      "name": "法国 0702[994ms]",
+      "password": "freeuser1",
+      "port": 9251,
+      "server": "fr012.freeconnect.link",
+      "sni": "fr012.freeconnect.link",
+      "tls": true,
+      "type": "http",
+      "username": "freeuser1"
+    },
+    {
+      "client-fingerprint": "chrome",
+      "name": "捷克 0121[997ms]",
+      "network": "ws",
+      "port": 443,
+      "server": "194.87.0.196",
+      "skip-cert-verify": true,
+      "sni": "shuma.ccwu.cc",
+      "tls": true,
+      "type": "vless",
+      "udp": true,
+      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
+      "ws-opts": {
+        "headers": {
+          "Host": "shuma.ccwu.cc"
+        },
+        "path": "/"
+      }
+    },
+    {
+      "client-fingerprint": "chrome",
+      "name": "法国 0713[1002ms]",
+      "network": "ws",
+      "port": 443,
+      "server": "95.182.82.191",
+      "skip-cert-verify": true,
+      "sni": "shuma.ccwu.cc",
+      "tls": true,
+      "type": "vless",
+      "udp": true,
+      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
+      "ws-opts": {
+        "headers": {
+          "Host": "shuma.ccwu.cc"
+        },
+        "path": "/"
+      }
+    },
+    {
+      "client-fingerprint": "chrome",
+      "name": "美国 4716[1008ms]",
+      "network": "ws",
+      "port": 443,
+      "server": "191.222.247.114",
+      "skip-cert-verify": true,
+      "sni": "shuma.ccwu.cc",
+      "tls": true,
+      "type": "vless",
+      "udp": true,
+      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
+      "ws-opts": {
+        "headers": {
+          "Host": "shuma.ccwu.cc"
+        },
+        "path": "/"
+      }
+    },
+    {
+      "client-fingerprint": "chrome",
+      "headerType": "none",
       "host": "shuma.ccwu.cc",
-      "name": "德国 1145[989ms]",
+      "name": "德国 0681[1022ms]",
       "network": "ws",
       "port": 443,
       "server": "109.176.202.20",
@@ -1093,134 +788,108 @@
         "headers": {
           "Host": "shuma.ccwu.cc"
         },
-        "path": "/fp=chrome"
+        "path": "/"
       }
     },
     {
-      "host": "shuma.ccwu.cc",
-      "name": "新加坡 0378[1015ms]",
-      "network": "ws",
-      "port": 443,
-      "server": "103.195.188.206",
-      "skip-cert-verify": false,
-      "sni": "shuma.ccwu.cc",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
-      "ws-opts": {
-        "headers": {
-          "Host": "shuma.ccwu.cc"
-        },
-        "path": "/fp=chrome"
-      }
-    },
-    {
-      "name": "瑞士 0153[1021ms]",
-      "password": "None",
-      "port": 9443,
-      "server": "37.120.213.210",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": null
-    },
-    {
-      "name": "瑞士 0151[1025ms]",
-      "port": 9443,
-      "server": "37.120.213.210",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "client-fingerprint": "chrome",
-      "ech-opts": {
-        "enable": true,
-        "query-server-name": "cloudflare-ech.com"
-      },
-      "name": "德国 1731[1035ms]",
-      "network": "ws",
-      "port": 443,
-      "server": "31.76.18.213",
-      "skip-cert-verify": true,
-      "sni": "cdn8848.776676.xyz",
-      "tls": true,
-      "type": "vless",
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
-      "ws-opts": {
-        "headers": {
-          "Host": "cdn8848.776676.xyz"
-        },
-        "path": "/product/uploads/new?ed=2560"
-      }
-    },
-    {
-      "host": "shuma.ccwu.cc",
-      "name": "乌兹别克斯坦 0007[1041ms]",
-      "network": "ws",
-      "port": 2053,
-      "server": "46.8.194.76",
-      "skip-cert-verify": false,
-      "sni": "shuma.ccwu.cc",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
-      "ws-opts": {
-        "headers": {
-          "Host": "shuma.ccwu.cc"
-        },
-        "path": "/fp=chrome"
-      }
-    },
-    {
-      "name": "荷兰 1162[1051ms]",
+      "name": "丹麦 0027[1029ms]",
       "password": null,
-      "port": 9002,
-      "server": "84.17.47.125",
+      "port": 9443,
+      "server": "185.245.84.50",
       "skip-cert-verify": true,
       "tls": true,
       "type": "http",
       "username": null
     },
     {
-      "name": "荷兰 1174[1087ms]",
-      "password": "",
-      "port": 9002,
-      "server": "84.17.47.146",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": ""
-    },
-    {
-      "name": "荷兰 1172[1108ms]",
+      "name": "法国 0695[1038ms]",
       "password": "freeuser1",
       "port": 9251,
-      "server": "nl207.freeconnect.link",
-      "sni": "nl207.freeconnect.link",
+      "server": "fr017.freeconnect.link",
+      "skip-cert-verify": true,
+      "sni": "fr017.freeconnect.link",
       "tls": true,
       "type": "http",
       "username": "freeuser1"
     },
     {
-      "name": "罗马尼亚 0231[1115ms]",
+      "name": "英国 0887[1056ms]",
       "password": null,
-      "port": 9002,
-      "server": "193.176.84.20",
+      "port": 9443,
+      "server": "37.120.233.34",
       "skip-cert-verify": true,
       "tls": true,
       "type": "http",
       "username": null
     },
     {
-      "host": "shuma.ccwu.cc",
-      "name": "挪威 0030[1122ms]",
+      "name": "未知 2832[1071ms]",
+      "network": "ws",
+      "port": 443,
+      "server": "172.67.156.222",
+      "skip-cert-verify": true,
+      "sni": "6-M16.chiaN-MAi-6.KDns.fR",
+      "tfo": false,
+      "tls": true,
+      "type": "vless",
+      "udp": true,
+      "uuid": "ef5c5d5c-08c6-4549-b05e-d1ff29ecc8ba",
+      "ws-opts": {
+        "headers": {
+          "Host": "6-M16.chiaN-MAi-6.KDns.fR"
+        },
+        "path": "/JRr6VGcSLFc034DC6sDbwyWJLbB"
+      }
+    },
+    {
+      "name": "荷兰 1277[1075ms]",
+      "port": 9002,
+      "server": "84.17.47.125",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http",
+      "udp": true
+    },
+    {
+      "allowInsecure": "0",
+      "client-fingerprint": "chrome",
+      "encryption": "none",
+      "host": "cdn.skyvora.app",
+      "insecure": "0",
+      "name": "未知 1367[1076ms]",
+      "network": "ws",
+      "port": 2096,
+      "server": "172.67.130.159",
+      "skip-cert-verify": false,
+      "sni": "cdn.skyvora.app",
+      "tls": true,
+      "type": "vless",
+      "udp": true,
+      "uuid": "bdc5e450-3e2d-4001-928e-e3bc6cecb249",
+      "ws-opts": {
+        "headers": {
+          "Host": "cdn.skyvora.app"
+        },
+        "path": "/hux9duzm54"
+      }
+    },
+    {
+      "name": "德国 1814[1090ms]",
+      "password": null,
+      "port": 9443,
+      "server": "87.249.132.97",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http",
+      "username": null
+    },
+    {
+      "client-fingerprint": "chrome",
+      "name": "法国 0711[1090ms]",
       "network": "ws",
       "port": 8443,
-      "server": "185.125.171.128",
-      "skip-cert-verify": false,
+      "server": "138.124.58.31",
+      "skip-cert-verify": true,
       "sni": "shuma.ccwu.cc",
       "tls": true,
       "type": "vless",
@@ -1230,13 +899,115 @@
         "headers": {
           "Host": "shuma.ccwu.cc"
         },
-        "path": "/fp=chrome"
+        "path": "/"
       }
     },
     {
-      "host": "shuma.ccwu.cc",
-      "name": "捷克 0079[1146ms]",
+      "name": "瑞士 0168[1111ms]",
+      "password": null,
+      "port": 9443,
+      "server": "37.120.213.210",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http",
+      "username": null
+    },
+    {
+      "allowInsecure": "0",
+      "client-fingerprint": "chrome",
+      "encryption": "none",
+      "host": "cdn-fr.skyvora.app",
+      "insecure": "0",
+      "name": "未知 0486[1117ms]",
       "network": "ws",
+      "port": 2096,
+      "server": "172.67.130.159",
+      "skip-cert-verify": false,
+      "sni": "cdn-fr.skyvora.app",
+      "tls": true,
+      "type": "vless",
+      "udp": true,
+      "uuid": "214bf4c5-045a-4ddb-944b-e2eef9b33338",
+      "ws-opts": {
+        "headers": {
+          "Host": "cdn-fr.skyvora.app"
+        },
+        "path": "/9hf8a67dhf"
+      }
+    },
+    {
+      "client-fingerprint": "chrome",
+      "name": "美国 4723[1122ms]",
+      "network": "ws",
+      "port": 443,
+      "server": "130.51.22.56",
+      "skip-cert-verify": true,
+      "sni": "shuma.ccwu.cc",
+      "tls": true,
+      "type": "vless",
+      "udp": true,
+      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
+      "ws-opts": {
+        "headers": {
+          "Host": "shuma.ccwu.cc"
+        },
+        "path": "/"
+      }
+    },
+    {
+      "name": "罗马尼亚 0246[1127ms]",
+      "port": 9002,
+      "server": "193.176.84.30",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http",
+      "udp": true
+    },
+    {
+      "name": "罗马尼亚 0242[1135ms]",
+      "password": "null",
+      "port": 9002,
+      "server": "193.176.84.17",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http",
+      "username": "null"
+    },
+    {
+      "name": "罗马尼亚 0241[1146ms]",
+      "password": null,
+      "port": 9002,
+      "server": "193.176.84.26",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http",
+      "username": null
+    },
+    {
+      "client-fingerprint": "chrome",
+      "name": "奥地利 0105[1155ms]",
+      "network": "ws",
+      "port": 443,
+      "server": "62.60.238.191",
+      "skip-cert-verify": true,
+      "sni": "shuma.ccwu.cc",
+      "tls": true,
+      "type": "vless",
+      "udp": true,
+      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
+      "ws-opts": {
+        "headers": {
+          "Host": "shuma.ccwu.cc"
+        },
+        "path": "/"
+      }
+    },
+    {
+      "client-fingerprint": "chrome",
+      "host": "shuma.ccwu.cc",
+      "name": "捷克 0033[1157ms]",
+      "network": "ws",
+      "packet-encoding": "xudp",
       "port": 8443,
       "server": "103.200.28.113",
       "skip-cert-verify": false,
@@ -1249,252 +1020,11 @@
         "headers": {
           "Host": "shuma.ccwu.cc"
         },
-        "path": "/fp=chrome"
-      }
-    },
-    {
-      "name": "英国 0761[1157ms]",
-      "password": "freeuser1",
-      "port": 9251,
-      "server": "ma1-gb.freeconnect.link",
-      "sni": "ma1-gb.freeconnect.link",
-      "tls": true,
-      "type": "http",
-      "username": "freeuser1"
-    },
-    {
-      "name": "罗马尼亚 0234[1160ms]",
-      "password": "null",
-      "port": 9002,
-      "server": "193.176.84.16",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": "null"
-    },
-    {
-      "host": "shuma.ccwu.cc",
-      "name": "匈牙利 0016[1160ms]",
-      "network": "ws",
-      "port": 8443,
-      "server": "180.149.37.38",
-      "skip-cert-verify": false,
-      "sni": "shuma.ccwu.cc",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
-      "ws-opts": {
-        "headers": {
-          "Host": "shuma.ccwu.cc"
-        },
-        "path": "/fp=chrome"
-      }
-    },
-    {
-      "host": "shuma.ccwu.cc",
-      "name": "乌兹别克斯坦 0008[1170ms]",
-      "network": "ws",
-      "port": 8443,
-      "server": "46.8.194.76",
-      "skip-cert-verify": false,
-      "sni": "shuma.ccwu.cc",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
-      "ws-opts": {
-        "headers": {
-          "Host": "shuma.ccwu.cc"
-        },
-        "path": "/fp=chrome"
-      }
-    },
-    {
-      "name": "罗马尼亚 0233[1180ms]",
-      "password": "null",
-      "port": 9002,
-      "server": "193.176.84.34",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": "null"
-    },
-    {
-      "host": "shuma.ccwu.cc",
-      "name": "卢森堡 0015[1180ms]",
-      "network": "ws",
-      "port": 8443,
-      "server": "107.189.2.206",
-      "skip-cert-verify": false,
-      "sni": "shuma.ccwu.cc",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
-      "ws-opts": {
-        "headers": {
-          "Host": "shuma.ccwu.cc"
-        },
-        "path": "/fp=chrome"
-      }
-    },
-    {
-      "host": "shuma.ccwu.cc",
-      "name": "斯洛伐克 0005[1191ms]",
-      "network": "ws",
-      "port": 2053,
-      "server": "89.46.42.141",
-      "skip-cert-verify": false,
-      "sni": "shuma.ccwu.cc",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
-      "ws-opts": {
-        "headers": {
-          "Host": "shuma.ccwu.cc"
-        },
-        "path": "/fp=chrome"
-      }
-    },
-    {
-      "client-fingerprint": "chrome",
-      "name": "斯洛伐克 0009[1192ms]",
-      "network": "ws",
-      "port": 2053,
-      "server": "89.46.42.141",
-      "skip-cert-verify": true,
-      "sni": "shuma.ccwu.cc",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
-      "ws-opts": {
-        "headers": {
-          "Host": "shuma.ccwu.cc"
-        },
         "path": "/"
       }
     },
     {
-      "host": "shuma.ccwu.cc",
-      "name": "希腊 0025[1194ms]",
-      "network": "ws",
-      "port": 2053,
-      "server": "38.54.29.210",
-      "skip-cert-verify": false,
-      "sni": "shuma.ccwu.cc",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
-      "ws-opts": {
-        "headers": {
-          "Host": "shuma.ccwu.cc"
-        },
-        "path": "/fp=chrome"
-      }
-    },
-    {
-      "host": "shuma.ccwu.cc",
-      "name": "德国 1291[1204ms]",
-      "network": "ws",
-      "port": 443,
-      "server": "144.31.217.95",
-      "skip-cert-verify": false,
-      "sni": "shuma.ccwu.cc",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
-      "ws-opts": {
-        "headers": {
-          "Host": "shuma.ccwu.cc"
-        },
-        "path": "/fp=chrome"
-      }
-    },
-    {
-      "name": "罗马尼亚 0238[1220ms]",
-      "password": "",
-      "port": 9002,
-      "server": "193.176.84.21",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": ""
-    },
-    {
-      "host": "shuma.ccwu.cc",
-      "name": "丹麦 0016[1222ms]",
-      "network": "ws",
-      "port": 8443,
-      "server": "193.180.208.169",
-      "skip-cert-verify": false,
-      "sni": "shuma.ccwu.cc",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
-      "ws-opts": {
-        "headers": {
-          "Host": "shuma.ccwu.cc"
-        },
-        "path": "/fp=chrome"
-      }
-    },
-    {
-      "host": "shuma.ccwu.cc",
-      "name": "罗马尼亚 0044[1236ms]",
-      "network": "ws",
-      "port": 8443,
-      "server": "103.126.50.196",
-      "skip-cert-verify": false,
-      "sni": "shuma.ccwu.cc",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
-      "ws-opts": {
-        "headers": {
-          "Host": "shuma.ccwu.cc"
-        },
-        "path": "/fp=chrome"
-      }
-    },
-    {
-      "name": "罗马尼亚 0239[1251ms]",
-      "password": "null",
-      "port": 9002,
-      "server": "193.176.84.23",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": "null"
-    },
-    {
-      "name": "罗马尼亚 0236[1271ms]",
-      "password": "null",
-      "port": 9002,
-      "server": "193.176.84.40",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": "null"
-    },
-    {
-      "name": "罗马尼亚 0235[1271ms]",
-      "password": null,
-      "port": 9002,
-      "server": "193.176.84.33",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": null
-    },
-    {
-      "name": "荷兰 1170[1279ms]",
+      "name": "荷兰 1281[1162ms]",
       "password": "freeuser1",
       "port": 9251,
       "server": "nl201.freeconnect.link",
@@ -1504,45 +1034,166 @@
       "username": "freeuser1"
     },
     {
-      "host": "shuma.ccwu.cc",
-      "name": "爱尔兰 0066[1306ms]",
+      "client-fingerprint": "chrome",
+      "host": "3-m9.5f67a3d6-2963-45ab-8313-7d02d224d2a0.kdns.fr",
+      "name": "未知 0516[1180ms]",
       "network": "ws",
-      "port": 2083,
-      "server": "198.55.102.68",
+      "packet-encoding": "xudp",
+      "port": 443,
+      "server": "172.67.216.151",
       "skip-cert-verify": false,
-      "sni": "shuma.ccwu.cc",
+      "sni": "3-m9.5f67a3d6-2963-45ab-8313-7d02d224d2a0.kdns.fr",
       "tls": true,
       "type": "vless",
       "udp": true,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
+      "uuid": "2240d8f8-898f-4988-8c08-ac724aa06ddb",
       "ws-opts": {
         "headers": {
-          "Host": "shuma.ccwu.cc"
+          "Host": "3-m9.5f67a3d6-2963-45ab-8313-7d02d224d2a0.kdns.fr"
         },
-        "path": "/fp=chrome"
+        "path": "/BzuntJ8qZN0TRKbC8TveMxJ0"
       }
     },
     {
-      "host": "shuma.ccwu.cc",
-      "name": "斯洛伐克 0007[1329ms]",
-      "network": "ws",
-      "port": 2053,
-      "server": "89.46.42.92",
-      "skip-cert-verify": false,
-      "sni": "shuma.ccwu.cc",
+      "name": "荷兰 1287[1186ms]",
+      "password": "freeuser1",
+      "port": 9251,
+      "server": "nl203.freeconnect.link",
+      "skip-cert-verify": true,
+      "sni": "nl203.freeconnect.link",
       "tls": true,
+      "type": "http",
+      "username": "freeuser1"
+    },
+    {
+      "name": "罗马尼亚 0239[1189ms]",
+      "password": null,
+      "port": 9002,
+      "server": "193.176.84.36",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http",
+      "username": null
+    },
+    {
+      "name": "荷兰 1293[1208ms]",
+      "port": 23856,
+      "server": "51.159.225.196",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "罗马尼亚 0243[1212ms]",
+      "password": "null",
+      "port": 9002,
+      "server": "193.176.84.21",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http",
+      "username": "null"
+    },
+    {
+      "name": "罗马尼亚 0245[1216ms]",
+      "port": 9002,
+      "server": "193.176.84.38",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http",
+      "udp": true
+    },
+    {
+      "name": "罗马尼亚 0238[1226ms]",
+      "password": "null",
+      "port": 9002,
+      "server": "193.176.84.19",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http",
+      "username": "null"
+    },
+    {
+      "name": "罗马尼亚 0240[1232ms]",
+      "password": null,
+      "port": 9002,
+      "server": "193.176.84.23",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http",
+      "username": null
+    },
+    {
+      "encryption": "none",
+      "name": "美国 2850[1236ms]",
+      "network": "ws",
+      "port": 15262,
+      "server": "66.33.22.221",
+      "skip-cert-verify": false,
+      "tls": false,
       "type": "vless",
       "udp": true,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
+      "uuid": "9edfe008-51a5-48ee-ae99-945971227100",
       "ws-opts": {
-        "headers": {
-          "Host": "shuma.ccwu.cc"
-        },
-        "path": "/fp=chrome"
+        "headers": {},
+        "path": "/"
       }
     },
     {
-      "name": "荷兰 1175[1338ms]",
+      "name": "罗马尼亚 0244[1236ms]",
+      "password": "None",
+      "port": 9002,
+      "server": "193.176.84.25",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http",
+      "username": null
+    },
+    {
+      "name": "罗马尼亚 0237[1237ms]",
+      "port": 9002,
+      "server": "193.176.84.24",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "罗马尼亚 0248[1251ms]",
+      "port": 9002,
+      "server": "193.176.84.31",
+      "skip-cert-verify": true,
+      "sni": "www.bing.com",
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "荷兰 1272[1270ms]",
+      "password": "freeuser1",
+      "port": 9251,
+      "server": "nl209.freeconnect.link",
+      "skip-cert-verify": true,
+      "sni": "nl209.freeconnect.link",
+      "tls": true,
+      "type": "http",
+      "username": "freeuser1"
+    },
+    {
+      "encryption": "none",
+      "name": "美国 2836[1302ms]",
+      "network": "ws",
+      "port": 27534,
+      "server": "66.33.22.219",
+      "skip-cert-verify": false,
+      "tls": false,
+      "type": "vless",
+      "udp": true,
+      "uuid": "55333b48-43d2-40f5-99ef-982046bdf437",
+      "ws-opts": {
+        "headers": {},
+        "path": "/"
+      }
+    },
+    {
+      "name": "荷兰 1292[1303ms]",
       "password": "freeuser1",
       "port": 9251,
       "server": "nl206.freeconnect.link",
@@ -1553,59 +1204,79 @@
       "username": "freeuser1"
     },
     {
-      "name": "荷兰 1164[1349ms]",
-      "port": 9002,
-      "server": "84.17.47.148",
-      "skip-cert-verify": true,
+      "name": "荷兰 1274[1304ms]",
+      "password": "freeuser1",
+      "port": 9251,
+      "server": "nl205.freeconnect.link",
+      "sni": "nl205.freeconnect.link",
       "tls": true,
       "type": "http",
-      "udp": true
+      "username": "freeuser1"
     },
     {
-      "name": "德国 1721[1357ms]",
+      "name": "荷兰 1288[1314ms]",
+      "password": "freeuser1",
+      "port": 9251,
+      "server": "nl207.freeconnect.link",
+      "sni": "nl207.freeconnect.link",
+      "tls": true,
+      "type": "http",
+      "username": "freeuser1"
+    },
+    {
+      "name": "荷兰 1290[1352ms]",
       "password": null,
-      "port": 9443,
-      "server": "87.249.132.97",
+      "port": 9002,
+      "server": "84.17.47.150",
       "skip-cert-verify": true,
       "tls": true,
       "type": "http",
       "username": null
     },
     {
-      "name": "罗马尼亚 0232[1361ms]",
+      "name": "罗马尼亚 0247[1358ms]",
+      "port": 9002,
+      "server": "193.176.84.32",
+      "skip-cert-verify": true,
+      "sni": "www.bing.com",
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "荷兰 1279[1370ms]",
+      "port": 9002,
+      "server": "84.17.47.146",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http",
+      "udp": true
+    },
+    {
+      "name": "荷兰 1276[1384ms]",
       "password": "",
       "port": 9002,
-      "server": "193.176.84.29",
+      "server": "84.17.47.147",
       "skip-cert-verify": true,
       "tls": true,
       "type": "http",
       "username": ""
     },
     {
-      "name": "荷兰 1165[1368ms]",
-      "port": 9002,
-      "server": "84.17.47.150",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
+      "name": "美国 4356[1458ms]",
+      "network": "tcp",
+      "port": 4145,
+      "server": "192.111.139.165",
+      "skip-cert-verify": false,
+      "tls": false,
+      "type": "socks5",
       "udp": true
     },
     {
-      "name": "荷兰 1161[1375ms]",
-      "password": "None",
-      "port": 9002,
-      "server": "84.17.47.147",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": null
-    },
-    {
       "client-fingerprint": "chrome",
-      "name": "德国 1742[1383ms]",
+      "name": "香港 0552[1500ms]",
       "network": "ws",
       "port": 443,
-      "server": "144.31.217.95",
+      "server": "103.143.81.178",
       "skip-cert-verify": true,
       "sni": "shuma.ccwu.cc",
       "tls": true,
@@ -1620,248 +1291,18 @@
       }
     },
     {
-      "name": "荷兰 1171[1390ms]",
-      "password": null,
-      "port": 9002,
-      "server": "84.17.47.149",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": null
-    },
-    {
-      "host": "shuma.ccwu.cc",
-      "name": "阿联酋 0177[1414ms]",
-      "network": "ws",
-      "port": 8443,
-      "server": "104.143.204.23",
-      "skip-cert-verify": false,
-      "sni": "shuma.ccwu.cc",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
-      "ws-opts": {
-        "headers": {
-          "Host": "shuma.ccwu.cc"
-        },
-        "path": "/fp=chrome"
-      }
-    },
-    {
-      "host": "shuma.ccwu.cc",
-      "name": "美国 3438[1418ms]",
-      "network": "ws",
-      "port": 2096,
-      "server": "167.160.177.68",
-      "skip-cert-verify": false,
-      "sni": "shuma.ccwu.cc",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
-      "ws-opts": {
-        "headers": {
-          "Host": "shuma.ccwu.cc"
-        },
-        "path": "/fp=chrome"
-      }
-    },
-    {
-      "encryption": "mlkem768x25519plus.random.0rtt.4ZiK3Dv6QqgU4hTboAe80H0CPJ6KV_GUdsjOCLY3UlA",
-      "host": "myket.ir",
-      "mode": "stream-up",
-      "name": "伊朗 0111[1444ms]",
-      "network": "xhttp",
-      "port": 6010,
-      "server": "fr.masterpgd.com",
+      "name": "美国 3436[1760ms]",
+      "network": "tcp",
+      "port": 9050,
+      "server": "45.61.129.165",
       "skip-cert-verify": false,
       "tls": false,
-      "type": "vless",
-      "udp": true,
-      "uuid": "d2bf8658-06dc-4462-80d4-39c5c3bb0dd8",
-      "xhttp-opts": {
-        "host": "myket.ir",
-        "mode": "stream-up",
-        "path": "/assets"
-      }
-    },
-    {
-      "name": "罗马尼亚 0230[1450ms]",
-      "password": "None",
-      "port": 9002,
-      "server": "193.176.84.30",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": null
-    },
-    {
-      "host": "shuma.ccwu.cc",
-      "name": "韩国 0225[1496ms]",
-      "network": "ws",
-      "port": 2083,
-      "server": "123.111.169.70",
-      "skip-cert-verify": false,
-      "sni": "shuma.ccwu.cc",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
-      "ws-opts": {
-        "headers": {
-          "Host": "shuma.ccwu.cc"
-        },
-        "path": "/fp=chrome"
-      }
-    },
-    {
-      "host": "shuma.ccwu.cc",
-      "name": "日本 0307[1536ms]",
-      "network": "ws",
-      "port": 443,
-      "server": "45.202.254.133",
-      "skip-cert-verify": false,
-      "sni": "shuma.ccwu.cc",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
-      "ws-opts": {
-        "headers": {
-          "Host": "shuma.ccwu.cc"
-        },
-        "path": "/fp=chrome"
-      }
-    },
-    {
-      "host": "shuma.ccwu.cc",
-      "name": "爱尔兰 0068[1544ms]",
-      "network": "ws",
-      "port": 8443,
-      "server": "107.150.20.112",
-      "skip-cert-verify": false,
-      "sni": "shuma.ccwu.cc",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
-      "ws-opts": {
-        "headers": {
-          "Host": "shuma.ccwu.cc"
-        },
-        "path": "/fp=chrome"
-      }
-    },
-    {
-      "host": "shuma.ccwu.cc",
-      "name": "英国 0621[1563ms]",
-      "network": "ws",
-      "port": 8443,
-      "server": "46.250.250.48",
-      "skip-cert-verify": false,
-      "sni": "shuma.ccwu.cc",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
-      "ws-opts": {
-        "headers": {
-          "Host": "shuma.ccwu.cc"
-        },
-        "path": "/fp=chrome"
-      }
-    },
-    {
-      "alterId": 2,
-      "cipher": "auto",
-      "name": "中国 0283[1574ms]",
-      "network": "tcp",
-      "port": 30806,
-      "server": "v6.hdacd.com",
-      "skip-cert-verify": false,
-      "tls": false,
-      "type": "vmess",
-      "udp": true,
-      "uuid": "cbb3f877-d1fb-344c-87a9-d153bffd5484"
-    },
-    {
-      "client-fingerprint": "chrome",
-      "ech-opts": {
-        "enable": true,
-        "query-server-name": "cloudflare-ech.com"
-      },
-      "name": "法国 0659[1734ms]",
-      "network": "ws",
-      "port": 8443,
-      "server": "31.58.76.68",
-      "skip-cert-verify": true,
-      "sni": "cdn8848.776676.xyz",
-      "tls": true,
-      "type": "vless",
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
-      "ws-opts": {
-        "headers": {
-          "Host": "cdn8848.776676.xyz"
-        },
-        "path": "/new/dh?ed=2560"
-      }
-    },
-    {
-      "client-fingerprint": "chrome",
-      "ech-opts": {
-        "enable": true,
-        "query-server-name": "cloudflare-ech.com"
-      },
-      "name": "奥地利 0094[1754ms]",
-      "network": "ws",
-      "port": 8443,
-      "server": "132.243.203.207",
-      "skip-cert-verify": true,
-      "sni": "cdn8848.776676.xyz",
-      "tls": true,
-      "type": "vless",
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
-      "ws-opts": {
-        "headers": {
-          "Host": "cdn8848.776676.xyz"
-        },
-        "path": "/lives?ed=2560"
-      }
-    },
-    {
-      "alterId": 2,
-      "cipher": "auto",
-      "name": "中国 0281[1779ms]",
-      "network": "tcp",
-      "port": 30833,
-      "server": "v33.hdacd.com",
-      "skip-cert-verify": false,
-      "tls": false,
-      "type": "vmess",
-      "udp": true,
-      "uuid": "cbb3f877-d1fb-344c-87a9-d153bffd5484"
-    },
-    {
-      "client-fingerprint": "chrome",
-      "flow": "xtls-rprx-vision",
-      "name": "香港 0345[1779ms]",
-      "network": "tcp",
-      "port": 27948,
-      "reality-opts": {
-        "public-key": "ZJbUs5ZBJacR5XKdOKz8rI7ovNMcq0ocdCvsA0Z3ul8"
-      },
-      "server": "83.229.127.18",
-      "skip-cert-verify": false,
-      "sni": "www.amazon.com",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "7010c0c4-ac62-4456-9f40-fead039d2be5"
+      "type": "socks5",
+      "udp": true
     },
     {
       "encryption": "none",
-      "name": "中国 0228[1905ms]",
+      "name": "中国 0229[1926ms]",
       "network": "tcp",
       "port": 52683,
       "server": "jp.sofast.live",
@@ -1870,193 +1311,110 @@
       "type": "vless",
       "udp": true,
       "uuid": "399b6b23-cc40-4831-a494-61948e2df133"
-    },
-    {
-      "client-fingerprint": "chrome",
-      "flow": "xtls-rprx-vision",
-      "name": "美国 3479[1909ms]",
-      "network": "tcp",
-      "port": 14934,
-      "reality-opts": {
-        "public-key": "C9qIqeSCAkCLIqki3n21hyeILLltWcZJ6M0HgRTGmk4"
-      },
-      "server": "207.57.129.114",
-      "skip-cert-verify": false,
-      "sni": "dash.cloudflare.com",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "630b700b-3c91-463a-9ef5-ee01f5848b45"
-    },
-    {
-      "client-fingerprint": "chrome",
-      "ech-opts": {
-        "enable": true,
-        "query-server-name": "cloudflare-ech.com"
-      },
-      "name": "未知 2467[1946ms]",
-      "network": "ws",
-      "port": 2087,
-      "server": "104.17.117.227",
-      "skip-cert-verify": true,
-      "sni": "cdn8848.776676.xyz",
-      "tls": true,
-      "type": "vless",
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
-      "ws-opts": {
-        "headers": {
-          "Host": "cdn8848.776676.xyz"
-        },
-        "path": "/manhua/code/favourites?ed=2560"
-      }
-    },
-    {
-      "client-fingerprint": "chrome",
-      "name": "乌兹别克斯坦 0009[1991ms]",
-      "network": "ws",
-      "port": 8443,
-      "server": "46.8.194.76",
-      "skip-cert-verify": true,
-      "sni": "shuma.ccwu.cc",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "c18b978e-1c4e-415c-8bea-07942b563a64",
-      "ws-opts": {
-        "headers": {
-          "Host": "shuma.ccwu.cc"
-        },
-        "path": "/"
-      }
     }
   ],
   "proxy-groups": [
     {
       "name": "🚀 所有节点",
       "proxies": [
-        "香港 0578[375ms]",
-        "日本 0656[413ms]",
-        "日本 0664[417ms]",
-        "日本 0654[431ms]",
-        "未知 2474[451ms]",
-        "未知 2465[522ms]",
-        "香港 0585[575ms]",
-        "未知 2461[577ms]",
-        "未知 2459[593ms]",
-        "未知 2472[597ms]",
-        "未知 2460[597ms]",
-        "未知 2473[616ms]",
-        "未知 2471[618ms]",
-        "未知 2476[618ms]",
-        "未知 2462[623ms]",
-        "未知 2470[630ms]",
-        "美国 4521[680ms]",
-        "美国 4496[681ms]",
-        "日本 0368[682ms]",
-        "美国 4506[686ms]",
-        "美国 4530[687ms]",
-        "美国 4512[693ms]",
-        "美国 4520[696ms]",
-        "荷兰 1176[702ms]",
-        "未知 2466[721ms]",
-        "香港 0398[764ms]",
-        "美国 4518[770ms]",
-        "美国 4517[772ms]",
-        "美国 4527[774ms]",
-        "美国 4504[775ms]",
-        "美国 4508[779ms]",
-        "美国 4509[781ms]",
-        "美国 4511[783ms]",
-        "美国 4539[784ms]",
-        "美国 4522[787ms]",
-        "未知 2458[791ms]",
-        "美国 4475[793ms]",
-        "美国 4505[794ms]",
-        "美国 4497[794ms]",
-        "美国 4510[796ms]",
-        "美国 4543[796ms]",
-        "美国 4523[797ms]",
-        "美国 4499[798ms]",
-        "美国 4495[802ms]",
-        "美国 4490[804ms]",
-        "美国 4486[808ms]",
-        "美国 4538[809ms]",
-        "美国 4528[810ms]",
-        "美国 1233[819ms]",
-        "美国 1228[830ms]",
-        "法国 0656[840ms]",
-        "美国 1231[844ms]",
-        "荷兰 1168[851ms]",
-        "美国 1234[871ms]",
-        "新加坡 0374[891ms]",
-        "新加坡 0693[900ms]",
-        "德国 1733[906ms]",
-        "新加坡 0699[909ms]",
-        "新加坡 0700[921ms]",
-        "英国 0347[933ms]",
-        "法国 0657[937ms]",
-        "荷兰 1177[940ms]",
-        "日本 0642[951ms]",
-        "罗马尼亚 0254[954ms]",
-        "西班牙 0054[957ms]",
-        "法国 0654[961ms]",
-        "丹麦 0027[966ms]",
-        "德国 1145[989ms]",
-        "新加坡 0378[1015ms]",
-        "瑞士 0153[1021ms]",
-        "瑞士 0151[1025ms]",
-        "德国 1731[1035ms]",
-        "乌兹别克斯坦 0007[1041ms]",
-        "荷兰 1162[1051ms]",
-        "荷兰 1174[1087ms]",
-        "荷兰 1172[1108ms]",
-        "罗马尼亚 0231[1115ms]",
-        "挪威 0030[1122ms]",
-        "捷克 0079[1146ms]",
-        "英国 0761[1157ms]",
-        "罗马尼亚 0234[1160ms]",
-        "匈牙利 0016[1160ms]",
-        "乌兹别克斯坦 0008[1170ms]",
-        "罗马尼亚 0233[1180ms]",
-        "卢森堡 0015[1180ms]",
-        "斯洛伐克 0005[1191ms]",
-        "斯洛伐克 0009[1192ms]",
-        "希腊 0025[1194ms]",
-        "德国 1291[1204ms]",
-        "罗马尼亚 0238[1220ms]",
-        "丹麦 0016[1222ms]",
-        "罗马尼亚 0044[1236ms]",
-        "罗马尼亚 0239[1251ms]",
-        "罗马尼亚 0236[1271ms]",
-        "罗马尼亚 0235[1271ms]",
-        "荷兰 1170[1279ms]",
-        "爱尔兰 0066[1306ms]",
-        "斯洛伐克 0007[1329ms]",
-        "荷兰 1175[1338ms]",
-        "荷兰 1164[1349ms]",
-        "德国 1721[1357ms]",
-        "罗马尼亚 0232[1361ms]",
-        "荷兰 1165[1368ms]",
-        "荷兰 1161[1375ms]",
-        "德国 1742[1383ms]",
-        "荷兰 1171[1390ms]",
-        "阿联酋 0177[1414ms]",
-        "美国 3438[1418ms]",
-        "伊朗 0111[1444ms]",
-        "罗马尼亚 0230[1450ms]",
-        "韩国 0225[1496ms]",
-        "日本 0307[1536ms]",
-        "爱尔兰 0068[1544ms]",
-        "英国 0621[1563ms]",
-        "中国 0283[1574ms]",
-        "法国 0659[1734ms]",
-        "奥地利 0094[1754ms]",
-        "中国 0281[1779ms]",
-        "香港 0345[1779ms]",
-        "中国 0228[1905ms]",
-        "美国 3479[1909ms]",
-        "未知 2467[1946ms]",
-        "乌兹别克斯坦 0009[1991ms]"
+        "香港 0536[342ms]",
+        "香港 0541[378ms]",
+        "日本 0696[408ms]",
+        "美国 4688[416ms]",
+        "印度尼西亚 0023[462ms]",
+        "美国 4691[630ms]",
+        "未知 2859[640ms]",
+        "美国 4653[669ms]",
+        "美国 4644[692ms]",
+        "美国 4624[695ms]",
+        "美国 4654[697ms]",
+        "美国 4605[701ms]",
+        "美国 4629[717ms]",
+        "未知 2860[725ms]",
+        "美国 4693[725ms]",
+        "美国 4689[752ms]",
+        "未知 2856[770ms]",
+        "美国 4635[780ms]",
+        "美国 4630[785ms]",
+        "美国 4640[785ms]",
+        "美国 4616[791ms]",
+        "美国 4636[794ms]",
+        "美国 4594[800ms]",
+        "美国 4626[801ms]",
+        "美国 4656[802ms]",
+        "德国 1793[805ms]",
+        "美国 4638[806ms]",
+        "美国 4617[806ms]",
+        "美国 4649[808ms]",
+        "美国 4632[812ms]",
+        "美国 4628[814ms]",
+        "美国 4604[815ms]",
+        "美国 4652[817ms]",
+        "美国 4655[819ms]",
+        "美国 4646[820ms]",
+        "美国 4639[826ms]",
+        "美国 4625[826ms]",
+        "美国 4648[833ms]",
+        "美国 4633[835ms]",
+        "法国 0699[841ms]",
+        "美国 4701[853ms]",
+        "西班牙 0030[902ms]",
+        "新加坡 0754[928ms]",
+        "法国 0714[937ms]",
+        "拉脱维亚 0158[945ms]",
+        "荷兰 1309[948ms]",
+        "荷兰 1295[974ms]",
+        "印度尼西亚 0022[977ms]",
+        "荷兰 1282[983ms]",
+        "未知 0491[988ms]",
+        "未知 2858[992ms]",
+        "法国 0702[994ms]",
+        "捷克 0121[997ms]",
+        "法国 0713[1002ms]",
+        "美国 4716[1008ms]",
+        "德国 0681[1022ms]",
+        "丹麦 0027[1029ms]",
+        "法国 0695[1038ms]",
+        "英国 0887[1056ms]",
+        "未知 2832[1071ms]",
+        "荷兰 1277[1075ms]",
+        "未知 1367[1076ms]",
+        "德国 1814[1090ms]",
+        "法国 0711[1090ms]",
+        "瑞士 0168[1111ms]",
+        "未知 0486[1117ms]",
+        "美国 4723[1122ms]",
+        "罗马尼亚 0246[1127ms]",
+        "罗马尼亚 0242[1135ms]",
+        "罗马尼亚 0241[1146ms]",
+        "奥地利 0105[1155ms]",
+        "捷克 0033[1157ms]",
+        "荷兰 1281[1162ms]",
+        "未知 0516[1180ms]",
+        "荷兰 1287[1186ms]",
+        "罗马尼亚 0239[1189ms]",
+        "荷兰 1293[1208ms]",
+        "罗马尼亚 0243[1212ms]",
+        "罗马尼亚 0245[1216ms]",
+        "罗马尼亚 0238[1226ms]",
+        "罗马尼亚 0240[1232ms]",
+        "美国 2850[1236ms]",
+        "罗马尼亚 0244[1236ms]",
+        "罗马尼亚 0237[1237ms]",
+        "罗马尼亚 0248[1251ms]",
+        "荷兰 1272[1270ms]",
+        "美国 2836[1302ms]",
+        "荷兰 1292[1303ms]",
+        "荷兰 1274[1304ms]",
+        "荷兰 1288[1314ms]",
+        "荷兰 1290[1352ms]",
+        "罗马尼亚 0247[1358ms]",
+        "荷兰 1279[1370ms]",
+        "荷兰 1276[1384ms]",
+        "美国 4356[1458ms]",
+        "香港 0552[1500ms]",
+        "美国 3436[1760ms]",
+        "中国 0229[1926ms]"
       ],
       "type": "select"
     }
