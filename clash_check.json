@@ -55,7 +55,16 @@
   "mode": "rule",
   "proxies": [
     {
-      "name": "印度尼西亚 0021[413ms]",
+      "name": "香港 0541[367ms]",
+      "port": 443,
+      "server": "fan.240104.xyz",
+      "skip-cert-verify": true,
+      "sni": "fan.240104.xyz",
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "印度尼西亚 0025[416ms]",
       "password": "freeuser1",
       "port": 9251,
       "server": "cr2-id.freeconnect.link",
@@ -64,59 +73,44 @@
       "username": "freeuser1"
     },
     {
-      "alterId": 0,
-      "cipher": "auto",
-      "name": "日本 0327[435ms]",
-      "network": "ws",
-      "port": 2083,
-      "server": "or.521166.xyz",
-      "skip-cert-verify": false,
-      "tls": true,
-      "type": "vmess",
-      "udp": true,
-      "uuid": "ac251237-576f-40c8-a543-554960c958b1",
-      "ws-opts": {
-        "headers": {},
-        "path": "/or3"
-      }
-    },
-    {
-      "name": "香港 0470[438ms]",
-      "password": "null",
+      "name": "日本 0636[499ms]",
+      "password": "",
       "port": 443,
-      "server": "fan.240104.xyz",
-      "sni": "fan.240104.xyz",
+      "server": "fan.571589.xyz",
+      "skip-cert-verify": true,
+      "sni": "fan.571589.xyz",
       "tls": true,
       "type": "http",
-      "username": "null"
+      "udp": true,
+      "username": ""
     },
     {
-      "encryption": "none",
-      "host": "delicate-meadow-15da.423-c77.workers.dev",
-      "name": "未知 0802[564ms]",
+      "host": "vms.lifetime05.workers.dev",
+      "name": "荷兰 0397[636ms]",
       "network": "ws",
       "packet-encoding": "xudp",
       "port": 8880,
-      "server": "172.67.152.71",
+      "server": "45.131.210.30",
       "skip-cert-verify": false,
+      "sni": "vms.lifetime05.workers.dev",
       "tls": false,
       "type": "vless",
       "udp": true,
-      "uuid": "2a8cafda-479d-4e30-82d1-0bd4c6da6db9",
+      "uuid": "6202b230-417c-4d8e-b624-0f71afa9c75d",
       "ws-opts": {
         "headers": {
-          "Host": "delicate-meadow-15da.423-c77.workers.dev"
+          "Host": "vms.lifetime05.workers.dev"
         },
-        "path": "/pyip=ProxyIP.US.CMLiussss.net"
+        "path": "/"
       }
     },
     {
-      "encryption": "none",
-      "host": "vms.lifetime06.workers.dev",
-      "name": "立陶宛 0041[671ms]",
+      "host": "vms.lifetime35.workers.dev",
+      "name": "美国 1834[842ms]",
       "network": "ws",
+      "packet-encoding": "xudp",
       "port": 8880,
-      "server": "88.216.69.30",
+      "server": "192.0.54.30",
       "skip-cert-verify": false,
       "tls": false,
       "type": "vless",
@@ -124,36 +118,46 @@
       "uuid": "6202b230-417c-4d8e-b624-0f71afa9c75d",
       "ws-opts": {
         "headers": {
-          "Host": "vms.lifetime06.workers.dev"
+          "Host": "vms.lifetime35.workers.dev"
         },
         "path": "/"
       }
     },
     {
-      "client-fingerprint": "chrome",
-      "host": "web-tomcat.pages.dev",
-      "name": "未知 0841[790ms]",
-      "network": "ws",
-      "packet-encoding": "xudp",
+      "insecure": "1",
+      "name": "日本 0397[912ms]",
+      "network": "tcp",
+      "password": "RQBXe4kpsRant_2u1PzdneBOPuCSwUSI",
       "port": 443,
-      "server": "web-tomcat.pages.dev",
-      "skip-cert-verify": false,
-      "sni": "web-tomcat.pages.dev",
+      "server": "43.167.208.94",
+      "skip-cert-verify": true,
+      "sni": "43.167.208.94",
+      "tls": false,
+      "type": "hysteria2",
+      "udp": true
+    },
+    {
+      "name": "印度尼西亚 0024[1006ms]",
+      "password": "freeuser1",
+      "port": 9251,
+      "server": "cr1-id.freeconnect.link",
       "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "2cf94f4d-9d5b-49ca-81a3-ddc0529a2dac",
-      "ws-opts": {
-        "headers": {
-          "Host": "web-tomcat.pages.dev"
-        },
-        "path": "/"
-      }
+      "type": "http",
+      "username": "freeuser1"
+    },
+    {
+      "name": "印度尼西亚 0026[1080ms]",
+      "password": "freeuser1",
+      "port": 9251,
+      "server": "sr2-id.freeconnect.link",
+      "tls": true,
+      "type": "http",
+      "username": "freeuser1"
     },
     {
       "alterId": 2,
       "cipher": "auto",
-      "name": "中国 0288[872ms]",
+      "name": "中国 0289[1348ms]",
       "network": "tcp",
       "port": 30806,
       "server": "v6.hdacd.com",
@@ -164,84 +168,45 @@
       "uuid": "cbb3f877-d1fb-344c-87a9-d153bffd5484"
     },
     {
-      "alterId": 2,
-      "cipher": "auto",
-      "name": "中国 0289[888ms]",
-      "network": "tcp",
-      "port": 30835,
-      "server": "v35.hdacd.com",
+      "allowInsecure": "0",
+      "alpn": [
+        "http/1.1"
+      ],
+      "client-fingerprint": "chrome",
+      "host": "mitivpn---ss--s---mitivpn-11e.global.ssl.fastly.net",
+      "insecure": "0",
+      "name": "美国 1311[2000ms]",
+      "network": "ws",
+      "password": "MItIVPN",
+      "port": 443,
+      "server": "199.232.78.101",
       "skip-cert-verify": false,
-      "tls": false,
-      "type": "vmess",
-      "udp": true,
-      "uuid": "cbb3f877-d1fb-344c-87a9-d153bffd5484"
-    },
-    {
-      "alterId": 2,
-      "cipher": "auto",
-      "name": "中国 0292[950ms]",
-      "network": "tcp",
-      "port": 30836,
-      "server": "v36.hdacd.com",
-      "skip-cert-verify": false,
-      "tls": false,
-      "type": "vmess",
-      "udp": true,
-      "uuid": "cbb3f877-d1fb-344c-87a9-d153bffd5484"
-    },
-    {
-      "name": "印度尼西亚 0022[995ms]",
-      "password": "freeuser1",
-      "port": 9251,
-      "server": "cr1-id.freeconnect.link",
+      "sni": "ssl.fastly.com",
       "tls": true,
-      "type": "http",
-      "username": "freeuser1"
-    },
-    {
-      "alterId": 2,
-      "cipher": "auto",
-      "name": "中国 0287[1176ms]",
-      "network": "tcp",
-      "port": 30824,
-      "server": "v24.hdacd.com",
-      "skip-cert-verify": false,
-      "tls": false,
-      "type": "vmess",
+      "type": "trojan",
       "udp": true,
-      "uuid": "cbb3f877-d1fb-344c-87a9-d153bffd5484"
-    },
-    {
-      "alterId": 2,
-      "cipher": "auto",
-      "name": "中国 0291[1638ms]",
-      "network": "tcp",
-      "port": 30804,
-      "server": "v4.hdacd.com",
-      "skip-cert-verify": false,
-      "sni": "v4.hdacd.com",
-      "tls": false,
-      "type": "vmess",
-      "udp": true,
-      "uuid": "cbb3f877-d1fb-344c-87a9-d153bffd5484"
+      "ws-opts": {
+        "headers": {
+          "Host": "mitivpn---ss--s---mitivpn-11e.global.ssl.fastly.net"
+        },
+        "path": "/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NLSus---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN"
+      }
     }
   ],
   "proxy-groups": [
     {
       "name": "🚀 所有节点",
       "proxies": [
-        "印度尼西亚 0021[413ms]",
-        "日本 0327[435ms]",
-        "香港 0470[438ms]",
-        "未知 0802[564ms]",
-        "立陶宛 0041[671ms]",
-        "未知 0841[790ms]",
-        "中国 0288[872ms]",
-        "中国 0289[888ms]",
-        "中国 0292[950ms]",
-        "印度尼西亚 0022[995ms]",
-        "中国 0287[1176ms]",
-        "中国 0291[1638ms]"
+        "香港 0541[367ms]",
+        "印度尼西亚 0025[416ms]",
+        "日本 0636[499ms]",
+        "荷兰 0397[636ms]",
+        "美国 1834[842ms]",
+        "日本 0397[912ms]",
+        "印度尼西亚 0024[1006ms]",
+        "印度尼西亚 0026[1080ms]",
+        "中国 0289[1348ms]",
+        "美国 1311[2000ms]"
       ],
       "type": "select"
     }
