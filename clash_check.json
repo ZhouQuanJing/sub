@@ -55,17 +55,20 @@
   "mode": "rule",
   "proxies": [
     {
-      "name": "日本 0656[316ms]",
-      "password": "null",
-      "port": 443,
-      "server": "fan.571589.xyz",
-      "sni": "fan.571589.xyz",
-      "tls": true,
-      "type": "http",
-      "username": "null"
+      "insecure": "1",
+      "name": "香港 0447[322ms]",
+      "network": "tcp",
+      "password": "8cb0c4fb-03ee-35b8-a47b-cd1d7e76dfd3",
+      "port": 60001,
+      "server": "hk01.kfc-520.com",
+      "skip-cert-verify": true,
+      "sni": "hk01.kfc-520.com",
+      "tls": false,
+      "type": "hysteria2",
+      "udp": true
     },
     {
-      "name": "香港 0529[377ms]",
+      "name": "香港 0525[368ms]",
       "port": 443,
       "server": "fan.240104.xyz",
       "skip-cert-verify": true,
@@ -82,163 +85,53 @@
       "type": "http"
     },
     {
-      "name": "印度尼西亚 0020[399ms]",
+      "name": "印度尼西亚 0022[472ms]",
       "password": "freeuser1",
       "port": 9251,
-      "server": "cr2-id.freeconnect.link",
+      "server": "sr2-id.freeconnect.link",
       "tls": true,
       "type": "http",
       "username": "freeuser1"
     },
     {
-      "host": "vms.lifetime35.workers.dev",
-      "name": "塞舌尔 0045[430ms]",
-      "network": "ws",
-      "packet-encoding": "xudp",
-      "port": 8880,
-      "server": "154.194.12.40",
-      "skip-cert-verify": false,
-      "tls": false,
-      "type": "vless",
-      "udp": true,
-      "uuid": "6202b230-417c-4d8e-b624-0f71afa9c75d",
-      "ws-opts": {
-        "headers": {
-          "Host": "vms.lifetime35.workers.dev"
-        },
-        "path": "/?ed=2560"
-      }
-    },
-    {
-      "host": "yellow-hall-d482.260-d22.workers.dev",
-      "name": "未知 0507[617ms]",
-      "network": "ws",
-      "packet-encoding": "xudp",
-      "port": 8880,
-      "server": "104.27.82.154",
-      "skip-cert-verify": false,
-      "tls": false,
-      "type": "vless",
-      "udp": true,
-      "uuid": "0ed342c3-eb45-4d63-83a1-697252636ca9",
-      "ws-opts": {
-        "headers": {
-          "Host": "yellow-hall-d482.260-d22.workers.dev"
-        },
-        "path": "/pyip=ProxyIP.KR.CMLiussss.net"
-      }
-    },
-    {
-      "host": "vms.lifetime35.workers.dev",
-      "name": "美国 1868[785ms]",
-      "network": "ws",
-      "packet-encoding": "xudp",
-      "port": 8880,
-      "server": "192.0.54.30",
-      "skip-cert-verify": false,
-      "tls": false,
-      "type": "vless",
-      "udp": true,
-      "uuid": "6202b230-417c-4d8e-b624-0f71afa9c75d",
-      "ws-opts": {
-        "headers": {
-          "Host": "vms.lifetime35.workers.dev"
-        },
-        "path": "/"
-      }
-    },
-    {
-      "alpn": [
-        "http/1.1"
-      ],
-      "client-fingerprint": "chrome",
-      "host": "mitivpn---nl--s---mitivpn-2.global.ssl.fastly.net",
-      "name": "美国 1326[850ms]",
-      "network": "ws",
-      "password": "MiTiVPN",
+      "client-fingerprint": "random",
+      "flow": "xtls-rprx-vision",
+      "name": "香港 0528[547ms]",
       "port": 443,
-      "server": "151.101.56.255",
-      "skip-cert-verify": false,
-      "sni": "ssl.fastly.com",
+      "reality-opts": {
+        "public-key": "4ubYp4HaBJgn1qXwfo0hiejncurXCckII-O_FMDXTgI",
+        "short-id": "3b74d85e"
+      },
+      "server": "china.letsconnectpoint.com",
+      "skip-cert-verify": true,
+      "sni": "china.letsconnectpoint.com",
       "tls": true,
-      "type": "trojan",
+      "type": "vless",
       "udp": true,
-      "ws-opts": {
-        "headers": {
-          "Host": "mitivpn---nl--s---mitivpn-2.global.ssl.fastly.net"
-        },
-        "path": "/"
-      }
+      "uuid": "a368752a-32fc-42f3-980a-6b049218b23f"
     },
     {
-      "alterId": 2,
-      "cipher": "auto",
-      "name": "中国 0281[851ms]",
-      "network": "tcp",
-      "port": 30836,
-      "server": "v36.hdacd.com",
-      "skip-cert-verify": false,
-      "tls": false,
-      "type": "vmess",
-      "udp": true,
-      "uuid": "cbb3f877-d1fb-344c-87a9-d153bffd5484"
-    },
-    {
-      "alpn": [
-        "http/1.1"
-      ],
-      "client-fingerprint": "chrome",
-      "host": "mitivpn---gb--s---mitivpn-1.global.ssl.fastly.net",
-      "name": "美国 1334[896ms]",
+      "host": "spring-fire-a493.251-67d.workers.dev",
+      "name": "未知 0694[565ms]",
       "network": "ws",
-      "password": "MiTiVPN",
-      "port": 443,
-      "server": "151.101.56.9",
-      "skip-cert-verify": false,
-      "sni": "ssl.fastly.com",
-      "tls": true,
-      "type": "trojan",
-      "udp": true,
-      "ws-opts": {
-        "headers": {
-          "Host": "mitivpn---gb--s---mitivpn-1.global.ssl.fastly.net"
-        },
-        "path": "/"
-      }
-    },
-    {
-      "name": "德国 1180[921ms]",
-      "network": "ws",
-      "port": 80,
-      "server": "136.244.85.41",
+      "packet-encoding": "xudp",
+      "port": 8880,
+      "server": "104.16.106.213",
       "skip-cert-verify": false,
       "tls": false,
       "type": "vless",
       "udp": true,
-      "uuid": "9be7fcec-5b90-4cf7-828c-ccbd889fd03c",
+      "uuid": "1f06dae9-e4cc-4aae-b026-07f7fc81fb56",
       "ws-opts": {
-        "headers": {},
-        "path": "/"
-      }
-    },
-    {
-      "name": "德国 1190[941ms]",
-      "network": "ws",
-      "port": 80,
-      "server": "199.247.7.55",
-      "skip-cert-verify": false,
-      "tls": false,
-      "type": "vless",
-      "udp": true,
-      "uuid": "4c250d79-700a-4968-b50d-bae96983e1d7",
-      "ws-opts": {
-        "headers": {},
-        "path": "/"
+        "headers": {
+          "Host": "spring-fire-a493.251-67d.workers.dev"
+        },
+        "path": "/pyip=ProxyIP.JP.CMLiussss.net"
       }
     },
     {
       "insecure": "1",
-      "name": "香港 0421[986ms]",
+      "name": "香港 0393[685ms]",
       "network": "tcp",
       "password": "user317_windows:c70565e9-a99f-40ef-b96c-469a3949eed2",
       "port": 18642,
@@ -250,46 +143,32 @@
       "udp": true
     },
     {
-      "client-fingerprint": "chrome",
-      "grpc-opts": {
-        "grpc-service-name": "cdn.v1.AssetService"
-      },
-      "name": "以色列 0034[991ms]",
-      "network": "grpc",
-      "port": 443,
-      "server": "assets-de2.pleiades.codes",
-      "serviceName": "cdn.v1.AssetService",
-      "skip-cert-verify": false,
-      "sni": "assets-de2.pleiades.codes",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "0dca2cfe-98eb-4f9d-9a47-cf87510c558b"
-    },
-    {
-      "alterId": 2,
-      "cipher": "auto",
-      "name": "中国 0285[1001ms]",
+      "insecure": "1",
+      "name": "芬兰 0368[715ms]",
       "network": "tcp",
-      "port": 30806,
-      "server": "v6.hdacd.com",
-      "skip-cert-verify": false,
+      "password": "cf83b611-6cba-4535-adcb-8da06c6a9146",
+      "port": 443,
+      "server": "144.31.212.253",
+      "skip-cert-verify": true,
+      "sni": "vps155-edge.kermemehori.ru",
       "tls": false,
-      "type": "vmess",
-      "udp": true,
-      "uuid": "cbb3f877-d1fb-344c-87a9-d153bffd5484"
+      "type": "hysteria2",
+      "udp": true
     },
     {
-      "name": "印度尼西亚 0022[1008ms]",
-      "password": "freeuser1",
-      "port": 9251,
-      "server": "cr1-id.freeconnect.link",
+      "name": "日本 0654[764ms]",
+      "password": "",
+      "port": 443,
+      "server": "fan.571589.xyz",
+      "skip-cert-verify": true,
+      "sni": "fan.571589.xyz",
       "tls": true,
       "type": "http",
-      "username": "freeuser1"
+      "udp": true,
+      "username": ""
     },
     {
-      "name": "法国 0654[1049ms]",
+      "name": "法国 0637[1018ms]",
       "port": 4443,
       "server": "83.172.143.53",
       "skip-cert-verify": true,
@@ -297,8 +176,98 @@
       "type": "http"
     },
     {
+      "name": "爱尔兰 0096[1020ms]",
+      "port": 443,
+      "server": "18.200.158.139",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http"
+    },
+    {
       "insecure": "1",
-      "name": "法国 0596[1125ms]",
+      "name": "日本 0415[1341ms]",
+      "network": "tcp",
+      "password": "RQBXe4kpsRant_2u1PzdneBOPuCSwUSI",
+      "port": 443,
+      "server": "43.167.208.94",
+      "skip-cert-verify": true,
+      "sni": "43.167.208.94",
+      "tls": false,
+      "type": "hysteria2",
+      "udp": true
+    },
+    {
+      "allowInsecure": "1",
+      "client-fingerprint": "firefox",
+      "host": "tgmansion.site",
+      "name": "美国 1758[1348ms]",
+      "network": "ws",
+      "packet-encoding": "none",
+      "port": 443,
+      "server": "177.3.208.65",
+      "skip-cert-verify": true,
+      "sni": "tgmansion.site",
+      "tls": true,
+      "type": "vless",
+      "udp": true,
+      "uuid": "4f34bc04-479c-49ba-91a8-6bb9ed15031c",
+      "ws-opts": {
+        "headers": {
+          "Host": "tgmansion.site"
+        },
+        "path": "/vless-il"
+      }
+    },
+    {
+      "cipher": "chacha20-ietf-poly1305",
+      "name": "新加坡 0045[1488ms]",
+      "network": "tcp",
+      "password": "2db985f6-21bf-40c2-a4f1-4ce2cf90b1c2",
+      "port": 8443,
+      "server": "13.229.204.74",
+      "skip-cert-verify": false,
+      "tls": false,
+      "type": "ss",
+      "udp": true
+    },
+    {
+      "name": "美国 4776[1560ms]",
+      "password": "https://xship.top",
+      "port": 443,
+      "server": "starlink-ft.251313.xyz",
+      "skip-cert-verify": true,
+      "sni": "xship.top",
+      "type": "hysteria2",
+      "udp": true
+    },
+    {
+      "allowInsecure": "0",
+      "alpn": [
+        "h2",
+        "http/1.1"
+      ],
+      "client-fingerprint": "chrome",
+      "encryption": "none",
+      "insecure": "0",
+      "mode": "stream-up",
+      "name": "美国 2100[1849ms]",
+      "network": "xhttp",
+      "port": 443,
+      "server": "1579e6d9-6b57-4fb1-b080-9c9a6da46ae5.fly.dev",
+      "skip-cert-verify": false,
+      "sni": "1579e6d9-6b57-4fb1-b080-9c9a6da46ae5.fly.dev",
+      "tls": true,
+      "type": "vless",
+      "udp": true,
+      "uuid": "9fa2fae0-141a-b983-ef0e-b3d5633f9592",
+      "xhttp-opts": {
+        "mode": "stream-up",
+        "path": "/xhttp-siz10/stream-up/9fa2fae0-141a-b983-ef0e-b3d5633f9592"
+      }
+    },
+    {
+      "insecure": "1",
+      "name": "法国 0567[1927ms]",
       "network": "tcp",
       "password": "gf1:gfhysteria2024",
       "port": 443,
@@ -310,43 +279,18 @@
       "udp": true
     },
     {
-      "name": "荷兰 1144[1185ms]",
-      "port": 443,
-      "server": "185.238.168.20",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http"
-    },
-    {
       "client-fingerprint": "chrome",
-      "encryption": "none",
-      "host": "free-server.techsonic.dev",
-      "name": "英国 0469[1425ms]",
-      "network": "ws",
-      "port": 2096,
-      "server": "91.193.58.108",
-      "skip-cert-verify": false,
-      "sni": "free-server.techsonic.dev",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2",
-      "ws-opts": {
-        "headers": {
-          "Host": "free-server.techsonic.dev"
-        },
-        "path": "/free-server.techsonic.dev"
-      }
-    },
-    {
-      "name": "未知 4374[1975ms]",
+      "headerType": "none",
+      "host": "api.w2m.ink",
+      "name": "未知 1970[1965ms]",
       "network": "ws",
       "port": 443,
       "server": "api.w2m.ink",
-      "skip-cert-verify": true,
+      "skip-cert-verify": false,
       "sni": "api.w2m.ink",
       "tls": true,
       "type": "vless",
+      "udp": true,
       "uuid": "8344360f-0349-4784-a19f-33fd92e89389",
       "ws-opts": {
         "headers": {
@@ -360,27 +304,24 @@
     {
       "name": "🚀 所有节点",
       "proxies": [
-        "日本 0656[316ms]",
-        "香港 0529[377ms]",
+        "香港 0447[322ms]",
+        "香港 0525[368ms]",
         "印度尼西亚 0021[393ms]",
-        "印度尼西亚 0020[399ms]",
-        "塞舌尔 0045[430ms]",
-        "未知 0507[617ms]",
-        "美国 1868[785ms]",
-        "美国 1326[850ms]",
-        "中国 0281[851ms]",
-        "美国 1334[896ms]",
-        "德国 1180[921ms]",
-        "德国 1190[941ms]",
-        "香港 0421[986ms]",
-        "以色列 0034[991ms]",
-        "中国 0285[1001ms]",
-        "印度尼西亚 0022[1008ms]",
-        "法国 0654[1049ms]",
-        "法国 0596[1125ms]",
-        "荷兰 1144[1185ms]",
-        "英国 0469[1425ms]",
-        "未知 4374[1975ms]"
+        "印度尼西亚 0022[472ms]",
+        "香港 0528[547ms]",
+        "未知 0694[565ms]",
+        "香港 0393[685ms]",
+        "芬兰 0368[715ms]",
+        "日本 0654[764ms]",
+        "法国 0637[1018ms]",
+        "爱尔兰 0096[1020ms]",
+        "日本 0415[1341ms]",
+        "美国 1758[1348ms]",
+        "新加坡 0045[1488ms]",
+        "美国 4776[1560ms]",
+        "美国 2100[1849ms]",
+        "法国 0567[1927ms]",
+        "未知 1970[1965ms]"
       ],
       "type": "select"
     }
