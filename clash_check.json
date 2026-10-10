@@ -55,33 +55,7 @@
   "mode": "rule",
   "proxies": [
     {
-      "name": "香港 0625[321ms]",
-      "port": 443,
-      "server": "fan.240104.xyz",
-      "skip-cert-verify": true,
-      "sni": "fan.240104.xyz",
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "name": "印度尼西亚 0033[396ms]",
-      "password": "freeuser1",
-      "port": 9251,
-      "server": "cr2-id.freeconnect.link",
-      "tls": true,
-      "type": "http",
-      "username": "freeuser1"
-    },
-    {
-      "name": "印度尼西亚 0032[400ms]",
-      "port": 443,
-      "server": "178.248.73.58",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "name": "印度尼西亚 0034[417ms]",
+      "name": "印度尼西亚 0031[385ms]",
       "password": "freeuser1",
       "port": 9251,
       "server": "cr1-id.freeconnect.link",
@@ -90,7 +64,16 @@
       "username": "freeuser1"
     },
     {
-      "name": "印度尼西亚 0029[464ms]",
+      "name": "印度尼西亚 0032[393ms]",
+      "password": "freeuser1",
+      "port": 9251,
+      "server": "cr2-id.freeconnect.link",
+      "tls": true,
+      "type": "http",
+      "username": "freeuser1"
+    },
+    {
+      "name": "印度尼西亚 0028[480ms]",
       "password": "freeuser1",
       "port": 9251,
       "server": "sr2-id.freeconnect.link",
@@ -99,85 +82,20 @@
       "username": "freeuser1"
     },
     {
-      "name": "美国 5725[590ms]",
-      "password": "KiUXpE53Xd",
-      "port": 39493,
-      "server": "www.7770031.xyz",
-      "skip-cert-verify": true,
-      "sni": "www.7770031.xyz",
-      "type": "trojan",
-      "udp": true
-    },
-    {
-      "name": "未知 4444[614ms]",
-      "network": "ws",
-      "port": 443,
-      "server": "k7vx2m.cyou",
-      "skip-cert-verify": true,
-      "sni": "k7vx2m.cyou",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "c233cd08-884c-4170-a790-0e5aa3efa50f",
-      "ws-opts": {
-        "path": "/"
-      }
-    },
-    {
-      "name": "未知 4409[695ms]",
-      "port": 443,
-      "server": "172.64.68.89",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "name": "未知 4407[758ms]",
-      "port": 443,
-      "server": "172.64.69.89",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "client-fingerprint": "chrome",
-      "encryption": "none",
-      "flow": "xtls-rprx-vision",
-      "name": "美国 1861[885ms]",
+      "alterId": 2,
+      "cipher": "auto",
+      "name": "中国 0358[549ms]",
       "network": "tcp",
-      "port": 443,
-      "reality-opts": {
-        "public-key": "MQrvfivvEfLGzDee7h0j5uC-DwaD_38_NXOY9-NhqxM"
-      },
-      "server": "swidenlanzerotte.live",
+      "port": 11238,
+      "server": "silversbgfgov.vip38.wogbcnmnagfwgov.com",
       "skip-cert-verify": false,
-      "sni": "swidenlanzerotte.live",
-      "tls": true,
-      "type": "vless",
+      "tls": false,
+      "type": "vmess",
       "udp": true,
-      "uuid": "56de13ac-086e-4789-8e1e-1bf2bd90216b"
+      "uuid": "605956ee-544d-308e-8b90-51e67c6ea8da"
     },
     {
-      "client-fingerprint": "chrome",
-      "name": "未知 4443[891ms]",
-      "network": "ws",
-      "port": 2096,
-      "server": "miki.moumou207.dpdns.org",
-      "skip-cert-verify": true,
-      "sni": "mIKi.MoumOu207.dPdNs.Org",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "cb79ddc4-ec21-4077-a2c9-f5035d680a10",
-      "ws-opts": {
-        "headers": {
-          "Host": "mIKi.MoumOu207.dPdNs.Org"
-        },
-        "path": "/eyJqdW5rIjoiblNzWDl5VnRkRmF5R05mIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcm94eWlwIiwicGFuZWxJUHMiOlsiNDUuOC4xMTQuOTkiXX0="
-      }
-    },
-    {
-      "name": "荷兰 1400[1026ms]",
+      "name": "荷兰 1481[986ms]",
       "port": 443,
       "server": "185.93.106.214",
       "skip-cert-verify": true,
@@ -185,7 +103,7 @@
       "type": "http"
     },
     {
-      "name": "美国 5693[1121ms]",
+      "name": "美国 6068[1052ms]",
       "port": 443,
       "server": "170.199.233.89",
       "skip-cert-verify": true,
@@ -193,7 +111,45 @@
       "type": "http"
     },
     {
-      "name": "瑞典 0290[1368ms]",
+      "allowInsecure": "0",
+      "alpn": [
+        "http/1.1"
+      ],
+      "client-fingerprint": "chrome",
+      "host": "www.trusteeforward.com",
+      "insecure": "0",
+      "name": "未知 4339[1079ms]",
+      "network": "ws",
+      "password": "humanity",
+      "port": 443,
+      "server": "172.66.40.99",
+      "skip-cert-verify": false,
+      "sni": "www.trusteeforward.com",
+      "tls": true,
+      "type": "trojan",
+      "udp": true,
+      "ws-opts": {
+        "headers": {
+          "Host": "www.trusteeforward.com"
+        },
+        "path": "/assignment"
+      }
+    },
+    {
+      "alterId": 2,
+      "cipher": "auto",
+      "name": "中国 0293[1289ms]",
+      "network": "tcp",
+      "port": 11244,
+      "server": "silversbgfgov.vip44.wogbcnmnagfwgov.com",
+      "skip-cert-verify": false,
+      "tls": false,
+      "type": "vmess",
+      "udp": true,
+      "uuid": "605956ee-544d-308e-8b90-51e67c6ea8da"
+    },
+    {
+      "name": "瑞典 0306[1297ms]",
       "port": 8443,
       "server": "77.221.136.60",
       "skip-cert-verify": true,
@@ -203,10 +159,10 @@
     {
       "alterId": 2,
       "cipher": "auto",
-      "name": "中国 0305[1792ms]",
+      "name": "中国 0357[1873ms]",
       "network": "tcp",
-      "port": 11244,
-      "server": "silversbgfgov.vip44.wogbcnmnagfwgov.com",
+      "port": 11260,
+      "server": "goldcnmltyljgfwgov.vip60.wogcnmnnagfwgov.com",
       "skip-cert-verify": false,
       "tls": false,
       "type": "vmess",
@@ -218,21 +174,16 @@
     {
       "name": "🚀 所有节点",
       "proxies": [
-        "香港 0625[321ms]",
-        "印度尼西亚 0033[396ms]",
-        "印度尼西亚 0032[400ms]",
-        "印度尼西亚 0034[417ms]",
-        "印度尼西亚 0029[464ms]",
-        "美国 5725[590ms]",
-        "未知 4444[614ms]",
-        "未知 4409[695ms]",
-        "未知 4407[758ms]",
-        "美国 1861[885ms]",
-        "未知 4443[891ms]",
-        "荷兰 1400[1026ms]",
-        "美国 5693[1121ms]",
-        "瑞典 0290[1368ms]",
-        "中国 0305[1792ms]"
+        "印度尼西亚 0031[385ms]",
+        "印度尼西亚 0032[393ms]",
+        "印度尼西亚 0028[480ms]",
+        "中国 0358[549ms]",
+        "荷兰 1481[986ms]",
+        "美国 6068[1052ms]",
+        "未知 4339[1079ms]",
+        "中国 0293[1289ms]",
+        "瑞典 0306[1297ms]",
+        "中国 0357[1873ms]"
       ],
       "type": "select"
     }
