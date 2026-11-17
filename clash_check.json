@@ -55,7 +55,7 @@
   "mode": "rule",
   "proxies": [
     {
-      "name": "香港 0242[373ms]",
+      "name": "香港 0242",
       "port": 443,
       "server": "fan.240104.xyz",
       "skip-cert-verify": true,
@@ -74,7 +74,7 @@
           "/"
         ]
       },
-      "name": "美国 1130[384ms]",
+      "name": "★ 美国 1130[住宅]",
       "network": "http",
       "port": 44441,
       "server": "192.220.47.85",
@@ -86,14 +86,14 @@
     {
       "alterId": 0,
       "cipher": "auto",
-      "name": "美国 1145[416ms]",
+      "name": "美国 1145",
       "port": 42022,
       "server": "49.51.179.155",
       "type": "vmess",
       "uuid": "8ce7802c-019c-4568-f6ac-89f13c6d545d"
     },
     {
-      "name": "越南 0015[436ms]",
+      "name": "★ 越南 0015[住宅]",
       "port": 8443,
       "server": "14.225.71.128",
       "skip-cert-verify": true,
@@ -112,7 +112,7 @@
           "/"
         ]
       },
-      "name": "美国 1118[450ms]",
+      "name": "美国 1118",
       "network": "http",
       "port": 9983,
       "server": "104.225.148.201",
@@ -130,7 +130,7 @@
           "/ABCDE"
         ]
       },
-      "name": "美国 1119[452ms]",
+      "name": "美国 1119",
       "network": "http",
       "port": 52402,
       "server": "104.225.148.201",
@@ -177,7 +177,7 @@
     },
     {
       "cipher": "aes-256-gcm",
-      "name": "意大利 0011[596ms]",
+      "name": "意大利 0011",
       "network": "tcp",
       "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
       "port": 19999,
@@ -189,7 +189,7 @@
     },
     {
       "cipher": "aes-256-gcm",
-      "name": "意大利 0010[597ms]",
+      "name": "意大利 0010",
       "network": "tcp",
       "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
       "port": 19999,
@@ -200,7 +200,7 @@
       "udp": true
     },
     {
-      "name": "英国 0188[600ms]",
+      "name": "★ 英国 0188[商业]",
       "password": "Ks4Iab43",
       "port": 42000,
       "server": "82.47.152.151",
@@ -208,7 +208,7 @@
       "username": "userLjVB"
     },
     {
-      "name": "加拿大 0069[635ms]",
+      "name": "加拿大 0069",
       "password": "KT5hiU8o",
       "port": 42000,
       "server": "104.234.70.82",
@@ -216,7 +216,7 @@
       "username": "rnt2L4XO"
     },
     {
-      "name": "美国 1137[646ms]",
+      "name": "★ 美国 1137[商业]",
       "password": "mpbK00Pl",
       "port": 42000,
       "server": "192.204.15.192",
@@ -232,7 +232,7 @@
           "/"
         ]
       },
-      "name": "美国 1117[670ms]",
+      "name": "美国 1117",
       "network": "http",
       "port": 44441,
       "server": "104.225.148.201",
@@ -245,7 +245,7 @@
       "cipher": "chacha20-ietf",
       "country": "🇦🇱AL",
       "delay": 740,
-      "name": "荷兰 0275[683ms]",
+      "name": "荷兰 0275",
       "obfs": "tls1.2_ticket_auth",
       "password": "dongtaiwang.com",
       "port": 33336,
@@ -255,7 +255,7 @@
       "x-toolall-mihomo": true
     },
     {
-      "name": "法国 0170[835ms]",
+      "name": "法国 0170",
       "password": "None",
       "port": 6103,
       "server": "87.98.174.157",
@@ -267,7 +267,7 @@
       "x-toolall-mihomo": true
     },
     {
-      "name": "未知 0641[861ms]",
+      "name": "★ 未知 0641[商业]",
       "port": 443,
       "server": "172.64.69.89",
       "skip-cert-verify": true,
@@ -275,7 +275,7 @@
       "type": "http"
     },
     {
-      "name": "美国 1134[886ms]",
+      "name": "美国 1134",
       "port": 8443,
       "server": "44.248.167.117",
       "skip-cert-verify": true,
@@ -285,7 +285,7 @@
       "x-toolall-mihomo": true
     },
     {
-      "name": "荷兰 0373[887ms]",
+      "name": "荷兰 0373",
       "port": 19362,
       "server": "51.159.225.197",
       "skip-cert-verify": true,
@@ -293,7 +293,7 @@
       "type": "http"
     },
     {
-      "name": "俄罗斯联邦 0139[1015ms]",
+      "name": "俄罗斯联邦 0139",
       "password": "null",
       "port": 8443,
       "server": "87.242.85.187",
@@ -305,7 +305,7 @@
       "username": "null"
     },
     {
-      "name": "荷兰 0378[1038ms]",
+      "name": "荷兰 0378",
       "port": 9002,
       "server": "84.17.47.147",
       "skip-cert-verify": true,
@@ -313,7 +313,7 @@
       "type": "http"
     },
     {
-      "name": "荷兰 0266[1061ms]",
+      "name": "荷兰 0266",
       "password": "None",
       "port": 9002,
       "server": "84.17.47.126",
@@ -325,7 +325,7 @@
       "x-toolall-mihomo": true
     },
     {
-      "name": "荷兰 0268[1066ms]",
+      "name": "荷兰 0268",
       "port": 9002,
       "server": "84.17.47.148",
       "skip-cert-verify": true,
@@ -336,7 +336,7 @@
       "x-toolall-mihomo": true
     },
     {
-      "name": "加拿大 0070[1076ms]",
+      "name": "加拿大 0070",
       "port": 9443,
       "server": "198.44.142.27",
       "skip-cert-verify": true,
@@ -347,7 +347,7 @@
       "x-toolall-mihomo": true
     },
     {
-      "name": "瑞士 0039[1081ms]",
+      "name": "瑞士 0039",
       "password": "None",
       "port": 9443,
       "server": "37.120.213.210",
@@ -358,7 +358,7 @@
       "udp": true
     },
     {
-      "name": "挪威 0003[1087ms]",
+      "name": "挪威 0003",
       "port": 9443,
       "server": "146.70.170.210",
       "skip-cert-verify": true,
@@ -368,7 +368,7 @@
       "udp": true
     },
     {
-      "name": "荷兰 0374[1088ms]",
+      "name": "荷兰 0374",
       "port": 9002,
       "server": "84.17.47.149",
       "skip-cert-verify": true,
@@ -378,7 +378,7 @@
     {
       "client-fingerprint": "chrome",
       "encryption": "none",
-      "name": "美国 0082[1088ms]",
+      "name": "美国 0082",
       "network": "tcp",
       "port": 443,
       "reality-opts": {
@@ -395,7 +395,7 @@
       "uuid": "c82031be-e90f-4b15-ab4f-7ccef236d3ca"
     },
     {
-      "name": "荷兰 0264[1090ms]",
+      "name": "荷兰 0264",
       "password": "null",
       "port": 9002,
       "server": "84.17.47.126",
@@ -408,7 +408,7 @@
       "x-toolall-mihomo": true
     },
     {
-      "name": "荷兰 0376[1093ms]",
+      "name": "荷兰 0376",
       "port": 9002,
       "server": "84.17.47.150",
       "skip-cert-verify": true,
@@ -416,7 +416,7 @@
       "type": "http"
     },
     {
-      "name": "未知 0643[1113ms]",
+      "name": "★ 未知 0643[商业]",
       "password": "null",
       "port": 443,
       "server": "172.64.68.89",
@@ -429,7 +429,7 @@
       "client-fingerprint": "chrome",
       "encryption": "mlkem768x25519plus.native.0rtt.9ifdcMCsJ-bMvc9ealWuadeq1_iASTHy8hetUix-nTM",
       "flow": "xtls-rprx-vision",
-      "name": "芬兰 0098[1120ms]",
+      "name": "芬兰 0098",
       "network": "tcp",
       "port": 29086,
       "server": "sv.fn.clients.fimrel.ir",
@@ -441,7 +441,7 @@
       "xudp": true
     },
     {
-      "name": "美国 1136[1130ms]",
+      "name": "★ 美国 1136[商业]",
       "port": 8090,
       "server": "66.153.187.90",
       "skip-cert-verify": true,
@@ -450,7 +450,7 @@
       "type": "http"
     },
     {
-      "name": "荷兰 0273[1141ms]",
+      "name": "荷兰 0273",
       "port": 9002,
       "server": "84.17.47.146",
       "skip-cert-verify": true,
@@ -463,7 +463,7 @@
     {
       "alterId": 64,
       "cipher": "auto",
-      "name": "美国 0443[1147ms]",
+      "name": "美国 0443",
       "network": "ws",
       "port": 30004,
       "server": "192.74.236.148",
@@ -481,7 +481,7 @@
       }
     },
     {
-      "name": "荷兰 0265[1151ms]",
+      "name": "荷兰 0265",
       "password": "null",
       "port": 9002,
       "server": "84.17.47.147",
@@ -492,7 +492,7 @@
       "username": "null"
     },
     {
-      "name": "荷兰 0262[1165ms]",
+      "name": "荷兰 0262",
       "password": "None",
       "port": 9002,
       "server": "84.17.47.147",
@@ -504,7 +504,7 @@
       "x-toolall-mihomo": true
     },
     {
-      "name": "荷兰 0261[1180ms]",
+      "name": "荷兰 0261",
       "port": 9002,
       "server": "84.17.47.126",
       "skip-cert-verify": true,
@@ -515,7 +515,7 @@
       "x-toolall-mihomo": true
     },
     {
-      "name": "荷兰 0274[1181ms]",
+      "name": "荷兰 0274",
       "port": 9002,
       "server": "84.17.47.125",
       "skip-cert-verify": true,
@@ -525,7 +525,7 @@
       "x-toolall-mihomo": true
     },
     {
-      "name": "德国 0602[1185ms]",
+      "name": "德国 0602",
       "port": 9002,
       "server": "158.173.154.5",
       "skip-cert-verify": true,
@@ -533,7 +533,7 @@
       "type": "http"
     },
     {
-      "name": "德国 0616[1186ms]",
+      "name": "德国 0616",
       "password": "None",
       "port": 9002,
       "server": "158.173.154.2",
@@ -545,7 +545,7 @@
       "x-toolall-mihomo": true
     },
     {
-      "name": "荷兰 0377[1200ms]",
+      "name": "荷兰 0377",
       "port": 23856,
       "server": "51.159.225.196",
       "skip-cert-verify": true,
@@ -553,7 +553,7 @@
       "type": "http"
     },
     {
-      "name": "荷兰 0277[1205ms]",
+      "name": "荷兰 0277",
       "password": "freeuser1",
       "port": 9251,
       "server": "nl205.freeconnect.link",
@@ -563,7 +563,7 @@
       "username": "freeuser1"
     },
     {
-      "name": "荷兰 0371[1215ms]",
+      "name": "荷兰 0371",
       "password": "null",
       "port": 23856,
       "server": "51.159.225.196",
@@ -573,7 +573,7 @@
       "username": "null"
     },
     {
-      "name": "德国 0615[1224ms]",
+      "name": "德国 0615",
       "port": 9002,
       "server": "158.173.154.2",
       "skip-cert-verify": true,
@@ -584,7 +584,7 @@
       "x-toolall-mihomo": true
     },
     {
-      "name": "俄罗斯联邦 0127[1234ms]",
+      "name": "俄罗斯联邦 0127",
       "password": "null",
       "port": 1446,
       "server": "46.29.166.134",
@@ -607,7 +607,7 @@
       "x-toolall-mihomo": true
     },
     {
-      "name": "俄罗斯联邦 0119[1242ms]",
+      "name": "俄罗斯联邦 0119",
       "port": 1446,
       "server": "46.29.166.134",
       "skip-cert-verify": true,
@@ -618,7 +618,7 @@
       "x-toolall-mihomo": true
     },
     {
-      "name": "荷兰 0372[1366ms]",
+      "name": "荷兰 0372",
       "port": 9002,
       "server": "84.17.47.123",
       "skip-cert-verify": true,
@@ -626,7 +626,7 @@
       "type": "http"
     },
     {
-      "name": "荷兰 0269[1373ms]",
+      "name": "荷兰 0269",
       "password": "null",
       "port": 9002,
       "server": "84.17.47.146",
@@ -636,7 +636,7 @@
       "username": "null"
     },
     {
-      "name": "荷兰 0271[1375ms]",
+      "name": "荷兰 0271",
       "password": "None",
       "port": 9002,
       "server": "84.17.47.125",
@@ -648,7 +648,7 @@
       "x-toolall-mihomo": true
     },
     {
-      "name": "荷兰 0272[1416ms]",
+      "name": "荷兰 0272",
       "port": 9002,
       "server": "84.17.47.124",
       "skip-cert-verify": true,
@@ -661,7 +661,7 @@
       "allowInsecure": "1",
       "headerType": "none",
       "insecure": "1",
-      "name": "日本 0344[1422ms]",
+      "name": "日本 0344",
       "network": "tcp",
       "password": "d9064589-74af-432a-9390-5d8a9da281bf",
       "port": 20051,
@@ -673,7 +673,7 @@
       "udp": true
     },
     {
-      "name": "荷兰 0263[1425ms]",
+      "name": "荷兰 0263",
       "password": "None",
       "port": 9002,
       "server": "84.17.47.149",
@@ -684,7 +684,7 @@
       "x-toolall-mihomo": true
     },
     {
-      "name": "荷兰 0260[1480ms]",
+      "name": "荷兰 0260",
       "password": "None",
       "port": 9002,
       "server": "84.17.47.123",
@@ -695,7 +695,7 @@
       "x-toolall-mihomo": true
     },
     {
-      "name": "未知 0642[1495ms]",
+      "name": "★ 未知 0642[商业]",
       "password": "null",
       "port": 443,
       "server": "172.64.69.89",
@@ -711,7 +711,7 @@
       "encryption": "none",
       "flow": "xtls-rprx-vision",
       "headerType": "none",
-      "name": "俄罗斯联邦 0077[1541ms]",
+      "name": "俄罗斯联邦 0077",
       "network": "tcp",
       "port": 443,
       "reality-opts": {
@@ -729,7 +729,7 @@
     },
     {
       "cipher": "aes-256-gcm",
-      "name": "意大利 0019[1698ms]",
+      "name": "意大利 0019",
       "network": "tcp",
       "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
       "port": 19999,
@@ -740,7 +740,7 @@
       "udp": true
     },
     {
-      "name": "西班牙 0050[1719ms]",
+      "name": "★ 西班牙 0050[住宅]",
       "password": "null",
       "port": 8090,
       "server": "80.24.34.107",
@@ -751,7 +751,7 @@
     },
     {
       "cipher": "aes-256-gcm",
-      "name": "意大利 0016[1814ms]",
+      "name": "意大利 0016",
       "network": "tcp",
       "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
       "port": 19999,
@@ -773,7 +773,7 @@
     },
     {
       "cipher": "aes-256-gcm",
-      "name": "意大利 0017[1887ms]",
+      "name": "意大利 0017",
       "network": "tcp",
       "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
       "port": 19999,
@@ -784,7 +784,7 @@
       "udp": true
     },
     {
-      "name": "巴西 0021[1908ms]",
+      "name": "★ 巴西 0021[商业]",
       "password": "0mvrt5jb",
       "port": 62000,
       "server": "191.7.129.133",
@@ -792,7 +792,7 @@
       "username": "uwrgfkwg"
     },
     {
-      "name": "未知 0644[1930ms]",
+      "name": "★ 未知 0644[商业]",
       "password": "None",
       "port": 443,
       "server": "172.64.68.89",
@@ -805,70 +805,70 @@
     {
       "name": "🚀 所有节点",
       "proxies": [
-        "香港 0242[373ms]",
-        "美国 1130[384ms]",
-        "美国 1145[416ms]",
-        "越南 0015[436ms]",
-        "美国 1118[450ms]",
-        "美国 1119[452ms]",
+        "香港 0242",
+        "★ 美国 1130[住宅]",
+        "美国 1145",
+        "★ 越南 0015[住宅]",
+        "美国 1118",
+        "美国 1119",
         "越南 0014[476ms]",
         "未知 0675[586ms]",
-        "意大利 0011[596ms]",
-        "意大利 0010[597ms]",
-        "英国 0188[600ms]",
-        "加拿大 0069[635ms]",
-        "美国 1137[646ms]",
-        "美国 1117[670ms]",
-        "荷兰 0275[683ms]",
-        "法国 0170[835ms]",
-        "未知 0641[861ms]",
-        "美国 1134[886ms]",
-        "荷兰 0373[887ms]",
-        "俄罗斯联邦 0139[1015ms]",
-        "荷兰 0378[1038ms]",
-        "荷兰 0266[1061ms]",
-        "荷兰 0268[1066ms]",
-        "加拿大 0070[1076ms]",
-        "瑞士 0039[1081ms]",
-        "挪威 0003[1087ms]",
-        "荷兰 0374[1088ms]",
-        "美国 0082[1088ms]",
-        "荷兰 0264[1090ms]",
-        "荷兰 0376[1093ms]",
-        "未知 0643[1113ms]",
-        "芬兰 0098[1120ms]",
-        "美国 1136[1130ms]",
-        "荷兰 0273[1141ms]",
-        "美国 0443[1147ms]",
-        "荷兰 0265[1151ms]",
-        "荷兰 0262[1165ms]",
-        "荷兰 0261[1180ms]",
-        "荷兰 0274[1181ms]",
-        "德国 0602[1185ms]",
-        "德国 0616[1186ms]",
-        "荷兰 0377[1200ms]",
-        "荷兰 0277[1205ms]",
-        "荷兰 0371[1215ms]",
-        "德国 0615[1224ms]",
-        "俄罗斯联邦 0127[1234ms]",
+        "意大利 0011",
+        "意大利 0010",
+        "★ 英国 0188[商业]",
+        "加拿大 0069",
+        "★ 美国 1137[商业]",
+        "美国 1117",
+        "荷兰 0275",
+        "法国 0170",
+        "★ 未知 0641[商业]",
+        "美国 1134",
+        "荷兰 0373",
+        "俄罗斯联邦 0139",
+        "荷兰 0378",
+        "荷兰 0266",
+        "荷兰 0268",
+        "加拿大 0070",
+        "瑞士 0039",
+        "挪威 0003",
+        "荷兰 0374",
+        "美国 0082",
+        "荷兰 0264",
+        "荷兰 0376",
+        "★ 未知 0643[商业]",
+        "芬兰 0098",
+        "★ 美国 1136[商业]",
+        "荷兰 0273",
+        "美国 0443",
+        "荷兰 0265",
+        "荷兰 0262",
+        "荷兰 0261",
+        "荷兰 0274",
+        "德国 0602",
+        "德国 0616",
+        "荷兰 0377",
+        "荷兰 0277",
+        "荷兰 0371",
+        "德国 0615",
+        "俄罗斯联邦 0127",
         "法国 0159[1236ms]",
-        "俄罗斯联邦 0119[1242ms]",
-        "荷兰 0372[1366ms]",
-        "荷兰 0269[1373ms]",
-        "荷兰 0271[1375ms]",
-        "荷兰 0272[1416ms]",
-        "日本 0344[1422ms]",
-        "荷兰 0263[1425ms]",
-        "荷兰 0260[1480ms]",
-        "未知 0642[1495ms]",
-        "俄罗斯联邦 0077[1541ms]",
-        "意大利 0019[1698ms]",
-        "西班牙 0050[1719ms]",
-        "意大利 0016[1814ms]",
+        "俄罗斯联邦 0119",
+        "荷兰 0372",
+        "荷兰 0269",
+        "荷兰 0271",
+        "荷兰 0272",
+        "日本 0344",
+        "荷兰 0263",
+        "荷兰 0260",
+        "★ 未知 0642[商业]",
+        "俄罗斯联邦 0077",
+        "意大利 0019",
+        "★ 西班牙 0050[住宅]",
+        "意大利 0016",
         "美国 0313[1818ms]",
-        "意大利 0017[1887ms]",
-        "巴西 0021[1908ms]",
-        "未知 0644[1930ms]"
+        "意大利 0017",
+        "★ 巴西 0021[商业]",
+        "★ 未知 0644[商业]"
       ],
       "type": "select"
     }
