@@ -55,100 +55,44 @@
   "mode": "rule",
   "proxies": [
     {
-      "name": "★ 台湾 0136[移动]",
-      "password": "2902c46c8493",
-      "port": 443,
-      "server": "rtifgjdr.df6h451rh.xin",
-      "skip-cert-verify": true,
-      "sni": "docs.microsoft.com",
-      "type": "anytls",
-      "udp": true
-    },
-    {
+      "allowInsecure": "1",
+      "alpn": [
+        "h2",
+        "http/1.1"
+      ],
       "client-fingerprint": "chrome",
-      "name": "★ 台湾 0133[商业]",
-      "password": "0324fbc29561",
-      "port": 443,
-      "server": "a54ge.df6h451rh.xin",
-      "skip-cert-verify": true,
-      "sni": "docs.microsoft.com",
-      "type": "anytls",
-      "udp": true
-    },
-    {
-      "name": "★ 日本 0335[住宅]",
-      "password": "",
-      "port": 443,
-      "server": "fan.571589.xyz",
-      "skip-cert-verify": true,
-      "sni": "fan.571589.xyz",
-      "tls": true,
-      "type": "http",
-      "udp": true,
-      "username": "",
-      "x-toolall-mihomo": true
-    },
-    {
-      "name": "★ 韩国 0013[住宅]",
+      "name": "新加坡 0025[209ms]",
       "network": "tcp",
-      "port": 1080,
-      "server": "59.11.209.162",
-      "skip-cert-verify": false,
-      "tls": false,
-      "type": "socks5",
-      "udp": true
-    },
-    {
-      "name": "★ 日本 0337[商业]",
-      "password": "exaxgqkKkd0TAMrCxeonWg==",
-      "port": 443,
-      "server": "jpgmo102-cdn-route.couldflare-cdn.com",
-      "tls": true,
-      "type": "http",
-      "username": "mrwdfNTD8M79LCukCieldrqZWqs="
-    },
-    {
-      "name": "香港 0252",
-      "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
-      "port": 30178,
-      "server": "zzfxgcp.mateflora.com",
+      "port": 119,
+      "server": "172.236.145.200",
       "skip-cert-verify": true,
-      "sni": "usbg1hkzf.hikigo.com",
+      "sni": "whatsapp.net",
       "tls": true,
-      "type": "trojan",
-      "udp": true
+      "type": "vless",
+      "udp": true,
+      "uuid": "e084837e-c738-4ce5-b691-cf4637356cd6"
     },
     {
-      "name": "香港 0244",
-      "password": "111",
-      "port": 11211,
-      "server": "47.243.173.50",
+      "name": "泰国 0022[494ms]",
+      "password": "VAwyJQX0iKMJiyCw5UVK9wGH",
+      "port": 42000,
+      "server": "103.14.164.202",
+      "skip-cert-verify": true,
       "type": "socks5",
-      "username": "111"
+      "username": "route164JIa2CBPxfy"
     },
     {
-      "name": "★ 泰国 0019[商业]",
+      "name": "泰国 0023[524ms]",
       "password": "VAwyJQX0iKMJiyCw5UVK9wGH",
       "port": 42000,
       "server": "103.14.164.30",
+      "skip-cert-verify": true,
       "type": "socks5",
       "username": "route164JIa2CBPxfy"
     },
     {
       "cipher": "aes-256-gcm",
-      "name": "意大利 0016",
-      "network": "tcp",
-      "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
-      "port": 19999,
-      "server": "202.50.253.72",
-      "skip-cert-verify": false,
-      "tls": false,
-      "type": "ss",
-      "udp": true
-    },
-    {
-      "cipher": "aes-256-gcm",
-      "name": "意大利 0018",
+      "name": "意大利 0017[551ms]",
       "network": "tcp",
       "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
       "port": 19999,
@@ -159,57 +103,52 @@
       "udp": true
     },
     {
-      "client-fingerprint": "chrome",
-      "name": "★ 香港 0256[商业]",
-      "password": "2902c46c8493",
-      "port": 443,
-      "server": "ibsdsf.df6h451rh.xin",
-      "skip-cert-verify": true,
-      "sni": "docs.microsoft.com",
-      "type": "anytls",
-      "udp": true
-    },
-    {
-      "name": "★ 美国 1118[商业]",
-      "password": "mpbK00Pl",
-      "port": 42000,
-      "server": "192.204.15.192",
-      "type": "socks5",
-      "username": "X3s3JteD"
-    },
-    {
-      "name": "香港 0265",
-      "password": "87f368b4-2025-46f0-8492-8f749bb97a8b",
-      "port": 443,
-      "server": "theme.lovehk.xyz",
-      "skip-cert-verify": true,
-      "sni": "theme.lovehk.xyz",
-      "type": "anytls",
-      "udp": true
-    },
-    {
-      "name": "香港 0260",
-      "password": "fa851496-025b-4935-b7e5-83d5f210edc4",
-      "port": 443,
-      "server": "theme.lovehk.xyz",
-      "skip-cert-verify": true,
-      "sni": "theme.lovehk.xyz",
-      "type": "anytls",
-      "udp": true
-    },
-    {
-      "name": "香港 0259",
-      "password": "1ab804ed-fea9-4374-8d11-e6866495d8d0",
-      "port": 443,
-      "server": "theme.lovehk.xyz",
-      "skip-cert-verify": true,
-      "sni": "theme.lovehk.xyz",
-      "type": "anytls",
+      "cipher": "aes-256-gcm",
+      "name": "意大利 0016[555ms]",
+      "network": "tcp",
+      "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
+      "port": 19999,
+      "server": "202.50.253.27",
+      "skip-cert-verify": false,
+      "tls": false,
+      "type": "ss",
       "udp": true
     },
     {
       "cipher": "aes-256-gcm",
-      "name": "意大利 0023",
+      "name": "意大利 0015[556ms]",
+      "network": "tcp",
+      "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
+      "port": 19999,
+      "server": "202.50.253.81",
+      "skip-cert-verify": false,
+      "tls": false,
+      "type": "ss",
+      "udp": true
+    },
+    {
+      "cipher": "aes-256-gcm",
+      "name": "俄罗斯联邦 0014[564ms]",
+      "network": "tcp",
+      "password": "5mKjXAGrliIAlYwWDeFzkCEMIgQdFQLe",
+      "port": 18443,
+      "server": "194.87.69.12",
+      "skip-cert-verify": false,
+      "tls": false,
+      "type": "ss",
+      "udp": true
+    },
+    {
+      "name": "美国 0989[633ms]",
+      "password": "mpbK00Pl",
+      "port": 42000,
+      "server": "192.204.15.135",
+      "type": "socks5",
+      "username": "X3s3JteD"
+    },
+    {
+      "cipher": "aes-256-gcm",
+      "name": "意大利 0024[655ms]",
       "network": "tcp",
       "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
       "port": 19999,
@@ -221,19 +160,7 @@
     },
     {
       "cipher": "aes-256-gcm",
-      "name": "意大利 0017",
-      "network": "tcp",
-      "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
-      "port": 19999,
-      "server": "202.50.253.99",
-      "skip-cert-verify": false,
-      "tls": false,
-      "type": "ss",
-      "udp": true
-    },
-    {
-      "cipher": "aes-256-gcm",
-      "name": "意大利 0025",
+      "name": "意大利 0023[655ms]",
       "network": "tcp",
       "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
       "port": 19999,
@@ -245,40 +172,153 @@
     },
     {
       "cipher": "aes-256-gcm",
-      "name": "意大利 0024",
+      "name": "意大利 0018[661ms]",
       "network": "tcp",
       "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
       "port": 19999,
-      "server": "202.50.253.81",
+      "server": "202.50.253.63",
       "skip-cert-verify": false,
       "tls": false,
       "type": "ss",
       "udp": true
     },
     {
-      "name": "美国 1103",
-      "password": "null",
+      "cipher": "aes-256-gcm",
+      "name": "意大利 0020[666ms]",
+      "network": "tcp",
+      "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
+      "port": 19999,
+      "server": "202.50.253.54",
+      "skip-cert-verify": false,
+      "tls": false,
+      "type": "ss",
+      "udp": true
+    },
+    {
+      "cipher": "aes-256-gcm",
+      "name": "意大利 0019[667ms]",
+      "network": "tcp",
+      "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
+      "port": 19999,
+      "server": "202.50.253.18",
+      "skip-cert-verify": false,
+      "tls": false,
+      "type": "ss",
+      "udp": true
+    },
+    {
+      "client-fingerprint": "chrome",
+      "encryption": "none",
+      "flow": "xtls-rprx-vision",
+      "name": "俄罗斯联邦 0001[751ms]",
+      "network": "tcp",
+      "port": 443,
+      "reality-opts": {
+        "public-key": "fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI",
+        "short-id": "db04ce8bdb8900f1"
+      },
+      "server": "185.134.203.106",
+      "skip-cert-verify": false,
+      "sni": "api.vk.me",
+      "tls": true,
+      "type": "vless",
+      "udp": true,
+      "uuid": "3af3f8f0-569f-4dd3-be99-2ef4bfe7867c"
+    },
+    {
+      "name": "美国 1075[765ms]",
+      "password": "None",
       "port": 9002,
-      "server": "138.199.35.220",
+      "server": "138.199.35.216",
       "skip-cert-verify": true,
       "tls": true,
       "type": "http",
       "username": "null"
     },
     {
-      "name": "美国 1106",
-      "password": "",
+      "name": "美国 1077[772ms]",
+      "password": "null",
       "port": 9002,
-      "server": "138.199.35.201",
+      "server": "138.199.35.196",
       "skip-cert-verify": true,
       "tls": true,
       "type": "http",
-      "udp": true,
-      "username": "",
-      "x-toolall-mihomo": true
+      "username": "null"
     },
     {
-      "name": "美国 1108",
+      "cipher": "aes-256-gcm",
+      "name": "日本 0345[779ms]",
+      "password": "123456",
+      "port": 5555,
+      "server": "47.91.16.50",
+      "type": "ss",
+      "udp": true
+    },
+    {
+      "name": "美国 0980[802ms]",
+      "password": "null",
+      "port": 9002,
+      "server": "138.199.35.206",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http",
+      "username": "null"
+    },
+    {
+      "name": "美国 1084[803ms]",
+      "port": 9002,
+      "server": "138.199.35.198",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "美国 0982[805ms]",
+      "password": "null",
+      "port": 9002,
+      "server": "138.199.35.219",
+      "skip-cert-verify": true,
+      "sni": "138.199.35.219",
+      "tls": true,
+      "type": "http",
+      "username": "null"
+    },
+    {
+      "name": "美国 1079[808ms]",
+      "port": 9002,
+      "server": "138.199.35.204",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "美国 1080[813ms]",
+      "port": 9002,
+      "server": "138.199.35.220",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "美国 1076[819ms]",
+      "password": "null",
+      "port": 9002,
+      "server": "138.199.35.200",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http",
+      "username": "null"
+    },
+    {
+      "name": "法国 0134[824ms]",
+      "port": 6103,
+      "server": "87.98.174.157",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "美国 0981[830ms]",
       "password": "None",
       "port": 9002,
       "server": "138.199.35.196",
@@ -290,51 +330,11 @@
       "x-toolall-mihomo": true
     },
     {
-      "name": "美国 1107",
-      "password": "null",
-      "port": 9002,
-      "server": "138.199.35.206",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": "null"
-    },
-    {
-      "name": "美国 1184",
-      "password": "null",
-      "port": 9002,
-      "server": "138.199.35.200",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": "null"
-    },
-    {
-      "name": "美国 1105",
-      "password": "",
-      "port": 9002,
-      "server": "138.199.35.200",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "udp": true,
-      "username": "",
-      "x-toolall-mihomo": true
-    },
-    {
-      "name": "爱尔兰 0012[842ms]",
-      "port": 443,
-      "server": "18.200.158.139",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "name": "★ 未知 0662[商业]",
+      "name": "未知 0717[831ms]",
+      "password": "None",
       "port": 443,
       "server": "172.64.68.89",
       "skip-cert-verify": true,
-      "sni": "172.64.68.89",
       "sub_tag": "P002-260618",
       "tls": true,
       "type": "http",
@@ -342,77 +342,62 @@
       "x-toolall-mihomo": true
     },
     {
-      "name": "★ 未知 0664[商业]",
-      "password": "null",
+      "name": "未知 0692[832ms]",
       "port": 443,
       "server": "172.64.69.89",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "澳大利亚 0020[834ms]",
+      "port": 443,
+      "server": "103.62.50.130",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "美国 1081[836ms]",
+      "password": "null",
+      "port": 9002,
+      "server": "138.199.35.202",
       "skip-cert-verify": true,
       "tls": true,
       "type": "http",
       "username": "null"
     },
     {
-      "name": "新加坡 0410",
-      "password": "",
-      "port": 9443,
-      "server": "149.88.99.209",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
+      "encryption": "mlkem768x25519plus.native.0rtt.i-mCIgozdUXjdnvwa_1h7C1tM-A4lq45e1XfJTCQawk",
+      "http-opts": {
+        "headers": {
+          "Host": [
+            "play.googleapis.com"
+          ]
+        },
+        "path": [
+          "/"
+        ]
+      },
+      "name": "美国 1072[861ms]",
+      "network": "http",
+      "port": 8443,
+      "server": "tr.subscriptionservice.ir",
+      "type": "vless",
       "udp": true,
-      "username": "",
-      "x-toolall-mihomo": true
+      "uuid": "c28b9935-9392-48e9-947a-abad1ad9c933",
+      "xudp": true
     },
     {
-      "cipher": "aes-256-gcm",
-      "name": "意大利 0021",
-      "network": "tcp",
-      "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
-      "port": 19999,
-      "server": "202.50.253.54",
-      "skip-cert-verify": false,
-      "tls": false,
-      "type": "ss",
-      "udp": true
-    },
-    {
-      "name": "美国 1115[897ms]",
-      "password": "exaxgqkKkd0TAMrCxeonWg==",
-      "port": 443,
-      "server": "usgp1-cdn-route.couldflare-cdn.com",
-      "tls": true,
-      "type": "http",
-      "udp": true,
-      "username": "mrwdfNTD8M79LCukCieldrqZWqs=",
-      "x-toolall-mihomo": true
-    },
-    {
-      "name": "比利时 0009",
-      "port": 443,
-      "server": "146.70.123.98",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "udp": true
-    },
-    {
-      "name": "罗马尼亚 0072",
-      "port": 9002,
-      "server": "193.176.84.20",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "allowInsecure": "0",
-      "client-fingerprint": "chrome",
+      "alpn": [
+        "h2"
+      ],
+      "client-fingerprint": "firefox",
       "encryption": "none",
       "grpc-opts": {
         "grpc-service-name": "mobile.api.Event"
       },
-      "insecure": "0",
-      "mode": "gun",
-      "name": "俄罗斯联邦 0071",
+      "name": "俄罗斯联邦 0047[891ms]",
       "network": "grpc",
       "port": 443,
       "server": "vps3.nemnogogo.com",
@@ -425,253 +410,46 @@
       "uuid": "38308ff1-5aa9-494f-a25a-0f2870d56b3e"
     },
     {
-      "allowInsecure": "0",
-      "alpn": [
-        "h2"
-      ],
-      "client-fingerprint": "chrome",
-      "encryption": "none",
-      "extra": "{\"xmux\":{\"hMaxReusableSecs\":\"1140-1260\",\"maxConnections\":\"3\"}}",
-      "insecure": "0",
-      "mode": "stream-one",
-      "name": "英国 0154[945ms]",
-      "network": "xhttp",
-      "port": 443,
-      "server": "api.ferrin.uk",
-      "skip-cert-verify": false,
-      "sni": "7d1a74fd.ferrin.uk",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
-      "xhttp-opts": {
-        "mode": "stream-one",
-        "path": "/es"
-      }
-    },
-    {
-      "name": "瑞士 0042",
+      "name": "新加坡 0399[893ms]",
+      "password": "",
       "port": 9443,
-      "server": "37.120.213.210",
+      "server": "149.88.99.209",
       "skip-cert-verify": true,
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "client-fingerprint": "edge",
-      "host": "live.ok.ru",
-      "name": "俄罗斯联邦 0013",
-      "network": "ws",
-      "port": 4100,
-      "server": "194.26.229.207",
-      "skip-cert-verify": false,
-      "tls": false,
-      "type": "vless",
-      "udp": true,
-      "uuid": "026ecbd6-2838-40f6-b530-d2c303c4f629",
-      "ws-opts": {
-        "headers": {
-          "Host": "live.ok.ru"
-        },
-        "path": "/v1"
-      }
-    },
-    {
-      "name": "美国 1172[971ms]",
-      "port": 443,
-      "server": "38.28.193.188",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "name": "法国 0154",
-      "password": "null",
-      "port": 6103,
-      "server": "87.98.174.157",
-      "skip-cert-verify": true,
-      "sub_tag": "R002-260618",
       "tls": true,
       "type": "http",
       "udp": true,
-      "username": "null",
+      "username": "",
       "x-toolall-mihomo": true
     },
     {
-      "name": "法国 0157",
-      "port": 6103,
-      "server": "87.98.174.157",
+      "name": "罗马尼亚 0028[913ms]",
+      "password": "null",
+      "port": 9002,
+      "server": "193.176.84.23",
       "skip-cert-verify": true,
+      "tls": true,
+      "type": "http",
+      "username": "null"
+    },
+    {
+      "name": "罗马尼亚 0045[946ms]",
+      "port": 9002,
+      "server": "193.176.84.38",
+      "skip-cert-verify": true,
+      "sni": "www.bing.com",
       "tls": true,
       "type": "http"
     },
     {
-      "name": "香港 0262",
-      "password": "98c394b5-2a27-4be2-b5e5-0daab762c058",
-      "port": 443,
-      "server": "signal.lovehk.xyz",
-      "skip-cert-verify": true,
-      "sni": "signal.lovehk.xyz",
-      "type": "anytls",
-      "udp": true
-    },
-    {
-      "name": "★ 土耳其 0094[商业]",
-      "password": "freeuser1",
-      "port": 9251,
-      "server": "br3-tr.freeconnect.link",
-      "tls": true,
-      "type": "http",
-      "username": "freeuser1"
-    },
-    {
-      "name": "香港 0264",
-      "password": "d2e242fe-3a90-4d5c-b890-6089474faa39",
-      "port": 443,
-      "server": "im.lovehk.xyz",
-      "skip-cert-verify": true,
-      "sni": "im.lovehk.xyz",
-      "type": "anytls",
-      "udp": true
-    },
-    {
-      "name": "爱尔兰 0011[1012ms]",
+      "name": "爱尔兰 0007[1025ms]",
       "port": 443,
       "server": "34.249.214.108",
       "skip-cert-verify": true,
       "tls": true,
-      "type": "http",
-      "udp": true,
-      "x-toolall-mihomo": true
-    },
-    {
-      "name": "香港 0261",
-      "password": "44b7e257-d326-4df1-8510-002acac96d93",
-      "port": 443,
-      "server": "signal.lovehk.xyz",
-      "skip-cert-verify": true,
-      "sni": "signal.lovehk.xyz",
-      "type": "anytls",
-      "udp": true
-    },
-    {
-      "name": "荷兰 0276[1028ms]",
-      "port": 443,
-      "server": "5.255.118.82",
-      "skip-cert-verify": true,
-      "tls": true,
       "type": "http"
     },
     {
-      "name": "罗马尼亚 0073[1034ms]",
-      "port": 9002,
-      "server": "193.176.84.25",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "name": "香港 0263",
-      "password": "26ba2310-31aa-4fe6-86b1-47fcd14cabb2",
-      "port": 443,
-      "server": "im.lovehk.xyz",
-      "skip-cert-verify": true,
-      "sni": "im.lovehk.xyz",
-      "type": "anytls",
-      "udp": true
-    },
-    {
-      "name": "罗马尼亚 0074",
-      "port": 9002,
-      "server": "193.176.84.36",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "udp": true
-    },
-    {
-      "name": "罗马尼亚 0076",
-      "port": 9002,
-      "server": "193.176.84.40",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "name": "罗马尼亚 0040",
-      "port": 9002,
-      "server": "193.176.84.32",
-      "skip-cert-verify": true,
-      "sni": "www.bing.com",
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "name": "德国 0560[1079ms]",
-      "password": "None",
-      "port": 443,
-      "server": "149.36.50.1",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "udp": true,
-      "x-toolall-mihomo": true
-    },
-    {
-      "name": "罗马尼亚 0027",
-      "port": 9002,
-      "server": "193.176.84.24",
-      "skip-cert-verify": true,
-      "sni": "www.bing.com",
-      "tls": true,
-      "type": "http",
-      "udp": true,
-      "x-toolall-mihomo": true
-    },
-    {
-      "name": "奥地利 0021[1087ms]",
-      "port": 443,
-      "server": "146.70.244.18",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "name": "罗马尼亚 0033[1087ms]",
-      "port": 9002,
-      "server": "193.176.84.39",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "name": "瑞典 0047",
-      "port": 443,
-      "server": "146.70.242.146",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "name": "美国 1117[1095ms]",
-      "port": 443,
-      "server": "149.34.248.65",
-      "skip-cert-verify": true,
-      "sni": "149.34.248.65",
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "name": "★ 未知 0682[商业]",
-      "port": 443,
-      "server": "172.64.69.89",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "udp": true
-    },
-    {
-      "name": "罗马尼亚 0039",
+      "name": "罗马尼亚 0030[1036ms]",
       "port": 9002,
       "server": "193.176.84.27",
       "skip-cert-verify": true,
@@ -680,25 +458,163 @@
       "type": "http"
     },
     {
-      "name": "罗马尼亚 0032",
-      "password": "None",
+      "name": "罗马尼亚 0046[1048ms]",
       "port": 9002,
-      "server": "193.176.84.24",
+      "server": "193.176.84.35",
+      "skip-cert-verify": true,
+      "sni": "www.bing.com",
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "罗马尼亚 0040[1054ms]",
+      "port": 9002,
+      "server": "193.176.84.26",
+      "skip-cert-verify": true,
+      "sni": "www.bing.com",
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "罗马尼亚 0032[1062ms]",
+      "password": "null",
+      "port": 9002,
+      "server": "193.176.84.26",
       "skip-cert-verify": true,
       "tls": true,
       "type": "http",
-      "udp": true
+      "username": "null"
     },
     {
-      "name": "荷兰 0270",
+      "name": "罗马尼亚 0026[1065ms]",
       "port": 9002,
-      "server": "84.17.47.149",
+      "server": "193.176.84.39",
       "skip-cert-verify": true,
       "tls": true,
       "type": "http"
     },
     {
-      "name": "罗马尼亚 0028",
+      "name": "荷兰 0218[1065ms]",
+      "port": 9002,
+      "server": "84.17.47.150",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "荷兰 0219[1068ms]",
+      "port": 23856,
+      "server": "51.159.225.196",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "德国 0512[1071ms]",
+      "port": 9002,
+      "server": "158.173.154.1",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http",
+      "udp": true,
+      "x-toolall-mihomo": true
+    },
+    {
+      "name": "荷兰 0200[1072ms]",
+      "password": "null",
+      "port": 9002,
+      "server": "84.17.47.147",
+      "skip-cert-verify": true,
+      "sni": "84.17.47.147",
+      "tls": true,
+      "type": "http",
+      "username": "null"
+    },
+    {
+      "name": "荷兰 0215[1073ms]",
+      "password": "null",
+      "port": 9002,
+      "server": "84.17.47.125",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http",
+      "username": "null"
+    },
+    {
+      "name": "罗马尼亚 0056[1074ms]",
+      "port": 9002,
+      "server": "193.176.84.31",
+      "skip-cert-verify": true,
+      "sni": "www.bing.com",
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "罗马尼亚 0035[1076ms]",
+      "port": 9002,
+      "server": "193.176.84.36",
+      "skip-cert-verify": true,
+      "sni": "www.bing.com",
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "罗马尼亚 0027[1081ms]",
+      "password": "null",
+      "port": 9002,
+      "server": "193.176.84.19",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http",
+      "username": "null"
+    },
+    {
+      "name": "罗马尼亚 0055[1083ms]",
+      "port": 9002,
+      "server": "193.176.84.32",
+      "skip-cert-verify": true,
+      "sni": "www.bing.com",
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "荷兰 0223[1094ms]",
+      "password": "null",
+      "port": 9002,
+      "server": "84.17.47.148",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http",
+      "udp": true,
+      "username": "null"
+    },
+    {
+      "name": "未知 0691[1110ms]",
+      "port": 443,
+      "server": "172.64.68.89",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "德国 0542[1112ms]",
+      "port": 9002,
+      "server": "158.173.154.5",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "罗马尼亚 0033[1113ms]",
+      "port": 9002,
+      "server": "193.176.84.37",
+      "skip-cert-verify": true,
+      "sni": "www.bing.com",
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "罗马尼亚 0038[1120ms]",
       "password": "null",
       "port": 9002,
       "server": "193.176.84.33",
@@ -709,17 +625,99 @@
       "username": "null"
     },
     {
-      "name": "德国 0561",
+      "name": "德国 0550[1132ms]",
+      "password": "None",
       "port": 9002,
-      "server": "158.173.154.5",
+      "server": "158.173.154.4",
       "skip-cert-verify": true,
       "tls": true,
       "type": "http",
-      "udp": true,
-      "x-toolall-mihomo": true
+      "udp": true
     },
     {
-      "name": "荷兰 0257",
+      "name": "罗马尼亚 0034[1189ms]",
+      "port": 9002,
+      "server": "193.176.84.19",
+      "skip-cert-verify": true,
+      "sni": "www.bing.com",
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "client-fingerprint": "chrome",
+      "encryption": "none",
+      "name": "美国 1074[1192ms]",
+      "network": "ws",
+      "port": 443,
+      "server": "xray-b8ct4r2f-sahdon-hosaindoost.cloady.io",
+      "sni": "xray-b8ct4r2f-sahdon-hosaindoost.cloady.io",
+      "tls": true,
+      "type": "vless",
+      "udp": true,
+      "uuid": "1fd2e2d1-96f5-2056-19fd-b375b1a9d851",
+      "ws-opts": {
+        "headers": {
+          "Host": "xray-b8ct4r2f-sahdon-hosaindoost.cloady.io",
+          "User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.17 (KHTML, like Gecko) Chrome/10.0.649.0 Safari/534.17"
+        },
+        "path": "/ffad70ffdfc3bcda"
+      },
+      "xudp": true
+    },
+    {
+      "name": "荷兰 0216[1203ms]",
+      "port": 9002,
+      "server": "84.17.47.149",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "罗马尼亚 0042[1203ms]",
+      "port": 9002,
+      "server": "193.176.84.20",
+      "skip-cert-verify": true,
+      "sni": "www.bing.com",
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "荷兰 0205[1206ms]",
+      "password": "freeuser1",
+      "port": 9251,
+      "server": "nl205.freeconnect.link",
+      "sni": "nl205.freeconnect.link",
+      "tls": true,
+      "type": "http",
+      "username": "freeuser1"
+    },
+    {
+      "name": "罗马尼亚 0048[1208ms]",
+      "port": 9002,
+      "server": "193.176.84.22",
+      "skip-cert-verify": true,
+      "sni": "www.bing.com",
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "罗马尼亚 0036[1213ms]",
+      "port": 9002,
+      "server": "193.176.84.25",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "荷兰 0214[1219ms]",
+      "port": 9002,
+      "server": "84.17.47.124",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "荷兰 0203[1220ms]",
       "password": "None",
       "port": 9002,
       "server": "84.17.47.148",
@@ -730,23 +728,25 @@
       "x-toolall-mihomo": true
     },
     {
-      "client-fingerprint": "firefox",
-      "grpc-opts": {
-        "grpc-mode": "gun",
-        "grpc-service-name": "glush.de3.v1"
-      },
-      "name": "★ 俄罗斯联邦 0141[移动]",
-      "network": "grpc",
-      "port": 443,
-      "server": "vellum.filnex.baby",
-      "sni": "rookery.moltex.click",
+      "name": "罗马尼亚 0047[1248ms]",
+      "password": "None",
+      "port": 9002,
+      "server": "193.176.84.24",
+      "skip-cert-verify": true,
       "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "0b6a7fe0-206b-4071-9f96-cd397d1ec01a"
+      "type": "http",
+      "udp": true
     },
     {
-      "name": "德国 0576",
+      "name": "罗马尼亚 0037[1256ms]",
+      "port": 9002,
+      "server": "193.176.84.34",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "德国 0540[1257ms]",
       "port": 9002,
       "server": "158.173.154.4",
       "skip-cert-verify": true,
@@ -754,15 +754,33 @@
       "type": "http"
     },
     {
-      "name": "塞尔维亚 0004[1142ms]",
-      "port": 443,
-      "server": "146.70.221.18",
+      "name": "罗马尼亚 0044[1287ms]",
+      "port": 9002,
+      "server": "193.176.84.33",
+      "skip-cert-verify": true,
+      "sni": "www.bing.com",
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "罗马尼亚 0049[1293ms]",
+      "port": 9002,
+      "server": "193.176.84.30",
+      "skip-cert-verify": true,
+      "sni": "www.bing.com",
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "罗马尼亚 0031[1377ms]",
+      "port": 9002,
+      "server": "193.176.84.24",
       "skip-cert-verify": true,
       "tls": true,
       "type": "http"
     },
     {
-      "name": "捷克 0029",
+      "name": "捷克 0026[1382ms]",
       "password": "None",
       "port": 9443,
       "server": "152.233.16.174",
@@ -773,249 +791,33 @@
       "x-toolall-mihomo": true
     },
     {
-      "name": "罗马尼亚 0041",
-      "port": 9002,
-      "server": "193.176.84.19",
-      "skip-cert-verify": true,
-      "sni": "www.bing.com",
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "name": "荷兰 0256",
-      "port": 9002,
-      "server": "84.17.47.124",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "udp": true,
-      "x-toolall-mihomo": true
-    },
-    {
-      "name": "德国 0593",
-      "password": "None",
-      "port": 9002,
-      "server": "158.173.154.4",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "udp": true
-    },
-    {
-      "name": "英国 0183[1167ms]",
-      "port": 443,
-      "server": "212.102.63.31",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "udp": true,
-      "x-toolall-mihomo": true
-    },
-    {
-      "alpn": [
-        "h2"
-      ],
-      "client-fingerprint": "chrome",
-      "encryption": "none",
-      "grpc-opts": {
-        "grpc-service-name": "glush.de7.v1"
-      },
-      "name": "俄罗斯联邦 0080[1176ms]",
-      "network": "grpc",
-      "port": 443,
-      "server": "honeycomb.merlano.monster",
-      "serviceName": "glush.de7.v1",
-      "skip-cert-verify": false,
-      "sni": "honeycomb.merlano.monster",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "0b6a7fe0-206b-4071-9f96-cd397d1ec01a"
-    },
-    {
-      "name": "德国 0577[1179ms]",
-      "port": 443,
-      "server": "149.36.50.1",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "name": "罗马尼亚 0029",
-      "password": "null",
-      "port": 9002,
-      "server": "193.176.84.35",
-      "skip-cert-verify": true,
-      "sni": "193.176.84.35",
-      "tls": true,
-      "type": "http",
-      "username": "null"
-    },
-    {
-      "name": "荷兰 0272",
-      "password": "null",
+      "name": "荷兰 0221[1384ms]",
       "port": 9002,
       "server": "84.17.47.147",
       "skip-cert-verify": true,
       "tls": true,
-      "type": "http",
-      "username": "null"
-    },
-    {
-      "name": "德国 0562",
-      "port": 9002,
-      "server": "158.173.154.1",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "udp": true,
-      "x-toolall-mihomo": true
-    },
-    {
-      "name": "以色列 0015[1217ms]",
-      "password": "zdnivBaI",
-      "port": 62000,
-      "server": "109.66.136.242",
-      "type": "socks5",
-      "username": "r3ZzP8WW"
-    },
-    {
-      "name": "罗马尼亚 0030",
-      "password": "null",
-      "port": 9002,
-      "server": "193.176.84.23",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": "null"
-    },
-    {
-      "name": "荷兰 0263",
-      "password": "freeuser1",
-      "port": 9251,
-      "server": "nl205.freeconnect.link",
-      "sni": "nl205.freeconnect.link",
-      "tls": true,
-      "type": "http",
-      "username": "freeuser1"
-    },
-    {
-      "name": "法国 0155[1238ms]",
-      "port": 443,
-      "server": "82.66.235.221",
-      "skip-cert-verify": true,
-      "sub_tag": "R002-260618",
-      "tls": true,
-      "type": "http",
-      "udp": true,
-      "x-toolall-mihomo": true
-    },
-    {
-      "name": "荷兰 0275",
-      "port": 23856,
-      "server": "51.159.225.196",
-      "skip-cert-verify": true,
-      "tls": true,
       "type": "http"
     },
     {
-      "name": "中国 0057[1265ms]",
-      "password": "d7563108-615c-4338-a7bd-77f359869a4a",
-      "port": 20103,
-      "server": "sclass-01.catcat321.com",
-      "skip-cert-verify": true,
-      "sni": "hk.catxstar.com",
-      "tls": true,
-      "type": "trojan",
-      "udp": true
-    },
-    {
-      "name": "美国 1122[1273ms]",
-      "password": "ao3W5ZML",
-      "port": 42000,
-      "server": "168.222.8.4",
-      "type": "socks5",
-      "username": "JPjarpW3"
-    },
-    {
-      "alpn": [
-        "h2"
-      ],
-      "client-fingerprint": "firefox",
-      "grpc-opts": {
-        "grpc-mode": "gun",
-        "grpc-service-name": "glush.de3.v1"
-      },
-      "name": "★ 俄罗斯联邦 0145[移动]",
-      "network": "grpc",
-      "port": 443,
-      "server": "tapestry.gerqix.online",
-      "sni": "tapestry.gerqix.online",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "0b6a7fe0-206b-4071-9f96-cd397d1ec01a"
-    },
-    {
-      "name": "罗马尼亚 0034",
-      "port": 9002,
-      "server": "193.176.84.34",
-      "skip-cert-verify": true,
-      "sni": "www.bing.com",
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "name": "罗马尼亚 0031",
-      "password": "",
-      "port": 9002,
-      "server": "193.176.84.26",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "udp": true,
-      "username": "",
-      "x-toolall-mihomo": true
-    },
-    {
-      "name": "荷兰 0258",
+      "name": "荷兰 0225[1386ms]",
       "password": "None",
       "port": 9002,
       "server": "84.17.47.123",
       "skip-cert-verify": true,
       "tls": true,
       "type": "http",
-      "udp": true,
-      "x-toolall-mihomo": true
+      "udp": true
     },
     {
-      "name": "以色列 0018[1367ms]",
-      "password": "null",
-      "port": 443,
-      "server": "62.90.77.30",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": "null"
-    },
-    {
-      "name": "荷兰 0274",
+      "name": "荷兰 0213[1387ms]",
       "port": 9002,
-      "server": "84.17.47.150",
+      "server": "84.17.47.123",
       "skip-cert-verify": true,
       "tls": true,
       "type": "http"
     },
     {
-      "name": "荷兰 0269[1374ms]",
-      "port": 443,
-      "server": "149.36.51.129",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "name": "荷兰 0281",
+      "name": "荷兰 0224[1391ms]",
       "port": 9002,
       "server": "84.17.47.125",
       "skip-cert-verify": true,
@@ -1024,18 +826,17 @@
       "udp": true
     },
     {
-      "name": "荷兰 0280",
+      "name": "罗马尼亚 0039[1396ms]",
       "password": "null",
       "port": 9002,
-      "server": "84.17.47.148",
+      "server": "193.176.84.27",
       "skip-cert-verify": true,
       "tls": true,
       "type": "http",
-      "udp": true,
       "username": "null"
     },
     {
-      "name": "荷兰 0260",
+      "name": "荷兰 0201[1396ms]",
       "password": "None",
       "port": 9002,
       "server": "84.17.47.149",
@@ -1046,41 +847,7 @@
       "x-toolall-mihomo": true
     },
     {
-      "name": "荷兰 0268",
-      "password": "null",
-      "port": 9002,
-      "server": "84.17.47.125",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http",
-      "username": "null"
-    },
-    {
-      "name": "捷克 0030",
-      "port": 9443,
-      "server": "152.233.16.174",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "name": "荷兰 0271",
-      "port": 9002,
-      "server": "84.17.47.123",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "name": "荷兰 0277",
-      "port": 9002,
-      "server": "84.17.47.147",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "name": "荷兰 0259",
+      "name": "荷兰 0202[1409ms]",
       "password": "null",
       "port": 9002,
       "server": "84.17.47.146",
@@ -1090,221 +857,104 @@
       "username": "null"
     },
     {
-      "name": "美国 1111[1555ms]",
-      "password": "",
-      "port": 443,
-      "server": "149.88.21.129",
+      "name": "罗马尼亚 0029[1415ms]",
+      "password": "null",
+      "port": 9002,
+      "server": "193.176.84.35",
       "skip-cert-verify": true,
+      "sni": "193.176.84.35",
       "tls": true,
       "type": "http",
-      "udp": true,
-      "username": "",
-      "x-toolall-mihomo": true
+      "username": "null"
     },
     {
-      "alpn": [
-        "h2",
-        "http/1.1"
-      ],
-      "client-fingerprint": "chrome",
-      "name": "俄罗斯联邦 0156[1567ms]",
-      "network": "xhttp",
-      "port": 443,
-      "server": "riverstone.gerqix.online",
-      "sni": "riverstone.gerqix.online",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "0b6a7fe0-206b-4071-9f96-cd397d1ec01a",
-      "xhttp-opts": {
-        "host": "riverstone.gerqix.online",
-        "mode": "auto",
-        "path": "/api/de7/sync"
-      }
-    },
-    {
-      "alpn": [
-        "h2",
-        "http/1.1"
-      ],
-      "client-fingerprint": "random",
-      "name": "俄罗斯联邦 0140[1651ms]",
-      "network": "xhttp",
-      "port": 443,
-      "server": "tealeaf.elvano.website",
-      "sni": "tealeaf.elvano.website",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "0b6a7fe0-206b-4071-9f96-cd397d1ec01a",
-      "xhttp-opts": {
-        "host": "tealeaf.elvano.website",
-        "mode": "auto",
-        "path": "/api/de4/sync"
-      }
-    },
-    {
-      "name": "日本 0350",
-      "password": "d9064589-74af-432a-9390-5d8a9da281bf",
-      "port": 20051,
-      "server": "sclass-c2.catcat321.com",
-      "skip-cert-verify": true,
-      "sni": "hk.catxstar.com",
-      "tls": true,
-      "type": "trojan",
-      "udp": true
-    },
-    {
-      "alpn": [
-        "h2",
-        "http/1.1"
-      ],
-      "client-fingerprint": "firefox",
-      "name": "俄罗斯联邦 0142[1766ms]",
-      "network": "xhttp",
-      "port": 443,
-      "server": "savanna.moltex.click",
-      "sni": "savanna.moltex.click",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "83706ae4-be2f-4b2b-8079-c3eb4e0b2e3e",
-      "xhttp-opts": {
-        "host": "savanna.moltex.click",
-        "mode": "auto",
-        "path": "/api/de7/sync"
-      }
-    },
-    {
-      "client-fingerprint": "firefox",
-      "name": "香港 0258",
-      "network": "ws",
-      "port": 443,
-      "server": "ws3.falmero.store",
-      "sni": "paperbirch.merlano.monster",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "0b6a7fe0-206b-4071-9f96-cd397d1ec01a",
-      "ws-opts": {
-        "headers": {
-          "Host": "paperbirch.merlano.monster"
-        },
-        "path": "/api/de1/stream"
-      }
-    },
-    {
-      "name": "★ 美国 1173[商业]",
-      "port": 8090,
-      "server": "209.148.53.153",
+      "name": "捷克 0028[1468ms]",
+      "port": 9443,
+      "server": "152.233.16.174",
       "skip-cert-verify": true,
       "tls": true,
       "type": "http"
     },
     {
-      "name": "★ 未知 0681[商业]",
-      "password": "None",
-      "port": 443,
-      "server": "172.64.68.89",
+      "name": "美国 1073[1481ms]",
+      "password": "DJy1T0dt",
+      "port": 42000,
+      "server": "144.225.47.161",
       "skip-cert-verify": true,
-      "sub_tag": "P002-260618",
+      "type": "socks5",
+      "username": "Tek2x6av"
+    },
+    {
+      "name": "未知 0715[1632ms]",
+      "password": "null",
+      "port": 443,
+      "server": "172.64.69.89",
+      "skip-cert-verify": true,
       "tls": true,
       "type": "http",
+      "username": "null"
+    },
+    {
+      "name": "美国 1078[1683ms]",
+      "port": 8443,
+      "server": "74.208.250.147",
+      "skip-cert-verify": true,
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "英国 0177[1730ms]",
+      "password": "KsPAxZGn",
+      "port": 42000,
+      "server": "94.194.166.52",
+      "skip-cert-verify": true,
+      "type": "socks5",
+      "username": "userLRgK"
+    },
+    {
+      "client-fingerprint": "chrome",
+      "encryption": "none",
+      "host": "xray-b8ct4r2f-sahdon-hosaindoost.cloady.io",
+      "name": "美国 0399[1801ms]",
+      "network": "ws",
+      "port": 443,
+      "server": "xray-b8ct4r2f-sahdon-hosaindoost.cloady.io",
+      "skip-cert-verify": false,
+      "sni": "xray-b8ct4r2f-sahdon-hosaindoost.cloady.io",
+      "tls": true,
+      "type": "vless",
       "udp": true,
-      "x-toolall-mihomo": true
+      "uuid": "1fd2e2d1-96f5-2056-19fd-b375b1a9d851",
+      "ws-opts": {
+        "headers": {
+          "Host": "xray-b8ct4r2f-sahdon-hosaindoost.cloady.io"
+        },
+        "path": "/ffad70ffdfc3bcda"
+      }
     },
     {
       "cipher": "aes-256-gcm",
-      "name": "意大利 0013",
+      "name": "意大利 0022[1837ms]",
       "network": "tcp",
       "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
       "port": 19999,
-      "server": "202.50.253.63",
+      "server": "202.50.253.72",
       "skip-cert-verify": false,
       "tls": false,
       "type": "ss",
       "udp": true
     },
     {
-      "name": "新加坡 0411[2058ms]",
-      "port": 443,
-      "server": "154.26.139.24",
+      "name": "巴西 0026[1875ms]",
+      "password": "0mvrt5jb",
+      "port": 62000,
+      "server": "191.7.129.133",
       "skip-cert-verify": true,
-      "tls": true,
-      "type": "http"
+      "type": "socks5",
+      "username": "uwrgfkwg"
     },
     {
-      "name": "美国 1181[2210ms]",
-      "port": 9443,
-      "server": "181.215.52.6",
-      "skip-cert-verify": true,
-      "tls": true,
-      "type": "http"
-    },
-    {
-      "name": "台湾 0135[2311ms]",
-      "password": "0324fbc29561",
-      "port": 443,
-      "server": "mfjh645drfj1dr6j5.df6h451rh.xin",
-      "skip-cert-verify": true,
-      "sni": "px.ads.linkedin.com",
-      "type": "anytls"
-    },
-    {
-      "alpn": [
-        "h2",
-        "http/1.1"
-      ],
-      "client-fingerprint": "chrome",
-      "name": "俄罗斯联邦 0157[2366ms]",
-      "network": "xhttp",
-      "port": 443,
-      "server": "fresco.merlano.monster",
-      "sni": "fresco.merlano.monster",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "0b6a7fe0-206b-4071-9f96-cd397d1ec01a",
-      "xhttp-opts": {
-        "host": "fresco.merlano.monster",
-        "mode": "auto",
-        "path": "/api/de4/sync"
-      }
-    },
-    {
-      "name": "美国 1138",
-      "password": "d9064589-74af-432a-9390-5d8a9da281bf",
-      "port": 20123,
-      "server": "sclass-00.catcat321.com",
-      "skip-cert-verify": true,
-      "sni": "hk.catxstar.com",
-      "tls": true,
-      "type": "trojan",
-      "udp": true
-    },
-    {
-      "alpn": [
-        "http/1.1"
-      ],
-      "client-fingerprint": "firefox",
-      "name": "俄罗斯联邦 0150[2444ms]",
-      "network": "ws",
-      "port": 443,
-      "server": "marina.gerqix.online",
-      "sni": "marina.gerqix.online",
-      "tls": true,
-      "type": "vless",
-      "udp": true,
-      "uuid": "0b6a7fe0-206b-4071-9f96-cd397d1ec01a",
-      "ws-opts": {
-        "headers": {
-          "Host": "marina.gerqix.online"
-        },
-        "path": "/api/de3/stream"
-      }
-    },
-    {
-      "name": "厄瓜多尔 0002",
+      "name": "厄瓜多尔 0002[1981ms]",
       "password": "",
       "port": 9443,
       "server": "38.165.231.71",
@@ -1316,136 +966,179 @@
       "x-toolall-mihomo": true
     },
     {
-      "name": "★ 台湾 0134[商业]",
-      "password": "10f65625-c1f9-4a14-bec5-c1cae15e6f8f",
-      "port": 57180,
-      "server": "media.gosthk.site",
+      "name": "罗马尼亚 0043[2126ms]",
+      "port": 9002,
+      "server": "193.176.84.40",
       "skip-cert-verify": true,
-      "sni": "media.gosthk.site",
+      "tls": true,
+      "type": "http"
+    },
+    {
+      "name": "墨西哥 0009[2359ms]",
+      "password": "VvUAFi2E",
+      "port": 62000,
+      "server": "72.57.228.30",
+      "skip-cert-verify": true,
+      "type": "socks5",
+      "username": "UBXich0K"
+    },
+    {
+      "encryption": "mlkem768x25519plus.native.0rtt.nHoPNLMt_oBBrE9YodTzva_TCX4cF2Tz2ReH_jRwqCo",
+      "headerType": "none",
+      "name": "俄罗斯联邦 0074[2432ms]",
+      "network": "tcp",
+      "port": 443,
+      "server": "176.114.95.249",
+      "skip-cert-verify": false,
+      "tls": false,
+      "type": "vless",
+      "udp": true,
+      "uuid": "9a591702-24c7-4abf-9f14-ac59438a64e6"
+    },
+    {
+      "insecure": "1",
+      "name": "美国 0119[2454ms]",
+      "network": "tcp",
+      "password": "https://xship.best",
+      "port": 443,
+      "server": "starlink-ft.251313.xyz",
+      "skip-cert-verify": true,
+      "sni": "xship.top",
+      "tls": false,
+      "type": "hysteria2",
+      "udp": true
+    },
+    {
+      "name": "台湾 0135[2494ms]",
+      "password": "2902c46c8493",
+      "port": 443,
+      "server": "rtifgjdr.df6h451rh.xin",
+      "skip-cert-verify": true,
+      "sni": "docs.microsoft.com",
       "type": "anytls",
       "udp": true
+    },
+    {
+      "name": "台湾 0140[2494ms]",
+      "password": "2902c46c8493",
+      "port": 443,
+      "server": "er8u54dh.df6h451rh.xin",
+      "skip-cert-verify": true,
+      "sni": "px.ads.linkedin.com",
+      "type": "anytls"
+    },
+    {
+      "fingerprint": "",
+      "name": "台湾 0139[2689ms]",
+      "password": "0324fbc29561",
+      "port": 443,
+      "server": "mfjh645drfj1dr6j5.df6h451rh.xin",
+      "skip-cert-verify": true,
+      "sni": "px.ads.linkedin.com",
+      "type": "anytls",
+      "udp": true,
+      "username": "0324fbc29561"
     }
   ],
   "proxy-groups": [
     {
       "name": "🚀 所有节点",
       "proxies": [
-        "★ 台湾 0136[移动]",
-        "★ 台湾 0133[商业]",
-        "★ 日本 0335[住宅]",
-        "★ 韩国 0013[住宅]",
-        "★ 日本 0337[商业]",
-        "香港 0252",
-        "香港 0244",
-        "★ 泰国 0019[商业]",
-        "意大利 0016",
-        "意大利 0018",
-        "★ 香港 0256[商业]",
-        "★ 美国 1118[商业]",
-        "香港 0265",
-        "香港 0260",
-        "香港 0259",
-        "意大利 0023",
-        "意大利 0017",
-        "意大利 0025",
-        "意大利 0024",
-        "美国 1103",
-        "美国 1106",
-        "美国 1108",
-        "美国 1107",
-        "美国 1184",
-        "美国 1105",
-        "爱尔兰 0012[842ms]",
-        "★ 未知 0662[商业]",
-        "★ 未知 0664[商业]",
-        "新加坡 0410",
-        "意大利 0021",
-        "美国 1115[897ms]",
-        "比利时 0009",
-        "罗马尼亚 0072",
-        "俄罗斯联邦 0071",
-        "英国 0154[945ms]",
-        "瑞士 0042",
-        "俄罗斯联邦 0013",
-        "美国 1172[971ms]",
-        "法国 0154",
-        "法国 0157",
-        "香港 0262",
-        "★ 土耳其 0094[商业]",
-        "香港 0264",
-        "爱尔兰 0011[1012ms]",
-        "香港 0261",
-        "荷兰 0276[1028ms]",
-        "罗马尼亚 0073[1034ms]",
-        "香港 0263",
-        "罗马尼亚 0074",
-        "罗马尼亚 0076",
-        "罗马尼亚 0040",
-        "德国 0560[1079ms]",
-        "罗马尼亚 0027",
-        "奥地利 0021[1087ms]",
-        "罗马尼亚 0033[1087ms]",
-        "瑞典 0047",
-        "美国 1117[1095ms]",
-        "★ 未知 0682[商业]",
-        "罗马尼亚 0039",
-        "罗马尼亚 0032",
-        "荷兰 0270",
-        "罗马尼亚 0028",
-        "德国 0561",
-        "荷兰 0257",
-        "★ 俄罗斯联邦 0141[移动]",
-        "德国 0576",
-        "塞尔维亚 0004[1142ms]",
-        "捷克 0029",
-        "罗马尼亚 0041",
-        "荷兰 0256",
-        "德国 0593",
-        "英国 0183[1167ms]",
-        "俄罗斯联邦 0080[1176ms]",
-        "德国 0577[1179ms]",
-        "罗马尼亚 0029",
-        "荷兰 0272",
-        "德国 0562",
-        "以色列 0015[1217ms]",
-        "罗马尼亚 0030",
-        "荷兰 0263",
-        "法国 0155[1238ms]",
-        "荷兰 0275",
-        "中国 0057[1265ms]",
-        "美国 1122[1273ms]",
-        "★ 俄罗斯联邦 0145[移动]",
-        "罗马尼亚 0034",
-        "罗马尼亚 0031",
-        "荷兰 0258",
-        "以色列 0018[1367ms]",
-        "荷兰 0274",
-        "荷兰 0269[1374ms]",
-        "荷兰 0281",
-        "荷兰 0280",
-        "荷兰 0260",
-        "荷兰 0268",
-        "捷克 0030",
-        "荷兰 0271",
-        "荷兰 0277",
-        "荷兰 0259",
-        "美国 1111[1555ms]",
-        "俄罗斯联邦 0156[1567ms]",
-        "俄罗斯联邦 0140[1651ms]",
-        "日本 0350",
-        "俄罗斯联邦 0142[1766ms]",
-        "香港 0258",
-        "★ 美国 1173[商业]",
-        "★ 未知 0681[商业]",
-        "意大利 0013",
-        "新加坡 0411[2058ms]",
-        "美国 1181[2210ms]",
-        "台湾 0135[2311ms]",
-        "俄罗斯联邦 0157[2366ms]",
-        "美国 1138",
-        "俄罗斯联邦 0150[2444ms]",
-        "厄瓜多尔 0002",
-        "★ 台湾 0134[商业]"
+        "新加坡 0025[209ms]",
+        "泰国 0022[494ms]",
+        "泰国 0023[524ms]",
+        "意大利 0017[551ms]",
+        "意大利 0016[555ms]",
+        "意大利 0015[556ms]",
+        "俄罗斯联邦 0014[564ms]",
+        "美国 0989[633ms]",
+        "意大利 0024[655ms]",
+        "意大利 0023[655ms]",
+        "意大利 0018[661ms]",
+        "意大利 0020[666ms]",
+        "意大利 0019[667ms]",
+        "俄罗斯联邦 0001[751ms]",
+        "美国 1075[765ms]",
+        "美国 1077[772ms]",
+        "日本 0345[779ms]",
+        "美国 0980[802ms]",
+        "美国 1084[803ms]",
+        "美国 0982[805ms]",
+        "美国 1079[808ms]",
+        "美国 1080[813ms]",
+        "美国 1076[819ms]",
+        "法国 0134[824ms]",
+        "美国 0981[830ms]",
+        "未知 0717[831ms]",
+        "未知 0692[832ms]",
+        "澳大利亚 0020[834ms]",
+        "美国 1081[836ms]",
+        "美国 1072[861ms]",
+        "俄罗斯联邦 0047[891ms]",
+        "新加坡 0399[893ms]",
+        "罗马尼亚 0028[913ms]",
+        "罗马尼亚 0045[946ms]",
+        "爱尔兰 0007[1025ms]",
+        "罗马尼亚 0030[1036ms]",
+        "罗马尼亚 0046[1048ms]",
+        "罗马尼亚 0040[1054ms]",
+        "罗马尼亚 0032[1062ms]",
+        "罗马尼亚 0026[1065ms]",
+        "荷兰 0218[1065ms]",
+        "荷兰 0219[1068ms]",
+        "德国 0512[1071ms]",
+        "荷兰 0200[1072ms]",
+        "荷兰 0215[1073ms]",
+        "罗马尼亚 0056[1074ms]",
+        "罗马尼亚 0035[1076ms]",
+        "罗马尼亚 0027[1081ms]",
+        "罗马尼亚 0055[1083ms]",
+        "荷兰 0223[1094ms]",
+        "未知 0691[1110ms]",
+        "德国 0542[1112ms]",
+        "罗马尼亚 0033[1113ms]",
+        "罗马尼亚 0038[1120ms]",
+        "德国 0550[1132ms]",
+        "罗马尼亚 0034[1189ms]",
+        "美国 1074[1192ms]",
+        "荷兰 0216[1203ms]",
+        "罗马尼亚 0042[1203ms]",
+        "荷兰 0205[1206ms]",
+        "罗马尼亚 0048[1208ms]",
+        "罗马尼亚 0036[1213ms]",
+        "荷兰 0214[1219ms]",
+        "荷兰 0203[1220ms]",
+        "罗马尼亚 0047[1248ms]",
+        "罗马尼亚 0037[1256ms]",
+        "德国 0540[1257ms]",
+        "罗马尼亚 0044[1287ms]",
+        "罗马尼亚 0049[1293ms]",
+        "罗马尼亚 0031[1377ms]",
+        "捷克 0026[1382ms]",
+        "荷兰 0221[1384ms]",
+        "荷兰 0225[1386ms]",
+        "荷兰 0213[1387ms]",
+        "荷兰 0224[1391ms]",
+        "罗马尼亚 0039[1396ms]",
+        "荷兰 0201[1396ms]",
+        "荷兰 0202[1409ms]",
+        "罗马尼亚 0029[1415ms]",
+        "捷克 0028[1468ms]",
+        "美国 1073[1481ms]",
+        "未知 0715[1632ms]",
+        "美国 1078[1683ms]",
+        "英国 0177[1730ms]",
+        "美国 0399[1801ms]",
+        "意大利 0022[1837ms]",
+        "巴西 0026[1875ms]",
+        "厄瓜多尔 0002[1981ms]",
+        "罗马尼亚 0043[2126ms]",
+        "墨西哥 0009[2359ms]",
+        "俄罗斯联邦 0074[2432ms]",
+        "美国 0119[2454ms]",
+        "台湾 0135[2494ms]",
+        "台湾 0140[2494ms]",
+        "台湾 0139[2689ms]"
       ],
       "type": "select"
     }
